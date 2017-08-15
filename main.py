@@ -15,9 +15,12 @@ from packages.functions import pack_padded, to_np, to_var, str2bool
 parser = argparse.ArgumentParser()
 
 # arguments related to the dataset
-parser.add_argument('--train_root',type=str,default='/home/irteam/users/data/D3/outputs_train.txt',help='data file')
-parser.add_argument('--val_root',type=str,default='/home/irteam/users/data/D3/outputs_val.txt',help='data file')
-parser.add_argument('--test_root',type=str,default='/home/irteam/users/data/D3/outputs_test.txt',help='data file')
+# parser.add_argument('--train_root',type=str,default='/home/irteam/users/data/D3/outputs_train.txt',help='data file')
+# parser.add_argument('--val_root',type=str,default='/home/irteam/users/data/D3/outputs_val.txt',help='data file')
+# parser.add_argument('--test_root',type=str,default='/home/irteam/users/data/D3/outputs_test.txt',help='data file')
+parser.add_argument('--train_root',type=str,default='data/outputs_train.txt',help='data file')
+parser.add_argument('--val_root',type=str,default='data/outputs_val.txt',help='data file')
+parser.add_argument('--test_root',type=str,default='data/outputs_test.txt',help='data file')
 parser.add_argument('--dict_root',type=str,default='data/dict_1000.json',
                     help='directory of dictionary file')
 parser.add_argument("--max_oovs",type=int, default=20,
