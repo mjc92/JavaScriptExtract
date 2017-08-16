@@ -42,11 +42,22 @@ class Vocab(object):
 
     def tensor_to_string(self, tensor, oov2idx):
         idx_list = tensor.tolist()
-        idx_list = [x for x in idx_list if x!=0]
-        if len(idx_list)==0:
+        out_list = []
+        for x in idx_list:
+            if x==self.w2i['<EOS>']:
+                break
+            elif x==self.w2i['<PAD>']:
+                continue
+            elif x==self.w2i[';']:
+                out_list.append(x)
+                break
+            else:
+                out_list.append(x)
+        # idx_list = [x for x in idx_list if x!=0]
+        if len(out_list)==0:
             return 'None'
         idx2oov = {v: k for k, v in oov2idx.items()}
-        word_list = self.idx_list_to_word_list(idx_list,idx2oov)
+        word_list = self.idx_list_to_word_list(out_list,idx2oov)
         return ' '.join(word_list)
     
     def idx_list_to_word_list(self, idx_list, idx2oov={}):

@@ -1,9 +1,10 @@
 import torch.backends.cudnn as cudnn
 cudnn.benchmark = True
-
+import datetime
 import torch
 from torch import optim, nn
 import argparse
+import os
 from packages.vocab import Vocab
 import torch.nn.functional as F
 from tensorboard.logger import Logger
@@ -49,6 +50,11 @@ parser.add_argument("--similarity",type=str, default='position', help='similarit
 parser.add_argument("--encoder",type=str, default='lstm', help='encoder type to use')
 
 args = parser.parse_args()
+
+
+time_str = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+args.time_str = time_str
+args.time_str = ''
 
 def train(args):
     print(args)
@@ -115,7 +121,7 @@ def train(args):
                         loss1.data[0],loss2.data[0],acc2,acc))
             loss.backward()
             opt.step()
-            if steps%100==0:
+            if steps%500==0:
                 val(model,vocab, args) 
                 torch.save(obj=model,f='data/model_%d_steps.pckl'%steps)
                 print("Model saved...")
@@ -138,8 +144,9 @@ def val(model, vocab, args):
     data_loader = get_loader(args.val_root, args.dict_root, vocab, args.batch, 
                           args.single, shuffle=False)
     total_cases = 0
-    total_correct = 0
-    total_loss = 0
+    total_correct_cases = 0
+    total_labels = 0
+    total_correct_labels = 0
     for i, (inputs, lengths, labels, oovs) in enumerate(data_loader):
         model.eval()
         sources, queries, targets = inputs
@@ -151,21 +158,44 @@ def val(model, vocab, args):
         if args.single:
             outputs = model(sources,queries,lengths, targets) # [batch x seq x vocab]
         else:
-            outputs, similarities = model(sources,queries,lengths,targets)
+            outputs, sim = model(sources,queries,lengths,targets)
         targets = Variable(targets[:,1:])
 
         packed_outputs,packed_targets = pack_padded(outputs,targets)
         packed_outputs = torch.log(packed_outputs)
-        loss = criterion(packed_outputs,packed_targets).data[0]
+        if args.single:
+            loss = criterion(packed_outputs,packed_targets)
+        else:
+            sim = sim + 1e-3
+            sim = torch.log(sim)
+            labels = Variable(torch.LongTensor(list(labels)))
+            if args.cuda:
+                labels = labels.cuda()
+            loss1 = criterion(sim, labels).data[0]
+            loss2 = criterion(packed_outputs,packed_targets).data[0]
+            loss = loss1 + loss2
+            # loss = loss1
         predicted = packed_outputs.max(1)[1]
         correct=(predicted==packed_targets).long().sum().data[0]
         
-        total_correct+=correct
-        total_cases+=len(packed_targets)
-        total_loss += loss*len(packed_targets)
-        print("%s \tLoss: %1.3f"%(mode,total_loss/total_cases))
-    acc = (correct*1.0/packed_targets.size(0))
-    print("%s \tLoss: %1.3f\tAccuracy: %1.3f"%(mode,total_loss/total_cases,acc))
+        total_correct_cases += correct
+        total_cases += len(packed_outputs)
+        
+        print("Loss: %1.3f"%(loss))
+        if args.single==False:
+            predicted_label = sim.max(1)[1]
+            correct_label=(predicted_label==labels).long().sum().data[0]
+            
+            total_correct_labels += correct_label
+            total_labels += len(predicted_label)
+    
+    if args.single:
+        acc = (total_correct_cases*1.0/total_cases)
+        print("%s accuracy: %1.3f"%(mode,acc))
+    else:
+        acc1 = (total_correct_labels*1.0/total_labels)
+        acc2 = (total_correct_cases*1.0/total_cases)
+        print("%s accuracy: %1.3f\t%1.3f"%(mode,acc1, acc2))
     return
 
 def test(args):
@@ -180,6 +210,7 @@ def test(args):
         model.cuda()
     total_batches=0
     args.val_root = args.test_root # to apply val function directly
+    print_samples(model,vocab,args)
     val(model, vocab, args)
     return
 
@@ -187,14 +218,53 @@ def copy(args):
     import os
     import datetime
     from distutils.dir_util import copy_tree
-    folder_dir = os.path.join('data',datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
+    with open('performances.txt','a') as f:
+        f.write(time_str)
+    folder_dir = os.path.join('saves',args.time_str)
     os.mkdir(folder_dir)
     from_list = ['models/','packages/']
     for item in from_list:
         from_dir = item
         to_dir = os.path.join(folder_dir,item)
-        copy_tree(from_dir, to_dir)    
+        copy_tree(from_dir, to_dir)
     print("Folders copied at %s" %folder_dir)
+    return
+
+def print_samples(model, vocab, args):
+    data_loader = get_loader(args.val_root, args.dict_root, vocab, args.batch, 
+                          args.single, shuffle=False)
+    f = open(os.path.join(args.time_str,'samples.txt'),'a')
+    for i, (inputs, lengths, labels, oovs) in enumerate(data_loader):
+        model.eval()
+        sources, queries, targets = inputs
+        source_len, query_len, target_len, context_len= lengths
+        if args.cuda:
+            sources = sources.cuda()
+            queries = queries.cuda()
+            targets = targets.cuda()
+        if args.single:
+            outputs = model(sources,queries,lengths, targets) # [batch x seq x vocab]
+        else:
+            outputs, sim = model(sources,queries,lengths,targets)
+        
+        context = context_len[0]
+        source = sources[:context]
+        query = queries[0]
+        target = targets[0][1:]
+        output = outputs[0].max(1)[1]
+        
+        # print(source)
+        # print('\n')
+        # print(query)
+        # print('\n')
+        # print(target)
+        # print('\n')
+        # print(output)
+        l1 = 'source: \n'+'\n'.join([vocab.tensor_to_string(src,oovs[0]) for src in source])
+        l2 = 'query: '+ vocab.tensor_to_string(query,oovs[0])
+        l3 = 'target: ' + vocab.tensor_to_string(target,oovs[0])
+        l4 = 'output: ' + vocab.tensor_to_string(output.data,oovs[0])
+        f.write(l1+'\n'+l2+'\n'+l3+'\n'+l4+'\n------------------------------------------\n\n')
     return
 
 def main(args):

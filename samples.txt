@@ -1,0 +1,1568 @@
+source: 
+tape ( " pow . domain ( ) returns a copy of domain values " , function ( test )  {
+var s = scale . scalePow ( ) , d = s . domain ( ) ;
+test . deepEqual ( d ,  [ 0 , 1 ] ) ;
+d . push ( 3 ) ;
+test . deepEqual ( s . domain ( ) ,  [ 0 , 1 ] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " pow . range ( range ) does not coerce range to numbers " , function ( test )  {
+var s = scale . scalePow ( ) . range ( [ " 0px " ,  " 2px " ] ) ;
+test . deepEqual ( s . range ( ) ,  [ " 0px " ,  " 2px " ] ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . deepEqual ( x . ticks ( 10 ) ,  [ ] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " time . nice ( ) is an alias for time . nice ( 10 ) " , function ( test )  {
+var x = scale . scaleTime ( ) . domain ( [ date . local ( 2009 , 0 , 1 , 0 , 17 ) , date . local ( 2009 , 0 , 1 , 23 , 42 ) ] ) ;
+test . deepEqual ( x . nice ( ) . domain ( ) ,  [ date . local ( 2009 , 0 , 1 ) , date . local ( 2009 , 0 , 2 ) ] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " time . nice ( ) can nice sub - second domains " , function ( test )  {
+var x = scale . scaleTime ( ) . domain ( [ date . local ( 2013 , 0 , 1 , 12 , 0 , 0 , 0 ) , date . local ( 2013 , 0 , 1 , 12 , 0 , 0 , 128 ) ] ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . deepEqual ( x . ticks ( 6 ) ,  [
+date . local ( 500 , 0 , 1 , 0 , 0 ) ,
+date . local ( 1000 , 0 , 1 , 0 , 0 ) ,
+date . local ( 1500 , 0 , 1 , 0 , 0 ) ,
+date . local ( 2000 , 0 , 1 , 0 , 0 )
+] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " time . ticks ( count ) returns no ticks for an empty domain " , function ( test )  {
+var x = scale . scaleTime ( ) . domain ( [ date . local ( 2014 , 2 , 2 ) , date . local ( 2014 , 2 , 2 ) ] ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+var x = scale . scaleUtc ( ) . domain ( [ date . utc ( 2011 , 0 , 1 , 16 , 28 , 27 ) , date . utc ( 2011 , 0 , 3 , 21 , 34 , 12 ) ] ) ;
+test . deepEqual ( x . ticks ( 4 ) ,  [
+date . utc ( 2011 , 0 , 2 , 0 , 0 ) ,
+date . utc ( 2011 , 0 , 2 , 12 , 0 ) ,
+date . utc ( 2011 , 0 , 3 , 0 , 0 ) ,
+date . utc ( 2011 , 0 , 3 , 12 , 0 )
+] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " scaleUtc . ticks ( count ) can generate 1 - day ticks " , function ( test )  {
+query: test . deepEqual
+target: ( x . ticks ( 4 ) ,  [
+output: ( x . ticks ( 4 ) ,  [
+------------------------------------------
+
+source: 
+test . equal ( d3 . select ( node ) . datum ( ) ,  " hello " ) ;
+test . equal ( d3 . selectAll ( [ null , node ] ) . datum ( ) ,  " hello " ) ;
+test . end ( ) ;
+} ) ;
+tape ( " selection . datum ( value ) sets datum on the selected elements " , function ( test )  {
+var one = { __data__: " " } ,
+two = { __data__: " " } ,
+selection = d3 . selectAll ( [ one , two ] ) ;
+test . equal ( selection . datum ( " bar " ) , selection ) ;
+test . equal ( one . __data__ ,  " bar " ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+mean = 0;
+var input_pos_match = [ 2 , 4 , 2 ,  - 4 , 6 ,  - 10 , 7 , 2 ] ;
+var input_no_match = [ 2 , 0 , 2 ,  - 4 , 6 , 0 , 7 , 2 ] ;
+tape ( ' rule_8 marks high values ' , function ( test )  {
+var result = rule_8 ( input_pos_match , mean , std ) ;
+test . ok ( result ) ;
+test . end ( ) ;
+} ) ;
+tape ( ' rule_8 does not mark low values ' , function ( test )  {
+var result = rule_8 ( input_no_match , mean , std ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . pathEqual ( a ( [ [ 0 , 1 ] ,  [ 1 , 3 ] ,  [ 2 , 1 ] ] ) ,  " M0 , 1C0 , 1 , 0 . 666667 , 3 , 1 , 3C1 . 333333 , 3 , 2 , 1 , 2 , 1L2 , 0C2 , 0 , 1 . 333333 , 0 , 1 , 0C0 . 666667 , 0 , 0 , 0 , 0 , 0Z " ) ;
+test . pathEqual ( a ( [ [ 0 , 1 ] ,  [ 1 , 3 ] ,  [ 2 , 1 ] ,  [ 3 , 3 ] ] ) ,  " M0 , 1C0 , 1 , 0 . 666667 , 3 , 1 , 3C1 . 333333 , 3 , 1 . 666667 , 1 , 2 , 1C2 . 333333 , 1 , 3 , 3 , 3 , 3L3 , 0C3 , 0 , 2 . 333333 , 0 , 2 , 0C1 . 666667 , 0 , 1 . 333333 , 0 , 1 , 0C0 . 666667 , 0 , 0 , 0 , 0 , 0Z " ) ;
+test . end ( ) ;
+} ) ;
+tape ( " area . curve ( curveCardinal ) uses a default <UNK> of zero " , function ( test )  {
+var a = shape . area ( ) . curve ( shape . curveCardinal . <UNK> ( 0 ) ) ;
+test . equal ( shape . area ( ) . curve ( shape . curveCardinal ) ( [ [ 0 , 1 ] ,  [ 1 , 3 ] ,  [ 2 , 1 ] ,  [ 3 , 3 ] ] ) , a ( [ [ 0 , 1 ] ,  [ 1 , 3 ] ,  [ 2 , 1 ] ,  [ 3 , 3 ] ] ) ) ;
+test . end ( ) ;
+} ) ;
+tape ( " area . curve ( curveCardinal . <UNK> ( <UNK> ) ) uses the specified <UNK> " , function ( test )  {
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+var tape = require ( " tape " ) ,
+shape = require ( " . . / . . / " ) ;
+tape ( " stackOrderAscending ( series ) returns an order by sum " , function ( test )  {
+test . deepEqual ( shape . stackOrderAscending ( [
+[ [ 0 , 1 ] ,  [ 0 , 2 ] ,  [ 0 , 3 ] ] ,
+[ [ 0 , 2 ] ,  [ 0 , 3 ] ,  [ 0 , 4 ] ] ,
+[ [ 0 , 0 ] ,  [ 0 , 1 ] ,  [ 0 , 2 ] ]
+] ) ,  [ 2 , 0 , 1 ] ) ;
+test . end ( ) ;
+} ) ;
+query: test . deepEqual
+target: ( shape . stackOrderAscending ( [
+output: ( " ) ticks ) ) 0 . a a a
+------------------------------------------
+
+source: 
+tape ( " timeMinute . offset ( date ) allows zero offset " , function ( test )  {
+test . deepEqual ( time . timeMinute . offset ( date . local ( 2010 , 11 , 31 , 23 , 59 , 59 , 999 ) , 0 ) , date . local ( 2010 , 11 , 31 , 23 , 59 , 59 , 999 ) ) ;
+test . deepEqual ( time . timeMinute . offset ( date . local ( 2010 , 11 , 31 , 23 , 59 , 58 , 000 ) , 0 ) , date . local ( 2010 , 11 , 31 , 23 , 59 , 58 , 000 ) ) ;
+test . end ( ) ;
+} ) ;
+tape ( " timeMinute . range ( start , stop ) , returns minutes " , function ( test )  {
+test . deepEqual ( time . timeMinute . range ( date . local ( 2010 , 11 , 31 , 23 , 59 ) , date . local ( 2011 , 0 , 1 , 0 , 2 ) ) ,  [
+date . local ( 2010 , 11 , 31 , 23 , 59 ) ,
+date . local ( 2011 , 0 , 1 , 0 , 0 ) ,
+date . local ( 2011 , 0 , 1 , 0 , 1 )
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . end ( ) ;
+} ) ;
+tape ( " timeYear . every ( n ) . offset ( date , count ) does not modify the passed - in date " , function ( test )  {
+var d = date . local ( 2010 , 11 , 31 , 23 , 59 , 59 , 999 ) ;
+time . timeYear . every ( 5 ) . offset ( d ,  + 1 ) ;
+test . deepEqual ( d , date . local ( 2010 , 11 , 31 , 23 , 59 , 59 , 999 ) ) ;
+test . end ( ) ;
+} ) ;
+tape ( " timeYear . every ( n ) . offset ( date , count ) does not round the passed - in - date " , function ( test )  {
+test . deepEqual ( time . timeYear . every ( 5 ) . offset ( date . local ( 2010 , 11 , 31 , 23 , 59 , 59 , 999 ) ,  + 1 ) , date . local ( 2015 , 11 , 31 , 23 , 59 , 59 , 999 ) ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . deepEqual ( time . utcFriday . floor ( date . utc ( 2011 , 00 , 07 , 00 , 00 , 01 ) ) , date . utc ( 2011 , 00 , 07 ) ) ;
+test . end ( ) ;
+} ) ;
+tape ( " utcFriday . count ( start , end ) counts Fridays after start ( exclusive ) and before end ( inclusive ) " , function ( test )  {
+test . equal ( time . utcFriday . count ( date . utc ( 2012 , 00 , 01 ) , date . utc ( 2012 , 00 , 05 ) ) , 0 ) ;
+test . equal ( time . utcFriday . count ( date . utc ( 2012 , 00 , 01 ) , date . utc ( 2012 , 00 , 06 ) ) , 1 ) ;
+test . equal ( time . utcFriday . count ( date . utc ( 2012 , 00 , 01 ) , date . utc ( 2012 , 00 , 07 ) ) , 1 ) ;
+test . equal ( time . utcFriday . count ( date . utc ( 2012 , 00 , 01 ) , date . utc ( 2012 , 00 , 13 ) ) , 2 ) ;
+test . equal ( time . utcFriday . count ( date . utc ( 2010 , 00 , 01 ) , date . utc ( 2010 , 00 , 07 ) ) , 0 ) ;
+test . equal ( time . utcFriday . count ( date . utc ( 2010 , 00 , 01 ) , date . utc ( 2010 , 00 , 08 ) ) , 1 ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+tape ( " utcMonth . range ( start , stop ) returns the empty array if start >= stop " , function ( test )  {
+test . deepEqual ( time . utcMonth . range ( date . utc ( 2011 , 11 , 10 ) , date . utc ( 2011 , 10 , 04 ) ) ,  [ ] ) ;
+test . deepEqual ( time . utcMonth . range ( date . utc ( 2011 , 10 , 01 ) , date . utc ( 2011 , 10 , 01 ) ) ,  [ ] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " utcMonth . range ( start , stop ) returns months " , function ( test )  {
+test . deepEqual ( time . utcMonth . range ( date . utc ( 2010 , 10 , 31 ) , date . utc ( 2011 , 2 , 1 ) ) ,  [
+date . utc ( 2010 , 11 , 1 ) ,
+date . utc ( 2011 , 0 , 1 ) ,
+date . utc ( 2011 , 1 , 1 )
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+date . utc ( 2012 , 00 , 08 )
+] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " utcSunday . range ( start , stop ) returns the empty array for invalid dates " , function ( test )  {
+test . deepEqual ( time . utcSunday . range ( new Date ( NaN ) , Infinity ) ,  [ ] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " utcSunday . range ( start , stop ) returns the empty array if start >= stop " , function ( test )  {
+test . deepEqual ( time . utcSunday . range ( date . utc ( 2011 , 11 , 10 ) , date . utc ( 2011 , 10 , 04 ) ) ,  [ ] ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+date . local ( 2011 , 0 , 30 ) ,
+date . local ( 2011 , 1 , 27 ) ,
+date . local ( 2011 , 2 , 27 )
+] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " timeWeek . range ( start , stop ) observes start of daylight savings time " , function ( test )  {
+test . deepEqual ( time . timeWeek . range ( date . local ( 2011 , 2 , 1 ) , date . local ( 2011 , 2 , 28 ) ) ,  [
+date . local ( 2011 , 2 , 6 ) ,
+date . local ( 2011 , 2 , 13 ) ,
+query: date . local
+target: ( 2011 , 2 , 27 )
+output: ( 2011 , 0 , 3 , , . Object a a a a a 7 a a a a Object Buffer Object Buffer Object Object Object Object Object Object
+------------------------------------------
+
+source: 
+var p = timeFormat . utcParse ( " %m / %d / %y " ) ;
+test . deepEqual ( p ( " 01 / 01 / 90 " ) , date . utc ( 1990 , 0 , 1 ) ) ;
+test . deepEqual ( p ( " 02 / 03 / 91 " ) , date . utc ( 1991 , 1 , 3 ) ) ;
+test . equal ( p ( " 03 / 10 / 2010 " ) , null ) ;
+test . end ( ) ;
+} ) ;
+tape ( " utcParse ( \ " \ " ) ( date ) parses locale date " , function ( test )  {
+var p = timeFormat . utcParse ( " %x " ) ;
+test . deepEqual ( p ( " 01 / 01 / 1990 " ) , date . utc ( 1990 , 0 , 1 ) ) ;
+test . deepEqual ( p ( " 02 / 03 / 1991 " ) , date . utc ( 1991 , 1 , 3 ) ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+tape ( " selection . interrupt ( ) has no effect on an ended transition " , function ( test )  {
+var root = jsdom ( ) . documentElement ,
+selection = d3_selection . select ( root ) ,
+transition = selection . transition ( ) . duration ( 50 ) . on ( " end " , ended ) ,
+schedule = root . __transition [ transition . _id ] ;
+function ended ( )  {
+d3_timer . timeout ( function ( )  {
+test . equal ( schedule . state , state . ENDED ) ;
+test . equal ( schedule . timer . _call , null ) ;
+selection . interrupt ( ) ;
+query: test . equal
+target: ( schedule . timer . _call , null ) ;
+output: ( m . innerHTML ( length (  ) ;
+------------------------------------------
+
+source: 
+test . equal ( transition3 . _name , transition1 . _name ) ;
+test . equal ( transition3 . _id , transition1 . _id ) ;
+test . end ( ) ;
+} ) ;
+tape ( " transition . merge ( other ) throws an error if the other transition has a different id " , function ( test )  {
+var document = jsdom ( " <h1 id= ' one ' >< / h1><h1 id= ' two ' >< / h1> " ) ,
+one = document . querySelector ( " #one " ) ,
+two = document . querySelector ( " #two " ) ,
+transition1 = d3_selection . selectAll ( [ null , two ] ) . transition ( ) ,
+transition2 = d3_selection . selectAll ( [ one , null ] ) . transition ( ) ;
+query: test . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+] ) ;
+test . end ( ) ;
+} ) ;
+tape ( " voronoi . triangles ( points ) observes the specified x - and y - accessors " , function ( test )  {
+var voronoi = d3 . voronoi ( ) . x ( function ( d )  { return d . x; } ) . y ( function ( d )  { return d . y; } ) ;
+test . deepEqual ( voronoi . triangles ( [ { x: 200 , y: 200 } ,  { x: 500 , y: 250 } ,  { x: 760 , y: 300 } ] ) ,  [
+[ { x: 200 , y: 200 } ,  { x: 760 , y: 300 } ,  { x: 500 , y: 250 } ]
+] ) ;
+test . end ( ) ;
+} ) ;
+query: var voronoi =
+target: d3 . voronoi ( ) . extent ( [ [ 0 , 0 ] ,  [ 800 , 600 ] ] ) ;
+output: voronoi . end ( ' ;
+------------------------------------------
+
+source: 
+if ( ! ( date instanceof Date ) ) date = new Date ( + date ) ;
+while ( + + i < n )  {
+if ( specifier . charCodeAt ( i ) === 37 )  {
+string . push ( specifier . slice ( j , i ) ) ;
+if ( ( pad = pads [ c = specifier . charAt ( + + i ) ] ) != null ) c = specifier . charAt ( + + i ) ;
+else pad = c === " e " ? "  " : " 0 " ;
+if ( format = formats [ c ] ) c = format ( date , pad ) ;
+string . push ( c ) ;
+j = i + 1;
+}
+query: string . push
+target: ( specifier . slice ( j , i ) ) ;
+output: ( " . push ( 0 )  ) ;
+------------------------------------------
+
+source: 
+var startString = format ( new Date ( minValue ) ) ;
+var endString = format ( new Date ( maxValue ) ) ;
+} else {
+var format = function ( d ) { return d } ;
+var startString = minValue;
+var endString = maxValue;
+}
+svg . append ( " text " )
+. text ( startString ) . style ( " font - size " ,  " 70% " )
+. attr ( " x " , function ( d ) { if ( <UNK> . <UNK> ) { return d3 . max ( [ 0 ,  ( margin - this . <UNK> ( ) . width / 2 ) ] ) } return Math . floor ( this . <UNK> ( ) . width / 2 ) } )
+query: svg . append
+target: ( " text " )
+output: ( " text " )
+------------------------------------------
+
+source: 
+. each ( function ( )  {
+self . offsets . push ( this [ 0 ] )
+self . targets . push ( this [ 1 ] )
+} )
+}
+ScrollSpy . prototype . process = function ( )  {
+var scrollTop  = this . $scrollElement . scrollTop ( )  + this . options . offset
+var scrollHeight = this . getScrollHeight ( )
+var maxScroll  = this . options . offset + scrollHeight - this . $scrollElement . height ( )
+var offsets   = this . offsets
+query: var activeTarget =
+target: this . activeTarget
+output:  . scrollTop . . . . . . . . . . . . . . . . . . . . . . . . res res res 04 04 04 core core 04 04
+------------------------------------------
+
+source: 
+output + = str;
+} ) ;
+cblist . fire ( " A " ) ;
+strictEqual ( output ,  " XA " ,  " Basic binding and firing "  ) ;
+strictEqual ( cblist . fired ( ) , true ,  " . fired ( ) detects firing "  ) ;
+output = " X " ;
+cblist . disable ( ) ;
+cblist . add ( function ( str )  {
+output + = str;
+} ) ;
+query: cblist . fire
+target: ( " A " ) ;
+output: ( ) hide " ) ;
+------------------------------------------
+
+source: 
+( function ( document , Modernizr ) {
+Modernizr . formvalidationapi = false;
+Modernizr . formvalidationmessage = false;
+Modernizr . addTest ( ' formvalidation ' , function ( ) {
+var form = document . createElement ( ' form ' ) ;
+if ( ! ( ' checkValidity ' in form )  )  {
+return false;
+None
+None
+None
+query: var body =
+target: document . body ,
+output: document . createElement . ' . " ' ' ' ' ' ' Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer
+------------------------------------------
+
+source: 
+test . done ( ) ;
+} ,
+" suffix " : function ( test )  {
+test . expect ( 2 ) ;
+test . equal ( moment ( 30000 ) . from ( 0 ) ,  " om få sekunder " ,  " prefix " ) ;
+test . equal ( moment ( 0 ) . from ( 30000 ) ,  " få sekunder siden " ,  " suffix " ) ;
+test . done ( ) ;
+} ,
+" now from now " : function ( test )  {
+test . expect ( 1 ) ;
+query: test . done
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . equal ( moment ( [ 2007 , 0 , 15 ] ) . week ( ) , 3 ,  " Jan 15 2007 should be week 3 " ) ;
+test . done ( ) ;
+} ,
+" weeks year starting tuesday " : function ( test )  {
+test . expect ( 6 ) ;
+test . equal ( moment ( [ 2007 , 11 , 31 ] ) . week ( ) , 1 ,  " Dec 31 2007 should be week 1 " ) ;
+test . equal ( moment ( [ 2008 ,  0 ,  1 ] ) . week ( ) , 1 ,  " Jan 1 2008 should be week 1 " ) ;
+test . equal ( moment ( [ 2008 ,  0 ,  6 ] ) . week ( ) , 1 ,  " Jan 6 2008 should be week 1 " ) ;
+test . equal ( moment ( [ 2008 ,  0 ,  7 ] ) . week ( ) , 2 ,  " Jan 7 2008 should be week 2 " ) ;
+test . equal ( moment ( [ 2008 ,  0 , 13 ] ) . week ( ) , 2 ,  " Jan 13 2008 should be week 2 " ) ;
+query: test . done
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+" weeks year starting tuesday " : function ( test )  {
+test . expect ( 6 ) ;
+test . equal ( moment ( [ 2007 , 11 , 31 ] ) . week ( ) , 1 ,  " Dec 31 2007 should be week 1 " ) ;
+test . equal ( moment ( [ 2008 ,  0 ,  1 ] ) . week ( ) , 1 ,  " Jan 1 2008 should be week 1 " ) ;
+test . equal ( moment ( [ 2008 ,  0 ,  6 ] ) . week ( ) , 1 ,  " Jan 6 2008 should be week 1 " ) ;
+test . equal ( moment ( [ 2008 ,  0 ,  7 ] ) . week ( ) , 2 ,  " Jan 7 2008 should be week 2 " ) ;
+test . equal ( moment ( [ 2008 ,  0 , 13 ] ) . week ( ) , 2 ,  " Jan 13 2008 should be week 2 " ) ;
+test . equal ( moment ( [ 2008 ,  0 , 14 ] ) . week ( ) , 3 ,  " Jan 14 2008 should be week 3 " ) ;
+test . done ( ) ;
+} ,
+query: test . expect
+target: ( 6 ) ;
+output: ( 4 ) ;
+------------------------------------------
+
+source: 
+test . equal ( moment ( [ 2003 ,  0 , 13 ] ) . week ( ) , 3 ,  " Jan 13 2003 should be week 3 " ) ;
+test . done ( ) ;
+} ,
+" weeks year starting thursday " : function ( test )  {
+test . expect ( 6 ) ;
+test . equal ( moment ( [ 2008 , 11 , 29 ] ) . week ( ) , 1 ,  " Dec 29 2008 should be week 1 " ) ;
+test . equal ( moment ( [ 2009 ,  0 ,  1 ] ) . week ( ) , 1 ,  " Jan 1 2009 should be week 1 " ) ;
+test . equal ( moment ( [ 2009 ,  0 ,  4 ] ) . week ( ) , 1 ,  " Jan 4 2009 should be week 1 " ) ;
+test . equal ( moment ( [ 2009 ,  0 ,  5 ] ) . week ( ) , 2 ,  " Jan 5 2009 should be week 2 " ) ;
+test . equal ( moment ( [ 2009 ,  0 , 11 ] ) . week ( ) , 2 ,  " Jan 11 2009 should be week 2 " ) ;
+query: test . done
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+targetDiv . innerHTML = " " ;
+self . iframe = document . createElement ( ' iframe ' ) ;
+targetDiv . appendChild ( self . iframe ) ;
+
+element = self . iframe . contentDocument . createElement ( ' style ' ) ;
+element . setAttribute ( ' type ' ,  ' text / css ' ) ;
+element . setAttribute ( ' id ' ,  ' illustratorFeel ' ) ;
+self . iframe . contentDocument . head . appendChild ( element ) ;
+element . innerText = " text { font - family: ' Myriad Pro ' , sans - serif; font - <UNK> <UNK> } " ;
+
+query: element . setAttribute
+target: ( ' type ' ,  ' text / css ' ) ;
+output: ( ' illustratorFeel ' )  ' ' ' id ' ) ;
+------------------------------------------
+
+source: 
+" weeks year starting tuesday " : function ( test )  {
+test . expect ( 6 ) ;
+test . equal ( moment ( [ 2007 , 11 , 31 ] ) . week ( ) , 1 ,  " Dec 31 2007 should be week 1 " ) ;
+test . equal ( moment ( [ 2008 ,  0 ,  1 ] ) . week ( ) , 1 ,  " Jan 1 2008 should be week 1 " ) ;
+test . equal ( moment ( [ 2008 ,  0 ,  6 ] ) . week ( ) , 1 ,  " Jan 6 2008 should be week 1 " ) ;
+test . equal ( moment ( [ 2008 ,  0 ,  7 ] ) . week ( ) , 2 ,  " Jan 7 2008 should be week 2 " ) ;
+test . equal ( moment ( [ 2008 ,  0 , 13 ] ) . week ( ) , 2 ,  " Jan 13 2008 should be week 2 " ) ;
+test . equal ( moment ( [ 2008 ,  0 , 14 ] ) . week ( ) , 3 ,  " Jan 14 2008 should be week 3 " ) ;
+test . done ( ) ;
+} ,
+query: test . expect
+target: ( 6 ) ;
+output: ( 4 ) ;
+------------------------------------------
+
+source: 
+test . equal ( moment ( [ 2009 ,  0 , 13 ] ) . week ( ) , 3 ,  " Jan 12 2009 should be week 3 " ) ;
+test . done ( ) ;
+} ,
+" weeks year starting friday " : function ( test )  {
+test . expect ( 6 ) ;
+test . equal ( moment ( [ 2009 , 11 , 28 ] ) . week ( ) , 53 ,  " Dec 28 2009 should be week 53 " ) ;
+test . equal ( moment ( [ 2010 ,  0 ,  1 ] ) . week ( ) , 53 ,  " Jan 1 2010 should be week 53 " ) ;
+test . equal ( moment ( [ 2010 ,  0 ,  3 ] ) . week ( ) , 53 ,  " Jan 3 2010 should be week 53 " ) ;
+test . equal ( moment ( [ 2010 ,  0 ,  4 ] ) . week ( ) ,  1 ,  " Jan 4 2010 should be week 1 " ) ;
+test . equal ( moment ( [ 2010 ,  0 , 10 ] ) . week ( ) ,  1 ,  " Jan 10 2010 should be week 1 " ) ;
+query: test . done
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . equal ( start . from ( moment ( [ 2007 , 1 , 28 ] ) . add ( { d:345 } ) , true ) ,  " um ano " ,    " 345 days = a year " ) ;
+test . equal ( start . from ( moment ( [ 2007 , 1 , 28 ] ) . add ( { d:547 } ) , true ) ,  " um ano " ,    " 547 days = a year " ) ;
+test . equal ( start . from ( moment ( [ 2007 , 1 , 28 ] ) . add ( { d:548 } ) , true ) ,  " 2 anos " ,   " 548 days = 2 years " ) ;
+test . equal ( start . from ( moment ( [ 2007 , 1 , 28 ] ) . add ( { y:1 } ) , true ) ,   " um ano " ,    " 1 year = a year " ) ;
+test . equal ( start . from ( moment ( [ 2007 , 1 , 28 ] ) . add ( { y:5 } ) , true ) ,   " 5 anos " ,   " 5 years = 5 years " ) ;
+test . done ( ) ;
+} ,
+" suffix " : function ( test )  {
+test . expect ( 2 ) ;
+test . equal ( moment ( <UNK> ) . from ( 0 ) ,  " <UNK> <UNK> " ,  " prefix " ) ;
+query: test . done
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . equal ( weeksAgo . calendar ( ) ,    weeksAgo . format ( ' L ' ) ,  " 2 weeks ago " ) ;
+test . equal ( weeksFromNow . calendar ( ) ,  weeksFromNow . format ( ' L ' ) ,  " in 2 weeks " ) ;
+test . done ( ) ;
+} ,
+" weeks year starting sunday " : function ( test )  {
+test . expect ( 5 ) ;
+test . equal ( moment ( [ 2012 , 0 , 1 ] ) . week ( ) , 52 ,  " Jan 1 2012 should be week 52 " ) ;
+test . equal ( moment ( [ 2012 , 0 , 2 ] ) . week ( ) ,  1 ,  " Jan 2 2012 should be week 1 " ) ;
+test . equal ( moment ( [ 2012 , 0 , 8 ] ) . week ( ) ,  1 ,  " Jan 8 2012 should be week 1 " ) ;
+test . equal ( moment ( [ 2012 , 0 , 9 ] ) . week ( ) ,  2 ,  " Jan 9 2012 should be week 2 " ) ;
+query: test . done
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . equal ( moment ( " / Date ( 1325132654000 ) / " ) . valueOf ( ) , 1325132654000 ,  " / Date ( 1325132654000 ) / " ) ;
+test . equal ( moment ( " / Date ( 1325132654000 + 0700 ) / " ) . valueOf ( ) , 1325132654000 ,  " / Date ( 1325132654000 + 0700 ) / " ) ;
+test . equal ( moment ( " / Date ( 1325132654000 - 0700 ) / " ) . valueOf ( ) , 1325132654000 ,  " / Date ( 1325132654000 - 0700 ) / " ) ;
+test . done ( ) ;
+} ,
+" string with format dropped am / pm bug " : function ( test )  {
+moment . lang ( ' en ' ) ;
+test . expect ( 3 ) ;
+test . equal ( moment ( ' 05 / 1 / 2012 ' ,  ' MM / DD / YYYY <UNK> a ' ) . format ( ' MM / DD / YYYY ' ) ,  ' 05 / 01 / 2012 ' ,  ' should not <UNK> if am / pm is left off from the <UNK> <UNK> ' ) ;
+test . equal ( moment ( ' 05 / 1 / 2012 <UNK> am ' ,  ' MM / DD / YYYY <UNK> a ' ) . format ( ' MM / DD / YYYY ' ) ,  ' 05 / 01 / 2012 ' ,  ' should not <UNK> if am / pm is left off from the <UNK> <UNK> ' ) ;
+query: test . done
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+test . equal ( moment ( ) . dayOfYear ( 60 ) . dayOfYear ( ) ,  60 ,  " Setting day of the year to 60 should work " ) ;
+test . equal ( moment ( ) . dayOfYear ( 365 ) . dayOfYear ( ) , 365 ,  " Setting day of the year to 365 should work " ) ;
+test . done ( ) ;
+} ,
+" iso weeks year starting sunday " : function ( test )  {
+test . expect ( 5 ) ;
+test . equal ( moment ( [ 2012 , 0 , 1 ] ) . isoWeek ( ) , 52 ,  " Jan 1 2012 should be iso week 52 " ) ;
+test . equal ( moment ( [ 2012 , 0 , 2 ] ) . isoWeek ( ) ,  1 ,  " Jan 2 2012 should be iso week 1 " ) ;
+test . equal ( moment ( [ 2012 , 0 , 8 ] ) . isoWeek ( ) ,  1 ,  " Jan 8 2012 should be iso week 1 " ) ;
+test . equal ( moment ( [ 2012 , 0 , 9 ] ) . isoWeek ( ) ,  2 ,  " Jan 9 2012 should be iso week 2 " ) ;
+query: test . done
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+} ) ;
+}
+$ ( document ) . off ( {
+mousemove: this . mousemove ,
+mouseup: this . mouseup
+} ) ;
+this . inDrag = false;
+if ( this . over === false )  {
+this . hideTooltip ( ) ;
+}
+query: this . layout
+target: ( ) ;
+output: ( " ;
+------------------------------------------
+
+source: 
+bindAttributeSelect: function ( )  {
+var selector = this . attributeSelect ,
+builder = this;
+if ( selector )  {
+selector . bind ( ' change ' , function ( )  {
+var attributes = selector . val ( ) ;
+_ . each ( attributes , function ( v )  {
+builder . addAttribute ( v ) ;
+} , builder ) ;
+_ . each ( builder . attrsSelected , function ( v )  {
+query: builder . removeAttribute
+target: ( v ) ;
+output: = ) ) ;
+------------------------------------------
+
+source: 
+this . _xAccessor = " x " ;
+this . _yAccessor = " y " ;
+this . colorVar = " fill " ;
+this . isNewStylePlot = false;
+this . hasDeployed = false;
+if ( datasets instanceof Array )
+datasets = {  " " : datasets } ;
+datasets = d3 . entries ( datasets ) ;
+this . datasets = datasets . map ( function ( kv )  { return makeDataset ( kv . key , kv . value ) ;
+}
+query: this . _xType
+target: = this . setType ( t , true ) ;
+output: = this . _xType . " . this ) ;
+------------------------------------------
+
+source: 
+it ( ' should only generate titles once ' , function ( )  {
+chart . redraw ( ) ;
+expect ( chart . selectAll ( ' g . node title ' ) [ 0 ] . length ) . toEqual ( 6 ) ;
+} ) ;
+it ( ' should fill circles with the specified colors ' , function ( )  {
+expect ( d3 . select ( chart . selectAll ( ' circle . bubble ' ) [ 0 ] [ 0 ] ) . attr ( ' fill ' ) ) . toEqual ( ' blue ' ) ;
+expect ( d3 . select ( chart . selectAll ( ' circle . bubble ' ) [ 0 ] [ 3 ] ) . attr ( ' fill ' ) ) . toEqual ( ' blue ' ) ;
+} ) ;
+it ( ' should highlight the filtered bubbles ' , function ( )  {
+chart . filter ( ' Colorado ' ) ;
+query: chart . redraw
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+chart . selectAll ( ' td . dc - table - label ' ) . text ( ' changed ' ) ;
+} ) ;
+derlet . and . callThrough ( ) ;
+chart . on ( ' renderlet ' , derlet ) ;
+} ) ;
+it ( ' custom renderlet should be invoked with render ' , function ( )  {
+chart . render ( ) ;
+expect ( chart . selectAll ( ' td . dc - table - label ' ) . text ( ) ) . toEqual ( ' changed ' ) ;
+expect ( derlet ) . toHaveBeenCalled ( ) ;
+} ) ;
+query: chart . redraw
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+expect ( d3 . select ( this ) . attr ( ' class ' ) . indexOf ( ' deselected ' ) > 0 ) . toBeTruthy ( ) ;
+}
+} ) ;
+chart . filterAll ( ) ;
+} ) ;
+it ( ' reset link shown after slice selection ' , function ( )  {
+chart . filter ( ' 66 ' ) ;
+expect ( chart . select ( ' a . reset ' ) . style ( ' display ' ) ) . not . toEqual ( ' none ' ) ;
+} ) ;
+it ( ' filter info shown after slice selection ' , function ( )  {
+query: chart . filter
+target: ( ' 66 ' ) ;
+output: ( ) . ' , ;
+------------------------------------------
+
+source: 
+_chart . fadeDeselectedArea = function ( )  {
+if ( _chart . hasFilter ( ) )  {
+_chart . selectAll ( ' g . '  + _chart . BUBBLE_NODE_CLASS ) . each ( function ( d )  {
+if ( _chart . isSelectedNode ( d ) )  {
+_chart . highlightSelected ( this ) ;
+} else {
+_chart . fadeDeselected ( this ) ;
+}
+} ) ;
+} else {
+query: _chart . resetHighlight
+target: ( this ) ;
+output: ( ) ) ;
+------------------------------------------
+
+source: 
+a . left = b . left
+a . right = b . right
+a . leftPoints = b . leftPoints
+a . rightPoints = b . rightPoints
+a . count = b . count
+}
+function rebuild ( node , intervals )  {
+var ntree = createIntervalTree ( intervals )
+node . mid = ntree . mid
+node . left = ntree . left
+query: node . leftPoints
+target: = ntree . leftPoints
+output: = node . count . . . . . . . . . . . . . . . . . .
+------------------------------------------
+
+source: 
+element . addClass ( ' active ' ) ;
+inputElement [ 0 ] . focus ( ) ;
+} ;
+inputElement . bind ( ' keydown keypress ' , function ( event )  {
+if ( event . which === 13 )  {
+if ( !scope . value . toString ( ) . length )  {
+element . addClass ( ' empty ' ) ;
+} else {
+element . removeClass ( ' empty ' ) ;
+}
+query: element . removeClass
+target: ( ' active ' ) ;
+output: ( ' <div ' ) ;
+------------------------------------------
+
+source: 
+. attr ( " x " , function ( d , i )  { return x ( i )  -  . 5; } )
+. attr ( " y " , function ( d )  { return yval ( d )  } )
+. attr ( " width " , w )
+. attr ( " height " ,
+function ( d )  { return scale * d . y; } ) ;
+chart . append ( " svg:line " )
+. attr ( " x1 " , 0 )
+. attr ( " x2 " , w *  ( 1 + data . length ) )
+. attr ( " y1 " , h -  . 5 )
+. attr ( " y2 " , h -  . 5 )
+query: chart . append
+target: ( " svg:line " )
+output: ( " svg:line " )
+------------------------------------------
+
+source: 
+" use strict " ;
+process . chdir ( __dirname ) ;
+const fs = require ( " fs " ) ;
+const glob = require ( " glob " ) ;
+const path = require ( " path " ) ;
+None
+None
+None
+None
+None
+query: const XlsxPopulate =
+target: require ( " . . / . . / lib / XlsxPopulate " ) ;
+output: require ( " . . / . . / js / XlsxPopulate . ) ;
+------------------------------------------
+
+source: 
+const colors = require ( ' colors ' ) ;
+const argv = minimist ( process . argv . slice ( 2 ) ,  {
+alias: {
+file: ' f '
+} ,
+default: {
+file: ' data / new . pgn '
+}
+} ) ;
+const Openings = require ( ' . / lib / Openings . js ' ) ;
+query: const Moves =
+target: require ( ' . / lib / Moves . js ' ) ;
+output: require ( ' . / . / / ' js ' ) ;
+------------------------------------------
+
+source: 
+items ( vars ) ;
+update ( vars ) ;
+}
+} ) ;
+vars . container . search . exit ( ) . remove ( )
+var oldDisplay = vars . container . selector . style ( " display " )
+vars . container . selector . style ( " display " ,  " block " )
+vars . search . height = vars . search . enabled ? vars . container . search . node ( ) . offsetHeight ||
+vars . container . search . node ( ) . getBoundingClientRect ( ) . height : 0;
+vars . container . selector . style ( " display " , oldDisplay )
+query: vars . margin
+target: . title + = vars . search . height
+output: . call . vars vars . length; . vars . . . . . . . . . . . . . . . . .
+------------------------------------------
+
+source: 
+lower48 . scale ( x ) ;
+alaska . scale ( x *  . 6 ) ;
+hawaii . scale ( x ) ;
+puertoRico . scale ( x * 1 . 5 ) ;
+return albersUsa . translate ( lower48 . translate ( ) ) ;
+} ;
+albersUsa . translate = function ( x )  {
+if ( !arguments . length ) return lower48 . translate ( ) ;
+var dz = lower48 . scale ( )  / 1000 ,
+dx = x [ 0 ] ,
+query: lower48 . translate
+target: ( x ) ;
+output: . x ) ;
+------------------------------------------
+
+source: 
+function A ( )  {  + + events; }
+d . on ( " foo . a " , A ) ;
+d . foo ( ) ;
+d . on ( " foo . a " , A ) . on ( " foo . a " , A ) ;
+d . foo ( ) ;
+assert . equal ( events , 2 ) ;
+} ,
+" removing a missing listener has no effect " : function ( dispatch )  {
+var d = dispatch ( " foo " ) , events = 0;
+function A ( )  {  + + events; }
+query: d . foo
+target: ( ) ;
+output: = ) ;
+------------------------------------------
+
+source: 
+div . classed ( " foo " , false ) ;
+assert . equal ( div [ 0 ] [ 0 ] . className ,  " baz " ) ;
+assert . equal ( div [ 0 ] [ 1 ] . className ,  " baz " ) ;
+div . attr ( " class " , null ) ;
+div . classed ( " bar " , false ) ;
+assert . equal ( div [ 0 ] [ 0 ] . className ,  " " ) ;
+assert . equal ( div [ 0 ] [ 1 ] . className ,  " " ) ;
+} ,
+" preserves a missing class as a function " : function ( div )  {
+div . attr ( " class " ,  " baz " ) ;
+query: assert . equal
+target: ( div [ 0 ] [ 0 ] . className ,  " baz " ) ;
+output: ( params [ 0 ] . 0 ] . className ,  "  " ) ;
+------------------------------------------
+
+source: 
+assert . inDelta ( coords [ 0 ] , 1031 . 393796 , 1e - 6 ) ;
+assert . inDelta ( coords [ 1 ] ,  - 714 . 160436 , 1e - 6 ) ;
+var lonlat = albers . invert ( coords ) ;
+assert . inDelta ( lonlat [ 0 ] , 0 , 1e - 6 ) ;
+assert . inDelta ( lonlat [ 1 ] , 85 , 1e - 6 ) ;
+} ,
+" Antarctic " : function ( albers )  {
+var coords = albers ( [ 0 ,  - 85 ] ) ;
+assert . inDelta ( coords [ 0 ] , 2753 . 458335 , 1e - 6 ) ;
+assert . inDelta ( coords [ 1 ] ,  317 . 371122 , 1e - 6 ) ;
+query: assert . inDelta
+target: ( lonlat [ 0 ] , 0 , 1e - 6 ) ;
+output: ( params [ 0 ] , 0 , 1e - 6 ) ;
+------------------------------------------
+
+source: 
+assert . inDelta ( x ( new Date ( 1989 , 09 , 20 ) ) ,  - . 2 , 1e - 2 ) ;
+assert . inDelta ( x ( new Date ( 1990 , 00 , 01 ) ) , 0 , 1e - 2 ) ;
+assert . inDelta ( x ( new Date ( 1990 , 02 , 15 ) ) ,  . 2 , 1e - 2 ) ;
+assert . inDelta ( x ( new Date ( 1990 , 04 , 27 ) ) ,  . 4 , 1e - 2 ) ;
+assert . inDelta ( x ( new Date ( 1991 , 00 , 01 ) ) , 1 , 1e - 2 ) ;
+assert . inDelta ( x ( new Date ( 1991 , 02 , 15 ) ) , 1 . 2 , 1e - 2 ) ;
+var x = linear ( ) . domain ( [ " 0 " ,  " 1 " ] ) ;
+assert . equal ( typeof x . domain ( ) [ 0 ] ,  " number " ) ;
+assert . equal ( typeof x . domain ( ) [ 1 ] ,  " number " ) ;
+assert . inDelta ( x ( . 5 ) ,  . 5 , 1e - 6 ) ;
+query: assert . equal
+target: ( typeof x . domain ( ) [ 0 ] ,  " number " ) ;
+output: ( params def . domain ( ) [ 0 ] ,  " , " ) ;
+------------------------------------------
+
+source: 
+} ,
+" uses the R - 7 algorithm to compute quantiles " : function ( quantile )  {
+var x = d3 . scale . quantile ( ) . domain ( [ 3 , 6 , 7 , 8 , 8 , 10 , 13 , 15 , 16 , 20 ] ) . range ( [ 0 , 1 , 2 , 3 ] ) ;
+assert . deepEqual ( [ 3 , 6 , 6 . 9 , 7 , 7 . 1 ] . map ( x ) ,  [ 0 , 0 , 0 , 0 , 0 ] ) ;
+assert . deepEqual ( [ 8 , 8 . 9 ] . map ( x ) ,  [ 1 , 1 ] ) ;
+assert . deepEqual ( [ 9 , 9 . 1 , 10 , 13 ] . map ( x ) ,  [ 2 , 2 , 2 , 2 ] ) ;
+assert . deepEqual ( [ 14 . 9 , 15 , 15 . 1 , 16 , 20 ] . map ( x ) ,  [ 3 , 3 , 3 , 3 , 3 ] ) ;
+var x = d3 . scale . quantile ( ) . domain ( [ 3 , 6 , 7 , 8 , 8 , 9 , 10 , 13 , 15 , 16 , 20 ] ) . range ( [ 0 , 1 , 2 , 3 ] ) ;
+assert . deepEqual ( [ 3 , 6 , 6 . 9 , 7 , 7 . 1 ] . map ( x ) ,  [ 0 , 0 , 0 , 0 , 0 ] ) ;
+assert . deepEqual ( [ 8 , 8 . 9 ] . map ( x ) ,  [ 1 , 1 ] ) ;
+query: assert . deepEqual
+target: ( [ 14 . 9 , 15 , 15 . 1 , 16 , 20 ] . map ( x ) ,  [ 3 , 3 , 3 , 3 , 3 ] ) ;
+output: ( x 8 . 9 , 1 , 15 , js ] 4 ] 6 ] . width ( ) . ,  . . , 4 , 4 , 4 , 4 , ) ;
+------------------------------------------
+
+source: 
+" generates 12 - hour ticks " : function ( scale )  {
+var x = scale ( ) . domain ( [ utc ( 2011 , 0 , 1 , 16 , 28 , 27 ) , utc ( 2011 , 0 , 3 , 21 , 34 , 12 ) ] ) ;
+assert . deepEqual ( x . ticks ( 4 ) ,  [
+utc ( 2011 , 0 , 2 , 0 , 0 ) ,
+utc ( 2011 , 0 , 2 , 12 , 0 ) ,
+utc ( 2011 , 0 , 3 , 0 , 0 ) ,
+utc ( 2011 , 0 , 3 , 12 , 0 )
+] ) ;
+} ,
+" generates 1 - day ticks " : function ( scale )  {
+query: assert . deepEqual
+target: ( x . ticks ( 4 ) ,  [
+output: ( x . ticks ( 4 ) ,  [
+------------------------------------------
+
+source: 
+}
+function prepareCorners ( quad )  {
+if ( quad . data )  {
+return quad . bb = boundingBoxes [ quad . data . node . index ]
+}
+quad . bb = [ [ 0 , 0 ] , [ 0 , 0 ] ]
+for ( var i = 0; i < 4; + + i )  {
+if ( quad [ i ] && quad [ i ] . bb [ 0 ] [ 0 ] < quad . bb [ 0 ] [ 0 ] )  {
+quad . bb [ 0 ] [ 0 ] = quad [ i ] . bb [ 0 ] [ 0 ]
+}
+query: quad . bb
+target: [ 0 ] [ 1 ] = quad [ i ] . bb [ 0 ] [ 1 ]
+output: = 0 ] . 0 ] = quad . 0 ] . bb [ 0 ] . 0 ] . . . . . . 0 . 0 0 0 0 0 0 0
+------------------------------------------
+
+source: 
+} ;
+handle . drag = d3 . behavior . drag ( )
+. on ( " drag " , function ( d , i )  {
+var dx = d3 . event . dx;
+var dy = d3 . event . dy;
+var mx = data . get ( " mx " ) ;
+var my = data . get ( " my " ) ;
+mx + = dx;
+my + = dy;
+var sl = - my; / / down makes it go left
+query: var x =
+target: data . get ( " x " ) ;
+output: options . get ( ' destroy " ) .
+------------------------------------------
+
+source: 
+} ) ;
+
+this . touches = new BVTouches ( event ) ;
+this . touchDidGoDown ( this . touches ) ;
+} ,
+_mouseMove: function ( event )  {
+event . stop ( ) ;
+this . touches . updateWithEvent ( event ) ;
+this . touchDidMove ( this . touches ) ;
+} ,
+query: event . stop
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+res . status ( 200 ) . send ( response ) ;
+indexGist ( response ) ;
+} ) ;
+} ) ;
+app . post ( ' / api / fork ' , function ( req , res )  {
+var gist = req . body . gist;
+var token;
+if ( req . session . passport && req . session . passport . user ) token = req . session . passport . user . accessToken;
+saveGist ( gist ,  " POST " , token , function ( err , response )  {
+if ( err )  { console . log ( err ) ;
+query: res . status
+target: ( 200 ) . send ( response ) ;
+output: ( " ) ;
+------------------------------------------
+
+source: 
+var result = function ( )  {
+var state = cx . state;
+state . lexical = new JSLexical ( state . indented , cx . stream . column ( ) , type , null , state . lexical , info )
+} ;
+result . lex = true;
+return result;
+}
+function poplex ( )  {
+var state = cx . state;
+if ( state . lexical . prev )  {
+query: state . indented
+target: = state . lexical . indented;
+output: . state . lexical . lexical . . . . . . . . . . . . . . .
+------------------------------------------
+
+source: 
+if ( example . index >= 0 && example . index < 64 )
+eq ( cm . indexFromPos ( pos ) , example . index ) ;
+}
+} ) ;
+testCM ( " undo " , function ( cm )  {
+cm . setLine ( 0 ,  " def " ) ;
+eq ( cm . historySize ( ) . undo , 1 ) ;
+cm . undo ( ) ;
+eq ( cm . getValue ( ) ,  " abc " ) ;
+eq ( cm . historySize ( ) . undo , 0 ) ;
+query: cm . redo
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+if ( stream . match ( " CDATA [ " ) ) return chain ( inBlock ( " atom " ,  " ] ] > " ) ) ;
+else return null;
+} else if ( stream . match ( " - - " ) )  {
+return chain ( inBlock ( " comment " ,  " - - > " ) ) ;
+} else if ( stream . match ( " DOCTYPE " , true , true ) )  {
+stream . eatWhile ( / [ \w\ . _\ - ] / ) ;
+return chain ( doctype ( 1 ) ) ;
+} else {
+return null;
+}
+query: stream . eatWhile
+target: ( / [ \w\ . _\ - ] / ) ;
+output: ( / . 0 ] data ] stream ) / .
+------------------------------------------
+
+source: 
+if ( tributary . endpoint )  {
+endpoint = tributary . endpoint;
+}
+if ( endpoint === " delta " )  {
+config . set ( " display " ,  " svg " ) ;
+config . set ( " play " , true ) ;
+config . set ( " loop " , true ) ;
+config . set ( " autoinit " , true ) ;
+} else if ( endpoint === " cypress " )  {
+config . set ( " display " ,  " canvas " ) ;
+query: config . set
+target: ( " autoinit " , true ) ;
+output: ( " svg " ,  ) ;
+------------------------------------------
+
+source: 
+var queryDialog =
+' Search: <input type= " text " style= " width: 10em " / > <span style= " color: #888 " > ( Use / re / syntax for regexp search ) < / <UNK> ' ;
+function <UNK> ( cm , <UNK> )  {
+var state = <UNK> ( cm ) ;
+if ( state . query ) return <UNK> ( cm , <UNK> ) ;
+dialog ( cm , queryDialog ,  " <UNK> <UNK> " , function ( query )  {
+cm . <UNK> ( function ( )  {
+if ( <UNK> || state . query ) return;
+state . query = <UNK> ( query ) ;
+cm . <UNK> ( state . <UNK> ) ;
+query: cm . <UNK>
+target: ( state . <UNK> ) ;
+output: ( state , <UNK> ) ;
+------------------------------------------
+
+source: 
+state . langs . push ( parsedLang ) ;
+stream . next ( ) ;
+transitState ( state ,  '  ' ) ;
+return ' string - 2 ' ;
+}
+if ( ch == ' ^ '  )  {
+stream . next ( ) ;
+transitState ( state ,  ' ^ ' ) ;
+var parsedType = ' ' ;
+stream . eatWhile ( function ( c )  { if ( c != ' > '  )  { parsedType + = c; return true; } return false; }  ) ;
+query: stream . next
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+break;
+}
+escaped = !escaped && ch == " \\ " ;
+}
+return " string " ;
+} ;
+}
+function pushContext ( state , type , col )  {
+state . context = { prev: state . context , indent: state . indent , col: col , type: type } ;
+}
+query: state . indent
+target: = state . context . indent;
+output: , state . indent . length;
+------------------------------------------
+
+source: 
+summary = ' ' ;
+if ( value === null && !percentage )  {
+return ' <span class= " no - data " > ( no data ) < / span> ' ;
+}
+if ( value !== null )  {
+data . push ( this . format ( value , this . getFormatOptions ( ) ) ) ;
+}
+if ( percentage )  {
+if ( this . graph . isOneHundredPercent ( ) )  {
+data . unshift ( this . format ( percentage ,  ' percent ' ) ) ;
+query: data . push
+target: ( this . format ( percentage ,  ' percent ' ) ) ;
+output: ( " . push , " .  [ . ' ) . ;
+------------------------------------------
+
+source: 
+} ) ;
+} ;
+exports . json = function ( req , res , files ) {
+files = JSON . stringify ( files ) ;
+res . setHeader ( ' Content - Type ' ,  ' application / json ' ) ;
+res . setHeader ( ' Content - Length ' , files . length ) ;
+res . end ( files ) ;
+} ;
+exports . plain = function ( req , res , files ) {
+files = files . join ( ' \n ' )  +  ' \n ' ;
+query: res . setHeader
+target: ( ' Content - Length ' , files . length ) ;
+output: ( ) ) ' - - )  . setHeader ) ;
+------------------------------------------
+
+source: 
+t . end ( ) ;
+}
+} )
+} )
+} ) ;
+} ) ;
+test ( ' async root perm ' , function ( t )  {
+mkdirp ( ' / tmp ' , 0755 , function ( err )  {
+if ( err ) t . fail ( err ) ;
+t . end ( ) ;
+query: t . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+return val ? this . visit ( val ) : ident;
+} else {
+this . return + + ;
+ident . val = this . visit ( ident . val ) ;
+this . return - - ;
+this . currentScope . add ( ident ) ;
+return ident . val;
+}
+} ;
+Evaluator . prototype . visitBinOp = function ( binop ) {
+query: this . return
+target: + + ;
+output: . ;
+------------------------------------------
+
+source: 
+var c = captures [ 1 ] ;
+this . skip ( captures ) ;
+return new Token ( ' ident ' , new nodes . Literal ( c ) ) ;
+}
+} ,
+
+
+
+literal: function ( )  {
+var captures;
+query: this . skip
+target: ( captures ) ;
+output: = ) ) ;
+------------------------------------------
+
+source: 
+var CSSOM = {
+CSSRule: require ( " . / CSSRule " ) . CSSRule ,
+MediaList: require ( " . / MediaList " ) . MediaList
+} ;
+CSSOM . CSSMediaRule = function CSSMediaRule ( )  {
+CSSOM . CSSRule . call ( this ) ;
+this . media = new CSSOM . MediaList;
+this . cssRules = [ ] ;
+} ;
+CSSOM . CSSMediaRule . prototype = new CSSOM . CSSRule;
+query: CSSOM . CSSMediaRule
+target: . prototype . type = 4;
+output: = CSSMediaRule . type = CSSOM
+------------------------------------------
+
+source: 
+' use strict ' ;
+var util = require ( ' util ' ) ;
+None
+None
+None
+None
+None
+None
+None
+None
+query: var fs =
+target: require ( ' fs ' ) ;
+output: require ( ' . ' ) ;
+------------------------------------------
+
+source: 
+var fs = require ( ' graceful - fs ' ) ;
+var test = require ( ' tap ' ) . test;
+var glob = require ( ' . . / ' ) ;
+test ( ' mock fs ' , function ( t )  {
+var stat = fs . stat
+var statSync = fs . statSync
+None
+None
+None
+None
+query: var readdirSync =
+target: fs . readdirSync
+output: require . readdirSync
+------------------------------------------
+
+source: 
+stream . on ( " data " , function ( c )  {
+me . _bytesEmitted + = c . length
+if ( !c . length ) return
+else if ( me . _paused || me . _buffer . length )  {
+me . _buffer . push ( c )
+me . _read ( )
+} else me . emit ( " data " , c )
+} )
+stream . on ( " end " , function ( )  {
+if ( me . _paused || me . _buffer . length )  {
+query: me . _read
+target: ( )
+output: ( )
+------------------------------------------
+
+source: 
+actual . sort ( alpha )
+t . equivalent ( actual , expect
+, JSON . stringify ( pattern )  +  "  "  + JSON . stringify ( expect )
+, tapOpts )
+} )
+t . comment ( " time= "  +  ( Date . now ( )  - start )  +  " ms " )
+t . end ( )
+} )
+tap . test ( " global leak test " , function ( t )  {
+var globalAfter = Object . keys ( global )
+query: t . end
+target: ( )
+output: ( )
+------------------------------------------
+
+source: 
+var obj = qs . parse ( ' foo ' ) ;
+console . log ( obj )
+var obj = qs . parse ( ' foo=bar=baz ' ) ;
+console . log ( obj )
+var obj = qs . parse ( ' users [ ] ' ) ;
+console . log ( obj )
+var obj = qs . parse ( ' name=tj&email=tj@vision - media . ca ' ) ;
+console . log ( obj )
+var obj = qs . parse ( ' users [ ] =tj&users [ ] =tobi&users [ ] =jane ' ) ;
+console . log ( obj )
+query: console . log
+target: ( obj )
+output: (
+------------------------------------------
+
+source: 
+' use strict ' ;
+var grunt = require ( ' grunt ' ) ;
+None
+None
+None
+None
+None
+None
+None
+None
+query: var fs =
+target: require ( ' fs ' ) ;
+output: require ( ' . ' ) ;
+------------------------------------------
+
+source: 
+var fs = require ( ' fs ' ) ;
+var http = require ( ' http ' ) ;
+var path = require ( ' path ' ) ;
+None
+None
+None
+None
+None
+None
+None
+query: var querystring =
+target: require ( ' querystring ' ) ;
+output: require ( ' . ' ) ;
+------------------------------------------
+
+source: 
+throw new Error ( " must provide pattern " )
+}
+if ( options . matchBase && - 1 === pattern . indexOf ( " / " ) )  {
+if ( options . noglobstar )  {
+throw new Error ( " base matching requires globstar " )
+}
+pattern = " * * / "  + pattern
+}
+this . strict = options . strict !== false
+this . dot = !!options . dot
+query: this . sync
+target: = !!options . sync
+output: = this .
+------------------------------------------
+
+source: 
+options . target . host = options . target . host || host;
+if ( options . target && options . target . host && options . target . port )  {
+proxy = new HttpProxy ( options ) ;
+handlers . push ( function ( req , res )  {
+proxy . proxyRequest ( req , res ) ;
+} ) ;
+}
+else {
+proxy = new RoutingProxy ( options ) ;
+if ( options . router )  {
+query: proxy . proxyRequest
+target: ( req , res ) ;
+output: = " .  [ ;
+------------------------------------------
+
+source: 
+var common = require ( ' . . / common ' ) ;
+None
+None
+None
+None
+None
+None
+None
+None
+None
+query: var net =
+target: require ( ' net ' ) ;
+output: require ( ' . ' ) ;
+------------------------------------------
+
+source: 
+process . exit ( 1 ) ;
+}
+} else if ( entry . slice ( 0 , 2 ) === ' - - ' )  {
+console . log ( ' Error: unknown option '  + entry +  ' . ' ) ;
+process . exit ( 1 ) ;
+} else {
+fnames . push ( entry ) ;
+}
+} ) ;
+if ( fnames . length === 0 )  {
+query: process . exit
+target: ( 1 ) ;
+output: ( 1 ) ;
+------------------------------------------
+
+source: 
+generateExpression ( expr . left , Precedence . Call )  +  '  '  + expr . operator +  '  '  +
+generateExpression ( expr . right , Precedence . Assignment ) ,
+Precedence . Assignment ,
+precedence
+) ;
+break;
+case Syntax . ConditionalExpression:
+result = parenthesize (
+generateExpression ( expr . test , Precedence . LogicalOR )  +  ' ? '  +
+generateExpression ( expr . consequent , Precedence . Assignment )  +  ' : '  +
+query: Precedence . <UNK>
+target: ,
+output: .
+------------------------------------------
+
+source: 
+var requirejs = require ( ' requirejs ' ) ;
+None
+None
+None
+None
+None
+None
+None
+None
+None
+query: var sanitizer =
+target: require ( ' sanitizer ' ) ;
+output: require ( ' . ' ) ;
+------------------------------------------
+
+source: 
+var assert = require ( ' assert ' ) ;
+var wordwrap = require ( ' wordwrap ' ) ;
+None
+None
+None
+None
+None
+None
+None
+None
+query: var idleness =
+target: fs . readFileSync ( __dirname +  ' / idleness . txt ' ,  ' utf8 ' ) ;
+output: require . idleness
+------------------------------------------
+
+source: 
+cov;
+module . exports = {
+setUp: function ( cb )  {
+rimraf . sync ( OUTPUT_DIR ) ;
+mkdirp . sync ( OUTPUT_DIR ) ;
+helper . resetOpts ( ) ;
+runCover ( [  ' test / run . js ' ,  ' - - report ' ,  ' none '  ] , function ( results )  {
+cb ( ) ;
+} ) ;
+} ,
+query: rimraf . sync
+target: ( OUTPUT_DIR ) ;
+output: ( ) ) ;
+------------------------------------------
+
+source: 
+' } '
+] ;
+verifier = helper . verifier ( __filename , code ) ;
+cb ( null ) ;
+} ,
+" should cover one path " : function ( test )  {
+verifier . verify ( test ,  [  " 1 "  ] ,  " onetwothree " ,  { lines: { 1: 1 , 2: 1 } , branches: {  ' 1 ' : [ 1 , 1 , 1 ]  } , functions: { } , statements: {  ' 1 ' : 1 ,  ' 2 ' : 1 ,  ' 3 ' : 1 ,  ' 4 ' : 1 ,  ' 5 ' : 1 }  } ) ;
+test . done ( ) ;
+} ,
+" should cover two path " : function ( test )  {
+query: test . done
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+exports . fields = fields
+exports . fieldSize = fieldSize
+exports . fieldOffs = fieldOffs
+exports . fieldEnds = fieldEnds
+exports . types = types
+exports . modes = modes
+exports . numeric = numeric
+exports . headerSize = headerSize
+exports . blockSize = blockSize
+exports . knownExtended = knownExtended
+query: exports . Parse
+target: = require ( " . / lib / parse . js " )
+output: = . ( ' . Parse . . Parse " js " ) ;
+------------------------------------------
+
+source: 
+return me . error ( " incorrect size " )
+}
+me . size = props . size
+var type = getType ( props )
+if ( type !== " Directory " && props . nlink && props . nlink > 1 )  {
+var k = props . dev +  " : "  + props . ino
+if ( hardLinks [ k ] === me . _path || !hardLinks [ k ] ) hardLinks [ k ] = me . _path
+else {
+type = me . type = me . props . type = " Link "
+me . Link = me . props . Link = true
+query: me . _stat
+target: = me . _read = <UNK> . prototype . _read
+output: = me . type
+------------------------------------------
+
+source: 
+ret . fill ( ' x ' ) ;
+pt . push ( ret ) ;
+cb ( ) ;
+} ;
+pt . write ( new Buffer ( ' foog ' ) ) ;
+pt . write ( new Buffer ( ' bark ' ) ) ;
+pt . write ( new Buffer ( ' bazy ' ) ) ;
+pt . write ( new Buffer ( ' kuel ' ) ) ;
+pt . end ( ) ;
+t . equal ( pt . read ( 5 ) . toString ( ) ,  ' xxxxx ' ) ;
+query: t . equal
+target: ( pt . read ( 5 ) . toString ( ) ,  ' xxxxx ' ) ;
+output: ( ' . length . x , , map ( ' ,  [ x ' , ;
+------------------------------------------
+
+source: 
+for ( var i = 0; i < 100; i + + ) cache . set ( i , i )
+t . equal ( cache . length , 100 )
+for ( var i = 0; i < 100; i + + )  {
+t . equal ( cache . get ( i ) , i )
+}
+cache . max = 3
+t . equal ( cache . length , 3 )
+for ( var i = 0; i < 97; i + + )  {
+t . equal ( cache . get ( i ) , undefined )
+}
+query: t . equal
+target: ( cache . get ( i ) , i )
+output: ( i . equal ( i ) ,  ] , . ] ] ] ] ] ] ] ] ] ] ] ] ] ] ] Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer Buffer
+------------------------------------------
+
+source: 
+t . equal ( argv . sometrue , true ) ;
+t . end ( ) ;
+} ) ;
+test ( ' boolean default false ' , function ( t )  {
+var argv = optimist . options ( {
+somefalse: {
+boolean: true ,
+default: false
+}
+} ) . argv;
+query: t . end
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+if ( ' heartbeat ' == packet . type )  {
+this . log . debug ( ' got heartbeat packet ' ) ;
+if ( current && current . open )  {
+current . onHeartbeatClear ( ) ;
+} else {
+this . store . publish ( ' heartbeat - clear: '  + this . id ) ;
+}
+} else {
+if ( ' disconnect ' == packet . type && packet . endpoint == ' ' )  {
+this . log . debug ( ' got disconnection packet ' ) ;
+query: current . onForcedDisconnect
+target: ( ) ;
+output: ( ) ;
+------------------------------------------
+
+source: 
+var client = require ( " redis " ) . createClient ( ) ,
+client2 = require ( " redis " ) . createClient ( ) ;
+client . subscribe ( " something " ) ;
+client . on ( " subscribe " , function ( channel , count )  {
+None
+None
+None
+None
+None
+None
+query: client . unsubscribe
+target: ( " something " ) ;
+output: " " , " ,
+------------------------------------------
+
+source: 
+var JSON = io . JSON
+, indexOf = io . util . indexOf;
+
+parser . encodePacket = function ( packet )  {
+var type = indexOf ( packets , packet . type )
+, id = packet . id || ' '
+, endpoint = packet . endpoint || ' '
+, ack = packet . ack
+, data = null;
+switch ( packet . type )  {
+query: var reason =
+target: packet . reason ? indexOf ( reasons , packet . reason ) : ' '
+output: options . id || ' ( ' .  . options ) ;
+------------------------------------------
+
+source: 
+
+this . int_n_cs_precedes = properties . int_n_cs_precedes;
+
+if ( properties . int_p_sep_by_space !== 0 &&
+properties . int_p_sep_by_space !== 1 &&
+properties . int_p_sep_by_space !== 2 )
+throw " Error: Invalid / missing int_p_sep_by_spacev , must be 0 , 1 or 2 " ;
+
+this . int_p_sep_by_space = properties . int_p_sep_by_space;
+if ( properties . int_n_sep_by_space !== 0 &&
+query: properties . int_n_sep_by_space
+target: !== 2 )
+output: . properties .
+------------------------------------------
+
+source: 
+' use strict ' ;
+var expect = require ( ' chai ' ) . expect;
+describe ( ' Voronoi ' , function ( )  {
+it ( ' renders and tests voronoi component ' , function ( )  {
+var React = require ( ' react / addons ' ) ;
+var Voronoi = require ( ' . . / src / common / Voronoi ' ) ;
+var generate = require ( ' . / utils / datagen ' ) . generateArrayOfPoints;
+None
+None
+None
+query: var utils =
+target: require ( ' . . / src / utils ' ) ;
+output: require ( ' . / / utils / utils ' ) ;
+------------------------------------------
+
+source: 
+listeners: any [ ] ;
+generator: AreaRadial;
+data: AnimatedListener;
+constructor ( props )  {
+super ( props ) ;
+this . generator = createGenerator ( props ) ;
+this . data = listen ( props . data , _ => this . setNativeProps ( { _listener: true } ) ) ;
+}
+setNativeProps = ( props = { } ) => {
+const argChanged = args . some ( ( key , index ) => props [ key ] != null ) ;
+query: this . generator
+target: = createGenerator ( props , this . generator ) ;
+output: . this . " . this . options . ;
+------------------------------------------
+
