@@ -7,7 +7,8 @@ Pytorch implementation of a selective JavaScript autocompletion model. Tested on
   - tensorflow, scipy (only needed for tensorboard Logger)
 
 - usage: python main.py --mode=train
-  - arguments
+  - arguments:
+  
     - mode = train / test
     - load = set to None, can be replaced with the location of a previously saved weight
     - copy = if True, copies all files into a temporary folder
