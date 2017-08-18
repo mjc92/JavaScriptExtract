@@ -31,9 +31,12 @@ class TextFolder(data.Dataset):
     
     def __getitem__(self, index):
         data = self.data[index].split('%NWL%')
-
-        label = int(data[-1]) # label
         
+        try:
+            label = int(data[-1]) # label
+        except ValueError:
+            label = np.random.randint(0,max(1,len(data)-2))
+            
         if self.single:
             src_tokens = self.tokenize(data[:-2][label],'single') # single context
             src_tokens = src_tokens.split(' ')
