@@ -11,7 +11,7 @@ from tensorboard.logger import Logger
 from torch.autograd import Variable
 from packages.data_loader import get_loader
 from models.extractor import JavascriptExtractor
-from packages.functions import pack_padded, to_np, to_var, str2bool
+from packages.functions import pack_padded, to_np, to_var, str2bool, write_log
 
 parser = argparse.ArgumentParser()
 
@@ -24,12 +24,13 @@ parser.add_argument('--val_root',type=str,default='data/outputs_val.txt',help='d
 parser.add_argument('--test_root',type=str,default='data/outputs_test.txt',help='data file')
 parser.add_argument('--dict_root',type=str,default='data/dict_1000.json',
                     help='directory of dictionary file')
+parser.add_argument('--save_dir',type=str,default='saves', help='where to save model & info')
 parser.add_argument("--max_oovs",type=int, default=20,
                     help='max number of OOVs to accept in a sample')
 
 # arguments related to model training and inference
 parser.add_argument("--mode",type=str, help='train/test mode. Error if unspecified')
-parser.add_argument("--epochs",type=int, default=20, help='Number of epochs. Set by default to 20')
+parser.add_argument("--epochs",type=int, default=10, help='Number of epochs. Set by default to 20')
 parser.add_argument("--lr",type=float, default=0.01, help='learning rate')
 parser.add_argument("--batch",type=int, default=64, help='batch size')
 parser.add_argument("--k",type=int, default=5, help='for top-k accuracy')
@@ -78,6 +79,8 @@ def train(args):
         for i, (inputs, lengths, labels, oovs) in enumerate(data_loader):
             # split tuples
             steps+=1
+            if steps==100000:
+                sys.exit()
             total_batches = max(total_batches,i)
             model.zero_grad()
             sources, queries, targets = inputs
@@ -109,16 +112,19 @@ def train(args):
             correct=(predicted==packed_targets.data).long().sum()
             acc = (correct*1.0/packed_targets.size(0))
             if args.single:
-                print("[%d]: Epoch %d\t%d/%d\tLoss: %1.3f\tAccuracy: %1.3f"
-                      %(steps,epoch+1,i,total_batches,
-                        loss.data[0],acc))
+                string = "[%d]: Epoch %d\t%d/%d\tLoss: %1.3f\tAccuracy: %1.3f"\
+                      %(steps,epoch+1,i,total_batches,loss.data[0],acc)
+                print(string)
+                write_log(string, args)
+                
             else:
                 predicted_label = sim.max(1)[1]
                 correct_label=(predicted_label.data==labels.data).long().sum()
                 acc2 = (correct_label*1.0/len(labels))
-                print("[%d]: Epoch %d\t%d/%d\tLoss: %1.3f, %1.3f\tAccuracy: %1.3f, %1.3f"
-                      %(steps,epoch+1,i,total_batches,
-                        loss1.data[0],loss2.data[0],acc2,acc))
+                string = "[%d]: Epoch %d\t%d/%d\tLoss: %1.3f, %1.3f\tAccuracy: %1.3f, %1.3f"\
+                      %(steps,epoch+1,i,total_batches,loss1.data[0],loss2.data[0],acc2,acc)
+                print(string)
+                write_log(string,args)
             loss.backward()
             
             # free memory
@@ -128,7 +134,7 @@ def train(args):
             opt.step()
             if steps%100==0:
                 # val(model,vocab, args)
-                torch.save(obj=model,f='data/model_%d_steps.pckl'%steps)
+                torch.save(obj=model,f=os.path.join(args.save_dir,'model_%d_steps.pckl'%steps))
                 # print("Model saved...")
                 if args.log:
                     # log scalar values
@@ -253,6 +259,10 @@ def copy(args):
         to_dir = os.path.join(folder_dir,item)
         copy_tree(from_dir, to_dir)
     print("Folders copied at %s" %folder_dir)
+    if args.save_dir=='saves':
+        args.save_dir = folder_dir
+    with open(os.path.join(args.save_dir,"meta.txt"),'w') as f:
+        f.write(str(args))
     return
 
 def print_samples(model, vocab, args):

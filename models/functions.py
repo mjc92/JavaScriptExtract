@@ -1,6 +1,7 @@
 import torch
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 from torch.autograd import Variable
 
 # changes a numpy array to a Variable of LongTensor type
@@ -12,6 +13,11 @@ def numpy_to_var(x,is_int=True):
     if torch.cuda.is_available():
         x = x.cuda()
     return Variable(x)
+
+def write_log(string, args):
+    with open(os.path.join(args.save_dir,'log.txt'),'a') as f:
+        f.write(string+'\n')
+
 
 def toData(batch):
     # [input] batch: list of strings

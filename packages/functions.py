@@ -8,6 +8,10 @@ import torch
 import glob
 from spacy import attrs
 
+def write_log(string, args):
+    with open(os.path.join(args.save_dir,'log.txt'),'a') as f:
+        f.write(string+'\n')
+        
 def str2bool(v):
     if v.lower() in ('yes', 'true', 't', 'y', '1'):
         return True
