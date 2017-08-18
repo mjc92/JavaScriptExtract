@@ -32,6 +32,7 @@ parser.add_argument("--mode",type=str, help='train/test mode. Error if unspecifi
 parser.add_argument("--epochs",type=int, default=20, help='Number of epochs. Set by default to 20')
 parser.add_argument("--lr",type=float, default=0.01, help='learning rate')
 parser.add_argument("--batch",type=int, default=64, help='batch size')
+parser.add_argument("--k",type=int, default=5, help='for top-k accuracy')
 parser.add_argument("--single",type=str2bool, default=True, 
                     help='whether to include the task of selecting from multiple lines')
 parser.add_argument("--cuda",type=str2bool, default=True, help='whether to use cuda')
@@ -46,7 +47,7 @@ parser.add_argument("--n_layers",type=int, default=2, help='number of layers for
 parser.add_argument("--n_head",type=int, default=8, help='number of heads for transformer model')
 parser.add_argument("--max_in_seq",type=int, default=150, help='max length of input')
 parser.add_argument("--max_out_seq",type=int, default=150, help='max length of output')
-parser.add_argument("--similarity",type=str, default='position', help='similarity measure to use')
+parser.add_argument("--similarity",type=str, default='cosine', help='similarity measure to use')
 parser.add_argument("--encoder",type=str, default='lstm', help='encoder type to use')
 
 args = parser.parse_args()
@@ -143,10 +144,13 @@ def val(model, vocab, args):
     mode = 'Validation results:'
     data_loader = get_loader(args.val_root, args.dict_root, vocab, args.batch, 
                           args.single, shuffle=False)
+    
     total_cases = 0
     total_correct_cases = 0
+    total_correct_k = 0
     total_labels = 0
     total_correct_labels = 0
+    
     for i, (inputs, lengths, labels, oovs) in enumerate(data_loader):
         model.eval()
         sources, queries, targets = inputs
@@ -159,7 +163,8 @@ def val(model, vocab, args):
             outputs = model(sources,queries,lengths, targets) # [batch x seq x vocab]
         else:
             outputs, sim = model(sources,queries,lengths,targets)
-        targets = Variable(targets[:,1:])
+            
+        targets = Variable(targets[:,1:]) # correct answers
 
         packed_outputs,packed_targets = pack_padded(outputs,targets)
         packed_outputs = torch.log(packed_outputs)
@@ -175,6 +180,7 @@ def val(model, vocab, args):
             loss2 = criterion(packed_outputs,packed_targets).data[0]
             loss = loss1 + loss2
             # loss = loss1
+        
         predicted = packed_outputs.max(1)[1]
         correct=(predicted==packed_targets).long().sum().data[0]
         
@@ -188,6 +194,12 @@ def val(model, vocab, args):
             
             total_correct_labels += correct_label
             total_labels += len(predicted_label)
+            
+        # get top-k accuracy
+        topk = packed_outputs.data.topk[args.k][1]
+        for i in range(len(packed_targets)):
+            if packed_targets[i] in packed_outputs[i]:
+                total_correct_k += 1
     
     if args.single:
         acc = (total_correct_cases*1.0/total_cases)
@@ -196,6 +208,9 @@ def val(model, vocab, args):
         acc1 = (total_correct_labels*1.0/total_labels)
         acc2 = (total_correct_cases*1.0/total_cases)
         print("%s accuracy: %1.3f\t%1.3f"%(mode,acc1, acc2))
+    
+    print("top-%d accuracy: %1.3f" %(args.k, total_correct_k*1.0/total_cases))
+        
     return
 
 def test(args):
@@ -209,7 +224,7 @@ def test(args):
     if args.cuda:
         model.cuda()
     total_batches=0
-    args.val_root = args.test_root # to apply val function directly
+    # args.val_root = args.test_root # to apply val function directly
     print_samples(model,vocab,args)
     val(model, vocab, args)
     return
@@ -253,13 +268,6 @@ def print_samples(model, vocab, args):
         target = targets[0][1:]
         output = outputs[0].max(1)[1]
         
-        # print(source)
-        # print('\n')
-        # print(query)
-        # print('\n')
-        # print(target)
-        # print('\n')
-        # print(output)
         l1 = 'source: \n'+'\n'.join([vocab.tensor_to_string(src,oovs[0]) for src in source])
         l2 = 'query: '+ vocab.tensor_to_string(query,oovs[0])
         l3 = 'target: ' + vocab.tensor_to_string(target,oovs[0])
