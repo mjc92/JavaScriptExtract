@@ -6,6 +6,7 @@ import torch
 from torch import optim, nn
 import argparse
 import os
+import sys
 from packages.vocab import Vocab
 import torch.nn.functional as F
 from tensorboard.logger import Logger
@@ -56,6 +57,9 @@ args = parser.parse_args()
 
 time_str = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 args.time_str = time_str
+
+if not os.path.exists(args.save_dir):
+    os.mkdir(args.save_dir)
 
 
 def train(args):
