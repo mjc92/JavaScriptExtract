@@ -251,6 +251,10 @@ def copy(args):
     from distutils.dir_util import copy_tree
     with open('performances.txt','a') as f:
         f.write(time_str)
+
+    if not os.path.exsits("saves"):
+        os.mkdir("saves")
+
     folder_dir = os.path.join('saves',args.time_str)
     os.mkdir(folder_dir)
     from_list = ['models/','packages/']
