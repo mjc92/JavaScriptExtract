@@ -15,3 +15,6 @@ Pytorch implementation of a selective JavaScript autocompletion model. Tested on
     - similarity: which similarity measurement to use (either cosine or mlp)
     - everything else is described at main.py
     
+- evaluation
+  - accuracy : # of tokens correct to the answer / # of tokens in total
+  - top-5 accuracy: # of tokens correct in 5 guesses
