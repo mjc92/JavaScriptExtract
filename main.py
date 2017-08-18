@@ -45,8 +45,8 @@ parser.add_argument("--hidden",type=int, default=256, help='size of hidden dimen
 parser.add_argument("--embed",type=int, default=256, help='size of embedded word dimension')
 parser.add_argument("--n_layers",type=int, default=2, help='number of layers for transformer model')
 parser.add_argument("--n_head",type=int, default=8, help='number of heads for transformer model')
-parser.add_argument("--max_in_seq",type=int, default=150, help='max length of input')
-parser.add_argument("--max_out_seq",type=int, default=150, help='max length of output')
+parser.add_argument("--max_in_seq",type=int, default=100, help='max length of input')
+parser.add_argument("--max_out_seq",type=int, default=100, help='max length of output')
 parser.add_argument("--similarity",type=str, default='cosine', help='similarity measure to use')
 parser.add_argument("--encoder",type=str, default='lstm', help='encoder type to use')
 
@@ -55,7 +55,6 @@ args = parser.parse_args()
 
 time_str = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 args.time_str = time_str
-args.time_str = ''
 
 def train(args):
     print(args)
@@ -106,26 +105,31 @@ def train(args):
                 loss2 = criterion(packed_outputs,packed_targets)
                 loss = loss1 + loss2
                 # loss = loss1
-            predicted = packed_outputs.max(1)[1]
-            correct=(predicted==packed_targets).long().sum()
-            acc = (correct.data[0]*1.0/packed_targets.size(0))
+            predicted = packed_outputs.data.max(1)[1]
+            correct=(predicted==packed_targets.data).long().sum()
+            acc = (correct*1.0/packed_targets.size(0))
             if args.single:
                 print("[%d]: Epoch %d\t%d/%d\tLoss: %1.3f\tAccuracy: %1.3f"
                       %(steps,epoch+1,i,total_batches,
                         loss.data[0],acc))
             else:
                 predicted_label = sim.max(1)[1]
-                correct_label=(predicted_label==labels).long().sum()
-                acc2 = (correct_label.data[0]*1.0/len(labels))
+                correct_label=(predicted_label.data==labels.data).long().sum()
+                acc2 = (correct_label*1.0/len(labels))
                 print("[%d]: Epoch %d\t%d/%d\tLoss: %1.3f, %1.3f\tAccuracy: %1.3f, %1.3f"
                       %(steps,epoch+1,i,total_batches,
                         loss1.data[0],loss2.data[0],acc2,acc))
             loss.backward()
+            
+            # free memory
+            del targets, outputs, packed_targets, packed_outputs, correct
+            if args.single==False:
+                del sim, labels, correct_label
             opt.step()
-            if steps%500==0:
-                val(model,vocab, args) 
+            if steps%100==0:
+                # val(model,vocab, args)
                 torch.save(obj=model,f='data/model_%d_steps.pckl'%steps)
-                print("Model saved...")
+                # print("Model saved...")
                 if args.log:
                     # log scalar values
                     info = {'loss': loss.data[0],
@@ -169,7 +173,7 @@ def val(model, vocab, args):
         packed_outputs,packed_targets = pack_padded(outputs,targets)
         packed_outputs = torch.log(packed_outputs)
         if args.single:
-            loss = criterion(packed_outputs,packed_targets)
+            loss = criterion(packed_outputs,packed_targets).data[0]
         else:
             sim = sim + 1e-3
             sim = torch.log(sim)
@@ -195,10 +199,16 @@ def val(model, vocab, args):
             total_correct_labels += correct_label
             total_labels += len(predicted_label)
             
+        # free memory
+        del targets, outputs, packed_targets, packed_outputs, correct
+        if args.single==False:
+            del sim, labels, correct_label
+
         # get top-k accuracy
-        topk = packed_outputs.data.topk[args.k][1]
-        for i in range(len(packed_targets)):
-            if packed_targets[i] in packed_outputs[i]:
+        target_list = packed_targets.data
+        topk = packed_outputs.data.topk(args.k)[1]
+        for i in range(len(target_list)):
+            if target_list[i] in topk[i]:
                 total_correct_k += 1
     
     if args.single:

@@ -40,7 +40,7 @@ class TextFolder(data.Dataset):
         else:
             src_tokens = self.tokenize(data[:-2],'multi') # context
         target = data[-2].split(' ')
-        split_point = np.random.randint(1,min(len(target),4))
+        split_point = np.random.randint(1,min(len(target),5))
         qry_ = target[:split_point]
         qry_tokens = self.tokenize(qry_,'single') # guery
         trg_ = target[split_point:]
@@ -97,11 +97,11 @@ class TextFolder(data.Dataset):
 
     def tokenize(self, input, mode=None):
         if mode=='multi': # input: list of strings
-            out = [x.split(' ') for x in input]
+            out = [x.split(' ')[:self.max_len] for x in input]
         elif mode=='single': # input: string
-            out = input
+            out = input[:self.max_len]
         elif mode=='target': # input: string
-            out = ['<SOS>'] + input + ['<EOS>']
+            out = ['<SOS>'] + input[:self.max_len-2] + ['<EOS>']
         return out
 
 def collate_fn(data):
@@ -158,11 +158,10 @@ def collate_fn(data):
         queries_out[i,:len(queries[i])] = queries[i]
         targets_out[i,:len(targets[i])] = targets[i]
   
-    # set max limit
-    source_len = np.maximum(np.array(source_len),150).tolist()
-    query_len = np.maximum(np.array(query_len),150).tolist()
-    sources_out = sources_out[:,:150]
-    queries_out = queries_out[:,:150]
+    # source_len = np.maximum(np.array(source_len),150).tolist()
+    # query_len = np.maximum(np.array(query_len),150).tolist()
+    # sources_out = sources_out[:,:150]
+    # queries_out = queries_out[:,:150]
     outputs = (sources_out,queries_out,targets_out)
     lengths = (source_len,query_len,target_len,context_len)
     

@@ -14,21 +14,22 @@ class JavascriptExtractor(nn.Module):
         super(JavascriptExtractor, self).__init__()
            
         self.copynet = CopyNet(args, vocab)
+        
+        if args.single==False:
+            # set similarity measurement
+            if args.encoder=='position':
+                from models.similarity.position_encoding import PositionEncoding
+                self.encoder = PositionEncoding(args, vocab)
+            elif args.encoder=='lstm':
+                from models.similarity.lstm import LSTMLastState
+                self.encoder = LSTMLastState(args, vocab)
 
-        # set similarity measurement
-        if args.encoder=='position':
-            from models.similarity.position_encoding import PositionEncoding
-            self.encoder = PositionEncoding(args, vocab)
-        elif args.encoder=='lstm':
-            from models.similarity.lstm import LSTMLastState
-            self.encoder = LSTMLastState(args, vocab)
-            
-        if args.similarity=='cosine':
-            from models.similarity.cosine import CosineSimilarity
-            self.similarity = CosineSimilarity(args, vocab)
-        elif args.similarity=='mlp':
-            from models.similarity.mlp import MLPSimilarity
-            self.similarity = MLPSimilarity(args, vocab)
+            if args.similarity=='cosine':
+                from models.similarity.cosine import CosineSimilarity
+                self.similarity = CosineSimilarity(args, vocab)
+            elif args.similarity=='mlp':
+                from models.similarity.mlp import MLPSimilarity
+                self.similarity = MLPSimilarity(args, vocab)
         
         self.iscuda = args.cuda
         self.single = args.single
@@ -56,6 +57,7 @@ class JavascriptExtractor(nn.Module):
         max_len = (source_lens+query_lens).max()
         new_sources = torch.zeros(sources.size(0),max_len).long()
         new_sources = to_cuda(new_sources, self.iscuda)
+                
         for i in range(sources.size(0)):
             try:
                 new_sources[i,:source_lens[i]] += sources[i,:source_lens[i]]
@@ -63,9 +65,13 @@ class JavascriptExtractor(nn.Module):
                 pass
             new_sources[i,source_lens[i]:source_lens[i]+query_lens[i]] += queries[i,:query_lens[i]]
         
-        self.inputs = new_sources # inputs for the copynet model
         # get target outputs using the copynet model
         outputs = self.copynet(new_sources, targets)
+        
+        # delete irrelevant items
+        del sources, targets, source_len, query_len, target_len, context_len, lengths
+        del new_sources
+        
         if self.single:
             return outputs
         else:
