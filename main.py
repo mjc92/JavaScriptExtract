@@ -9,7 +9,8 @@ from packages.vocab import Vocab
 import torch.nn.functional as F
 from tensorboard.logger import Logger
 from torch.autograd import Variable
-from packages.data_loader import get_loader
+from packages.data_loader_for_var import get_loader
+# from packages.data_loader import get_loader
 from models.extractor import JavascriptExtractor
 from packages.functions import pack_padded, to_np, to_var, str2bool, write_log
 
