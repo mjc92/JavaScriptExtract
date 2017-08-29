@@ -61,7 +61,10 @@ args.time_str = time_str
 def train(args):
     print(args)
     if args.log:
-        logger = Logger('./logs')
+        if args.log_dir is not None:
+            logger = Logger(args.log_dir)
+        else:
+            logger = Logger('./logs')
     vocab = Vocab(args.dict_root, args.max_oovs)
     data_loader = get_loader(args.train_root, args.dict_root, vocab, args.batch, args.single)
 
@@ -137,18 +140,19 @@ def train(args):
                 # val(model,vocab, args)
                 torch.save(obj=model,f=os.path.join(args.save_dir,'model_%d_steps.pckl'%steps))
                 # print("Model saved...")
-                if args.log:
-                    # log scalar values
-                    info = {'loss': loss.data[0],
-                            'acc': acc}
-                    for tag,value in info.items():
-                        logger.scalar_summary(tag,value,steps)
+                
+            if args.log==True & (steps%5==0):
+                # log scalar values
+                info = {'loss': loss.data[0],
+                        'acc': acc}
+                for tag,value in info.items():
+                    logger.scalar_summary(tag,value,steps)
 
-                    # log values and gradients of the parameters
-                    for tag, value in model.named_parameters():
-                        tag = tag.replace('.','/')
-                        logger.histo_summary(tag, to_np(value), steps)
-                        logger.histo_summary(tag+'/grad',to_np(value.grad), steps)
+                # log values and gradients of the parameters
+                for tag, value in model.named_parameters():
+                    tag = tag.replace('.','/')
+                    logger.histo_summary(tag, to_np(value), steps)
+                    logger.histo_summary(tag+'/grad',to_np(value.grad), steps)
                         
 def val(model, vocab, args):
     criterion = nn.NLLLoss()
@@ -212,11 +216,11 @@ def val(model, vocab, args):
             del sim, labels, correct_label
 
         # get top-k accuracy
-        target_list = packed_targets.data
-        topk = packed_outputs.data.topk(args.k)[1]
-        for i in range(len(target_list)):
-            if target_list[i] in topk[i]:
-                total_correct_k += 1
+        # target_list = packed_targets.data
+        # topk = packed_outputs.data.topk(args.k)[1]
+#         for i in range(len(target_list)):
+#             if target_list[i] in topk[i]:
+#                 total_correct_k += 1
     
     if args.single:
         acc = (total_correct_cases*1.0/total_cases)
@@ -226,7 +230,7 @@ def val(model, vocab, args):
         acc2 = (total_correct_cases*1.0/total_cases)
         print("%s accuracy: %1.3f\t%1.3f"%(mode,acc1, acc2))
     
-    print("top-%d accuracy: %1.3f" %(args.k, total_correct_k*1.0/total_cases))
+    # print("top-%d accuracy: %1.3f" %(args.k, total_correct_k*1.0/total_cases))
         
     return
 
@@ -254,6 +258,10 @@ def copy(args):
         f.write(time_str)
     folder_dir = os.path.join('saves',args.time_str)
     os.mkdir(folder_dir)
+    log_dir = os.path.join('logs',args.time_str)
+    os.mkdir(log_dir)
+    args.log_dir = log_dir
+    # copy models and packages
     from_list = ['models/','packages/']
     for item in from_list:
         from_dir = item
@@ -269,7 +277,8 @@ def copy(args):
 def print_samples(model, vocab, args):
     data_loader = get_loader(args.val_root, args.dict_root, vocab, args.batch, 
                           args.single, shuffle=False)
-    f = open(os.path.join(args.time_str,'samples.txt'),'a')
+    load_dir = '/'.join(args.load.split('/')[:2])
+    f = open(os.path.join(load_dir,'samples.txt'),'a')
     for i, (inputs, lengths, labels, oovs) in enumerate(data_loader):
         model.eval()
         sources, queries, targets = inputs
@@ -282,14 +291,18 @@ def print_samples(model, vocab, args):
             outputs = model(sources,queries,lengths, targets) # [batch x seq x vocab]
         else:
             outputs, sim = model(sources,queries,lengths,targets)
-        
-        context = context_len[0]
-        source = sources[:context]
+        if args.single:
+            source = sources[0]
+        else:
+            context = context_len[0]
+            source = sources[:context]
         query = queries[0]
         target = targets[0][1:]
         output = outputs[0].max(1)[1]
-        
-        l1 = 'source: \n'+'\n'.join([vocab.tensor_to_string(src,oovs[0]) for src in source])
+        if args.single==True:
+            l1 = 'source: \n'+vocab.tensor_to_string(source,oovs[0])
+        else:
+            l1 = 'source: \n'+'\n'.join([vocab.tensor_to_string(src,oovs[0]) for src in source])
         l2 = 'query: '+ vocab.tensor_to_string(query,oovs[0])
         l3 = 'target: ' + vocab.tensor_to_string(target,oovs[0])
         l4 = 'output: ' + vocab.tensor_to_string(output.data,oovs[0])
