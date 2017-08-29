@@ -1,0 +1,3500 @@
+source: 
+var position = this . position 
+query:  var transform
+target: this . transform ;
+output: this . transform ;
+------------------------------------------
+
+source: 
+var minute = this . minute 
+query:  var hour
+target: this . hour ;
+output: this . hour ;
+------------------------------------------
+
+source: 
+var d1 = _ addDiv ( ' d1 ' ) , d2 = _ addDiv ( ' d2 ' ) , d3 = _ addDiv ( ' d3 ' ) 
+query:  var c
+target: _ jsPlumb . connect ( source : d1 , target : d2 ) ;
+output: _ _ . ' ( ' : ' , ' ' ' ' ;
+------------------------------------------
+
+source: 
+var layout = imports . layout 
+query:  var Divider
+target: imports . Divider ;
+output: imports . Divider ;
+------------------------------------------
+
+source: 
+var errors = get ( ' mass - spec - errors ' ) 
+query:  var failures
+target: get ( ' mass - spec - failures ' ) ;
+output: get ( ' failures ' failures - failures ' ) ;
+------------------------------------------
+
+source: 
+var blessed = require ( ' blessed ' ) 
+query:  var fs
+target: require ( ' fs ' ) ;
+output: require ( ' fs ' ) ;
+------------------------------------------
+
+source: 
+var derivedDataProperty = ' derivedDataProperty ' 
+query:  var f
+target: ' f ' ;
+output: ' f ' ;
+------------------------------------------
+
+source: 
+var balloon1 = BABYLON . Mesh . createSphere ( ' balloon1 ' , 10 , 2 . 0 , scene ) 
+query:  var balloon2
+target: babylon . mesh . createSphere ( ' balloon2 ' , 10 , 2 . 0 , scene ) ;
+output: Mesh . 0 ( 0 ( ' balloon2 ' ) ' ) ' ) balloon1 , ' . ;
+------------------------------------------
+
+source: 
+var sel = select . selectedIndex 
+query:  var i d
+target: select . options [ sel ] . i d ;
+output: select . i . 0 ]    ;
+------------------------------------------
+
+source: 
+var pixelFormat = defaultValue ( options . pixelFormat , pixelFormat . rgb ) 
+query:  var framebufferxOffset
+target: defaultValue ( options . framebufferxOffset , 0 ) ;
+output: ( ( pixelFormat . pixelFormat . pixelFormat , ;
+------------------------------------------
+
+source: 
+var dependencies = options . dependencies 
+query:  var arch
+target: options . arch ;
+output: options . arch ;
+------------------------------------------
+
+source: 
+var shapes = powerbi . visuals . shapes 
+query:  var svgUtil
+target: powerbi . visuals . svgUtil ;
+output: powerbi . data . visuals ;
+------------------------------------------
+
+source: 
+var maxHeight = options . maxHeight  |  |  10 . 0 
+query:  var updatable
+target: options . updatable ;
+output: options . maxHeight 
+------------------------------------------
+
+source: 
+var util = require ( ' util ' ) 
+query:  var conf
+target: env . conf . eventDumper  |  |  ;
+output: require . conf ( conf ( |  |  |
+------------------------------------------
+
+source: 
+var gulp = require ( ' gulp ' ) 
+query:  var concat
+target: require ( ' gulp - concat ' ) ;
+output: require ( ' concat - concat ' ) ;
+------------------------------------------
+
+source: 
+var quality = getValue ( options . quality , 50 ) 
+query:  var destinationType
+target: getValue ( options . destinationType , camera . destinationType . file_uri ) ;
+output: ( ( options  quality  options . quality ) quality ) ;
+------------------------------------------
+
+source: 
+var viewManagement = windows . ui . viewManagement 
+query:  var applicationView
+target: viewManagement . applicationView ;
+output: windows . ui ;
+------------------------------------------
+
+source: 
+var defineGetter = scope . defineGetter 
+query:  var mixin
+target: scope . mixin ;
+output: scope . defineGetter ;
+------------------------------------------
+
+source: 
+var xAxisModel = foundCpts . xAxisModel 
+query:  var yAxisModel
+target: foundCpts . yAxisModel ;
+output: foundCpts . yAxisModel ;
+------------------------------------------
+
+source: 
+var moduleRequire = traceur . syntax . trees . moduleRequire 
+query:  var moduleSpecifier
+target: traceur . syntax . trees . moduleSpecifier ;
+output: traceur . syntax . moduleSpecifier . moduleSpecifier ;
+------------------------------------------
+
+source: 
+var isName = corePrimitives . isName 
+query:  var ascii85Stream
+target: coreStream . ascii85Stream ;
+output: corePrimitives . ascii85Stream ;
+------------------------------------------
+
+source: 
+var w = parseInt ( svgRoot . getAttribute ( ' width ' ) ) 
+query:  var h
+target: parseInt ( svgRoot . getAttribute ( ' height ' ) ) ;
+output: parseInt ( parseInt  getAttribute ( ' ) ' ) ;
+------------------------------------------
+
+source: 
+var vfile = require ( ' vfile ' ) 
+query:  var trough
+target: require ( ' trough ' ) ;
+output: require ( ' trough ' ) ;
+------------------------------------------
+
+source: 
+var . . . x = z 
+query:  var . . . a
+target: a : 1 ;
+output: new . 4 .
+------------------------------------------
+
+source: 
+var textContext = settings . textContext 
+query:  var referenceContext
+target: settings . referenceContext ;
+output: settings . referenceContext ;
+------------------------------------------
+
+source: 
+var condition = this . transformAny ( tree . condition ) 
+query:  var body
+target: this . transformAny ( tree . body ) ;
+output: new . body ( tree . tree . ;
+------------------------------------------
+
+source: 
+var path = require ( ' path ' ) 
+query:  var jsdom
+target: require ( ' jsdom ' ) ;
+output: require ( ' jsdom ' ) ;
+------------------------------------------
+
+source: 
+var x = temp . x 
+query:  var y
+target: temp . y ;
+output: temp . y ;
+------------------------------------------
+
+source: 
+var interactivityUtils = powerbi . visuals . interactivityUtils 
+query:  var yAxisPosition
+target: powerbi . visuals . yAxisPosition ;
+output: powerbi . data . visuals ;
+------------------------------------------
+
+source: 
+var message = _ ref6 . message 
+query:  var assert
+target: _ ref6 . assert ;
+output: require _ . assert ;
+------------------------------------------
+
+source: 
+var b = tree . b = sr2 . firstChild 
+query:  var shadow
+target: tree . shadow    b . firstChild ;
+output: sr2 . sr2 . |   . sr2 ;
+------------------------------------------
+
+source: 
+var Symbol = traceur . semantics . symbols . Symbol 
+query:  var evaluateStringLiteral
+target: traceur . util . evaluateStringLiteral ;
+output: symbols . syntax . evaluateStringLiteral ;
+------------------------------------------
+
+source: 
+var prevTok = this . prevTok 
+query:  var lexState
+target: this . lexState ;
+output: this . lexState ;
+------------------------------------------
+
+source: 
+var headerLinks = require ( ' headerLinks ' ) 
+query:  var metadata
+target: require ( ' metadata ' ) ;
+output: require ( ' metadata ' ) ;
+------------------------------------------
+
+source: 
+var repulsion = params . repulsion  |  |  400 . 0 
+query:  var damping
+target: params . damping  |  |  0 . 5 ;
+output: params . repulsion  |  |  | ;
+------------------------------------------
+
+source: 
+var username = options . username 
+query:  var email
+target: options . email ;
+output: options . email ;
+------------------------------------------
+
+source: 
+var height = shape . height 
+query:  var width
+target: shape . width ;
+output: shape . width ;
+------------------------------------------
+
+source: 
+var startCol = this . startCol 
+query:  var startLine
+target: this . startLine ;
+output: this . startLine ;
+------------------------------------------
+
+source: 
+var cyanA200 = exports . cyanA200 = ' # 18ffff ' 
+query:  var cyanA400
+target: exports . cyanA400    ' # 00e5ff ' ;
+output: exports . cyanA400  ' ' ' # ' ' ;
+------------------------------------------
+
+source: 
+var x = 100 + 90 * ix 
+query:  var y
+target: 100 + 100 * iy + 100 - 50 * ( ix % 2 ) ;
+output: 90 [ 90 ;
+------------------------------------------
+
+source: 
+var chain = pendingFetch . chain 
+query:  var deferred
+target: pendingFetch . deferred ;
+output: pendingFetch . deferred (
+------------------------------------------
+
+source: 
+var name = obj . name 
+query:  var prefix
+target: obj . prefix ;
+output: obj . prefix ;
+------------------------------------------
+
+source: 
+var store = new datastore ( tests . data . readOnlyItemFileTestTemplates . getTestData ( ' geography_hierarchy_small ' ) ) 
+query:  var d
+target: new doh . deferred ( ) ;
+output: new . ( data ( ' ;
+------------------------------------------
+
+source: 
+var createParameterReference = parseTreeFactory . createParameterReference 
+query:  var createPromise
+target: parseTreeFactory . createPromise ;
+output: parseTreeFactory . createPromise ;
+------------------------------------------
+
+source: 
+var glob = require ( ' glob ' ) 
+query:  var join
+target: require ( ' path ' ) . join ;
+output: require ( ' join ' ) ;
+------------------------------------------
+
+source: 
+var opts = _ _ alloyId6 . opts  |  |  
+query:  var models
+target: _ _ alloyId5 . models ;
+output: _ _ _   
+------------------------------------------
+
+source: 
+var regexp = spec . regexp 
+query:  var matchFilter
+target: spec . matchFilter ;
+output: spec . matchFilter ;
+------------------------------------------
+
+source: 
+var expandable = _ props . expandable 
+query:  var showExpandableButton
+target: _ props . showExpandableButton ;
+output: _ _ . showExpandableButton ;
+------------------------------------------
+
+source: 
+var path = require ( ' path ' ) 
+query:  var jade
+target: require ( ' jade ' ) ;
+output: require ( ' jade ' ) ;
+------------------------------------------
+
+source: 
+var semVerRegExp = system . semVerRegExp _ ( ) 
+query:  var m
+target: semVerRegExp . exec ( ' 1 . 2 . 3-a . b . c . 5 . d . 100 ' ) ;
+output: system . semVerRegExp ;
+------------------------------------------
+
+source: 
+var o = options  |  |  
+query:  var prefix
+target: typeof o . prefix     ' undefined ' & & ' assert '  |  |  o . prefix ;
+output: options    (     # ' ;
+------------------------------------------
+
+source: 
+var s = OIMO . sin ( rad ) 
+query:  var c
+target: OIMO . cos ( rad ) ;
+output: OIMO . sin ( ) ) ;
+------------------------------------------
+
+source: 
+var x = queryNumericValue ( iconNode , ' x ' , namespaces . gx ) 
+query:  var y
+target: queryNumericValue ( iconNode , ' y ' , namespaces . gx ) ;
+output: queryNumericValue . ' , ' , ' ) ' . y ) ;
+------------------------------------------
+
+source: 
+var arrowHead = math . max ( 0 , math . min ( h , parseFloat ( mxUtils . getValue ( this . style , ' arrowHead ' , this . arrowHead ) ) ) ) 
+query:  var rounded
+target: mxUtils . getValue ( this . style , ' rounded ' , ' 0 ' ) ;
+output: math . 0 ( math . 0 ( math rounded ' ) math rounded , ) ;
+------------------------------------------
+
+source: 
+var editorClient = firepad . editorClient 
+query:  var entityManager
+target: firepad . entityManager ;
+output: firepad . entityManager ;
+------------------------------------------
+
+source: 
+var a = rejectSoon ( ' rejected - a ' , 40 ) 
+query:  var b
+target: rejectSoon ( ' rejected - b ' , 30 ) ;
+output: rejectSoon ( ' , - core ' ) ' ) ;
+------------------------------------------
+
+source: 
+var hsep = opts . hsep = = = undefined ? ' ' : opts . hsep 
+query:  var align
+target: opts . align  |  |  [ ] ;
+output: opts . opts ;
+------------------------------------------
+
+source: 
+var wasm = config . wasm 
+query:  var bundle
+target: config . bundles [ key ] ;
+output: config . bundle   ] ;
+------------------------------------------
+
+source: 
+var binding = bindings [ i ] 
+query:  var handler
+target: binding . handler ;
+output: bindings ( handler (
+------------------------------------------
+
+source: 
+var end = this . end 
+query:  var scheduler
+target: this . scheduler ;
+output: this . scheduler ;
+------------------------------------------
+
+source: 
+var el = this . el 
+query:  var a
+target: document . createElement ( ' a ' ) ;
+output: new . createElement ( ' el ' ) ;
+------------------------------------------
+
+source: 
+var index = state . index 
+query:  var hasError
+target: state . hasError ;
+output: state . hasError ;
+------------------------------------------
+
+source: 
+var err = test . err 
+query:  var message
+target: err . message  |  |  '' ;
+output: test . message ;
+------------------------------------------
+
+source: 
+var createParameterList = traceur . codegeneration . parseTreeFactory . createParameterList 
+query:  var createParameterReference
+target: traceur . codegeneration . parseTreeFactory . createParameterReference ;
+output: codegeneration . syntax . codegeneration . codegeneration ;
+------------------------------------------
+
+source: 
+var y = this . y 
+query:  var z
+target: this . z ;
+output: this . z ;
+------------------------------------------
+
+source: 
+var afterCompleteDocOpen = helpers . afterCompleteDocOpen 
+query:  var afterCompleteOpen
+target: helpers . afterCompleteOpen ;
+output: helpers . afterCompleteOpen ;
+------------------------------------------
+
+source: 
+var repeat = require ( ' repeat - string ' ) 
+query:  var trim
+target: require ( ' trim ' ) ;
+output: require ( ' trim ' ) ;
+------------------------------------------
+
+source: 
+var body = dom . getDocument ( ) . body 
+query:  var active
+target: dom . getDocument ( ) . activeElement  |  |  body ;
+output: dom . getDocument ( ) ;
+------------------------------------------
+
+source: 
+var getSlotSegmentContainer = t . getSlotSegmentContainer 
+query:  var getHoverListener
+target: t . getHoverListener ;
+output: t . getHoverListener ;
+------------------------------------------
+
+source: 
+var assert = util . assert 
+query:  var cursor
+target: util . Module ( ' cursor ' ) ;
+output: util . cursor ( util cursor ' ) ;
+------------------------------------------
+
+source: 
+var source = rawActivity . source 
+query:  var data
+target: source . data ;
+output: rawActivity . data ;
+------------------------------------------
+
+source: 
+var models = _ _ alloyId16 . models 
+query:  var len
+target: models . length ;
+output: _ . length ;
+------------------------------------------
+
+source: 
+var left = bottom_left [ 0 ] 
+query:  var right
+target: top_right [ 0 ] ;
+output: bottom_left . ] ] ;
+------------------------------------------
+
+source: 
+var outlineWidth = ellipsoid . outlineWidth 
+query:  var subdivisions
+target: ellipsoid . subdivisions ;
+output: ellipsoid . subdivisions ;
+------------------------------------------
+
+source: 
+var version = _ ref$browserInfo . version 
+query:  var css
+target: _ ref . prefix . css ;
+output: parseTreeFactory _ . css ( css (
+------------------------------------------
+
+source: 
+var cert = fs . readFileSync ( join ( _ _ dirname , ' . . ' , ' certs ' , ' agent2-cert . pem ' ) ) 
+query:  var key
+target: fs . readFileSync ( join ( _ _ dirname , ' . . ' , ' certs ' , ' agent2-key . pem ' ) ) ;
+output: _ . _ ( ' . ' , . . ' _ _ readFileSync , ' _ ' ) ' _ ' _ ' ) ;
+------------------------------------------
+
+source: 
+var sourceRoot = util . getArg ( sourceMap , ' sourceRoot ' , null ) 
+query:  var mappings
+target: util . getArg ( sourceMap , ' mappings ' ) ;
+output: util . mappings ( ' , ' mappings ' ) ;
+------------------------------------------
+
+source: 
+var _ strncasecmp = Module [ ' _ strncasecmp ' ] = asm [ ' _ strncasecmp ' ] 
+query:  var _ strcat
+target: Module [ ' _ strcat ' ]    asm [ ' _ strcat ' ] ;
+output: _ [ ' _ _ ' ]  ' ' ' [ ' _ _ ' ] 
+------------------------------------------
+
+source: 
+var frames = this . frames 
+query:  var bone
+target: skeleton . bones [ this . boneIndex ] ;
+output: this . bone . this ] bone  ;
+------------------------------------------
+
+source: 
+var lastIdealStyle = _ state . lastIdealStyle 
+query:  var lastIdealVelocity
+target: _ state . lastIdealVelocity ;
+output: _ _ . lastIdealVelocity ;
+------------------------------------------
+
+source: 
+var login = imports . login 
+query:  var api
+target: imports . api ;
+output: imports . api ;
+------------------------------------------
+
+source: 
+var timeZone = goog . require ( ' goog . i18n . timeZone ' ) 
+query:  var array
+target: goog . require ( ' goog . array ' ) ;
+output: goog . require ( ' . . array . ) ;
+------------------------------------------
+
+source: 
+var express = require ( ' express ' ) 
+query:  var http
+target: require ( ' http ' ) ;
+output: require ( ' http ' ) ;
+------------------------------------------
+
+source: 
+var layer = this . map . layers [ i ] 
+query:  var c
+target: this . layers . charAt ( i ) ;
+output: this . c . c . ) c ;
+------------------------------------------
+
+source: 
+var l = $ ( target ) . offset ( ) . left+10 
+query:  var t
+target: $ ( target ) . offset ( ) . top + $ ( target ) . offset ( ) . height-10 ;
+output: $ ( $ ) ;
+------------------------------------------
+
+source: 
+var e = scenes . $ g . firstChild 
+query:  var s
+target: scenes [ 0 ] ;
+output: $ . g ] ;
+------------------------------------------
+
+source: 
+var output = operation . output 
+query:  var payload
+target: output . payload ;
+output: operation . payload ;
+------------------------------------------
+
+source: 
+var $ scope = this . $ scope 
+query:  var $ attrs
+target: this . $ attrs ;
+output: $ . $ ( 
+------------------------------------------
+
+source: 
+var POSITION_SIZE_INDEX = Polyline . POSITION_SIZE_INDEX 
+query:  var DISTANCE_DISPLAY_CONDITION
+target: Polyline . DISTANCE_DISPLAY_CONDITION ;
+output: Polyline . DISTANCE_DISPLAY_CONDITION ;
+------------------------------------------
+
+source: 
+var UA = localStorage . getItem ( ' ua ' )  |  |  defaultua 
+query:  var headers
+target: localStorage . getItem ( ' headers ' ) ;
+output: localStorage . getItem  ' headers ' ) ;
+------------------------------------------
+
+source: 
+var assign = Object . assign  |  |  require ( ' object . assign ' ) 
+query:  var notify
+target: require ( ' gulp - notify ' ) ;
+output: Object ( ' object - object  ) ;
+------------------------------------------
+
+source: 
+var key = scope . generateUidIdentifier ( ' key ' ) 
+query:  var len
+target: scope . generateUidIdentifier ( ' len ' ) ;
+output: scope . length ( ' len ' ) ;
+------------------------------------------
+
+source: 
+var Divider = imports . Divider 
+query:  var save
+target: imports . save ;
+output: imports . save ;
+------------------------------------------
+
+source: 
+var tx = ( childTransform . tx * renderSession . resolution ) + renderSession . shakex 
+query:  var ty
+target: ( childTransform . ty * renderSession . resolution ) + renderSession . shakey ;
+output: tx renderSession . renderSession ) renderSession . renderSession ) ;
+------------------------------------------
+
+source: 
+var hat = require ( ' hat ' ) 
+query:  var assert
+target: require ( ' assert ' ) ;
+output: require ( ' assert ' ) ;
+------------------------------------------
+
+source: 
+var diameter = options . diameter  |  |  1 
+query:  var thickness
+target: options . thickness  |  |  0 . 5 ;
+output: options . thickness  |  |  | ;
+------------------------------------------
+
+source: 
+var selection = instance . selection 
+query:  var selectedHeader
+target: selection . selectedHeader ;
+output: instance . selectedHeader ;
+------------------------------------------
+
+source: 
+var zmin = options . zmin  |  |  -1 . 0 
+query:  var xmax
+target: options . xmax  |  |  1 . 0 ;
+output: options . zmin  |  |  | ;
+------------------------------------------
+
+source: 
+var properties = featureObj . properties 
+query:  var geo
+target: featureObj . geometry ;
+output: featureObj . geo .
+------------------------------------------
+
+source: 
+var panels = imports . panels 
+query:  var scm
+target: imports . scm ;
+output: imports . scm ;
+------------------------------------------
+
+source: 
+var env = opts . env  |  |  process . env 
+query:  var platform
+target: opts . platform  |  |  process . platform ;
+output: opts . platform  |  |  | . platform 
+------------------------------------------
+
+source: 
+var metadata = this . model . get ( ' metadata ' )  |  |  
+query:  var lang
+target: metadata & & metadata . lang ? metadata . lang : ' en ' ;
+output: new . & this . get  get : get  '  ' )
+------------------------------------------
+
+source: 
+var babel = require ( ' broccoli - babel - transpiler ' ) 
+query:  var path
+target: require ( ' path ' ) ;
+output: require ( ' path ' ) ;
+------------------------------------------
+
+source: 
+var $ child = $ ( $ children [ c ] ) 
+query:  var child
+target: this . item ( $ child ) ;
+output: $ . $ [ $ c ) ;
+------------------------------------------
+
+source: 
+var freeze = require ( ' . . ' ) . freeze 
+query:  var liven
+target: require ( ' . . ' ) . liven ;
+output: require ( ' liven liven liven liven ;
+------------------------------------------
+
+source: 
+var d = _ d 
+query:  var s2
+target: _ s2 ;
+output: _ _ 
+------------------------------------------
+
+source: 
+var fn = klass . fn 
+query:  var _ _ init _ _
+target: klass . _ _ init _ _ ;
+output: _ . _ _ _ _ _ _
+------------------------------------------
+
+source: 
+var camera = this . _ camera 
+query:  var frustum
+target: camera . frustum ;
+output: this . frustum ;
+------------------------------------------
+
+source: 
+var DIRECTION_LEFT = gestureDetector . direction_left = ' left ' 
+query:  var direction_up
+target: gestureDetector . direction_up    ' up ' ;
+output: gestureDetector . direction_up  ' ' ' # ' ;
+------------------------------------------
+
+source: 
+var isDefault = this . cli . command ( ' output ' ) . isDefault ( this . argv . output ) 
+query:  var folder
+target: this . test_settings . output_folder  |  |  this . settings . output_folder ;
+output: this . this . isDefault . |  |  | . isDefault . isDefault .
+------------------------------------------
+
+source: 
+var decorations = session . $ decorations 
+query:  var firstLineNumber
+target: session . $ firstLineNumber ;
+output: $ . $ ( ;
+------------------------------------------
+
+source: 
+var transformToRoot = n . transformToRoot 
+query:  var commands
+target: n . commands ;
+output: n . transformToRoot ;
+------------------------------------------
+
+source: 
+var correctOrientation = ! ! options . correctOrientation 
+query:  var saveToPhotoAlbum
+target: ! ! options . saveToPhotoAlbum ;
+output: ! (  . saveToPhotoAlbum ;
+------------------------------------------
+
+source: 
+var content = tree . content = a . firstChild 
+query:  var sr2
+target: tree . sr2    a . createShadowRoot ( ) ;
+output: tree . sr2 . |   ;
+------------------------------------------
+
+source: 
+var Child = Parse . Object . extend ( ' Child ' ) 
+query:  var Parent
+target: Parse . Object . extend ( ' Parent ' ) ;
+output: Parse . Parent ( Parent ( ' Parent ' ) ;
+------------------------------------------
+
+source: 
+var View = require ( ' View ' ) 
+query:  var Recording
+target: require ( ' nativeModules ' ) . recording ;
+output: require ( ' Recording ' ) ;
+------------------------------------------
+
+source: 
+var values = attribute . values 
+query:  var view
+target: views [ name ] ;
+output: attribute . ] ] ;
+------------------------------------------
+
+source: 
+var firstDayOfWeek = this . dateLocale . firstDayOfWeek 
+query:  var shortDays
+target: this . dateLocale . shortDays ;
+output: this . shortDays . shortDays .
+------------------------------------------
+
+source: 
+var after = new Blockly . fieldLabel ( ' after ' ) 
+query:  var between
+target: new blockly . fieldLabel ( ' between ' ) ;
+output: new ( ( between ( ' between ' ) ;
+------------------------------------------
+
+source: 
+var stats = testSet . stats 
+query:  var treeNode
+target: testSet . treeNode ;
+output: testSet . treeNode ;
+------------------------------------------
+
+source: 
+var noRespond = options & & options . noRespond 
+query:  var client
+target: this . getClient ( clientId ) ;
+output: require . client & options ) ;
+------------------------------------------
+
+source: 
+var powerbi = window . powerbi 
+query:  var powerbitests
+target: window . powerbitests ;
+output: window . powerbitests ;
+------------------------------------------
+
+source: 
+var filters = require ( ' pug - filters ' ) 
+query:  var link
+target: require ( ' pug - linker ' ) ;
+output: require ( ' link ' link ' ) ;
+------------------------------------------
+
+source: 
+var y = style . y  |  |  0 
+query:  var text
+target: style . text ;
+output: style . text 
+------------------------------------------
+
+source: 
+var xs = _ xs 
+query:  var n
+target: _ n ;
+output: xs xs .
+------------------------------------------
+
+source: 
+var path = require ( ' path ' ) 
+query:  var mout
+target: require ( ' mout ' ) ;
+output: require ( ' mout ' ) ;
+------------------------------------------
+
+source: 
+var r = parseInt ( matches [ 1 ] ) - 1 
+query:  var c
+target: parseInt ( matches [ 2 ] ) - 1 ;
+output: parseInt ( c  c ] ) ;
+------------------------------------------
+
+source: 
+var message = options . message  |  |  ' ' 
+query:  var close
+target: options . close  |  |  gettext ( ' Close ' ) ;
+output: options . close  |  |  |  ' close ' ) ;
+------------------------------------------
+
+source: 
+var Wil = Wil + Wi16l 
+query:  var Wih
+target: Wih + Wi16h + ( ( Wil > > > 0 ) < ( Wi16l > > > 0 ) ? 1 : 0 ) ;
+output: Wil  Wih  Wih  Wih  > > > ) ;
+------------------------------------------
+
+source: 
+var onclick = options . onclick 
+query:  var submenu
+target: options . submenu ;
+output: options . submenu ;
+------------------------------------------
+
+source: 
+var slice = Array . prototype . slice 
+query:  var push
+target: Array . prototype . push ;
+output: Array . push . push ;
+------------------------------------------
+
+source: 
+var upperCanvasEl = canvas . upperCanvasEl 
+query:  var lowerCanvasEl
+target: canvas . lowerCanvasEl ;
+output: canvas . lowerCanvasEl ;
+------------------------------------------
+
+source: 
+var skirtHeight = options . skirtHeight 
+query:  var isGeographic
+target: defaultValue ( options . isGeographic , true ) ;
+output: options ( options  isGeographic  options ) ;
+------------------------------------------
+
+source: 
+var inherits = util . inherits 
+query:  var notEnumerableProp
+target: util . notEnumerableProp ;
+output: util . notEnumerableProp ;
+------------------------------------------
+
+source: 
+var clipboard = imports . clipboard 
+query:  var tree
+target: imports . tree ;
+output: imports . tree ;
+------------------------------------------
+
+source: 
+var params = this . params  |  |  
+query:  var body
+target: this . body  |  |  ;
+output: this . body  |  |  |
+------------------------------------------
+
+source: 
+var Renderer = Hilo . Renderer 
+query:  var Matrix
+target: Hilo . Matrix ;
+output: Hilo . Matrix ;
+------------------------------------------
+
+source: 
+var yieldStatement = traceur . syntax . trees . yieldStatement 
+query:  var createBindingIdentifier
+target: traceur . codegeneration . parseTreeFactory . createBindingIdentifier ;
+output: traceur . syntax . createBindingIdentifier . createBindingIdentifier ;
+------------------------------------------
+
+source: 
+var keys = this . keys 
+query:  var params
+target: this . params ;
+output: this . params .
+------------------------------------------
+
+source: 
+var fclone = require ( ' fclone ' ) 
+query:  var fs
+target: require ( ' fs ' ) ;
+output: require ( ' fs ' ) ;
+------------------------------------------
+
+source: 
+var metadata = request . metadata 
+query:  var msg_type
+target: header . msg_type ;
+output: metadata . msg_type ;
+------------------------------------------
+
+source: 
+var plugins = this . plugins 
+query:  var verbose
+target: this . verbose ;
+output: this . verbose ;
+------------------------------------------
+
+source: 
+var url = require ( ' url ' ) 
+query:  var eventEmitter
+target: require ( ' events ' ) . eventEmitter ;
+output: require ( ' events ' ) ;
+------------------------------------------
+
+source: 
+var coth = math . coth 
+query:  var complex
+target: math . complex ;
+output: math . complex ;
+------------------------------------------
+
+source: 
+var start = section_start [ name ] 
+query:  var end
+target: section_end [ name ] ;
+output: section_start . ] ] ;
+------------------------------------------
+
+source: 
+var fixedRowsBottom = this . wot . getSetting ( ' fixedRowsBottom ' ) 
+query:  var fixedRowsTop
+target: this . wot . getSetting ( ' fixedRowsTop ' ) ;
+output: this . wot ( getSetting ( ) fixedRowsTop ' ) ;
+------------------------------------------
+
+source: 
+var target = evt . target 
+query:  var type
+target: evt . type ;
+output: evt . type ;
+------------------------------------------
+
+source: 
+var _ i64Subtract = module [ ' _ i64Subtract ' ] = asm [ ' _ i64Subtract ' ] 
+query:  var _ strcpy
+target: module [ ' _ strcpy ' ]    asm [ ' _ strcpy ' ] ;
+output: _ [ ' _ _ ' ]  ' ' ' [ ' _ _ ' ] 
+------------------------------------------
+
+source: 
+var multiIframeLoadMonitor = goog . require ( ' goog . net . multiIframeLoadMonitor ' ) 
+query:  var promise
+target: goog . require ( ' goog . promise ' ) ;
+output: goog . require ( ' promise . require . ) ;
+------------------------------------------
+
+source: 
+var next = item . next 
+query:  var prev
+target: item . prev ;
+output: item . prev ;
+------------------------------------------
+
+source: 
+var polylines = collection . _ polylines 
+query:  var length
+target: polylines . length ;
+output: collection . polylines ;
+------------------------------------------
+
+source: 
+var browser_name   = zombie_array [ index ] [ ' browser_name ' ] 
+query:  var browser_version
+target: zombie_array [ index ] [ ' browser_version ' ] ;
+output: zombie_array  ' ]  ' browser_version ' ] 
+------------------------------------------
+
+source: 
+var etag = payloadMetadata . etag 
+query:  var uri
+target: payloadMetadata . uri ;
+output: payloadMetadata . uri ;
+------------------------------------------
+
+source: 
+var cm     = this . cm 
+query:  var settings
+target: this . settings ;
+output: this . settings ;
+------------------------------------------
+
+source: 
+var shouldHighlight = this . opts . shouldHighlight 
+query:  var renderAll
+target: this . opts . renderAll ;
+output: this . renderAll . renderAll ;
+------------------------------------------
+
+source: 
+var ignoreAccents = _ props . ignoreAccents 
+query:  var ignoreCase
+target: _ props . ignoreCase ;
+output: _ _ . ignoreCase ;
+------------------------------------------
+
+source: 
+var bind = require ( ' component - bind ' ) 
+query:  var debug
+target: require ( ' debug ' ) ( ' socket . io - client : socket ' ) ;
+output: require ( ' debug ' ) ;
+------------------------------------------
+
+source: 
+var start = this . remote . startDate 
+query:  var end
+target: this . remote . endDate ;
+output: this . end ;
+------------------------------------------
+
+source: 
+var portKey = document . getElementById ( ' portKey ' ) . value 
+query:  var portValue
+target: document . getElementById ( ' portValue ' ) . value ;
+output: document . getElementById ( ' portValue ' ) ;
+------------------------------------------
+
+source: 
+var dur = + conf . dur 
+query:  var len
+target: + conf . len ;
+output: conf ( . length 
+------------------------------------------
+
+source: 
+var reactInstrumentation = require ( ' reactInstrumentation ' ) 
+query:  var reactNativeContainerInfo
+target: require ( ' reactNativeContainerInfo ' ) ;
+output: require ( ' reactNativeContainerInfo ' ) ;
+------------------------------------------
+
+source: 
+var segments = options . segments  |  |  32 
+query:  var diameterX
+target: options . diameterX  |  |  options . diameter  |  |  1 ;
+output: options . diameterX  |  |  | . diameterX  |  |  | ;
+------------------------------------------
+
+source: 
+var createPromiseCapability = sharedUtil . createPromiseCapability 
+query:  var error
+target: sharedUtil . error ;
+output: sharedUtil . error ;
+------------------------------------------
+
+source: 
+var s = this . _ createHostViewInContainerScope ( ) 
+query:  var protoView
+target: view_ref_1 . internalProtoView ( protoViewRef ) ;
+output: this . _ ( ) ) ;
+------------------------------------------
+
+source: 
+var breakState = traceur . codegeneration . generator . breakState 
+query:  var continueState
+target: traceur . codegeneration . generator . continueState ;
+output: codegeneration . codegeneration . codegeneration . codegeneration ;
+------------------------------------------
+
+source: 
+var defaultSelectionEnd = t . defaultSelectionEnd 
+query:  var renderSelection
+target: t . renderSelection ;
+output: t . renderSelection ;
+------------------------------------------
+
+source: 
+var startButton = document . querySelector ( ' button#startButton ' ) 
+query:  var callButton
+target: document . querySelector ( ' button#callButton ' ) ;
+output: document . querySelector ( ' callButton ' ) ;
+------------------------------------------
+
+source: 
+var b = genModule ( ' module - big - async ' , 5 , 2 , 9 , 2 , [ ] ) 
+query:  var c
+target: genModule ( ' module - broad - async ' , 3 , 3 , 20 , 10 , [ ] ) ;
+output: genModule . ' , ' c , c ' ) ' , ' , ' , ' ) ' ' ) ;
+------------------------------------------
+
+source: 
+var wrappedOperation = firepad . wrappedOperation 
+query:  var cursor
+target: firepad . cursor ;
+output: firepad . cursor ;
+------------------------------------------
+
+source: 
+var backdrop = new Animation ( ele . querySelector ( ' ion - backdrop ' ) ) 
+query:  var wrapper
+target: new animation ( ele . querySelector ( ' . picker - wrapper ' ) ) ;
+output: new ( ( '  querySelector ( ' wrapper ion ' ele ' ) ;
+------------------------------------------
+
+source: 
+var decode = types . decode 
+query:  var encode
+target: types . encode ;
+output: types . encode ;
+------------------------------------------
+
+source: 
+var length = children . length 
+query:  var child
+target: children . shift ( ) ;
+output: children . child ;
+------------------------------------------
+
+source: 
+var cloudinaryImageMultipleFieldTestObject = require ( path . resolve ( fieldTestObjectsPath , ' cloudinaryImageMultipleFieldTestObject ' ) ) 
+query:  var textFieldTestObject
+target: require ( path . resolve ( fieldTestObjectsPath , ' textFieldTestObject ' ) ) ;
+output: require ( ' . fieldTestObjectsPath ( ' , ' fieldTestObjectsPath ' ) ;
+------------------------------------------
+
+source: 
+var a = ' dc99c646fa4cb7c24314bb6f4ca2d391297acd0dacb0430a13bbf1e37dcf8071 ' 
+query:  var b
+target: ' cf878e00c9f2b6aa48a10f66df9706e64fef2ca399f396d65f5b0a27cb8ae237 ' ;
+output:  b ' ;
+------------------------------------------
+
+source: 
+var uvs1    = opts & & opts . uvs1 ! = = undefined ? opts . uvs1 : null 
+query:  var indices
+target: opts & & opts . indices !    undefined ? opts . indices : null ;
+output: opts . & opts . opts       opts . opts  opts ;
+------------------------------------------
+
+source: 
+var collab = imports . collab 
+query:  var cloneObject
+target: c9Util . cloneObject ;
+output: collab . cloneObject ;
+------------------------------------------
+
+source: 
+var isDict = corePrimitives . isDict 
+query:  var isStream
+target: corePrimitives . isStream ;
+output: corePrimitives . isStream (
+------------------------------------------
+
+source: 
+var unwrap = scope . unwrap 
+query:  var unwrapIfNeeded
+target: scope . unwrapIfNeeded ;
+output: scope . unwrapIfNeeded ;
+------------------------------------------
+
+source: 
+var message = mockMessage ( messageId : presidentialId ) 
+query:  var handler
+target: handlerStub . withArgs ( ' cellbroadcast - received ' ) . args [ 0 ] [ 1 ] ;
+output: ( ( messageId ( ) ) ' core  ) ;
+------------------------------------------
+
+source: 
+var Readable = stream . Readable 
+query:  var Writable
+target: stream . Writable ;
+output: stream . Writable ;
+------------------------------------------
+
+source: 
+var domNamespaces = require ( ' domNamespaces ' ) 
+query:  var setInnerhtml
+target: require ( ' setInnerhtml ' ) ;
+output: require ( ' setInnerhtml ' ) ;
+------------------------------------------
+
+source: 
+var value = options . value 
+query:  var value2
+target: options . value2 ;
+output: options . value2 ;
+------------------------------------------
+
+source: 
+var gulp = require ( ' gulp ' ) 
+query:  var source
+target: require ( ' vinyl - source - stream ' ) ;
+output: require ( ' source - source ' core ' ) ;
+------------------------------------------
+
+source: 
+var f8Header = require ( ' f8Header ' ) 
+query:  var interactionManager
+target: require ( ' interactionManager ' ) ;
+output: require ( ' interactionManager ' ) ;
+------------------------------------------
+
+source: 
+var e = this . _ parts . hostname . length - this . domain ( ) . length 
+query:  var sub
+target: this . _ parts . hostname . substring ( 0 , e ) ;
+output: this . this this . this . this ( ) ) math . ;
+------------------------------------------
+
+source: 
+var fs = require ( ' fs ' ) 
+query:  var istanbul
+target: require ( ' rollup - plugin - istanbul ' ) ;
+output: require ( ' istanbul ' istanbul ' istanbul ' ) ;
+------------------------------------------
+
+source: 
+var keys = o . keys . slice ( 0 ) 
+query:  var keypad
+target: this . _ keypad ;
+output: keys . keys keypad (
+------------------------------------------
+
+source: 
+var header = request . header 
+query:  var content
+target: request . content ;
+output: request . content ;
+------------------------------------------
+
+source: 
+var CANCELLED = ' CANCELLED ' 
+query:  var FLUSH
+target: ' FLUSH ' ;
+output: CANCELLED FLUSH ' ;
+------------------------------------------
+
+source: 
+var nodeFrom = adj . nodeFrom 
+query:  var nodeTo
+target: adj . nodeTo ;
+output: adj . nodeTo ;
+------------------------------------------
+
+source: 
+var createIdentifierToken = parseTreeFactory . createIdentifierToken 
+query:  var createNumberLiteral
+target: parseTreeFactory . createNumberLiteral ;
+output: parseTreeFactory . createNumberLiteral ;
+------------------------------------------
+
+source: 
+var l = lines . length 
+query:  var row
+target: delta . start . row ;
+output: lines . row ;
+------------------------------------------
+
+source: 
+var endCap = ( settings . endCap = = null ) ? 0 : settings . endCap 
+query:  var closed
+target: ( settings . closed     null ) ? false : settings . closed ;
+output: settings settings . settings ) |    ) ;
+------------------------------------------
+
+source: 
+var minCanvasWidth = number ( options . minCanvasWidth )  |  |  0 
+query:  var minCanvasHeight
+target: number ( options . minCanvasHeight )  |  |  0 ;
+output: ( ( options  minCanvasHeight  ;
+------------------------------------------
+
+source: 
+var createCallExpression = parseTreeFactory . createCallExpression 
+query:  var createExpressionStatement
+target: parseTreeFactory . createExpressionStatement ;
+output: parseTreeFactory . createExpressionStatement ;
+------------------------------------------
+
+source: 
+var email = identify . email ( ) 
+query:  var name
+target: identify . name ( ) ;
+output: identify . name  ' ;
+------------------------------------------
+
+source: 
+var cull = defaultValue ( rs . cull , ) 
+query:  var polygonOffset
+target: defaultValue ( rs . polygonOffset , ) ;
+output: ( ( rs  cull  rs ;
+------------------------------------------
+
+source: 
+var apply = functionPrototype . apply 
+query:  var max
+target: math . max ;
+output: functionPrototype . max (
+------------------------------------------
+
+source: 
+var options = this . options 
+query:  var scale
+target: Math . pow ( viewport . _ scale , options . scaleResponse ) ;
+output: this . scale ( options , scale scale ) options  scale ) ;
+------------------------------------------
+
+source: 
+var O = ES . toObject ( this ) 
+query:  var len
+target: es . toLength ( o . length ) ;
+output: this . length ( ) . toObject ) ;
+------------------------------------------
+
+source: 
+var checkSymlinks = options . checkSymlinks 
+query:  var sandbox
+target: options . sandbox ;
+output: options . sandbox ;
+------------------------------------------
+
+source: 
+var exec = require ( ' child_process ' ) . exec 
+query:  var logger
+target: require ( ' pomelo - logger ' ) . getLogger ( ' pomelo ' , _ _ filename ) ;
+output: require ( ' logger ' logger ' ) ;
+------------------------------------------
+
+source: 
+var tab = e . tab 
+query:  var undoManager
+target: tab . document . undoManager ;
+output: e . undoManager . undoManager ;
+------------------------------------------
+
+source: 
+var path = require ( ' path ' ) 
+query:  var child_process
+target: require ( ' child_process ' ) ;
+output: require ( ' path ' ) ;
+------------------------------------------
+
+source: 
+var bax = trace . baxis 
+query:  var a
+target: trace . _ a    trace . a ;
+output: new . width  ;
+------------------------------------------
+
+source: 
+var IDENTITY_MATRIX = sharedUtil . identity_matrix 
+query:  var unsupported_features
+target: sharedUtil . unsupported_features ;
+output: sharedUtil . unsupported_features ;
+------------------------------------------
+
+source: 
+var html = element . html ( ) 
+query:  var name
+target: attr . name ;
+output: element ( name 
+------------------------------------------
+
+source: 
+var fs = imports . fs 
+query:  var Plugin
+target: imports . Plugin ;
+output: imports . Plugin ;
+------------------------------------------
+
+source: 
+var p = p : 123 
+query:  var o
+target: _ _ proto _ _ : p ;
+output: p o o  o o o .
+------------------------------------------
+
+source: 
+var scrollView = require ( ' scrollView ' ) 
+query:  var text
+target: require ( ' text ' ) ;
+output: require ( ' text ' ) ;
+------------------------------------------
+
+source: 
+var type = buffer . getOctetArray ( typeLen ) 
+query:  var i d
+target: buffer . getOctetArray ( idLen ) ;
+output: buffer . ( ( ) ) ;
+------------------------------------------
+
+source: 
+var length = commands . length 
+query:  var shadowsEnabled
+target: scene . frameState . shadowHints . shadowsEnabled ;
+output: commands . shadowsEnabled . shadowsEnabled ;
+------------------------------------------
+
+source: 
+var Size = goog . math . Size 
+query:  var getMarginBox
+target: goog . style . getMarginBox ;
+output: math . math . math ;
+------------------------------------------
+
+source: 
+var resolve = path . resolve 
+query:  var extname
+target: path . extname ;
+output: path . extname ;
+------------------------------------------
+
+source: 
+var bind = utils . bind 
+query:  var isIOS
+target: utils . device . isIOS ( ) ;
+output: utils . isIOS . isIOS ;
+------------------------------------------
+
+source: 
+var d = b . segment_hdr _ . num_segments _ 
+query:  var e
+target: Arr ( be , int ) ;
+output: _ . _ ) _ ) ;
+------------------------------------------
+
+source: 
+var offset = el . offset ( ) 
+query:  var left
+target: offset . left - ( origin ? origin . left : 0 ) ;
+output: offset . offset . left ' ) offset . offset  0 ) ;
+------------------------------------------
+
+source: 
+var exportStarBinding = $ _ _ 9 . exportStarBindings [ index ] 
+query:  var moduleBinding
+target: $ _ _ 9 . moduleBindings [ index ] ;
+output: _ ( _ _ . _ ;
+------------------------------------------
+
+source: 
+var intrinsicFuncs = wordRegexp ( intrinsicFuncsWords ) 
+query:  var command
+target: wordRegexp ( commandKeywords ) ;
+output: wordRegexp . ) ) ;
+------------------------------------------
+
+source: 
+var blending = renderState . blending 
+query:  var enabled
+target: ( defined ( passState . blendingEnabled ) ) ? passState . blendingEnabled : blending . enabled ;
+output: renderState renderState ( renderState  enabled ) ;
+------------------------------------------
+
+source: 
+var withStatement = traceur . syntax . trees . withStatement 
+query:  var yieldStatement
+target: traceur . syntax . trees . yieldStatement ;
+output: traceur . syntax . yieldStatement . yieldStatement ;
+------------------------------------------
+
+source: 
+var cellOffset = _ ref . cellOffset 
+query:  var cellSize
+target: _ ref . cellSize ;
+output: _ _ . cellSize ;
+------------------------------------------
+
+source: 
+var initClass = isIn ? initClasses [ 0 ] : initClasses [ 1 ] 
+query:  var activeClass
+target: isIn ? activeClasses [ 0 ] : activeClasses [ 1 ] ;
+output: isIn [ isIn [ 0 ] [ initClasses [ 0 ] [
+------------------------------------------
+
+source: 
+var yn1 = helper . getNode ( ' yn1 ' ) 
+query:  var yn2
+target: helper . getNode ( ' yn2 ' ) ;
+output: helper . yn2 ( ' yn2 ' ) ;
+------------------------------------------
+
+source: 
+var emitter = scene . getLastEntryByid ( parsedLensFlareSystem . emitterId ) 
+query:  var lensFlareSystem
+target: new lensFlareSystem ( ' lensFlareSystem # ' + parsedLensFlareSystem . emitterId , emitter , scene ) ;
+output: parsedLensFlareSystem ( ( parsedLensFlareSystem lensFlareSystem ' scene ) parsedLensFlareSystem  lensFlareSystem ( parsedLensFlareSystem ) parsedLensFlareSystem . ;
+------------------------------------------
+
+source: 
+var data = this . data 
+query:  var el
+target: this . el ;
+output: this . el ;
+------------------------------------------
+
+source: 
+var connect = require ( ' connect ' ) 
+query:  var assert
+target: require ( ' chai ' ) . assert ;
+output: require ( ' assert ' ) ;
+------------------------------------------
+
+source: 
+var minificationFilter = sampler . minificationFilter 
+query:  var magnificationFilter
+target: sampler . magnificationFilter ;
+output: sampler . magnificationFilter ;
+------------------------------------------
+
+source: 
+var Class = kendo . Class 
+query:  var support
+target: kendo . support ;
+output: kendo . support ;
+------------------------------------------
+
+source: 
+var grey300 = exports . grey300 = ' # e0e0e0 ' 
+query:  var grey400
+target: exports . grey400    ' # bdbdbd ' ;
+output: exports . grey400  ' ' ' # # ' ;
+------------------------------------------
+
+source: 
+var event = args . event 
+query:  var ui
+target: args . ui ;
+output: args . ui ;
+------------------------------------------
+
+source: 
+var textures = hitDetection ? this . hitDetectionTextures _ : this . textures _ 
+query:  var groupIndices
+target: hitDetection ? this . hitDetectionGroupIndices _ : this . groupIndices _ ;
+output: this . this . this . _ this . hitDetectionTextures . _
+------------------------------------------
+
+source: 
+var referee = require ( ' referee ' ) 
+query:  var assert
+target: referee . assert ;
+output: require . referee ;
+------------------------------------------
+
+source: 
+var nodeCommands = this . _ nodeCommands 
+query:  var length
+target: nodeCommands . length ;
+output: this . nodeCommands ;
+------------------------------------------
+
+source: 
+var $ dataSpans = that . $ dataSpans = $ datatable . children ( ' . datatable - head , . datatable - rows ' ) . find ( ' . datatable - span ' ) 
+query:  var $ rowsSpans
+target: that . $ rowsSpans    $ datatable . children ( ' . datatable - rows ' ) . children ( ' . datatable - rows - span ' ) ;
+output: $ . $ ( . | ' ' datatable . datatable ( ' datatable datatable . datatable . ) ;
+------------------------------------------
+
+source: 
+var createIdentifierExpression = parseTreeFactory . createIdentifierExpression 
+query:  var predefinedName
+target: traceur . syntax . predefinedName ;
+output: parseTreeFactory . syntax . predefinedName .
+------------------------------------------
+
+source: 
+var depth = segmentData . depth 
+query:  var geometry
+target: segmentData . geometry ;
+output: segmentData . geometry ;
+------------------------------------------
+
+source: 
+var sum = Fn . sum 
+query:  var toFixed
+target: fn . toFixed ;
+output: Fn . toFixed ;
+------------------------------------------
+
+source: 
+var c = computed ( function ( ) return String ( a . get ( ) * b . get ( ) ) ) 
+query:  var buf
+target: buffer ( ) ;
+output: get ( get ;
+------------------------------------------
+
+source: 
+var children = _ props3 . children 
+query:  var onRowClick
+target: _ props3 . onRowClick ;
+output: _ _ . onRowClick ;
+------------------------------------------
+
+source: 
+var error = new Error ( ' some error ' ) 
+query:  var operation
+target: retry . operation ( retries : 3 , forever : true ) ;
+output: new . some ( ' ' ' , ' ' ' , ;
+------------------------------------------
+
+source: 
+var min = bbox . minimumWorld 
+query:  var max
+target: bbox . maximumWorld ;
+output: bbox . max ;
+------------------------------------------
+
+source: 
+var treeWriter = traceur . outputgeneration . treeWriter 
+query:  var moduleRequireVisitor
+target: traceur . codegeneration . module . moduleRequireVisitor ;
+output: outputgeneration . syntax . moduleRequireVisitor . moduleRequireVisitor ;
+------------------------------------------
+
+source: 
+var debug = _ dereq _ ( ' debug ' ) ( ' socket . io - parser ' ) 
+query:  var json
+target: _ dereq _ ( ' json3 ' ) ;
+output: _ _ _ _ ' json ' ) ;
+------------------------------------------
+
+source: 
+var filter = require ( ' gulp - filter ' ) 
+query:  var concat
+target: require ( ' gulp - concat ' ) ;
+output: require ( ' gulp - concat ' ) ;
+------------------------------------------
+
+source: 
+var x = this . x , y = this . y 
+query:  var w
+target: this . w , h    this . h ;
+output: this . x ( this . |   . w ;
+------------------------------------------
+
+source: 
+var deltaZ = defaultValue ( options . deltaz , 0 ) 
+query:  var deltaMode
+target: defaultValue ( options . deltaMode , 0 ) ;
+output: ( ( ( . deltaMode  options , ;
+------------------------------------------
+
+source: 
+var dimensions = model . dimensions 
+query:  var canvasPixelRatio
+target: model . canvasPixelRatio ;
+output: model . canvasPixelRatio ;
+------------------------------------------
+
+source: 
+var scene = transitioner . _ scene 
+query:  var camera
+target: scene . camera ;
+output: transitioner . camera ;
+------------------------------------------
+
+source: 
+var maxTrySeriesLength = options . maxTrySeriesLength  |  |  3 
+query:  var maxTrySeriesTime
+target: options . maxTrySeriesTime  |  |  10000 ;
+output: options . maxTrySeriesTime  |  |  | 
+------------------------------------------
+
+source: 
+var horizontalOrigin = label . _ horizontalOrigin 
+query:  var verticalOrigin
+target: label . _ verticalOrigin ;
+output: label . _ _ ;
+------------------------------------------
+
+source: 
+var timestep = this . timestep 
+query:  var forces
+target: this . physicsBody . forces ;
+output: this . forces ;
+------------------------------------------
+
+source: 
+var Plugin = imports . Plugin 
+query:  var automate
+target: imports . automate ;
+output: imports . automate ;
+------------------------------------------
+
+source: 
+var f = false 
+query:  var t
+target: true ;
+output: false ;
+------------------------------------------
+
+source: 
+var dfa = this . stack [ this . stack . length - 1 ] . dfa 
+query:  var state
+target: this . stack [ this . stack . length - 1 ] . state ;
+output: this . this . 1 ] this . this ] this ] . state .
+------------------------------------------
+
+source: 
+var startTimeElt = startTimeElts [ i ] 
+query:  var date
+target: parseInt ( startTimeElt . dataset . date , 10 ) ;
+output: startTimeElts ( i ) date  date  i ) ;
+------------------------------------------
+
+source: 
+var activeStyle = _ props2 . activeStyle 
+query:  var onlyActiveOnIndex
+target: _ props2 . onlyActiveOnIndex ;
+output: _ _ . onlyActiveOnIndex ;
+------------------------------------------
+
+source: 
+var resolve = require ( ' path ' ) . resolve 
+query:  var basename
+target: require ( ' path ' ) . basename ;
+output: require ( ' basename ' ) ;
+------------------------------------------
+
+source: 
+var viewMode = options . viewMode 
+query:  var container
+target: this . container ;
+output: options . container ;
+------------------------------------------
+
+source: 
+var exportVisitor = traceur . codegeneration . module . exportVisitor 
+query:  var importStarVisitor
+target: traceur . codegeneration . module . importStarVisitor ;
+output: codegeneration . codegeneration . codegeneration . codegeneration ;
+------------------------------------------
+
+source: 
+var confirmDownloadController = _ appJsControllersConfirmDownloadController [ ' default ' ] 
+query:  var deviceNameController
+target: _ appJsControllersDeviceNameController [ ' default ' ] ;
+output: _ _  ' deviceNameController ' ] 
+------------------------------------------
+
+source: 
+var x = x0 
+query:  var y
+target: y0 ;
+output: x0 [
+------------------------------------------
+
+source: 
+var emissive = this . emissive ? this . emissive . buildCode ( builder , ' c ' , slot : ' emissive ' ) : undefined 
+query:  var environment
+target: this . environment ? this . environment . buildCode ( builder , ' c ' , slot : ' environment ' ) : undefined ;
+output: this . emissive . this . emissive . emissive ( ' , ' emissive ' ) ' , ' emissive ' ) ;
+------------------------------------------
+
+source: 
+var args = operation . args 
+query:  var fn
+target: operation . fn ;
+output: operation . fn ;
+------------------------------------------
+
+source: 
+var options = this . options 
+query:  var $ element
+target: this . $ element ;
+output: this . element ( ;
+------------------------------------------
+
+source: 
+var rows = _ props . rows 
+query:  var rowsMax
+target: _ props . rowsMax ;
+output: _ _ . rowsMax ;
+------------------------------------------
+
+source: 
+var _ im_get_candidate = Module [ ' _ im_get_candidate ' ] = asm [ ' _ im_get_candidate ' ] 
+query:  var _ im_enable_shm_as_szm
+target: Module [ ' _ im_enable_shm_as_szm ' ]    asm [ ' _ im_enable_shm_as_szm ' ] ;
+output: _ [ ' _ _ ' ]  ' ' ' [ ' _ _ ' ] 
+------------------------------------------
+
+source: 
+var slice = array . slice 
+query:  var splice
+target: array . splice ;
+output: array . splice ;
+------------------------------------------
+
+source: 
+var p1 = symbol . _ _ p1 
+query:  var p2
+target: symbol . _ _ p2 ;
+output: symbol . _ _ p2 .
+------------------------------------------
+
+source: 
+var minimumAlpha = defaultValue ( options . minimumAlpha , 0 ) 
+query:  var maximumAlpha
+target: defaultValue ( options . maximumAlpha , 1 . 0 ) ;
+output: ( ( ( . minimumAlpha  options , minimumAlpha , ;
+------------------------------------------
+
+source: 
+var tpl = this . tpl 
+query:  var key
+target: this . key ;
+output: this . key ;
+------------------------------------------
+
+source: 
+var labelKey = _ ref5 . labelKey 
+query:  var valueKey
+target: _ ref5 . valueKey ;
+output: ref5 _ . valueKey ;
+------------------------------------------
+
+source: 
+var changeset = msg . changeset 
+query:  var author
+target: ( msg . author  |  |  '' ) ;
+output: msg msg . author ) |  |  | ;
+------------------------------------------
+
+source: 
+var query = req . uri . query 
+query:  var path
+target: query & & query . path + ' ' ;
+output: uri . & uri . uri . req path path
+------------------------------------------
+
+source: 
+var container = this . els . container 
+query:  var seekBar
+target: this . els . seekBar ;
+output: this . els . els .
+------------------------------------------
+
+source: 
+var config = utils . pkg . config ( packageJSON ) 
+query:  var npmIgnore
+target: config & & config . npmIgnore ;
+output: config . & ( . config (
+------------------------------------------
+
+source: 
+var rowContainer = $ scope . rowContainer = grid . renderContainers [ $ scope . rowContainerName ] 
+query:  var colContainer
+target: $ scope . colContainer    grid . renderContainers [ $ scope . colContainerName ] ;
+output: $ ( . $ . |   . $ ;
+------------------------------------------
+
+source: 
+var eventEmitter = require ( ' events ' ) . eventEmitter 
+query:  var inherits
+target: require ( ' util ' ) . inherits ;
+output: require ( ' inherits ' ) ;
+------------------------------------------
+
+source: 
+var page4 = element ( by . i d ( ' page4 ' ) ) 
+query:  var status
+target: element ( by . i d ( ' status ' ) ) ;
+output: element . ' . status ) ) ' status ' ) ;
+------------------------------------------
+
+source: 
+var concat = require ( ' concat - stream ' ) 
+query:  var path
+target: require ( ' path ' ) ;
+output: require ( ' path ' ) ;
+------------------------------------------
+
+source: 
+var cardSizes = opts . cardSizes  |  |  [ ' 6x6 ' ] 
+query:  var initialResults
+target: opts . initialResults  |  |  resources . length ;
+output: opts . initialResults    |  |  initialResults ;
+------------------------------------------
+
+source: 
+var property = context . property 
+query:  var entityAspect
+target: context . entityAspect ;
+output: context . entityAspect ;
+------------------------------------------
+
+source: 
+var cancellationError = errors . cancellationError 
+query:  var timeoutError
+target: errors . timeoutError ;
+output: errors . timeoutError ;
+------------------------------------------
+
+source: 
+var onlyFullyVisible = priv . onlyFullyVisible 
+query:  var overrideFn
+target: priv . overrideFn ;
+output: priv . overrideFn ;
+------------------------------------------
+
+source: 
+var i = this . ij [ 0 ] 
+query:  var j
+target: this . ij [ 1 ] ;
+output: this . j  0 ] [
+------------------------------------------
+
+source: 
+var getTestDocument = require ( ' getTestDocument ' ) 
+query:  var getNodeForCharacterOffset
+target: require ( ' getNodeForCharacterOffset ' ) ;
+output: require ( ' getNodeForCharacterOffset ' ) ;
+------------------------------------------
+
+source: 
+var STATUS_LOADING_AGENTS = exports . STATUS_LOADING_AGENTS = 2 
+query:  var STATUS_ACTIVE
+target: exports . STATUS_ACTIVE      3 ;
+output: exports . STATUS_ACTIVE       ;
+------------------------------------------
+
+source: 
+var width = $ ( window ) . width ( ) 
+query:  var breakpoints
+target: this . c . breakpoints ;
+output: $ . breakpoints ( breakpoints (
+------------------------------------------
+
+source: 
+var legendPosition = powerbi . visuals . legendPosition 
+query:  var axisScale
+target: powerbi . visuals . axisScale ;
+output: powerbi . data . axisScale ;
+------------------------------------------
+
+source: 
+var table = doc . createElement ( ' table ' ) 
+query:  var tbody
+target: doc . createElement ( ' tbody ' ) ;
+output: doc ( tbody ( ' tbody ' ) ;
+------------------------------------------
+
+source: 
+var x = geometry . x 
+query:  var y
+target: -geometry . y ;
+output: geometry . y ;
+------------------------------------------
+
+source: 
+var from = grid . getCellNodeBox ( range . fromRow , range . fromCell ) 
+query:  var to
+target: grid . getCellNodeBox ( range . toRow , range . toCell ) ;
+output: range . range . range . getCellNodeBox . range . range . ;
+------------------------------------------
+
+source: 
+var requireg = require ( ' requireg ' ) 
+query:  var resolve
+target: require ( ' resolve ' ) ;
+output: require ( ' resolve ' ) ;
+------------------------------------------
+
+source: 
+var isFunction = util . isFunction 
+query:  var isObject
+target: util . isObject ;
+output: util . isObject ;
+------------------------------------------
+
+source: 
+var history = flags . history  |  |  undefined 
+query:  var limit
+target: flags . limit  |  |  undefined ;
+output: flags . limit  |  |  | ;
+------------------------------------------
+
+source: 
+var asyncConditionalTestCase = asyncConditionalTestCase  |  |  conditionalTestCase 
+query:  var jstestdriver
+target: jstestdriver  |  |  ;
+output: asyncConditionalTestCase  |  |  |
+------------------------------------------
+
+source: 
+var hoursFormat = $ dateFormatter . hoursFormat ( format ) 
+query:  var timeSeparator
+target: $ dateFormatter . timeSeparator ( format ) ;
+output: $ ( ( hoursFormat ( ) , ;
+------------------------------------------
+
+source: 
+var promise = Promise . reject ( new Error ( ' think . error promise ' ) ) 
+query:  var reject
+target: think . reject ;
+output: new . reject (
+------------------------------------------
+
+source: 
+var _ realloc = Module [ ' _ realloc ' ] = asm [ ' _ realloc ' ] 
+query:  var _ strncasecmp
+target: Module [ ' _ strncasecmp ' ]    asm [ ' _ strncasecmp ' ] ;
+output: Module [ ' _ _ ' ]  ' ' ' [ ' _ _ ' ] 
+------------------------------------------
+
+source: 
+var options = that . options 
+query:  var timeView
+target: that . timeView ;
+output: options . timeView ;
+------------------------------------------
+
+source: 
+var i d = data . i d 
+query:  var url
+target: data . url ;
+output: data . i ;
+------------------------------------------
+
+source: 
+var tabPosition = this . options . tabPosition 
+query:  var h
+target: math . floor ( outerHeight ( element , true ) ) + ( tabPosition      ' left '  |  |  tabPosition      ' right ' ? 2 : this . tabsHeight ) ;
+output: this . options ( tabPosition ) options . options , ;
+------------------------------------------
+
+source: 
+var stream = evt . stream 
+query:  var connection
+target: provider . getConnection ( peerId , connectionId ) ;
+output: evt . connection ;
+------------------------------------------
+
+source: 
+var options = self . options 
+query:  var container
+target: self . container ;
+output: self . container ;
+------------------------------------------
+
+source: 
+var dataPoints = data . dataPoints 
+query:  var categoryLabels
+target: data . categoryLabels ;
+output: data . categoryLabels ;
+------------------------------------------
+
+source: 
+var range = this . _ range . slice ( ) 
+query:  var axisModel
+target: coordInfo . axisModels [ 0 ] ;
+output: this . range ( _ ] ;
+------------------------------------------
+
+source: 
+var m = SIMD . Uint16x8 . fromInt32x4Bits ( simd . int32x4 ( 0x3f800000 , 0x40000000 , 0x40400000 , 0x40800000 ) ) 
+query:  var n
+target: simd . int32x4 . fromUint16x8Bits ( m ) ;
+output: SIMD . ( ( ( ( ) ) ;
+------------------------------------------
+
+source: 
+var offset = TIFF_HEADER_LENGTH + entries_length + ifd_offset + values . length 
+query:  var b
+target: _ value_to_bytes ( raw_value , value_type , offset ) ;
+output: + + + values + values + b + ;
+------------------------------------------
+
+source: 
+var field = scope . field ( ) 
+query:  var attributes
+target: field . attributes ( ) ;
+output: scope . attributes ( ) ;
+------------------------------------------
+
+source: 
+var constructor = obj . constructor 
+query:  var proto
+target: ( _ . isFunction ( constructor ) & & constructor . prototype )  |  |  objProto ;
+output: obj obj constructor proto . obj ) ;
+------------------------------------------
+
+source: 
+var key = fiber . key 
+query:  var ref
+target: fiber . ref ;
+output: fiber . ref ;
+------------------------------------------
+
+source: 
+var aabb = this . aabb 
+query:  var l
+target: aabb . lowerBound ;
+output: this . l ;
+------------------------------------------
+
+source: 
+var command = commands [ j ] 
+query:  var derivedCommand
+target: ( shadowsEnabled & & command . receiveShadows ) ? command . derivedCommands . oit . shadows . translucentCommand : command . derivedCommands . oit . translucentCommand ;
+output: commands [  &  . derivedCommand  ;
+------------------------------------------
+
+source: 
+var db = BrowserDB . db . _ db 
+query:  var transaction
+target: db . transaction ( ' visits ' , ' readwrite ' ) ;
+output: db . db ( db transaction ' ) db transaction ' ) ;
+------------------------------------------
+
+source: 
+var geocoder = viewer . _ geocoder 
+query:  var homeButton
+target: viewer . _ homeButton ;
+output: viewer . geocoder _ ;
+------------------------------------------
+
+source: 
+var vx = this . vx * damping + ( gravity . x + this . f . x * this . m_inv ) * dt 
+query:  var vy
+target: this . vy * damping + ( gravity . y + this . f . y * this . m_inv ) * dt ;
+output: this . this . this . this this . this . this . vx . this . this . vx . ;
+------------------------------------------
+
+source: 
+var Span = firepad . Span 
+query:  var utils
+target: firepad . utils ;
+output: firepad . Span .
+------------------------------------------
+
+source: 
+var mout = require ( ' mout ' ) 
+query:  var archy
+target: require ( ' archy ' ) ;
+output: require ( ' archy ' ) ;
+------------------------------------------
+
+source: 
+var compression = require ( ' compression ' ) 
+query:  var favicon
+target: require ( ' serve - favicon ' ) ;
+output: require ( ' favicon ' favicon ' ) ;
+------------------------------------------
+
+source: 
+var nodeFieldCount = this . _ nodeFieldCount 
+query:  var edgeFieldsCount
+target: this . _ edgeFieldsCount ;
+output: this . edgeFieldsCount edgeFieldsCount ;
+------------------------------------------
+
+source: 
+var protectedDate = goog . testing . testCase . protectedDate _ 
+query:  var d
+target: new protectedDate ( ) ;
+output: testCase . ( protectedDate ;
+------------------------------------------
+
+source: 
+var Eventful = docSet . getByLongname ( ' eventful ' ) [ 0 ] 
+query:  var mixin
+target: docSet . getByLongname ( ' anotherMixin ' ) [ 0 ] ;
+output: docSet . getByLongname ( ' ' ' ) ;
+------------------------------------------
+
+source: 
+var hoverColor = _ props . hoverColor 
+query:  var onMouseLeave
+target: _ props . onMouseLeave ;
+output: _ _ . onMouseLeave ;
+------------------------------------------
+
+source: 
+var dx2 = Math . max ( 0 , Math . min ( parseFloat ( mxUtils . getValue ( this . state . style , ' dx3 ' , 0 ) ) , parseFloat ( mxUtils . getValue ( this . state . style , ' dx2 ' , 0 ) ) ) ) 
+query:  var dy2
+target: math . max ( 0 , math . min ( 100 , parseFloat ( mxUtils . getValue ( this . state . style , ' dy2 ' , 0 ) ) ) ) ;
+output: this . 0 ( ' , math . 0 ( ' . math . ' . 0 ( ' . 0 . 0 , ' 0 ' ) ' , . . . .
+------------------------------------------
+
+source: 
+var utils = elliptic . utils 
+query:  var assert
+target: utils . assert ;
+output: require . assert ;
+------------------------------------------
+
+source: 
+var incomingMessage = require ( ' http ' ) . incomingMessage 
+query:  var muk
+target: require ( ' muk ' ) ;
+output: require ( ' muk ' ) ;
+------------------------------------------
+
+source: 
+var l = 0 + ( sleft ? pleft . size + ( pleft . resizable ? this . spacer : this . padding ) : 0 ) 
+query:  var t
+target: 0 + ( stop ? ptop . size + ( ptop . resizable ? this . spacer : this . padding ) : 0 ) ;
+output: this . this this . this . this . . this . this . this . pleft . this . pleft . ;
+------------------------------------------
+
+source: 
+var sfField     = sfBuilderProvider . builders . sfField 
+query:  var ngModel
+target: sfBuilderProvider . builders . ngModel ;
+output: sfBuilderProvider  builders  builders 
+------------------------------------------
+
+source: 
+var fs = imports . fs 
+query:  var proc
+target: imports . proc ;
+output: imports . proc ;
+------------------------------------------
+
+source: 
+var isArray = angular . isArray 
+query:  var forEach
+target: angular . forEach ;
+output: angular . forEach ;
+------------------------------------------
+
+source: 
+var comment = env . store . peekRecord ( ' comment ' , 1 ) 
+query:  var post
+target: env . store . peekRecord ( ' post ' , 2 ) ;
+output: env . comment ( comment ( ' post , ) ' ) ;
+------------------------------------------
+
+source: 
+var argumentIndex = parsedPattern . argumentIndex 
+query:  var argumentOffset
+target: parsedPattern . argumentOffset ;
+output: parsedPattern . argumentOffset ;
+------------------------------------------
+
+source: 
+var O_CREAT = constants . O_CREAT  |  |  0 
+query:  var O_DIRECTORY
+target: constants . O_DIRECTORY  |  |  0 ;
+output: constants . O_DIRECTORY  |  |  | ;
+------------------------------------------
+
+source: 
+var anims = imports . anims 
+query:  var settings
+target: imports . settings ;
+output: imports . settings ;
+------------------------------------------
+
+source: 
+var minId = event . data . minId 
+query:  var maxId
+target: event . data . maxId ;
+output: data . data . data ;
+------------------------------------------
+
+source: 
+var callback = data . callback  |  |  ' jsonp ' + ( + + scriptLoader . _ count ) 
+query:  var win
+target: window ;
+output: data .
+------------------------------------------
+
+source: 
+var start = leaf . get ( ' start ' ) 
+query:  var end
+target: leaf . get ( ' end ' ) ;
+output: leaf . get ( ' end ' ) ;
+------------------------------------------
+
+source: 
+var logscale = this . attributes _ . getForAxis ( ' logscale ' , i ) 
+query:  var includeZero
+target: this . attributes _ . getForAxis ( ' includeZero ' , i ) ;
+output: this . _ ( _ _ ( ' includeZero ' ) ' , ;
+------------------------------------------
+
+source: 
+var _ _ GLOBAL__I_a = Module [ ' _ _ GLOBAL__I_a ' ] = asm [ ' _ _ GLOBAL__I_a ' ] 
+query:  var _ memset
+target: Module [ ' _ memset ' ]    asm [ ' _ memset ' ] ;
+output: Module [ _ _ _ _ ] ;
+------------------------------------------
+
+source: 
+var contentTypeInfo = $ tw . config . contentTypeInfo [ tiddlerType ]  |  |  
+query:  var extension
+target: contentTypeInfo . extension  |  |  ' . tid ' ;
+output: $  contentTypeInfo  |  |  | # contentTypeInfo  ;
+------------------------------------------
+
+source: 
+var totalX = totalXl + abs ( x - xl ) 
+query:  var totaly
+target: totalYl + abs ( y - yl ) ;
+output: totalXl ( ( ( ) , totaly ) ;
+------------------------------------------
+
+source: 
+var def = this . props . def 
+query:  var doc
+target: def . doc  |  |  ;
+output: this . props ;
+------------------------------------------
+
+source: 
+var stepMonths = this . _ get ( inst , ' stepMonths ' ) 
+query:  var i d
+target: ' # ' + inst . i d ;
+output: this _ _ ) _ ;
+------------------------------------------
+
+source: 
+var string = _ react$PropTypes . string 
+query:  var object
+target: _ react$PropTypes . object ;
+output: _ _ . object ;
+------------------------------------------
+
+source: 
+var previousRadius = this . previousRadius 
+query:  var sliceWidthRatio
+target: this . sliceWidthRatio ;
+output: this . sliceWidthRatio ;
+------------------------------------------
+
+source: 
+var FS = o . FS ! = = undefined ? o . FS : ' , ' , fs = FS . charCodeAt ( 0 ) 
+query:  var rs
+target: o . rs !    undefined ? o . rs : ' \n ' , rs    rs . charCodeAt ( 0 ) ;
+output: o . FS (   ' '  o . FS . ' ;
+------------------------------------------
+
+source: 
+var groupedItems = this . _ groupedItems 
+query:  var groupedItem
+target: groupedItems [ key ] ;
+output: this .  ] ;
+------------------------------------------
+
+source: 
+var containmentEdges = this . containmentEdges 
+query:  var strings
+target: this . strings ;
+output: this . strings ;
+------------------------------------------
+
+source: 
+var should = require ( ' should ' ) 
+query:  var sinon
+target: require ( ' sinon ' ) ;
+output: require ( ' sinon ' ) ;
+------------------------------------------
+
+source: 
+var fromSegment = fromSegments [ i ] 
+query:  var toSegment
+target: toSegments [ i ] ;
+output: fromSegments . ] ] ;
+------------------------------------------
+
+source: 
+var createObjectFreeze = parseTreeFactory . createObjectFreeze 
+query:  var createObjectLiteralExpression
+target: parseTreeFactory . createObjectLiteralExpression ;
+output: parseTreeFactory . createObjectLiteralExpression ;
+------------------------------------------
+
+source: 
+var parent = runtime . gltf . nodes [ parentID ] 
+query:  var children
+target: parent . children ;
+output: parent . children (
+------------------------------------------
+
+source: 
+var yAxisLeft = this . linegraph . yAxisLeft 
+query:  var yAxisRight
+target: this . linegraph . yAxisRight ;
+output: this . yAxisRight . yAxisRight .
+------------------------------------------
+
+source: 
+var ui = imports . ui 
+query:  var dirname
+target: require ( ' path ' ) . dirname ;
+output: imports ( ' dirname ' ) ;
+------------------------------------------
+
+source: 
+var favorites = imports [ ' tree . favorites ' ] 
+query:  var tabManager
+target: imports . tabManager ;
+output: imports . tree (
+------------------------------------------
+
+source: 
+var costControl = window . parent . costControl 
+query:  var simManager
+target: window . parent . simManager ;
+output: window . simManager . simManager ;
+------------------------------------------
+
+source: 
+var setZoom = content . getAttribute ( ' data - setZoom ' )  |  |  17 
+query:  var icon
+target: content . getAttribute ( ' data - icon ' ) ;
+output: content . data ( ' icon - icon ' ) ;
+------------------------------------------
+
+source: 
+var after = _ dereq _ ( ' after ' ) 
+query:  var utf8
+target: _ dereq _ ( ' utf8 ' ) ;
+output: _ _ _ _ _ utf8 ' ) ;
+------------------------------------------
+
+source: 
+var layout = imports . layout 
+query:  var fs
+target: imports . fs ;
+output: imports . fs ;
+------------------------------------------
+
+source: 
+var nodes = this . _ animation . _ nodes 
+query:  var duration
+target: this . _ animation . duration ;
+output: this . duration _ ;
+------------------------------------------
+
+source: 
+var appState = alloy . models . appState 
+query:  var heroes
+target: alloy . collections . heroes ;
+output: alloy . heroes ;
+------------------------------------------
+
+source: 
+var socket = root . openSignalingChannel ( socketConfig ) 
+query:  var isofferer
+target: _ config . isofferer ;
+output: root root . openSignalingChannel (
+------------------------------------------
+
+source: 
+var d = m . d 
+query:  var tx
+target: m . tx ;
+output: m . tx ;
+------------------------------------------
+
+source: 
+var i d = i d  |  |  dimensions . values ( ) . length 
+query:  var dimension
+target: model_dimension ( ) ;
+output: i  ) ;
+------------------------------------------
+
+source: 
+var view = endUserOptions . view 
+query:  var source
+target: endUserOptions . source ;
+output: endUserOptions . source ;
+------------------------------------------
+
+source: 
+var w = latestChange . boundingClientRect . width 
+query:  var h
+target: latestChange . boundingClientRect . height ;
+output: latestChange . boundingClientRect . boundingClientRect ;
+------------------------------------------
+
+source: 
+var fs = require ( ' fs ' ) 
+query:  var pager
+target: require ( ' default - pager ' ) ;
+output: require ( ' pager ' pager ' ) ;
+------------------------------------------
+
+source: 
+var height = _ ref2 . height 
+query:  var scrollLeft
+target: _ ref2 . scrollLeft ;
+output: _ _ . scrollLeft ;
+------------------------------------------
+
+source: 
+var scrollLeft = _ state2 . scrollLeft 
+query:  var scrollTop
+target: _ state2 . scrollTop ;
+output: _ _ . scrollTop ;
+------------------------------------------
+
+source: 
+var basename = p . basename 
+query:  var join
+target: p . join ;
+output: p . join ;
+------------------------------------------
+
+source: 
+var replace = require ( ' gulp - replace ' ) 
+query:  var rename
+target: require ( ' gulp - rename ' ) ;
+output: require ( ' gulp - rename ' ) ;
+------------------------------------------
+
+source: 
+var sFilter = blanket . options ( ' sap - ui - cover - only ' )  |  |  sFilterAttr 
+query:  var sAntiFilter
+target: blanket . options ( ' sap - ui - cover - never ' )  |  |  sAntiFilterAttr ;
+output: options  (  ' sAntiFilter ' options ' options  options  ) ;
+------------------------------------------
+
+source: 
+var exportMapping = traceur . syntax . trees . exportMapping 
+query:  var exportMappingList
+target: traceur . syntax . trees . exportMappingList ;
+output: traceur . syntax . exportMappingList . exportMappingList ;
+------------------------------------------
+
+source: 
+var styleSheetValidation = require ( ' styleSheetValidation ' ) 
+query:  var flatten
+target: require ( ' flattenStyle ' ) ;
+output: require ( ' flatten ' ) ;
+------------------------------------------
+
+source: 
+var controller = this . controller 
+query:  var controllerEuler
+target: this . controllerEuler ;
+output: this . controllerEuler ;
+------------------------------------------
+
+source: 
+var data = $ . data ( current . el , ' pp - rwdrag ' ) 
+query:  var left
+target: ( current . oleft + ( e . pageX  |  |  e . clientX ) - current . ox ) ;
+output: data data . data . ' data . data ) |  |  | . data . ;
+------------------------------------------
+
+source: 
+var choice = + this . doc . get_classname_numeric_suffix ( dragitemhome , ' choice ' ) 
+query:  var group
+target: + this . doc . get_classname_numeric_suffix ( dragitemhome , ' group ' ) ;
+output: this ( . ( ( ( ( ' ) ' group ' ) ;
+------------------------------------------
+
+source: 
+var Editor = imports . Editor 
+query:  var Tree
+target: imports . Tree ;
+output: imports . Tree ;
+------------------------------------------
+
+source: 
+var proc = imports . proc 
+query:  var fs
+target: require ( ' fs ' ) ;
+output: imports ( ' fs ' ) ;
+------------------------------------------
+
+source: 
+var binaryOperator = traceur . syntax . trees . binaryOperator 
+query:  var parseTree
+target: traceur . syntax . trees . parseTree ;
+output: traceur . syntax . parseTree . parseTree ;
+------------------------------------------
+
+source: 
+var fontDirection = current . fontDirection 
+query:  var charSpacing
+target: current . charSpacing ;
+output: current . charSpacing ;
+------------------------------------------
+
+source: 
+var matrix = math . matrix 
+query:  var sparse
+target: math . sparse ;
+output: math . sparse ;
+------------------------------------------
+
+source: 
+var msup = cTop . createElement ( ' msup ' ) 
+query:  var arg
+target: ( args . length ) ? args [ 0 ] : cTop . createElement ( ' mrow ' ) ;
+output: new cTop ) arg ) ;
+------------------------------------------
+
+source: 
+var leftDelimiter = parserConf . leftDelimiter  |  |  ' ' 
+query:  var version
+target: parserConf . version  |  |  2 ;
+output: parserConf . leftDelimiter  |  |  | ;
+------------------------------------------
+
+source: 
+var Linearization = coreParser . linearization 
+query:  var calculatemd5
+target: coreCrypto . calculatemd5 ;
+output: coreParser . calculatemd5 ;
+------------------------------------------
+
+source: 
+var cssmin = require ( ' gulp - cssmin ' ) 
+query:  var del
+target: require ( ' del ' ) ;
+output: require ( ' gulp ' ) ;
+------------------------------------------
+
+source: 
+var req = this . req 
+query:  var app
+target: req . app ;
+output: this . app .
+------------------------------------------
+
+source: 
+var ui = imports . ui 
+query:  var proc
+target: imports . proc ;
+output: imports . proc ;
+------------------------------------------
+
+source: 
+var removeRangeFromContentState = require ( ' removeRangeFromContentState ' ) 
+query:  var splitBlockInContentState
+target: require ( ' splitBlockInContentState ' ) ;
+output: require ( ' splitBlockInContentState ' ) ;
+------------------------------------------
+
+source: 
+var change = changes [ changes . length - 1 ] 
+query:  var idAttr
+target: this . options . idAttr ;
+output: changes . changes . changes 
+------------------------------------------
+
+source: 
+var isOpaque = this . props . isOpaque 
+query:  var verticalTop
+target: this . props . verticalTop  |  |  0 ;
+output: this . props . props ;
+------------------------------------------
+
+source: 
+var colors = this . colors 
+query:  var positions
+target: this . positions ;
+output: this . positions ;
+------------------------------------------
+
+source: 
+var text = el . select ( ' text ' ) 
+query:  var x
+target: parseFloat ( text . attr ( ' x ' )  |  |  0 ) ;
+output: el ( el ) x ( ' x ' ) ;
+------------------------------------------
+
+source: 
+var notes = treatment . notes  |  |  '' 
+query:  var enteredBy
+target: treatment . enteredBy  |  |  '' ;
+output: treatment  notes  |  |  | ;
+------------------------------------------
+
+source: 
+var bendPath = options . bendPath 
+query:  var extrudePath
+target: options . extrudePath ;
+output: options . extrudePath ;
+------------------------------------------
+
+source: 
+var hotUpdateChunkFilename = this . outputOptions . hotUpdateChunkFilename 
+query:  var hotUpdateMainFilename
+target: this . outputOptions . hotUpdateMainFilename ;
+output: this . hotUpdateMainFilename . hotUpdateMainFilename .
+------------------------------------------
+
+source: 
+var dynCall_iiiiiii = Module [ ' dynCall_iiiiiii ' ] = asm [ ' dynCall_iiiiiii ' ] 
+query:  var dynCall_viiiiiiiii
+target: Module [ ' dynCall_viiiiiiiii ' ]    asm [ ' dynCall_viiiiiiiii ' ] ;
+output: Module [ ' dynCall_viiiiiiiii ' ]  ' ' ' [ ' dynCall_viiiiiiiii ' ] 
+------------------------------------------
+
+source: 
+var uniforms = template . uniforms 
+query:  var materials
+target: template . materials ;
+output: template . materials ;
+------------------------------------------
+
+source: 
+var x = euler . x , y = euler . y , z = euler . z 
+query:  var a
+target: Math . cos ( x ) , b    Math . sin ( x ) ;
+output: new . euler ( ) , ;
+------------------------------------------
+
+source: 
+var cos = Math . cos ( rotation ) 
+query:  var sin
+target: Math . sin ( rotation ) ;
+output: Math . cos ( ) ) ;
+------------------------------------------
+
+source: 
+var right = this . get ( ' right ' ) 
+query:  var left
+target: this . get ( ' left ' ) ;
+output: this . get ( ' left ' ) ;
+------------------------------------------
+
+source: 
+var itemContainer = fragment  |  |  this . els . itemContainer 
+query:  var itemsIndom
+target: this . els . itemsIndom ;
+output: this . els  els 
+------------------------------------------
+
+source: 
+var root = new KM . minderNode ( ' root ' ) 
+query:  var first
+target: new km . minderNode ( ' first ' ) ;
+output: new . ( minderNode ( ' first ' ) ;
+------------------------------------------
+
+source: 
+var dragonBonesData = buildArmatureDataPackage . dragonBonesData 
+query:  var armatureData
+target: buildArmatureDataPackage . armatureData ;
+output: buildArmatureDataPackage . armatureData ;
+------------------------------------------
+
+source: 
+var wait = ( options & & options . wait )  |  |  4000 
+query:  var service
+target: this . services [ name ] ;
+output: options .   options ] 
+------------------------------------------
+
+source: 
+var radii = ellipsoid . radii 
+query:  var show
+target: ellipsoid . show ;
+output: ellipsoid . radii ;
+------------------------------------------
+
+source: 
+var top = offset . top + this . height 
+query:  var left
+target: offset . left ;
+output: this . top .
+------------------------------------------
+
+source: 
+var bucketCount = ( opts & & opts . bucketCount )  |  |  4 
+query:  var bucketMins
+target: ( opts & & opts . bucketMins )  |  |  5 ;
+output: opts &  & & . bucketMins  ;
+------------------------------------------
+
+source: 
+var visible = options . visible = = null  |  |  options . visible 
+query:  var index
+target: options . index  |  |  100 ;
+output: options .   |  |  | ;
+------------------------------------------
+
+source: 
+var accessorNode = math . expression . node . accessorNode 
+query:  var indexNode
+target: math . expression . node . indexNode ;
+output: math . indexNode . indexNode . indexNode ;
+------------------------------------------
+
+source: 
+var _ bitshift64Shl = module [ ' _ bitshift64Shl ' ] = asm [ ' _ bitshift64Shl ' ] 
+query:  var _ testSetjmp
+target: module [ ' _ testSetjmp ' ]    asm [ ' _ testSetjmp ' ] ;
+output: _ [ ' _ _ ' ]  ' ' ' [ ' _ _ ' ] 
+------------------------------------------
+
+source: 
+var timeout = _ timeout  |  |  50000 
+query:  var label
+target: _ label  |  |  ' Loading . . . ' ;
+output: timeout label  |  |  | 50000  label label label label
+------------------------------------------
+
+source: 
+var send = require ( ' send ' ) 
+query:  var mkdirp
+target: require ( ' mkdirp ' ) ;
+output: require ( ' mkdirp ' ) ;
+------------------------------------------
+
+source: 
+var createIdentifierToken = parseTreeFactory . createIdentifierToken 
+query:  var createCatch
+target: parseTreeFactory . createCatch ;
+output: parseTreeFactory . createCatch ;
+------------------------------------------
+
+source: 
+var eastHemisphereGeometry = instance . eastHemisphereGeometry 
+query:  var westHemisphereGeometry
+target: instance . westHemisphereGeometry ;
+output: instance . westHemisphereGeometry ;
+------------------------------------------
+
+source: 
+var d = bn . fromBits ( h . toBits ( vectors [ i ] . d ) ) 
+query:  var x
+target: bn . fromBits ( h . toBits ( vectors [ i ] . qx ) ) ;
+output: bn . x ( ) ) x ) ) ) 0 ] . x . ;
+------------------------------------------
+
+source: 
+var readdir = Promise . promisify ( require ( ' recursive - readdir ' ) ) 
+query:  var ejs
+target: require ( ' ejs ' ) ;
+output: require ( ' ejs ' ) ;
+------------------------------------------
+
+source: 
+var m = particle . mass 
+query:  var n
+target: this . options . normal ;
+output: particle . n ;
+------------------------------------------
+
+source: 
+var surface = this . _ surface 
+query:  var tileProvider
+target: surface . tileProvider ;
+output: this . tileProvider ;
+------------------------------------------
+
+source: 
+var width = element . width 
+query:  var height
+target: element . height ;
+output: element . height ;
+------------------------------------------
+
+source: 
+var layout = imports . layout 
+query:  var Menu
+target: imports . Menu ;
+output: imports . Menu ;
+------------------------------------------
+
+source: 
+var yaw = parseFloat ( e . yaw ) 
+query:  var radius
+target: parseFloat ( e . radius ) ;
+output: parseFloat ( e . radius ) ;
+------------------------------------------
+
+source: 
+var file = path . join ( testPackage , ' new - file ' ) 
+query:  var dir
+target: path . join ( testPackage , ' new - dir ' ) ;
+output: path . testPackage ( ' ) ' testPackage ' dir ' ) ;
+------------------------------------------
+
+source: 
+var callback = $ . data ( this , ' numeric . callback ' ) 
+query:  var negative
+target: $ . data ( this , ' numeric . negative ' ) ;
+output: data ( data ( ' . data data data data . ) ;
+------------------------------------------
+
+source: 
+var hintColor = props . muiTheme . textField . hintColor 
+query:  var show
+target: props . show ;
+output: props . hintColor .
+------------------------------------------
+
+source: 
+var db = new PouchDB ( dbs . name ) 
+query:  var doc
+target: _ i d : ' adoc ' ;
+output: new new new ;
+------------------------------------------
+
+source: 
+var mustache = require ( ' mustache ' ) 
+query:  var querystring
+target: require ( ' querystring ' ) ;
+output: require ( ' ' ' ) ;
+------------------------------------------
+
+source: 
+var i d = this . i d 
+query:  var name
+target: this . options . data . name ;
+output: this . name . name . name ;
+------------------------------------------
+
+source: 
+var assertion = Parsers . assertion 
+query:  var node
+target: Parsers . node ;
+output: Parsers . node ;
+------------------------------------------
+
+source: 
+var newChild = unwrap ( newChildWrapper ) 
+query:  var refChild
+target: refChildWrapper ? unwrap ( refChildWrapper ) : null ;
+output: unwrap ( [ ( ) ) ;
+------------------------------------------
+
+source: 
+var offset = options . offset 
+query:  var sideOrientation
+target: meshBuilder . updateSideOrientation ( options . sideOrientation , scene ) ;
+output: offset . sideOrientation ;
+------------------------------------------
+
+source: 
+var lazyLoader = window . wrappedjsObject . lazyLoader 
+query:  var data
+target: window . wrappedjsObject . data ;
+output: window . data ( data (
+------------------------------------------
+
+source: 
+var atan = Math . atan 
+query:  var atan2
+target: Math . atan2 ;
+output: Math . atan2 ;
+------------------------------------------
+
+source: 
+var clientX = e . clientX - pos . left + scrollLeft 
+query:  var clienty
+target: e . clienty - pos . top + scrollTop ;
+output: e . clientX . clientX ;
+------------------------------------------
+
+source: 
+var f8Colors = require ( ' f8Colors ' ) 
+query:  var react
+target: require ( ' react ' ) ;
+output: require ( ' react - ) ;
+------------------------------------------
+
+source: 
+var doBrowserify = buildUtils . doBrowserify 
+query:  var writeFile
+target: buildUtils . writeFile ;
+output: buildUtils . writeFile ;
+------------------------------------------
+
+source: 
+var contactPhone = contacts . contactPhone 
+query:  var contactPhoneKind
+target: contacts . contactPhoneKind ;
+output: contacts . contactPhoneKind ;
+------------------------------------------
+
+source: 
+var unicodeBidiDirection = require ( ' unicodeBidiDirection ' ) 
+query:  var getElementPosition
+target: require ( ' getElementPosition ' ) ;
+output: require ( ' getElementPosition ' ) ;
+------------------------------------------
+
+source: 
+var redirect_uri = _ ref . redirect_uri 
+query:  var data
+target: _ ref . data ;
+output: data data . data ;
+------------------------------------------
+
+source: 
+var line = lineAtHeight ( cm . view . doc , my ) 
+query:  var gutter
+target: cm . options . gutters [ i ] ;
+output: lineAtHeight . lineAtHeight . gutter ( view ] ;
+------------------------------------------
+
+source: 
+var positionRangeForPathAsync = exports . positionRangeForPathAsync = promisifySyncFn ( positionRangeForPath ) 
+query:  var getLineNumberForPathAsync
+target: exports . getLineNumberForPathAsync    promisifySyncFn ( getLineNumberForPath ) ;
+output: exports . getLineNumberForPathAsync  |   . ) ) ;
+------------------------------------------
+
+source: 
+var bgColor = opts . bgColor 
+query:  var container
+target: opts . container ;
+output: opts . container .
+------------------------------------------
+
+source: 
+var cardState = card . cardState 
+query:  var lockType
+target: this . lockTypeMap [ cardState ] ;
+output: card . lockType ;
+------------------------------------------
+
+source: 
+var config = options . config  |  |  ' ide ' 
+query:  var settings
+target: options . settings  |  |  ' devel ' ;
+output: config . settings  |  |  | ' ' ;
+------------------------------------------
+
+source: 
+var path = options . path 
+query:  var radius
+target: options . radius  |  |  1 ;
+output: options . path ;
+------------------------------------------
+
+source: 
+var delegateConfig = instance . get ( ' delegateConfig ' ) 
+query:  var proxy
+target: instance . get ( ' proxy ' ) ;
+output: instance . get ( ' proxy ' ) ;
+------------------------------------------
+
+source: 
+var rect = this . _ rect 
+query:  var style
+target: this . style ;
+output: this . style ;
+------------------------------------------
+
+source: 
+var fail = grunt . fail 
+query:  var verbose
+target: grunt . verbose ;
+output: grunt . verbose ;
+------------------------------------------
+
+source: 
+var detail = e . detail 
+query:  var direction
+target: detail . direction ;
+output: e . direction ;
+------------------------------------------
+
+source: 
+var   TABLE = 17 
+query:  var   LENLENS
+target: 18 ;
+output:  
+------------------------------------------
+
+source: 
+var selector = rule . selector 
+query:  var content
+target: rule . content ;
+output: new . content ;
+------------------------------------------
+
+source: 
+var sampleCoverage = renderState . sampleCoverage 
+query:  var enabled
+target: sampleCoverage . enabled ;
+output: renderState . enabled ;
+------------------------------------------
+
+source: 
+var beforeShowDay = this . _ get ( inst , ' beforeShowDay ' ) 
+query:  var showOtherMonths
+target: this . _ get ( inst , ' showOtherMonths ' ) ;
+output: this . _ _ ( ' , ' showOtherMonths ' ) ;
+------------------------------------------
+
+source: 
+var isScrolling = _ state2 . isScrolling 
+query:  var scrollLeft
+target: _ state2 . scrollLeft ;
+output: _ _ . scrollLeft ;
+------------------------------------------
+
+source: 
+var direction = camera . direction 
+query:  var up
+target: camera . up ;
+output: camera . up ;
+------------------------------------------
+
+source: 
+var threadId = node . dataset . threadId 
+query:  var draftId
+target: node . dataset . draftId ;
+output: dataset . draftId . draftId ;
+------------------------------------------
+
+source: 
+var naturalWidth = canvas . naturalWidth 
+query:  var naturalHeight
+target: canvas . naturalHeight ;
+output: canvas . naturalHeight ;
+------------------------------------------
+
+source: 
+var overlayText = app . overlayText 
+query:  var cameraButton
+target: app . cameraButton ;
+output: app . cameraButton ;
+------------------------------------------
+
+source: 
+var lightBlue700 = exports . lightBlue700 = ' # 0288d1 ' 
+query:  var lightBlue800
+target: exports . lightBlue800    ' # 0277bd ' ;
+output: exports . lightBlue800  ' ' ' # ' ' ;
+------------------------------------------
+
+source: 
+var page = data . page 
+query:  var pages
+target: data . pages ;
+output: page . pages ;
+------------------------------------------
+
+source: 
+var skipCurrent = options . skipCurrent ! = false 
+query:  var range
+target: options . range ;
+output: options . range 
+------------------------------------------
+
+source: 
+var x = Math . min ( rectx1 , prevrectx1 ) 
+query:  var y
+target: Math . min ( recty1 , prevrecty1 ) ;
+output: Math . min ( rectx1  rectx1  ;
+------------------------------------------
+
+source: 
+var exceptSingleline = this . _ exceptSingleline 
+query:  var exceptMultiline
+target: this . _ exceptMultiline ;
+output: this . _ _ ;
+------------------------------------------
+
+source: 
+var uglify   = require ( ' gulp - uglify ' ) 
+query:  var sass
+target: require ( ' gulp - sass ' ) ;
+output: require ( ' gulp - sass ' ) ;
+------------------------------------------
+
+source: 
+var message = messages [ i ] 
+query:  var rawLocation
+target: this . _ rawLocation ( message ) ;
+output: messages . rawLocation rawLocation ;
+------------------------------------------
+
+source: 
+var x = options [ ' x ' ] 
+query:  var y
+target: options [ ' y ' ] ;
+output: options [ '  ' ] 
+------------------------------------------
+
+source: 
+var cp1 = symbol . _ _ cp1 
+query:  var t
+target: symbol . _ _ t ;
+output: symbol . cp1 t _ ;
+------------------------------------------
+
+source: 
+var data = params . data 
+query:  var rect
+target: params . options . rect ;
+output: params . rect ;
+------------------------------------------
+
+source: 
+var gridStyle = _ props . gridStyle 
+query:  var headerHeight
+target: _ props . headerHeight ;
+output: _ _ . headerHeight ;
+------------------------------------------
+
+source: 
+var printStyle = _ _ webpack_require _ _ ( 29 ) . printStyle 
+query:  var allOptions
+target: _ _ webpack_require _ _ ( 59 ) . allOptions ;
+output: _ _ _ _ _ _ _ ) ;
+------------------------------------------
+
+source: 
+var map = zrUtil . map 
+query:  var merge
+target: zrUtil . merge ;
+output: zrUtil . merge ;
+------------------------------------------
+
+source: 
+var fs = require ( ' fs ' ) 
+query:  var rollup
+target: require ( ' rollup ' ) ;
+output: require ( ' rollup ' ) ;
+------------------------------------------
+
+source: 
+var authorizationUrl = security . authorizationUrl 
+query:  var tokenUrl
+target: security . tokenUrl ;
+output: security . tokenUrl ;
+------------------------------------------
+
+source: 
+var hDocEscKey = instance . _ hDocEscKeyEv 
+query:  var hDocMouseDown
+target: instance . _ hDocMouseDownEv ;
+output: instance . _ _ ;
+------------------------------------------
+
+source: 
+var tileProvider = primitive . _ tileProvider 
+query:  var occluders
+target: primitive . _ occluders ;
+output: primitive . _ _ ;
+------------------------------------------
+
+source: 
+var h = texture . height 
+query:  var c
+target: texture . channels ;
+output: texture . c ;
+------------------------------------------
+
+source: 
+var component = exports . component = internalPropTypes . component 
+query:  var components
+target: exports . components    internalPropTypes . components ;
+output: internalPropTypes . internalPropTypes ;
+------------------------------------------
+
+source: 
+var canvasWidth = self . canvasWidth 
+query:  var canvasHeight
+target: self . canvasHeight ;
+output: self . canvasHeight ;
+------------------------------------------
+
+source: 
+var file = ' file ' 
+query:  var type
+target: ' type ' ;
+output: ' type ' ;
+------------------------------------------
+
+source: 
+var isInteger = math . isInteger 
+query:  var bignumber
+target: math . bignumber ;
+output: math . bignumber ;
+------------------------------------------
+
+source: 
+var ref = this . props . node . get ( ' ref ' ) 
+query:  var state
+target: this . props . node . get ( ' state ' ) ;
+output: this . props . get . state ( ' state ' ) ;
+------------------------------------------
+
+source: 
+var x = this . x + 1 
+query:  var y
+target: this . ydisp + this . y ;
+output: x . x  x . y ;
+------------------------------------------
+
+source: 
+var bufPtr = alias ( ' bufPtr ' , voidPtr ) 
+query:  var str
+target: alias ( ' str ' , ptr ( u8 ) ) ;
+output: alias ( ' str ' ) '  '  ;
+------------------------------------------
+
+source: 
+var querystring = require ( ' querystring ' ) 
+query:  var request
+target: require ( ' request ' ) ;
+output: require ( ' request ' ) ;
+------------------------------------------
+
+source: 
+var functionInfos = this . _ functionInfos 
+query:  var idToTopDownNode
+target: this . _ idToTopDownNode ;
+output: this . _ _ ;
+------------------------------------------
+
+source: 
+var doc = global . document 
+query:  var addEvent
+target: addEventEasy ;
+output: global .
+------------------------------------------
+
+source: 
+var createClassAndSelector = jsCommon . cssConstants . createClassAndSelector 
+query:  var newDataLabelUtils
+target: powerbi . visuals . newDataLabelUtils ;
+output: cssConstants . data . cssConstants ;
+------------------------------------------
+
+source: 
+var currentOffset = _ ref3 . currentOffset 
+query:  var targetIndex
+target: _ ref3 . targetIndex ;
+output: _ _ . targetIndex ;
+------------------------------------------
+
+source: 
+var util = require ( ' util ' ) 
+query:  var ease
+target: require ( ' ease - component ' ) ;
+output: require ( ' ease ' ease - ) ;
+------------------------------------------
+
+source: 
+var ui = imports . ui 
+query:  var debug
+target: imports . debugger ;
+output: imports . debug ;
+------------------------------------------
+
+source: 
+var a = base ( 12 ) 
+query:  var b
+target: base ( 13 ) ;
+output: base [ ) ) ;
+------------------------------------------
+
+source: 
+var a = processStyle ( aFill ? this . fillStyle : this . strokeStyle ) 
+query:  var color
+target: a . color ;
+output: ( . this (
+------------------------------------------
+
+source: 
+var attribute = attributes [ attributeIndex ] 
+query:  var componentsPerAttribute
+target: attribute . componentsPerAttribute ;
+output: attributes . componentsPerAttribute ;
+------------------------------------------
+
+source: 
+var pointers = self . pointers 
+query:  var canvas
+target: self . canvas ;
+output: self . canvas ;
+------------------------------------------
+
+source: 
+var util = require ( ' util ' ) 
+query:  var express
+target: require ( ' express ' ) ;
+output: require ( ' express - ) ;
+------------------------------------------
+
+source: 
+var fullContactCardOptions = contacts . fullContactCardOptions 
+query:  var viewSizePreference
+target: windows . ui . viewManagement . viewSizePreference ;
+output: contacts . viewSizePreference . viewSizePreference ;
+------------------------------------------
+
+source: 
+var flat = flatten ( array ) 
+query:  var len
+target: flat . length ;
+output: flatten . length )
+------------------------------------------
+
+source: 
+var fs = require ( ' fs ' ) 
+query:  var replace
+target: require ( ' gulp - replace ' ) ;
+output: require ( ' replace - replace ' ) ;
+------------------------------------------
+
+source: 
+var relTarget = $ ( ' # relTargetId ' ) [ 0 ] 
+query:  var goodTarget
+target: $ ( ' # goodTargetId ' ) [ 0 ] ;
+output: $ ( ' goodTarget ' ' ) ;
+------------------------------------------
+
+source: 
+var fork = require ( ' child_process ' ) . fork 
+query:  var assert
+target: require ( ' assert ' ) ;
+output: require ( ' assert ' ) ;
+------------------------------------------
+
