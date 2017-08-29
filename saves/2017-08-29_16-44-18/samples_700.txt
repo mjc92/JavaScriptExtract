@@ -1,0 +1,3500 @@
+source: 
+var sets = params . sets 
+query:  var start
+target: params . has <CAM> own <CAM> property ( ' start ' ) ? params . start : 0 ;
+output: params . create ;
+------------------------------------------
+
+source: 
+var hint <CAM> color = _ context$mui <CAM> theme$tex . hint <CAM> color 
+query:  var error <CAM> color
+target: _ context$mui <CAM> theme$tex . error <CAM> color ;
+output: context$mui _ <CAM> color <CAM> hint <CAM> color <CAM>
+------------------------------------------
+
+source: 
+var level <CAM> controller = this . level <CAM> controller = new _ level <CAM> controller2 . default ( this ) 
+query:  var stream <CAM> controller
+target: this . stream <CAM> controller    new _ stream <CAM> controller2 . default ( this ) ;
+output: this . level <CAM> controller <CAM> |   <CAM> level <CAM> controller <CAM> level <CAM> this . ;
+------------------------------------------
+
+source: 
+var final = this . final <CAM> segments = [ ] 
+query:  var returned
+target: this . returned <CAM> fork <CAM> context    [ ] ;
+output: this . final . segments ;
+------------------------------------------
+
+source: 
+var pwd = options . pwd  |  |  '' 
+query:  var https
+target: options . https ;
+output: pwd . https 
+------------------------------------------
+
+source: 
+var sails = req . _ sails 
+query:  var parse <CAM> blueprint <CAM> options
+target: req . options . parse <CAM> blueprint <CAM> options  |  |  req . _ sails . config . blueprints . parse <CAM> blueprint <CAM> options ;
+output: req <CAM> _ <CAM> _ <CAM> options ;
+------------------------------------------
+
+source: 
+var create <CAM> legend = powerbi . visuals . create <CAM> legend 
+query:  var legend <CAM> position
+target: powerbi . visuals . legend <CAM> position ;
+output: powerbi . create . create <CAM> position ;
+------------------------------------------
+
+source: 
+var faceUV = options . faceUV  |  |  new Array ( nbfaces ) 
+query:  var face <CAM> colors
+target: options . face <CAM> colors ;
+output: options . faceUV  colors 
+------------------------------------------
+
+source: 
+var error <CAM> obj = util . error <CAM> obj 
+query:  var try <CAM> catch
+target: util . try <CAM> catch ;
+output: util . error <CAM> obj <CAM>
+------------------------------------------
+
+source: 
+var contact <CAM> card <CAM> options = Contacts . contact <CAM> card <CAM> options 
+query:  var contact <CAM> card <CAM> header <CAM> kind
+target: Contacts . contact <CAM> card <CAM> header <CAM> kind ;
+output: Contacts <CAM> contact <CAM> card <CAM> card <CAM> card ;
+------------------------------------------
+
+source: 
+var move <CAM> to <CAM> row = settings . move <CAM> to <CAM> row 
+query:  var move <CAM> to <CAM> col
+target: settings . move <CAM> to <CAM> col ;
+output: settings . move <CAM> to <CAM> to <CAM>
+------------------------------------------
+
+source: 
+var redirect <UND> uri = _ ref . redirect <UND> uri 
+query:  var data
+target: _ ref . data ;
+output: _ _ . redirect <UND>
+------------------------------------------
+
+source: 
+var wrap <CAM> data = this . $ wrap <CAM> data 
+query:  var wrap <CAM> limit
+target: this . $ wrap <CAM> limit ;
+output: this . wrap <CAM> <CAM> data ;
+------------------------------------------
+
+source: 
+var barcode <CAM> symbologies = Windows . Devices . point <CAM> of <CAM> service . barcode <CAM> symbologies 
+query:  var barcode <CAM> symbology <CAM> decode <CAM> length <CAM> kind
+target: Windows . Devices . point <CAM> of <CAM> service . barcode <CAM> symbology <CAM> decode <CAM> length <CAM> kind ;
+output: <CAM> <CAM> barcode <CAM> barcode <CAM> <CAM> <CAM> symbologies <CAM> barcode <CAM> <CAM> <CAM> <CAM> <CAM> <CAM> <CAM> symbologies ;
+------------------------------------------
+
+source: 
+var first <CAM> rect = first <CAM> rect <CAM> list [ 0 ] 
+query:  var last <CAM> rect
+target: last <CAM> rect <CAM> list [ last <CAM> list <CAM> length - 1 ] ;
+output: first <CAM> rect <CAM> rect <CAM> <CAM> <CAM> rect <CAM> rect <CAM> rect ] <CAM>
+------------------------------------------
+
+source: 
+var warn = debug ( ' extras : primitives : warn ' ) 
+query:  var primitives
+target: module . exports . primitives    ;
+output: debug . get .  ' |  
+------------------------------------------
+
+source: 
+var script <CAM> source <CAM> default = script <CAM> mapping . script <CAM> source <CAM> default 
+query:  var script <CAM> provider <CAM> default
+target: script <CAM> mapping . script <CAM> provider <CAM> default ;
+output: script <CAM> default . get <CAM> default <CAM> default <CAM>
+------------------------------------------
+
+source: 
+var amd <CAM> class <CAM> name = contents . amd <CAM> class <CAM> name 
+query:  var builtin <CAM> lookup
+target: contents . builtin <CAM> lookup ;
+output: contents <CAM> amd <CAM> class <CAM>
+------------------------------------------
+
+source: 
+var callbacks <CAM> last = configuration . callbacks <CAM> last  |  |  false 
+query:  var shorthand <CAM> first
+target: configuration . shorthand <CAM> first  |  |  false ;
+output: callbacks <CAM> callbacks <CAM> last <CAM> |  |  | ;
+------------------------------------------
+
+source: 
+var callback = require ( ' callback ' ) 
+query:  var clone
+target: require ( ' clone ' ) ;
+output: require ( ' clone ' ) ;
+------------------------------------------
+
+source: 
+var literal <CAM> expression = traceur . syntax . trees . literal <CAM> expression 
+query:  var parse <CAM> tree <CAM> factory
+target: traceur . codegeneration . parse <CAM> tree <CAM> factory ;
+output: traceur . syntax <CAM> syntax <CAM> tree <CAM> factory .
+------------------------------------------
+
+source: 
+var dark <CAM> white = exports . dark <CAM> white = ' rgba ( 255 , 255 , 255 , 0 . 87 ) ' 
+query:  var light <CAM> white
+target: exports . light <CAM> white    ' rgba ( 255 , 255 , 255 , 0 . 54 ) ' ;
+output: ' . dark <CAM> white <CAM> 255   255 ' 255 , 255 , 255 , 255 , 255 , , ;
+------------------------------------------
+
+source: 
+var x0 = vertices [ index0 ] 
+query:  var x1
+target: vertices [ index1 ] ;
+output: vertices [  ] ;
+------------------------------------------
+
+source: 
+var blob = request . source . data . blob 
+query:  var header
+target: document . get <CAM> element <CAM> by <CAM> id ( ' header ' ) ;
+output: request . create <CAM> element . by . id ( ' header . ) ;
+------------------------------------------
+
+source: 
+var rendering <CAM> queue = options . rendering <CAM> queue 
+query:  var text <CAM> layer <CAM> factory
+target: options . text <CAM> layer <CAM> factory ;
+output: options . rendering <CAM> queue <CAM> queue .
+------------------------------------------
+
+source: 
+var load <CAM> hero = sandbox . spy ( scope , ' load <CAM> hero ' ) 
+query:  var scroll <CAM> to
+target: sandbox . spy ( window , ' scroll <CAM> to ' ) ;
+output: sandbox <CAM> spy ( ' . ' scroll <CAM> to <CAM> ) ;
+------------------------------------------
+
+source: 
+var location = response . location 
+query:  var catalog <CAM> items
+target: response . catalog <CAM> items ;
+output: response . catalog <CAM> items ;
+------------------------------------------
+
+source: 
+var class <CAM> name = _ props . class <CAM> name 
+query:  var children
+target: _ props . children ;
+output: props _ . class ;
+------------------------------------------
+
+source: 
+var format = definition . format 
+query:  var xml
+target: definition . xml  |  |  ;
+output: definition . xml ;
+------------------------------------------
+
+source: 
+var yellow900 = exports . yellow900 = ' # f57f17 ' 
+query:  var yellowA100
+target: exports . yellowA100    ' # ffff8d ' ;
+output: exports . yellowA100     # ' ' ;
+------------------------------------------
+
+source: 
+var year = date . year ( ) 
+query:  var month
+target: date . month ( ) + 1 ;
+output: date . year . ) ;
+------------------------------------------
+
+source: 
+var crypto = require ( ' crypto ' ) 
+query:  var semver
+target: require ( ' semver ' ) ;
+output: require ( ' semver ' ) ;
+------------------------------------------
+
+source: 
+var invalid <CAM> version <CAM> error = errors . invalid <CAM> version <CAM> error 
+query:  var method <CAM> not <CAM> allowed <CAM> error
+target: errors . method <CAM> not <CAM> allowed <CAM> error ;
+output: invalid <CAM> error <CAM> error <CAM> error <CAM> error <CAM>
+------------------------------------------
+
+source: 
+var latch = allback . latch ( ) 
+query:  var storage
+target: this . storage ;
+output: allback . latch .
+------------------------------------------
+
+source: 
+var create <CAM> assignment <CAM> expression = parse <CAM> tree <CAM> factory . create <CAM> assignment <CAM> expression 
+query:  var create <CAM> call <CAM> call
+target: parse <CAM> tree <CAM> factory . create <CAM> call <CAM> call ;
+output: <CAM> <CAM> assignment <CAM> factory . create <CAM> call <CAM> call <CAM>
+------------------------------------------
+
+source: 
+var save = imports . save 
+query:  var build
+target: imports . build ;
+output: imports [ build <CAM>
+------------------------------------------
+
+source: 
+var symbol <CAM> node = math . expression . node . symbol <CAM> node 
+query:  var index <CAM> node
+target: math . expression . node . index <CAM> node ;
+output: symbol . node . node . node <CAM> node ;
+------------------------------------------
+
+source: 
+var from = Math . max ( visible . from - cm . options . viewport <CAM> margin , 0 ) 
+query:  var to
+target: Math . min ( doc . size , visible . to + cm . options . viewport <CAM> margin ) ;
+output: visible . max ( visible . get . 0 . to <CAM> 0 . slice . to . margin . ;
+------------------------------------------
+
+source: 
+var visual <CAM> bounds = this . dom . visual <CAM> bounds 
+query:  var layout <CAM> bounds
+target: this . dom . layout <CAM> bounds ;
+output: this . visual <CAM> dom <CAM> bounds <CAM>
+------------------------------------------
+
+source: 
+var create <CAM> call <CAM> expression = parse <CAM> tree <CAM> factory . create <CAM> call <CAM> expression 
+query:  var create <CAM> cascade <CAM> expression
+target: parse <CAM> tree <CAM> factory . create <CAM> cascade <CAM> expression ;
+output: <CAM> <CAM> call <CAM> factory . create <CAM> expression <CAM> expression <CAM>
+------------------------------------------
+
+source: 
+var axis <CAM> helper = powerbi . visuals . axis <CAM> helper 
+query:  var text <CAM> measurement <CAM> service
+target: powerbi . text <CAM> measurement <CAM> service ;
+output: powerbi . axis <CAM> helper <CAM> helper <CAM>
+------------------------------------------
+
+source: 
+var scale = options . scale 
+query:  var default <CAM> viewport
+target: options . default <CAM> viewport ;
+output: options . default <CAM> viewport ;
+------------------------------------------
+
+source: 
+var points = shape . points 
+query:  var smooth
+target: shape . smooth ;
+output: shape . smooth ;
+------------------------------------------
+
+source: 
+var row <CAM> overscan <CAM> stop <CAM> index = _ ref8 . row <CAM> overscan <CAM> stop <CAM> index 
+query:  var row <CAM> start <CAM> index
+target: _ ref8 . row <CAM> start <CAM> index ;
+output: <CAM> <CAM> <CAM> row <CAM> index <CAM> index <CAM>
+------------------------------------------
+
+source: 
+var dy1 = mx <CAM> utils . get <CAM> value ( this . style , ' dy1 ' , ' 0 ' ) 
+query:  var dx2
+target: mx <CAM> utils . get <CAM> value ( this . style , ' dx2 ' , ' 0 ' ) ;
+output: this <CAM> value . get <CAM> value ( ' . get , ' 0 ' ) ' 0 ' ) ;
+------------------------------------------
+
+source: 
+var react <CAM> updates = require ( ' react <CAM> updates ' ) 
+query:  var react <CAM> test <CAM> text <CAM> component
+target: require ( ' react <CAM> test <CAM> text <CAM> component ' ) ;
+output: require ( ' react <CAM> updates <CAM> updates <CAM> updates <CAM> ) ;
+------------------------------------------
+
+source: 
+var cookie = require ( ' cookie ' ) 
+query:  var send
+target: require ( ' send ' ) ;
+output: require ( ' send ' ) ;
+------------------------------------------
+
+source: 
+var is <CAM> primitive = util . is <CAM> primitive 
+query:  var wraps <CAM> primitive <CAM> receiver
+target: util . wraps <CAM> primitive <CAM> receiver ;
+output: util . is <CAM> primitive <CAM> primitive <CAM>
+------------------------------------------
+
+source: 
+var NAMED <UND> EXPORT = ' NAMED <UND> EXPORT ' 
+query:  var NEW <UND> EXPRESSION
+target: ' NEW <UND> EXPRESSION ' ;
+output: ' NAMED <UND> EXPORT ' ;
+------------------------------------------
+
+source: 
+var scope = options . scope 
+query:  var scroll <CAM> view
+target: options . scroll <CAM> view ;
+output: options . scroll <CAM> view ;
+------------------------------------------
+
+source: 
+var data = connection . data 
+query:  var network
+target: data & & data . network ;
+output: connection . & data . network ;
+------------------------------------------
+
+source: 
+var top = ~dir . index <CAM> of ( ' top ' )   & & ' top ' 
+query:  var bottom
+target: ~dir . index <CAM> of ( ' bottom ' ) & & ' bottom ' ;
+output: ~dir . index <CAM> of ( ' bottom ' ) ;
+------------------------------------------
+
+source: 
+var on <CAM> success = options . on <CAM> success  |  |  function ( ) 
+query:  var on <CAM> error
+target: options . on <CAM> error  |  |  function ( ) ;
+output: options . on <CAM> error  |  |  | (  ;
+------------------------------------------
+
+source: 
+var r = Q . reject ( new Error ( ' aaargh ' ) ) 
+query:  var p
+target: Q . promise ( function ( ) ) ;
+output: Q . find ( ' ( ' ;
+------------------------------------------
+
+source: 
+var sort <CAM> data   = method . sort <CAM> data 
+query:  var post <CAM> data
+target: method . post <CAM> data ;
+output: method . post <CAM> data ;
+------------------------------------------
+
+source: 
+var left = options . left 
+query:  var right
+target: options . right ;
+output: options . right ;
+------------------------------------------
+
+source: 
+var assert = require ( ' assert ' ) 
+query:  var source <CAM> map <CAM> consumer
+target: require ( ' source - map ' ) . source <CAM> map <CAM> consumer ;
+output: require ( ' source <CAM> source <CAM> ) ;
+------------------------------------------
+
+source: 
+var a = new <CAM> array <CAM> with <CAM> getter ( ) 
+query:  var s
+target: a . slice ( 1 ) ;
+output: new . s <CAM> ) , ;
+------------------------------------------
+
+source: 
+var a = load ( require , name ) 
+query:  var r
+target: require ;
+output: require (
+------------------------------------------
+
+source: 
+var o = open [ k ] = ' \u001b [ ' + color <CAM> nums [ k ] + ' m ' 
+query:  var c
+target: close [ k ]    ' \u001b [ 39 m ' ;
+output: k ' ' ] ;
+------------------------------------------
+
+source: 
+var root = _ ref . root 
+query:  var on <CAM> change
+target: _ ref . on <CAM> change ;
+output: _ _ . on <CAM> change ;
+------------------------------------------
+
+source: 
+var log2 = shared <CAM> util . log2 
+query:  var read <CAM> int8
+target: shared <CAM> util . read <CAM> int8 ;
+output: shared <CAM> util . read <CAM> int8 <CAM>
+------------------------------------------
+
+source: 
+var tile = context . tiles [ tile <CAM> index ] 
+query:  var packets <CAM> iterator
+target: tile . packets <CAM> iterator ;
+output: context <CAM> tile <CAM> iterator <CAM>
+------------------------------------------
+
+source: 
+var sinon = require ( ' sinon ' ) 
+query:  var is <CAM> nodejs
+target: test <CAM> utils . is <CAM> nodejs ;
+output: ' . nodejs . get <CAM> nodejs ;
+------------------------------------------
+
+source: 
+var parse <CAM> tree <CAM> transformer = traceur . codegeneration . parse <CAM> tree <CAM> transformer 
+query:  var predefined <CAM> name
+target: traceur . syntax . predefined <CAM> name ;
+output: parse . syntax <CAM> trees <CAM> tree <CAM>
+------------------------------------------
+
+source: 
+var group = this . create <CAM> vml <CAM> element ( ' group ' ) 
+query:  var style
+target: group . style ;
+output: this <CAM> find (
+------------------------------------------
+
+source: 
+var beta = is <CAM> beta <CAM> valid ? parse <CAM> float ( beta <CAM> string ) : -1 
+query:  var gamma
+target: is <CAM> gamma <CAM> valid ? parse <CAM> float ( gamma <CAM> string ) : -1 ;
+output: beta <CAM> beta <CAM> beta <CAM> beta <CAM> beta ( beta <CAM> beta <CAM> ;
+------------------------------------------
+
+source: 
+var gl = ( tempcanvas . get <CAM> context ( ' webgl ' )  |  |  tempcanvas . get <CAM> context ( ' experimental - webgl ' ) ) 
+query:  var ext
+target: gl . get <CAM> extension ( extension ) ;
+output: tempcanvas . get <CAM> context ( ' <CAM> ;
+------------------------------------------
+
+source: 
+var scene = this . _ scene 
+query:  var screen <CAM> space <CAM> camera <CAM> controller
+target: scene . screen <CAM> space <CAM> camera <CAM> controller ;
+output: this . _ <CAM> controller ;
+------------------------------------------
+
+source: 
+var g = parse <CAM> int ( hex . substring ( 3 , 5 ) , 16 ) 
+query:  var b
+target: parse <CAM> int ( hex . substring ( 5 , 7 ) , 16 ) ;
+output: hex <CAM> int ( 3 . substring <CAM> 5 ) 5 . ;
+------------------------------------------
+
+source: 
+var subtitle <CAM> color = this . context . mui <CAM> theme . card <CAM> media . subtitle <CAM> color 
+query:  var color
+target: this . context . mui <CAM> theme . card <CAM> media . color ;
+output: this . subtitle . subtitle <CAM> color . color . color <CAM> subtitle <CAM>
+------------------------------------------
+
+source: 
+var sources = this . sources 
+query:  var len
+target: sources . length ;
+output: this . length ;
+------------------------------------------
+
+source: 
+var mkdirp = require ( ' mkdirp ' ) 
+query:  var path
+target: require ( ' path ' ) ;
+output: require ( ' path ' ) ;
+------------------------------------------
+
+source: 
+var rot = array [ j ] . rotation 
+query:  var interpolation
+target: array [ j ] . interpolation ;
+output: array .  ] ;
+------------------------------------------
+
+source: 
+var error = shared <CAM> util . error 
+query:  var info
+target: shared <CAM> util . info ;
+output: shared error util . error ;
+------------------------------------------
+
+source: 
+var appear <CAM> to <CAM> class = ref . appear <CAM> to <CAM> class 
+query:  var appear <CAM> active <CAM> class
+target: ref . appear <CAM> active <CAM> class ;
+output: ref . appear <CAM> class <CAM> class ;
+------------------------------------------
+
+source: 
+var loading <CAM> imagery = this . loading <CAM> imagery 
+query:  var imagery <CAM> layer
+target: loading <CAM> imagery . imagery <CAM> layer ;
+output: this <CAM> imagery <CAM> imagery <CAM> imagery ;
+------------------------------------------
+
+source: 
+var a = reject <CAM> thenable <CAM> soon ( ' rejected - a ' , 40 ) 
+query:  var b
+target: reject <CAM> thenable <CAM> soon ( ' rejected - b ' , 30 ) ;
+output: reject <CAM> thenable ( thenable ( ' rejected ' b ' ) ' <CAM> ;
+------------------------------------------
+
+source: 
+var c = ec * 8 
+query:  var d
+target: dB - du ;
+output: ec . * *
+------------------------------------------
+
+source: 
+var d = new index <CAM> node ( [ new constant <CAM> node ( 2 ) , new constant <CAM> node ( 1 ) , new constant <CAM> node ( 3 ) ] ) 
+query:  var e
+target: new index <CAM> node ( [ new constant <CAM> node ( 2 ) , new constant <CAM> node ( 4 ) ] ) ;
+output: new <CAM> <CAM> node ( new new <CAM> <CAM> node ( new ) ;
+------------------------------------------
+
+source: 
+var event = track . event ( ) 
+query:  var properties
+target: track . properties ( ) ;
+output: track . get ( g ;
+------------------------------------------
+
+source: 
+var p2 = $ ( ' p2 ' ) 
+query:  var test <CAM> el2
+target: $ ( ' test <CAM> el2 ' ) ;
+output: $ ( ' test <CAM> el2 ' ) ;
+------------------------------------------
+
+source: 
+var bn = _ dereq _ ( ' bn . js ' ) 
+query:  var brorand
+target: _ dereq _ ( ' brorand ' ) ;
+output: _ _ _ _ ' brorand ' ) ;
+------------------------------------------
+
+source: 
+var cubic <CAM> extrema = curve . cubic <CAM> extrema 
+query:  var cubic <CAM> at
+target: curve . cubic <CAM> at ;
+output: curve <CAM> cubic <CAM> at <CAM>
+------------------------------------------
+
+source: 
+var browserify = require ( ' browserify ' ) 
+query:  var derequire
+target: require ( ' derequire ' ) ;
+output: require ( ' derequire - ) ;
+------------------------------------------
+
+source: 
+var get <CAM> value = local <CAM> utils . get <CAM> value 
+query:  var parse <CAM> field
+target: local <CAM> utils . parse <CAM> field ;
+output: local <CAM> field . get <CAM> value <CAM>
+------------------------------------------
+
+source: 
+var react <CAM> fiber <CAM> reconciler = require ( ' react <CAM> fiber <CAM> reconciler ' ) 
+query:  var react <CAM> input <CAM> selection
+target: require ( ' react <CAM> input <CAM> selection ' ) ;
+output: require ( ' react <CAM> fiber <CAM> fiber <CAM> ) ;
+------------------------------------------
+
+source: 
+var http   = require ( ' http ' ) 
+query:  var path
+target: require ( ' path ' ) ;
+output: require ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var url <CAM> utils = js <CAM> common . url <CAM> utils 
+query:  var edge <CAM> settings
+target: powerbi . visuals . controls . internal . tablix <CAM> utils . edge <CAM> settings ;
+output: js . edge . edge <CAM> edge <CAM> edge <CAM> utils ;
+------------------------------------------
+
+source: 
+var Parser = traceur . syntax . Parser 
+query:  var source <CAM> file
+target: traceur . syntax . source <CAM> file ;
+output: traceur . syntax . trees <CAM> file .
+------------------------------------------
+
+source: 
+var Stream = core <CAM> stream . Stream 
+query:  var get <CAM> glyphs <CAM> unicode
+target: core <CAM> glyph <CAM> list . get <CAM> glyphs <CAM> unicode ;
+output: core <CAM> stream . stream <CAM> get <CAM> stream <CAM> glyphs <CAM>
+------------------------------------------
+
+source: 
+var payload = payloads [ i ] 
+query:  var callback
+target: payload <UND> callbacks [ payload . source ] ;
+output: payloads . callback   . callback ] ;
+------------------------------------------
+
+source: 
+var async <CAM> for <CAM> each = util . async <CAM> for <CAM> each 
+query:  var add <CAM> link <CAM> targets
+target: util . add <CAM> link <CAM> targets ;
+output: util . async <CAM> for <CAM> for <CAM>
+------------------------------------------
+
+source: 
+var Tcp = require ( ' marionette - client ' ) . Drivers . Tcp 
+query:  var client
+target: marionette . client ( driver : Tcp ) ;
+output: require . client ;
+------------------------------------------
+
+source: 
+var is <CAM> absolute = $ traceur <CAM> runtime . is <CAM> absolute 
+query:  var remove <CAM> dot <CAM> segments
+target: $ traceur <CAM> runtime . remove <CAM> dot <CAM> segments ;
+output: $ <CAM> . absolute . is <CAM> dot <CAM> segments <CAM>
+------------------------------------------
+
+source: 
+var table2td = goog . dom . get <CAM> element ( ' table2td ' ) 
+query:  var logo2
+target: goog . dom . get <CAM> element ( ' logo2 ' ) ;
+output: goog . get . get <CAM> element . ' logo2 ' ) ;
+------------------------------------------
+
+source: 
+var tab = tabs . focussed <CAM> tab 
+query:  var toggle
+target: args . toggle  |  |  args . source     ' click ' ;
+output: tabs . focussed <CAM> |  |  | . focussed ;
+------------------------------------------
+
+source: 
+var async = Promise . _ async 
+query:  var try <CAM> catch
+target: util . try <CAM> catch ;
+output: Promise . _ <CAM> catch ;
+------------------------------------------
+
+source: 
+var cos = spine . math <CAM> utils . cos <CAM> deg ( rotation ) 
+query:  var sin
+target: spine . math <CAM> utils . sin <CAM> deg ( rotation ) ;
+output: spine . cos . utils . get ( utils ( rotation <CAM> ;
+------------------------------------------
+
+source: 
+var contents = strip <CAM> comments ( file . contents . to <CAM> string ( ) ) 
+query:  var relative
+target: file . relative ;
+output: strip <CAM> get <CAM>
+------------------------------------------
+
+source: 
+var startX = this . startX 
+query:  var height
+target: this . height ;
+output: this . height ;
+------------------------------------------
+
+source: 
+var position = entity . position 
+query:  var radii
+target: ellipsoid . radii ;
+output: entity . radii ;
+------------------------------------------
+
+source: 
+var hour = parse <CAM> int ( cal . find ( ' . hourselect ' ) . val ( ) , 10 ) 
+query:  var minute
+target: parse <CAM> int ( cal . find ( ' . minuteselect ' ) . val ( ) , 10 ) ;
+output: cal <CAM> int ( ' . find ( ' minute find ' ) ;
+------------------------------------------
+
+source: 
+var flatten <CAM> style = require ( ' flatten <CAM> style ' ) 
+query:  var merge
+target: require ( ' merge ' ) ;
+output: require ( ' stream - ) ;
+------------------------------------------
+
+source: 
+var l = frustum . left 
+query:  var n
+target: frustum . near ;
+output: frustum . right ;
+------------------------------------------
+
+source: 
+var identifier <CAM> token = traceur . syntax . identifier <CAM> token 
+query:  var literal <CAM> token
+target: traceur . syntax . literal <CAM> token ;
+output: traceur . syntax <CAM> trees <CAM> token ;
+------------------------------------------
+
+source: 
+var a = require ( ' a ' ) 
+query:  var test
+target: require ( ' test ' ) ;
+output: require ( ' stream - ) ;
+------------------------------------------
+
+source: 
+var do <CAM> browserify = build <CAM> utils . do <CAM> browserify 
+query:  var write <CAM> file
+target: build <CAM> utils . write <CAM> file ;
+output: build <CAM> browserify . get <CAM> browserify <CAM>
+------------------------------------------
+
+source: 
+var helpers = Chart . helpers 
+query:  var noop
+target: helpers . noop ;
+output: Chart . noop ;
+------------------------------------------
+
+source: 
+var react <CAM> simple <CAM> empty <CAM> component = require ( ' react <CAM> simple <CAM> empty <CAM> component ' ) 
+query:  var react <CAM> updates
+target: require ( ' react <CAM> updates ' ) ;
+output: ' ( ' react <CAM> component <CAM> ) ;
+------------------------------------------
+
+source: 
+var leave <CAM> active <CAM> class = ref . leave <CAM> active <CAM> class 
+query:  var before <CAM> leave
+target: ref . before <CAM> leave ;
+output: ref . before <CAM> active <CAM>
+------------------------------------------
+
+source: 
+var find <CAM> visitor = traceur . codegeneration . find <CAM> visitor 
+query:  var formal <CAM> parameter <CAM> list
+target: traceur . syntax . trees . formal <CAM> parameter <CAM> list ;
+output: formal . syntax <CAM> trees <CAM> find <CAM> list <CAM> list ;
+------------------------------------------
+
+source: 
+var points = spline . points 
+query:  var times
+target: spline . times ;
+output: spline . times ;
+------------------------------------------
+
+source: 
+var qs    = require ( ' qs ' ) 
+query:  var path
+target: require ( ' path ' ) ;
+output: require ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var decoration = get <CAM> style <CAM> property ( item , style <CAM> context <CAM> stack , ' decoration ' , null ) 
+query:  var decoration <CAM> color
+target: get <CAM> style <CAM> property ( item , style <CAM> context <CAM> stack , ' decoration <CAM> color ' , null ) ;
+output: style <CAM> style <CAM> style <CAM> ' <CAM> ' <CAM> style <CAM> style <CAM> ' decoration <CAM> style <CAM> ) ' , ;
+------------------------------------------
+
+source: 
+var x = ~~ ( e . pos . _ x + particle . position . x ) 
+query:  var y
+target: ~~ ( e . pos . _ y + particle . position . y ) ;
+output: ~~ . particle . right . right . . . . get . get . ;
+------------------------------------------
+
+source: 
+var task = g <CAM> require ( ' task ' ) 
+query:  var help
+target: g <CAM> require ( ' help ' ) ;
+output: g <CAM> require ( ' help ' ) ;
+------------------------------------------
+
+source: 
+var invariant = require ( ' invariant ' ) 
+query:  var nullthrows
+target: require ( ' nullthrows ' ) ;
+output: require ( ' nullthrows - ) ;
+------------------------------------------
+
+source: 
+var a = Math . abs ( this [ ' re ' ] ) 
+query:  var b
+target: Math . abs ( this [ ' i m ' ] ) ;
+output: this . max ( ' . ' b ' ' ]  ;
+------------------------------------------
+
+source: 
+var MAYBE <UND> PROPER = scope <CAM> analyzer . MAYBE <UND> PROPER 
+query:  var NOT <UND> PROPER
+target: scope <CAM> analyzer . NOT <UND> PROPER ;
+output: scope . PROPER . MAYBE <UND> PROPER <UND>
+------------------------------------------
+
+source: 
+var def = goog . dom . get <CAM> element ( ' def-2 ' ) 
+query:  var jkl
+target: goog . dom . get <CAM> element ( ' jkl-2 ' ) ;
+output: goog . get . get <CAM> element ( ' jkl ' ) ;
+------------------------------------------
+
+source: 
+var synthetic <CAM> composition <CAM> event = require ( ' synthetic <CAM> composition <CAM> event ' ) 
+query:  var synthetic <CAM> input <CAM> event
+target: require ( ' synthetic <CAM> input <CAM> event ' ) ;
+output: synthetic ( ' synthetic <CAM> event <CAM> event <CAM> ) ;
+------------------------------------------
+
+source: 
+var winston = require ( ' winston ' ) 
+query:  var event <CAM> emitter
+target: require ( ' events ' ) . event <CAM> emitter ;
+output: require ( ' events ' ) ;
+------------------------------------------
+
+source: 
+var rotation = default <CAM> value ( options . rotation , 0 . 0 ) 
+query:  var extruded <CAM> height
+target: options . extruded <CAM> height ;
+output: default . extruded <CAM> height <CAM>
+------------------------------------------
+
+source: 
+var path    = require ( ' path ' ) 
+query:  var fs
+target: require ( ' fs ' ) ;
+output: require ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var stamp = header . stamp 
+query:  var header <CAM> length
+target: header . header <CAM> length ;
+output: header . header <CAM> length ;
+------------------------------------------
+
+source: 
+var opacity = context . opacity 
+query:  var origin
+target: context . origin ;
+output: context . origin ;
+------------------------------------------
+
+source: 
+var uint16 = Fn . uint16 
+query:  var to <CAM> fixed
+target: Fn . to <CAM> fixed ;
+output: Fn . to <CAM> fixed ;
+------------------------------------------
+
+source: 
+var scroll <CAM> view = require ( ' scroll <CAM> view ' ) 
+query:  var scroll <CAM> responder
+target: require ( ' scroll <CAM> responder ' ) ;
+output: ' ( ' scroll <CAM> view <CAM> ) ;
+------------------------------------------
+
+source: 
+var default <CAM> credit = new Credit ( ' default <CAM> credit ' ) 
+query:  var credit1
+target: new Credit ( ' credit1 ' ) ;
+output: Credit credit1 <CAM> ' credit1 ' ) ;
+------------------------------------------
+
+source: 
+var subset = settings . subset 
+query:  var set
+target: subset ? to <CAM> expression ( subset ) : EXPRESSION <UND> ESCAPE ;
+output: settings . subset <CAM> string ;
+------------------------------------------
+
+source: 
+var index = _ ref . index 
+query:  var is <CAM> scrolling
+target: _ ref . is <CAM> scrolling ;
+output: _ _ . is <CAM> scrolling ;
+------------------------------------------
+
+source: 
+var conf = App . conf 
+query:  var tpl
+target: conf . tpl ;
+output: App . tpl ;
+------------------------------------------
+
+source: 
+var row <CAM> class <CAM> name = _ props3 . row <CAM> class <CAM> name 
+query:  var row <CAM> getter
+target: _ props3 . row <CAM> getter ;
+output: _ row . row <CAM> class ;
+------------------------------------------
+
+source: 
+var result = result <CAM> selector ( state ) 
+query:  var time
+target: time <CAM> selector ( state ) ;
+output: result + selector ( ' <CAM> ;
+------------------------------------------
+
+source: 
+var tooltip <CAM> manager = powerbi . visuals . tooltip <CAM> manager 
+query:  var svg <CAM> util
+target: powerbi . visuals . svg <CAM> util ;
+output: powerbi . tooltip . tooltip <CAM> manager .
+------------------------------------------
+
+source: 
+var recording <CAM> module = require ( ' native <CAM> modules ' ) . date <CAM> picker <CAM> dialog <CAM> recording <CAM> module 
+query:  var View
+target: require ( ' View ' ) ;
+output: require ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var e = this . end <CAM> contact <CAM> event 
+query:  var l
+target: end <CAM> overlaps . length ;
+output: this <CAM> event . length ;
+------------------------------------------
+
+source: 
+var y = anchor . y <CAM> coordinate 
+query:  var variation <CAM> processor
+target: this . font . _ variation <CAM> processor ;
+output: anchor . variation <CAM> variation variation <CAM> processor ;
+------------------------------------------
+
+source: 
+var cloud1 = cloud <CAM> layer . create ( -60 , 120 , ' cloud1 ' ) 
+query:  var cloud2
+target: cloud <CAM> layer . create ( 900 , 170 , ' cloud2 ' ) ;
+output: cloud . layer . create <CAM> ' ) ' . ' cloud2 ' ) ;
+------------------------------------------
+
+source: 
+var times = options . times 
+query:  var first <CAM> inner <CAM> quadrangle
+target: options . first <CAM> inner <CAM> quadrangle ;
+output: options . first <CAM> quadrangle <CAM> quadrangle <CAM>
+------------------------------------------
+
+source: 
+var parser = _ dereq _ ( ' engine . io - parser ' ) 
+query:  var parseqs
+target: _ dereq _ ( ' parseqs ' ) ;
+output: _ _ _ _ ' parseqs ' ) ;
+------------------------------------------
+
+source: 
+var type = event . data [ ' type ' ] 
+query:  var payload
+target: event . data [ ' payload ' ] ;
+output: event . data . ' payload ' ] ;
+------------------------------------------
+
+source: 
+var i d = i d  |  |  options . size ( ) 
+query:  var option
+target: chart <UND> option <UND> number ( ) ;
+output: options .      ;
+------------------------------------------
+
+source: 
+var scroll <CAM> to <CAM> cell = _ props . scroll <CAM> to <CAM> cell 
+query:  var scroll <CAM> top
+target: _ props . scroll <CAM> top ;
+output: scroll scroll <CAM> scroll <CAM> cell ;
+------------------------------------------
+
+source: 
+var o = Object . prevent <CAM> extensions ( ) 
+query:  var v
+target: o . v    50 ;
+output: Object . get <CAM> |   )
+------------------------------------------
+
+source: 
+var open = options . interpolation . open 
+query:  var close
+target: options . interpolation . close ;
+output: options . close . close .
+------------------------------------------
+
+source: 
+var old <CAM> item = event . detail . old <CAM> item 
+query:  var new <CAM> item
+target: event . detail . new <CAM> item ;
+output: event <CAM> old <CAM> old <CAM> item <CAM>
+------------------------------------------
+
+source: 
+var x = anchor <CAM> point . x 
+query:  var y
+target: anchor <CAM> point . y ;
+output: anchor . point . get <CAM>
+------------------------------------------
+
+source: 
+var awesome <CAM> markers <CAM> plugin = leaflet <CAM> helpers . awesome <CAM> markers <CAM> plugin 
+query:  var vector <CAM> markers <CAM> plugin
+target: leaflet <CAM> helpers . vector <CAM> markers <CAM> plugin ;
+output: leaflet <CAM> markers . awesome <CAM> plugin <CAM> plugin <CAM>
+------------------------------------------
+
+source: 
+var APN <UND> PROPERTIES = apn <CAM> editor <CAM> const . APN <UND> PROPERTIES 
+query:  var VALUE <UND> CONVERTERS
+target: apn <CAM> editor <CAM> const . VALUE <UND> CONVERTERS ;
+output: apn <UND> PROPERTIES <CAM> PROPERTIES <UND> APN <UND> const <UND>
+------------------------------------------
+
+source: 
+var sum64 <UND> lo = utils . sum64 <UND> lo 
+query:  var sum64 <UND> 4 <UND> hi
+target: utils . sum64 <UND> 4 <UND> hi ;
+output: utils . sum64 <UND> hi ;
+------------------------------------------
+
+source: 
+var extend = _ Vue$util . extend 
+query:  var is <CAM> array
+target: _ Vue$util . is <CAM> array ;
+output: Vue$util . . is <CAM> array ;
+------------------------------------------
+
+source: 
+var start <CAM> point = curve . start <CAM> point 
+query:  var end <CAM> point
+target: curve . end <CAM> point ;
+output: curve <CAM> end <CAM> point <CAM>
+------------------------------------------
+
+source: 
+var create <CAM> assignment <CAM> expression = parse <CAM> tree <CAM> factory . create <CAM> assignment <CAM> expression 
+query:  var create <CAM> binary <CAM> operator
+target: parse <CAM> tree <CAM> factory . create <CAM> binary <CAM> operator ;
+output: <CAM> <CAM> assignment <CAM> factory . create <CAM> assignment <CAM> assignment <CAM>
+------------------------------------------
+
+source: 
+var state = this . state _ 
+query:  var stroke <CAM> style
+target: state . stroke <CAM> style ;
+output: this . stroke ;
+------------------------------------------
+
+source: 
+var early <CAM> change = lzw <CAM> state . early <CAM> change 
+query:  var next <CAM> code
+target: lzw <CAM> state . next <CAM> code ;
+output: lzw <CAM> change . early <CAM> change ;
+------------------------------------------
+
+source: 
+var type = definition . type 
+query:  var format
+target: definition . format ;
+output: definition . format ;
+------------------------------------------
+
+source: 
+var Catch = traceur . syntax . trees . Catch 
+query:  var function <CAM> declaration
+target: traceur . syntax . trees . function <CAM> declaration ;
+output: traceur . syntax . trees . function <CAM> declaration ;
+------------------------------------------
+
+source: 
+var REVISION <UND> CHANGES = _ _ dependency3 _ _ . REVISION <UND> CHANGES 
+query:  var create <CAM> frame
+target: _ _ dependency3 _ _ . create <CAM> frame ;
+output: _ _ _ _ _ _ _ <CAM> frame <UND>
+------------------------------------------
+
+source: 
+var deep <CAM> purple100 = exports . deep <CAM> purple100 = ' # d1c4e9 ' 
+query:  var deep <CAM> purple200
+target: exports . deep <CAM> purple200    ' # b39ddb ' ;
+output: ' . deep <CAM> purple100 <CAM>    # ' <CAM> ;
+------------------------------------------
+
+source: 
+var gc <CAM> node = js <CAM> profile <CAM> model . gc <CAM> node 
+query:  var samples
+target: js <CAM> profile <CAM> model . samples ;
+output: js <CAM> common <CAM> node . get <CAM>
+------------------------------------------
+
+source: 
+var symbol = definition . symbol 
+query:  var color
+target: object . color  |  |  definition . color  |  |  ' # fff ' ;
+output: definition . color ;
+------------------------------------------
+
+source: 
+var scroll <CAM> left = _ ref . scroll <CAM> left 
+query:  var scroll <CAM> top
+target: _ ref . scroll <CAM> top ;
+output: _ scroll . scroll <CAM> left ;
+------------------------------------------
+
+source: 
+var x = vm . x 
+query:  var y
+target: vm . y ;
+output: vm . y ;
+------------------------------------------
+
+source: 
+var react <CAM> type <CAM> of <CAM> work = require ( ' react <CAM> type <CAM> of <CAM> work ' ) 
+query:  var synthetic <CAM> event
+target: require ( ' synthetic <CAM> event ' ) ;
+output: require ( ' synthetic <CAM> type <CAM> ) ;
+------------------------------------------
+
+source: 
+var rowheight = options . rowheight  |  |  40 
+query:  var width
+target: options . colwidth  |  |  300 ;
+output: rowheight . width  |  |  | 
+------------------------------------------
+
+source: 
+var bind = require ( ' component - bind ' ) 
+query:  var debug
+target: require ( ' debug ' ) ( ' socket . io - client : socket ' ) ;
+output: require ( ' debug ' ) ;
+------------------------------------------
+
+source: 
+var react <CAM> native <CAM> stack <CAM> injection = require ( ' react <CAM> native <CAM> stack <CAM> injection ' ) 
+query:  var react <CAM> updates
+target: require ( ' react <CAM> updates ' ) ;
+output: ' ( ' react <CAM> stack <CAM> ) ;
+------------------------------------------
+
+source: 
+var max <CAM> resolution = this . max <CAM> resolution _ 
+query:  var min <CAM> resolution
+target: this . min <CAM> resolution _ ;
+output: this . resolution <CAM> resolution <CAM> ;
+------------------------------------------
+
+source: 
+var babel = require ( ' babelify ' ) 
+query:  var browserify
+target: require ( ' browserify ' ) ;
+output: require ( ' browserify ' ) ;
+------------------------------------------
+
+source: 
+var start = range . start <CAM> container 
+query:  var end
+target: range . end <CAM> container ;
+output: range . end ;
+------------------------------------------
+
+source: 
+var title <CAM> color = this . context . mui <CAM> theme . card <CAM> media . title <CAM> color 
+query:  var subtitle <CAM> color
+target: this . context . mui <CAM> theme . card <CAM> media . subtitle <CAM> color ;
+output: this . title <CAM> title <CAM> color <CAM> title <CAM> color <CAM> title <CAM> color <CAM>
+------------------------------------------
+
+source: 
+var options = this . options 
+query:  var strict
+target: options . strict ;
+output: this . strict ;
+------------------------------------------
+
+source: 
+var quasi <CAM> literal <CAM> transformer = traceur . codegeneration . quasi <CAM> literal <CAM> transformer 
+query:  var rest <CAM> parameter <CAM> transformer
+target: traceur . codegeneration . rest <CAM> parameter <CAM> transformer ;
+output: traceur . syntax <CAM> quasi <CAM> transformer <CAM> transformer ;
+------------------------------------------
+
+source: 
+var child <UND> process = require ( ' child <UND> process ' ) 
+query:  var http
+target: require ( ' http ' ) ;
+output: require ( ' http ' ) ;
+------------------------------------------
+
+source: 
+var declare <CAM> ident <CAM> in <CAM> local <CAM> scope = utils . declare <CAM> ident <CAM> in <CAM> local <CAM> scope 
+query:  var init <CAM> scope <CAM> metadata
+target: utils . init <CAM> scope <CAM> metadata ;
+output: <CAM> . <CAM> <CAM> scope ;
+------------------------------------------
+
+source: 
+var texture = runtime . gltf . textures [ texture <CAM> info . index ] 
+query:  var tex <CAM> coord
+target: texture <CAM> info . tex <CAM> coord  |  |  0 ;
+output: runtime . info . texture <CAM> info <CAM>   |  | ;
+------------------------------------------
+
+source: 
+var deep <CAM> orange100 = exports . deep <CAM> orange100 = ' # ffccbc ' 
+query:  var deep <CAM> orange200
+target: exports . deep <CAM> orange200    ' # ffab91 ' ;
+output: ' . deep <CAM> orange100 <CAM>    # ' <CAM> ;
+------------------------------------------
+
+source: 
+var contents = capabilities . contents 
+query:  var layers
+target: contents . layers ;
+output: capabilities . layers ;
+------------------------------------------
+
+source: 
+var props = assign ( , element . props ) 
+query:  var key
+target: element . key ;
+output: element ( get (
+------------------------------------------
+
+source: 
+var visual <CAM> data <CAM> role <CAM> kind = powerbi . visual <CAM> data <CAM> role <CAM> kind 
+query:  var data <CAM> label <CAM> utils
+target: powerbi . visuals . data <CAM> label <CAM> utils ;
+output: <CAM> . data . visual <CAM> data <CAM> data <CAM>
+------------------------------------------
+
+source: 
+var auto <CAM> container <CAM> width = _ props4 . auto <CAM> container <CAM> width 
+query:  var auto <CAM> height
+target: _ props4 . auto <CAM> height ;
+output: props4 _ <CAM> auto <CAM> container <CAM>
+------------------------------------------
+
+source: 
+var expr = this . expr 
+query:  var node
+target: this . node ;
+output: this . node ;
+------------------------------------------
+
+source: 
+var appear = data . appear 
+query:  var after <CAM> appear
+target: data . after <CAM> appear ;
+output: data . after <CAM> appear ;
+------------------------------------------
+
+source: 
+var range <CAM> node = math . expression . node . range <CAM> node 
+query:  var assignment <CAM> node
+target: math . expression . node . assignment <CAM> node ;
+output: math . node . node . node . node ;
+------------------------------------------
+
+source: 
+var accumulate = require ( ' accumulate ' ) 
+query:  var is <CAM> startish
+target: event <CAM> plugin <CAM> utils . is <CAM> startish ;
+output: ' . startish . startish . get <CAM> startish ;
+------------------------------------------
+
+source: 
+var q = options . q  |  |  3 
+query:  var side <CAM> orientation
+target: ( options . side <CAM> orientation      0 ) ? 0 : options . side <CAM> orientation  |  |  BABYLON . Mesh . DEFAULTSIDE ;
+output: options  . side <CAM> orientation  |     ) ;
+------------------------------------------
+
+source: 
+var fs = imports . fs 
+query:  var util
+target: imports . util ;
+output: imports . util ;
+------------------------------------------
+
+source: 
+var grid <CAM> style = _ props . grid <CAM> style 
+query:  var header <CAM> height
+target: _ props . header <CAM> height ;
+output: props _ . grid <CAM> style ;
+------------------------------------------
+
+source: 
+var mm = require ( ' mm ' ) 
+query:  var nock
+target: require ( ' nock ' ) ;
+output: require ( ' nock - ) ;
+------------------------------------------
+
+source: 
+var esprima = require ( ' esprima ' ) 
+query:  var escodegen
+target: require ( ' escodegen ' ) ;
+output: require ( ' escodegen ' ) ;
+------------------------------------------
+
+source: 
+var should = require ( ' should ' ) 
+query:  var sinon
+target: require ( ' sinon ' ) ;
+output: require ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var semi <CAM> minor <CAM> axis = options . semi <CAM> minor <CAM> axis 
+query:  var granularity
+target: default <CAM> value ( options . granularity , cesium <CAM> math . RADIANS <UND> PER <UND> DEGREE ) ;
+output: semi <CAM> value ( options . semi , <CAM> <CAM> axis <CAM> semi <CAM> axis <CAM> axis <CAM> ;
+------------------------------------------
+
+source: 
+var through2 = require ( ' through2 ' ) 
+query:  var uglify
+target: require ( ' gulp - uglify ' ) ;
+output: require ( ' uglify - uglify ' ) ;
+------------------------------------------
+
+source: 
+var data = options . data 
+query:  var base <CAM> url
+target: options . base <CAM> url ;
+output: options . base <CAM> url ;
+------------------------------------------
+
+source: 
+var NO <UND> MODIFICATION <UND> ALLOWED <UND> ERR = exception <CAM> code . NO <UND> MODIFICATION <UND> ALLOWED <UND> ERR = ( ( exception <CAM> message [ 7 ] = ' No modification allowed ' ) , 7 ) 
+query:  var NOT <UND> FOUND <UND> ERR
+target: exception <CAM> code . NOT <UND> FOUND <UND> ERR       ( ( exception <CAM> message [ 8 ]   ' Not found ' ) , 8 ) ;
+output: exception <CAM> <UND> <CAM> NO <UND> <UND> <UND> <UND> <UND>       ' ' <CAM> <UND> <UND> ' <UND> <UND> |  <UND> <UND> <UND> ) <UND> ' <UND> ;
+------------------------------------------
+
+source: 
+var show <CAM> min <CAM> label = axis <CAM> model . get ( ' axis <CAM> label . show <CAM> min <CAM> label ' ) 
+query:  var show <CAM> max <CAM> label
+target: axis <CAM> model . get ( ' axis <CAM> label . show <CAM> max <CAM> label ' ) ;
+output: axis <CAM> label <CAM> get <CAM> ' show <CAM> label <CAM> show <CAM> label <CAM> label <CAM> ) ;
+------------------------------------------
+
+source: 
+var min = series <CAM> model . get ( ' min ' ) 
+query:  var max
+target: series <CAM> model . get ( ' max ' ) ;
+output: series . model . get ( ' max ' ) .
+------------------------------------------
+
+source: 
+var before = ' before ' + section 
+query:  var after
+target: ' after ' + section ;
+output: ' after ' ;
+------------------------------------------
+
+source: 
+var button = _ context$mui <CAM> theme . button 
+query:  var raised <CAM> button
+target: _ context$mui <CAM> theme . raised <CAM> button ;
+output: context$mui _ <CAM> button . button <CAM> button <CAM>
+------------------------------------------
+
+source: 
+var ROTATION <UND> INDEX = Billboard . ROTATION <UND> INDEX 
+query:  var ALIGNED <UND> AXIS <UND> INDEX
+target: Billboard . ALIGNED <UND> AXIS <UND> INDEX ;
+output: Billboard . ROTATION <UND> INDEX <UND> INDEX ;
+------------------------------------------
+
+source: 
+var plugin <CAM> error = gutil . plugin <CAM> error 
+query:  var path
+target: require ( ' path ' ) ;
+output: var ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var reactdom <CAM> component <CAM> tree = require ( ' reactdom <CAM> component <CAM> tree ' ) 
+query:  var react <CAM> fiber <CAM> tree <CAM> reflection
+target: require ( ' react <CAM> fiber <CAM> tree <CAM> reflection ' ) ;
+output: require ( ' react <CAM> tree <CAM> tree <CAM> tree <CAM> ) ;
+------------------------------------------
+
+source: 
+var select <CAM> transforms = transform <CAM> context . select <CAM> transforms 
+query:  var object <CAM> descriptors
+target: transform <CAM> context . object <CAM> descriptors ;
+output: transform <CAM> transforms . select <CAM> transforms ;
+------------------------------------------
+
+source: 
+var f8 <CAM> touchable = require ( ' f8 <CAM> touchable ' ) 
+query:  var Text
+target: require ( ' f8 <CAM> text ' ) ;
+output: require ( ' node <CAM> touchable ' ) ;
+------------------------------------------
+
+source: 
+var from = ray . from 
+query:  var to
+target: ray . to ;
+output: ray . to <CAM>
+------------------------------------------
+
+source: 
+var device = options . device 
+query:  var source <CAM> cubemap
+target: options . source <CAM> cubemap ;
+output: options . source <CAM> cubemap ;
+------------------------------------------
+
+source: 
+var dynCall <UND> viiddddddiiii = Module [ ' dynCall <UND> viiddddddiiii ' ] = asm [ ' dynCall <UND> viiddddddiiii ' ] 
+query:  var dynCall <UND> iiiiiiiiiiiidd
+target: Module [ ' dynCall <UND> iiiiiiiiiiiidd ' ]    asm [ ' dynCall <UND> iiiiiiiiiiiidd ' ] ;
+output: Module [ ' dynCall <UND> iiiiiiiiiiiidd ' ] ;
+------------------------------------------
+
+source: 
+var y <CAM> scale = axis <CAM> options . y <CAM> scale 
+query:  var series <CAM> offset <CAM> scale
+target: axis <CAM> options . series <CAM> offset <CAM> scale ;
+output: axis <CAM> scale . y <CAM> scale <CAM> scale <CAM>
+------------------------------------------
+
+source: 
+var missspelling = ' missspelling ' 
+query:  var iggnore
+target: ' iggnore ' ;
+output: ' iggnore ' ;
+------------------------------------------
+
+source: 
+var dt   = this . s . dt 
+query:  var details
+target: this . c . details ;
+output: this . details . details 
+------------------------------------------
+
+source: 
+var data <CAM> model = el . data <CAM> model  |  |  series <CAM> model 
+query:  var data <CAM> index
+target: el . data <CAM> index ;
+output: data <CAM> resolve <CAM> model <CAM>
+------------------------------------------
+
+source: 
+var socket <CAM> message <CAM> type = Windows . Networking . Sockets . socket <CAM> message <CAM> type 
+query:  var unicode <CAM> encoding
+target: Windows . Storage . Streams . unicode <CAM> encoding ;
+output: Windows . socket <CAM> Networking <CAM> Networking <CAM> message <CAM>
+------------------------------------------
+
+source: 
+var x = bounds . x 
+query:  var y
+target: bounds . y ;
+output: bounds . y ;
+------------------------------------------
+
+source: 
+var assert = utils . assert 
+query:  var cached <CAM> property
+target: utils . cached <CAM> property ;
+output: utils . cached <CAM> property ;
+------------------------------------------
+
+source: 
+var unwrap = shadowdom <CAM> polyfill . unwrap 
+query:  var wrap
+target: shadowdom <CAM> polyfill . wrap ;
+output: shadowdom . polyfill . wrap ;
+------------------------------------------
+
+source: 
+var deep <CAM> orange300 = exports . deep <CAM> orange300 = ' # ff8a65 ' 
+query:  var deep <CAM> orange400
+target: exports . deep <CAM> orange400    ' # ff7043 ' ;
+output: ' . deep <CAM> orange300 <CAM>    # ' <CAM> ;
+------------------------------------------
+
+source: 
+var x = proxy <CAM> ofp <CAM> foo . bind ( 1 ) 
+query:  var y
+target: new Proxy ( x , handler ) ;
+output: ofp <CAM> <CAM> 1 + 1 <CAM> ;
+------------------------------------------
+
+source: 
+var create <CAM> path = leaflet <CAM> paths <CAM> helpers . create <CAM> path 
+query:  var bind <CAM> path <CAM> events
+target: leaflet <CAM> path <CAM> events . bind <CAM> path <CAM> events ;
+output: leaflet <CAM> path <CAM> path <CAM> create <CAM> path <CAM> path <CAM>
+------------------------------------------
+
+source: 
+var HIDE <UND> SPINNER = exports . HIDE <UND> SPINNER = ' HIDE <UND> SPINNER ' 
+query:  var GET <UND> GITHUB <UND> INITIATE
+target: exports . GET <UND> GITHUB <UND> INITIATE    ' GET <UND> GITHUB <UND> INITIATE ' ;
+output: ' . HIDE <UND> INITIATE <UND> INITIATE <UND>     <UND> SPINNER <UND> SPINNER <UND> ;
+------------------------------------------
+
+source: 
+var nodes = this . body . nodes 
+query:  var edges
+target: this . body . edges ;
+output: this . body . body ;
+------------------------------------------
+
+source: 
+var key <CAM> expression = options . key <CAM> expression 
+query:  var render <CAM> buffer
+target: options . render <CAM> buffer ;
+output: options . key <CAM> expression <CAM>
+------------------------------------------
+
+source: 
+var tier = tiers [ index ] 
+query:  var th
+target: document . create <CAM> element ( ' th ' ) ;
+output: tiers . create <CAM> element ;
+------------------------------------------
+
+source: 
+var block <CAM> map <CAM> builder = require ( ' block <CAM> map <CAM> builder ' ) 
+query:  var character <CAM> metadata
+target: require ( ' character <CAM> metadata ' ) ;
+output: require ( ' character <CAM> map <CAM> ) ;
+------------------------------------------
+
+source: 
+var height = ellipse . height 
+query:  var extruded <CAM> height
+target: ellipse . extruded <CAM> height ;
+output: ellipse . extruded <CAM> height ;
+------------------------------------------
+
+source: 
+var label = _ props . label 
+query:  var label <CAM> color
+target: _ props . label <CAM> color ;
+output: props label . label <CAM> color ;
+------------------------------------------
+
+source: 
+var match = value <CAM> to <CAM> match ( v , prop <CAM> val , matches [ i ] , false , true ) 
+query:  var duplicate
+target: duplicates [ ' _ ' + match . i d ] ;
+output: matches <CAM> , duplicate duplicate duplicate prop . duplicate d , ;
+------------------------------------------
+
+source: 
+var HAS <UND> BOOLEAN <UND> VALUE = dom <CAM> property . injection . HAS <UND> BOOLEAN <UND> VALUE 
+query:  var HAS <UND> NUMERIC <UND> VALUE
+target: dom <CAM> property . injection . HAS <UND> NUMERIC <UND> VALUE ;
+output: dom . VALUE <UND> HAS <UND> HAS <UND> VALUE <UND> VALUE <UND>
+------------------------------------------
+
+source: 
+var view = this . view 
+query:  var projection <CAM> view
+target: this . projection <CAM> view ;
+output: this . projection <CAM> view <CAM>
+------------------------------------------
+
+source: 
+var now = _ _ dependency2 _ _ . now 
+query:  var all
+target: _ _ dependency3 _ _ . all ;
+output: _ _ _ _ _ _ all ;
+------------------------------------------
+
+source: 
+var index <CAM> of = zr <CAM> util . index <CAM> of 
+query:  var is <CAM> object
+target: zr <CAM> util . is <CAM> object ;
+output: zr <CAM> value . is <CAM> of <CAM>
+------------------------------------------
+
+source: 
+var p0 = segment . p0 
+query:  var p1
+target: segment . p1 ;
+output: segment . p1 ;
+------------------------------------------
+
+source: 
+var view <CAM> style <CAM> prop <CAM> types = require ( ' view <CAM> style <CAM> prop <CAM> types ' ) 
+query:  var flatten <CAM> style
+target: require ( ' flatten <CAM> style ' ) ;
+output: require ( ' flatten <CAM> style <CAM> ) ;
+------------------------------------------
+
+source: 
+var orientation = this . options . orientation 
+query:  var show <CAM> minor <CAM> labels
+target: this . options . show <CAM> minor <CAM> labels ;
+output: this . show . show <CAM> minor <CAM> minor ;
+------------------------------------------
+
+source: 
+var set <CAM> private = m . set <CAM> private 
+query:  var get <CAM> private
+target: m . get <CAM> private ;
+output: m . set <CAM> private <CAM>
+------------------------------------------
+
+source: 
+var ddfx = tmpx * 2 + dddfx , ddfy = tmpy * 2 + dddfy 
+query:  var dfx
+target: cx1 * 0 . 3 + tmpx + dddfx * 0 . 16666667 , dfy    cy1 * 0 . 3 + tmpy + dddfy * 0 . 16666667 ;
+output: + * dfx ;
+------------------------------------------
+
+source: 
+var keyboard <CAM> focused = _ props3 . keyboard <CAM> focused 
+query:  var link <CAM> button
+target: _ props3 . link <CAM> button ;
+output: _ _ . keyboard <CAM> focused <CAM>
+------------------------------------------
+
+source: 
+var scroll <CAM> top = $ WINDOW . scroll <CAM> top ( ) 
+query:  var scroll <CAM> left
+target: $ WINDOW . scroll <CAM> left ( ) ;
+output: scroll <CAM> <CAM> scroll <CAM> left <CAM> ) ;
+------------------------------------------
+
+source: 
+var minute = parse <CAM> int ( $ ( ' # timer - minute ' ) . val ( ) ) % 60 
+query:  var second
+target: parse <CAM> int ( $ ( ' # timer - second ' ) . val ( ) ) % 60 ;
+output: parse <CAM> int ( ) ( ) # # ' second ' ' . val ( ) ;
+------------------------------------------
+
+source: 
+var create <CAM> unit = math . create <CAM> unit 
+query:  var Unit
+target: math . type . Unit ;
+output: math . create ;
+------------------------------------------
+
+source: 
+var use <CAM> selenium <CAM> jar = grunt . option ( ' use <CAM> selenium <CAM> jar ' ) 
+query:  var selenium <CAM> address <CAM> proxy
+target: grunt . option ( ' selenium <CAM> address <CAM> proxy ' ) ;
+output: grunt <CAM> selenium <CAM> ' selenium <CAM> jar <CAM> proxy <CAM> ) ;
+------------------------------------------
+
+source: 
+var command = item . command 
+query:  var hash <CAM> id
+target: binding . hash <CAM> id ;
+output: item . hash <CAM> id ;
+------------------------------------------
+
+source: 
+var member <CAM> name = this . props . member <CAM> name 
+query:  var member <CAM> groups
+target: this . props . member <CAM> groups ;
+output: this . member <CAM> member <CAM> groups ;
+------------------------------------------
+
+source: 
+var literal <CAM> token = traceur . syntax . literal <CAM> token 
+query:  var parse <CAM> tree <CAM> type
+target: traceur . syntax . parse <CAM> tree <CAM> type ;
+output: traceur . syntax <CAM> trees <CAM> type <CAM> factory ;
+------------------------------------------
+
+source: 
+var each = zr <CAM> util . each 
+query:  var to <CAM> camel <CAM> case
+target: format <CAM> util . to <CAM> camel <CAM> case ;
+output: zr <CAM> util . to <CAM> case <CAM> case <CAM>
+------------------------------------------
+
+source: 
+var react <CAM> component <CAM> with <CAM> pure <CAM> render <CAM> mixin = require ( ' react <CAM> component <CAM> with <CAM> pure <CAM> render <CAM> mixin ' ) 
+query:  var react <CAM> wheel <CAM> handler
+target: require ( ' react <CAM> wheel <CAM> handler ' ) ;
+output: require ( ' <CAM> <CAM> pure <CAM> pure <CAM> ) ;
+------------------------------------------
+
+source: 
+var con = client . connection 
+query:  var query
+target: client . query ( ' whatever ' ) ;
+output: con . query <CAM> g node ' ) ;
+------------------------------------------
+
+source: 
+var request = require ( ' request ' ) 
+query:  var assert
+target: require ( ' assert ' ) ;
+output: require ( ' stream - ) ;
+------------------------------------------
+
+source: 
+var _ bitshift64 <CAM> shl = Module [ ' _ bitshift64 <CAM> shl ' ] = asm [ ' _ bitshift64 <CAM> shl ' ] 
+query:  var _ test <CAM> setjmp
+target: Module [ ' _ test <CAM> setjmp ' ]    asm [ ' _ test <CAM> setjmp ' ] ;
+output: _ _ ' _ _ <CAM> shl ' ]   ' ' [ ' _ _ <CAM> shl ' ] 
+------------------------------------------
+
+source: 
+var fixed <CAM> data <CAM> table <CAM> cell = require ( ' fixed <CAM> data <CAM> table <CAM> cell . react ' ) 
+query:  var cx
+target: require ( ' cx ' ) ;
+output: require ( ' fixed ' ) ;
+------------------------------------------
+
+source: 
+var data = this . data 
+query:  var camera
+target: this . camera ;
+output: this . camera .
+------------------------------------------
+
+source: 
+var doc = this . doc = new Document ( ' ' ) 
+query:  var deferred <CAM> update
+target: this . deferred <CAM> update    lang . delayed <CAM> call ( this . on <CAM> update . bind ( this ) ) ;
+output: this . doc <CAM> update <CAM> |   ? deferred <CAM> update ( ' . doc <CAM> update ( get ( ' . ;
+------------------------------------------
+
+source: 
+var div = document . create <CAM> element ( ' div ' ) 
+query:  var label <CAM> style
+target: label <CAM> styles [ prec <UND> axis     ' y2 ' ? ' y2 ' : axis ] ;
+output: document <CAM> style ' ' <CAM> style '   '  label ' ;
+------------------------------------------
+
+source: 
+var loaded = surface <CAM> tile . loaded <CAM> terrain 
+query:  var upsampled
+target: surface <CAM> tile . upsampled <CAM> terrain ;
+output: surface . upsampled . loaded <CAM> tile ;
+------------------------------------------
+
+source: 
+var https = require ( ' https ' ) 
+query:  var path
+target: require ( ' path ' ) ;
+output: require ( ' path ' ) ;
+------------------------------------------
+
+source: 
+var lis = $ . event . listeners 
+query:  var len
+target: lis . length ;
+output: $ . length ;
+------------------------------------------
+
+source: 
+var fs = require ( ' fs ' ) 
+query:  var format
+target: require ( ' util ' ) . format ;
+output: require ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var i d = updater . entity . i d 
+query:  var dynamic <CAM> updater
+target: this . _ dynamic <CAM> updaters . get ( i d ) ;
+output: updater . dynamic dynamic . updater . dynamic <CAM> i . ) ;
+------------------------------------------
+
+source: 
+var extend = _ angular . extend 
+query:  var element
+target: _ angular . element ;
+output: _ _ . element ;
+------------------------------------------
+
+source: 
+var n = new index <CAM> node ( [ b , c ] ) 
+query:  var e
+target: new constant <CAM> node ( 5 ) ;
+output: index <CAM> <CAM> node ( ) ) ;
+------------------------------------------
+
+source: 
+var target <CAM> index = _ ref3 . target <CAM> index 
+query:  var total <CAM> size
+target: _ ref3 . total <CAM> size ;
+output: _ _ <CAM> total <CAM> index ;
+------------------------------------------
+
+source: 
+var analysis = self . analysis 
+query:  var input
+target: self . input ;
+output: self . input <CAM>
+------------------------------------------
+
+source: 
+var offset = this . _ offsets [ attribute <CAM> index ] 
+query:  var stride
+target: this . _ stride ;
+output: this . _ _ .
+------------------------------------------
+
+source: 
+var ANON <UND> BLOCK = ' ANON <UND> BLOCK ' 
+query:  var ARGUMENT <UND> LIST
+target: ' ARGUMENT <UND> LIST ' ;
+output: ' ANON <UND> BLOCK <UND> ;
+------------------------------------------
+
+source: 
+var message = _ ref4 . message 
+query:  var assert
+target: _ ref4 . assert ;
+output: ref4 _ . assert ;
+------------------------------------------
+
+source: 
+var node <CAM> list = scope . wrappers . node <CAM> list 
+query:  var register <CAM> wrapper
+target: scope . register <CAM> wrapper ;
+output: node . node <CAM> list <CAM>
+------------------------------------------
+
+source: 
+var length = ! ! obj & & ' length ' in obj & & obj . length 
+query:  var type
+target: $ . type ( obj ) ;
+output: obj ( type ;
+------------------------------------------
+
+source: 
+var f = objf . f 
+query:  var f <CAM> async
+target: objf . f <CAM> async ;
+output: objf . f ;
+------------------------------------------
+
+source: 
+var height = $ ( this ) . parent ( ) . height ( ) 
+query:  var width
+target: $ ( this ) . parent ( ) . width ( ) ;
+output: ( . ) . . get . ) ;
+------------------------------------------
+
+source: 
+var script = debugger <CAM> model <CAM> location . script ( ) 
+query:  var ui <CAM> source <CAM> code
+target: this . _ ui <CAM> source <CAM> code <CAM> for <CAM> script <CAM> id . get ( script . script <CAM> id ) ;
+output: debugger . script script <CAM> model <CAM> code <CAM> code <CAM> code <CAM> code ( get <CAM> <CAM> <CAM> script <CAM> code ( ;
+------------------------------------------
+
+source: 
+var leave <CAM> to <CAM> class = data . leave <CAM> to <CAM> class 
+query:  var leave <CAM> active <CAM> class
+target: data . leave <CAM> active <CAM> class ;
+output: data <CAM> leave <CAM> class <CAM> class <CAM>
+------------------------------------------
+
+source: 
+var for <CAM> each = _ angular . for <CAM> each 
+query:  var is <CAM> object
+target: _ angular . is <CAM> object ;
+output: angular _ . for <CAM> each ;
+------------------------------------------
+
+source: 
+var create <CAM> number <CAM> literal = traceur . codegeneration . parse <CAM> tree <CAM> factory . create <CAM> number <CAM> literal 
+query:  var create <CAM> variable <CAM> statement
+target: traceur . codegeneration . parse <CAM> tree <CAM> factory . create <CAM> variable <CAM> statement ;
+output: <CAM> . syntax <CAM> create <CAM> number <CAM> factory . create <CAM> number <CAM> number <CAM>
+------------------------------------------
+
+source: 
+var request <CAM> camera = this . camera . request <CAM> camera 
+query:  var release
+target: this . camera . release ;
+output: this . camera <CAM> camera <CAM>
+------------------------------------------
+
+source: 
+var _ strlen = Module [ ' _ strlen ' ] = asm [ ' _ strlen ' ] 
+query:  var _ im <UND> reset <UND> search
+target: Module [ ' _ im <UND> reset <UND> search ' ]    asm [ ' _ im <UND> reset <UND> search ' ] ;
+output: _ [ ' _ _ <UND> reset ' reset ' ]     [ ' _ _ <UND> reset ' reset ' ] 
+------------------------------------------
+
+source: 
+var async = require ( ' async ' ) 
+query:  var dirname
+target: require ( ' path ' ) . dirname ;
+output: require ( ' dirname ' ) ;
+------------------------------------------
+
+source: 
+var end <CAM> args = options . end <CAM> args 
+query:  var done
+target: options . done ;
+output: options . end ;
+------------------------------------------
+
+source: 
+var north = rectangle . north 
+query:  var ellipsoid
+target: Ellipsoid . clone ( parameters . ellipsoid ) ;
+output: north . length ;
+------------------------------------------
+
+source: 
+var Modifiers = goog . ui . keyboard <CAM> shortcut <CAM> handler . Modifiers 
+query:  var key <CAM> codes
+target: goog . events . key <CAM> codes ;
+output: goog . keyboard <CAM> keyboard <CAM> shortcut <CAM>
+------------------------------------------
+
+source: 
+var update <CAM> ownership <CAM> data = denodeify ( session . models . user . update <CAM> ownership <CAM> data ) . bind ( session . models . user ) 
+query:  var update <CAM> key
+target: denodeify ( session . models . user . update <CAM> key ) . bind ( session . models . user ) ;
+output: update . session . update . update <CAM> update <CAM> data <CAM> . update ( session . update . update <CAM> .
+------------------------------------------
+
+source: 
+var operand = this . transform <CAM> any ( tree . left . operand ) 
+query:  var member <CAM> expression
+target: this . transform <CAM> any ( tree . left . member <CAM> expression ) ;
+output: this . left . any ( tree . left <CAM> left <CAM> expression . ;
+------------------------------------------
+
+source: 
+var expert <CAM> charset = core <CAM> charsets . expert <CAM> charset 
+query:  var expert <CAM> subset <CAM> charset
+target: core <CAM> charsets . expert <CAM> subset <CAM> charset ;
+output: core <CAM> charset . expert <CAM> charset <CAM> charset <CAM>
+------------------------------------------
+
+source: 
+var focus <CAM> ripple <CAM> opacity = _ props2 . focus <CAM> ripple <CAM> opacity 
+query:  var touch <CAM> ripple <CAM> color
+target: _ props2 . touch <CAM> ripple <CAM> color ;
+output: _ focus . focus <CAM> ripple <CAM> ripple <CAM>
+------------------------------------------
+
+source: 
+var Media = Windows . Media 
+query:  var simple <CAM> orientation
+target: Windows . Devices . Sensors . simple <CAM> orientation ;
+output: Windows . simple . simple . simple <CAM> orientation ;
+------------------------------------------
+
+source: 
+var path = paths [ i ] 
+query:  var condition
+target: query . _ conditions [ path ] ;
+output: condition <CAM> create condition ;
+------------------------------------------
+
+source: 
+var locks = mock <CAM> request <CAM> wake <CAM> lock . locks 
+query:  var lock
+target: locks [ 0 ] ;
+output: mock <CAM> <CAM> ] ;
+------------------------------------------
+
+source: 
+var fake <CAM> sum <CAM> row = window . fake <CAM> sum <CAM> row 
+query:  var fake <CAM> group <CAM> row
+target: window . fake <CAM> group <CAM> row ;
+output: window . fake <CAM> row <CAM> row <CAM>
+------------------------------------------
+
+source: 
+var indices = _ ref5 . indices 
+query:  var is <CAM> scrolling
+target: _ ref5 . is <CAM> scrolling ;
+output: ref5 . . is <CAM> scrolling ;
+------------------------------------------
+
+source: 
+var foo = doc <CAM> set . get <CAM> by <CAM> longname ( ' Thingy~foo ' ) [ 0 ] 
+query:  var _ bar
+target: doc <CAM> set . get <CAM> by <CAM> longname ( ' Thingy# <UND> bar ' ) [ 0 ] ;
+output: _ <CAM> set <CAM> get <CAM> set <CAM> set ( ' _ <CAM> by <CAM> ) ;
+------------------------------------------
+
+source: 
+var key <CAM> value = key <CAM> value <CAM> pairs [ i ] 
+query:  var split
+target: key <CAM> value . split ( ' ' ) ;
+output: key <CAM> value <CAM> get ( <CAM> split ) ;
+------------------------------------------
+
+source: 
+var cache <CAM> functions <CAM> crc32 = options [ ' cache <CAM> functions <CAM> crc32 ' ] = = null ? false : options [ ' cache <CAM> functions <CAM> crc32 ' ] 
+query:  var promote <CAM> longs
+target: options [ ' promote <CAM> longs ' ]     null ? true : options [ ' promote <CAM> longs ' ] ;
+output: ' <CAM> ' cache <CAM> crc32 <CAM> ] ;
+------------------------------------------
+
+source: 
+var value <CAM> rects = model . value <CAM> rects 
+query:  var target <CAM> values
+target: model . target <CAM> values ;
+output: model <CAM> value <CAM> values <CAM>
+------------------------------------------
+
+source: 
+var DIRECTION <UND> UP = gesture <CAM> detector . DIRECTION <UND> UP = ' up ' 
+query:  var DIRECTION <UND> RIGHT
+target: gesture <CAM> detector . DIRECTION <UND> RIGHT    ' right ' ;
+output: DIRECTION <UND> UP <UND> DIRECTION <UND> UP <UND>    DIRECTION ' ;
+------------------------------------------
+
+source: 
+var mustache = require ( ' gulp - mustache ' ) 
+query:  var browserify
+target: require ( ' browserify ' ) ;
+output: require ( ' gulp ' ) ;
+------------------------------------------
+
+source: 
+var dynCall <UND> iddddiii = Module [ ' dynCall <UND> iddddiii ' ] = asm [ ' dynCall <UND> iddddiii ' ] 
+query:  var dynCall <UND> iiiiiiiiiiii
+target: Module [ ' dynCall <UND> iiiiiiiiiiii ' ]    asm [ ' dynCall <UND> iiiiiiiiiiii ' ] ;
+output: Module [ ' dynCall <UND> iiiiiiiiiiii ' ] ;
+------------------------------------------
+
+source: 
+var async = require ( ' async ' ) 
+query:  var nomnom
+target: require ( ' nomnom ' ) ;
+output: require ( ' nomnom ' ) ;
+------------------------------------------
+
+source: 
+var side <UND> ns1 = sphereBox <UND> side <UND> ns1 
+query:  var side <UND> ns2
+target: sphereBox <UND> side <UND> ns2 ;
+output: sphereBox <UND> ns1 <UND> ns1 <UND>
+------------------------------------------
+
+source: 
+var d = goog . dom . create <CAM> dom ( goog . dom . tag <CAM> name . P , null , ' A paragraph ' ) 
+query:  var t
+target: d . first <CAM> child ;
+output: goog . dom <CAM> dom .
+------------------------------------------
+
+source: 
+var recid = $ ( el ) . attr ( ' recid ' ) 
+query:  var field
+target: $ ( el ) . attr ( ' field ' ) ;
+output: $ . ' . . attr ( ' field . ) ;
+------------------------------------------
+
+source: 
+var normals = this [ ' normals ' ] 
+query:  var len
+target: points . length ;
+output: normals . length ;
+------------------------------------------
+
+source: 
+var script <CAM> visual <CAM> enabled = feature <CAM> switches ? feature <CAM> switches . script <CAM> visual <CAM> enabled : false 
+query:  var script <CAM> visual <CAM> authoring <CAM> enabled
+target: feature <CAM> switches ? feature <CAM> switches . script <CAM> visual <CAM> authoring <CAM> enabled : false ;
+output: feature <CAM> enabled <CAM> feature <CAM> enabled <CAM> script <CAM> enabled <CAM> enabled <CAM> enabled <CAM> script ;
+------------------------------------------
+
+source: 
+var timeline <CAM> data = this . _ timeline <CAM> data ( ) 
+query:  var entry <CAM> start <CAM> times
+target: timeline <CAM> data . entry <CAM> start <CAM> times ;
+output: this <CAM> data <CAM> timeline <CAM> data <CAM> data <CAM>
+------------------------------------------
+
+source: 
+var opt = this . opt 
+query:  var axis <CAM> model
+target: this . axis <CAM> model ;
+output: this . axis <CAM> model ;
+------------------------------------------
+
+source: 
+var foreground <CAM> element = this . elements . foreground <CAM> element 
+query:  var background <CAM> element
+target: this . elements . background <CAM> element ;
+output: this . foreground <CAM> foreground <CAM> element ;
+------------------------------------------
+
+source: 
+var i = aindex [ k ] 
+query:  var v
+target: inverse ? cf ( b , avalues [ k ] ) : cf ( avalues [ k ] , b ) ;
+output: aindex . i . k + k  k ] ;
+------------------------------------------
+
+source: 
+var value = event . detail . value 
+query:  var sorted <CAM> keys
+target: this . _ sorted <CAM> keys ;
+output: event . sorted sorted <CAM> keys ;
+------------------------------------------
+
+source: 
+var success = config . success 
+query:  var failure
+target: config . failure ;
+output: config . failure ;
+------------------------------------------
+
+source: 
+var layout = imports . layout 
+query:  var editors
+target: imports . editors ;
+output: imports . editors ;
+------------------------------------------
+
+source: 
+var tildify = require ( ' tildify ' ) 
+query:  var interpret
+target: require ( ' interpret ' ) ;
+output: require ( ' interpret - ) ;
+------------------------------------------
+
+source: 
+var rotation = rectangle . rotation 
+query:  var outline <CAM> width
+target: rectangle . outline <CAM> width ;
+output: rectangle . outline <CAM> width ;
+------------------------------------------
+
+source: 
+var is <CAM> zero = math . is <CAM> zero 
+query:  var bignumber
+target: math . bignumber ;
+output: math . is <CAM>
+------------------------------------------
+
+source: 
+var protocol = require ( ' pomelo - protocol ' ) 
+query:  var logger
+target: require ( ' pomelo - logger ' ) . get <CAM> logger ( ' pomelo ' , _ _ filename ) ;
+output: require ( ' logger ' logger ' ) ;
+------------------------------------------
+
+source: 
+var fill = style . fill 
+query:  var stroke
+target: style . stroke ;
+output: style . stroke ;
+------------------------------------------
+
+source: 
+var show <CAM> menu <CAM> icon <CAM> button = _ props . show <CAM> menu <CAM> icon <CAM> button 
+query:  var icon <CAM> element <CAM> left
+target: _ props . icon <CAM> element <CAM> left ;
+output: <CAM> <CAM> . icon <CAM> icon <CAM> icon <CAM>
+------------------------------------------
+
+source: 
+var connect = imports . connect 
+query:  var render
+target: imports [ ' connect . render ' ] ;
+output: imports . ' render -   ] ;
+------------------------------------------
+
+source: 
+var active <CAM> drag = DDM . active <CAM> drag 
+query:  var active <CAM> drop
+target: instance . active <CAM> drop ;
+output: DDM . active <CAM> drag <CAM>
+------------------------------------------
+
+source: 
+var base <CAM> radius = opts & & opts . base <CAM> radius ! = = undefined ? opts . base <CAM> radius : 0 . 5 
+query:  var peak <CAM> radius
+target: opts & & opts . peak <CAM> radius !    undefined ? opts . peak <CAM> radius : 0 . 0 ;
+output: opts . & opts . base <CAM> radius <CAM>     ? opts . base <CAM> radius <CAM> opts ;
+------------------------------------------
+
+source: 
+var path = require ( ' path ' ) 
+query:  var noop
+target: mocha . utils . noop ;
+output: require . noop . noop ;
+------------------------------------------
+
+source: 
+var points = options . points 
+query:  var times
+target: options . times ;
+output: options . times ;
+------------------------------------------
+
+source: 
+var collab <CAM> panel = imports . collab <CAM> panel 
+query:  var ui
+target: imports . ui ;
+output: imports . collab ;
+------------------------------------------
+
+source: 
+var red50 = exports . red50 = ' # ffebee ' 
+query:  var red100
+target: exports . red100    ' # ffcdd2 ' ;
+output: ' . red100     # red100 ' ;
+------------------------------------------
+
+source: 
+var icon <CAM> button <CAM> size = _ context$mui <CAM> theme . button . icon <CAM> button <CAM> size 
+query:  var z <CAM> index
+target: _ context$mui <CAM> theme . z <CAM> index ;
+output: icon _ <CAM> button <CAM> button <CAM> button <CAM>
+------------------------------------------
+
+source: 
+var rows = this . rows . groups 
+query:  var sorted <CAM> cols
+target: this . sorted <CAM> cols ( ) ;
+output: this . sorted <CAM> cols ;
+------------------------------------------
+
+source: 
+var . . . x = z 
+query:  var . . . a
+target: a : 1 ;
+output: . . var .
+------------------------------------------
+
+source: 
+var height = this . attribute ( ' height ' ) . to <CAM> pixels ( ' y ' ) 
+query:  var rx
+target: this . attribute ( ' rx ' ) . to <CAM> pixels ( ' x ' ) ;
+output: this . to ( ' rx ' ) ;
+------------------------------------------
+
+source: 
+var is <CAM> array = Array . is <CAM> array 
+query:  var is <CAM> number
+target: number . is <CAM> number ;
+output: Array <CAM> is <CAM> array <CAM>
+------------------------------------------
+
+source: 
+var get <CAM> snap <CAM> height = t . get <CAM> snap <CAM> height 
+query:  var get <CAM> snap <CAM> minutes
+target: t . get <CAM> snap <CAM> minutes ;
+output: t . get <CAM> snap <CAM> snap <CAM>
+------------------------------------------
+
+source: 
+var scroll <CAM> to <CAM> column = _ state . scroll <CAM> to <CAM> column 
+query:  var scroll <CAM> to <CAM> row
+target: _ state . scroll <CAM> to <CAM> row ;
+output: _ scroll . scroll <CAM> to <CAM> to <CAM>
+------------------------------------------
+
+source: 
+var version = option <UND> consume ( options , ' version ' ) 
+query:  var format
+target: option <UND> consume ( options , ' format ' ) ;
+output: option <UND> consume ' ' . ' ' ' ) ;
+------------------------------------------
+
+source: 
+var request <CAM> encoding = this . request <CAM> encoding _ 
+query:  var tile <CAM> grid
+target: options . tile <CAM> grid ;
+output: this . request <CAM> encoding <CAM>
+------------------------------------------
+
+source: 
+var fold <CAM> data = this . fold <CAM> data 
+query:  var i
+target: folds . index <CAM> of ( fold ) ;
+output: fold <CAM> length <CAM> data ( data ) ;
+------------------------------------------
+
+source: 
+var minimist = require ( ' minimist ' ) 
+query:  var path
+target: require ( ' path ' ) ;
+output: require ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var create <CAM> variable <CAM> statement = traceur . codegeneration . parse <CAM> tree <CAM> factory . create <CAM> variable <CAM> statement 
+query:  var predefined <CAM> name
+target: traceur . syntax . predefined <CAM> name ;
+output: traceur . syntax <CAM> create <CAM> variable <CAM>
+------------------------------------------
+
+source: 
+var storage = this . _ _ storage 
+query:  var children
+target: this . _ children ;
+output: this . _ _ ;
+------------------------------------------
+
+source: 
+var href = _ ie <CAM> uri <CAM> monitor . iframe . location . href 
+query:  var index
+target: href . index <CAM> of ( ' ? ' ) ;
+output: _ . index <CAM> monitor ( . index _ ) ;
+------------------------------------------
+
+source: 
+var offset = data . offset  |  |  x : 0 , y : 0 
+query:  var repeat
+target: data . repeat  |  |  x : 1 , y : 1 ;
+output: offset . get ] |  |  |   ;
+------------------------------------------
+
+source: 
+var WIDTH <UND> INDEX = Polyline . WIDTH <UND> INDEX 
+query:  var POSITION <UND> INDEX
+target: Polyline . POSITION <UND> INDEX ;
+output: Polyline <UND> INDEX <UND> INDEX ;
+------------------------------------------
+
+source: 
+var view <CAM> model = options . view <CAM> model 
+query:  var previous <CAM> view <CAM> model
+target: this . previous <CAM> view <CAM> model ;
+output: view . view <CAM> model <CAM> model <CAM>
+------------------------------------------
+
+source: 
+var maybe <CAM> rename = this . maybe <CAM> rename _ 
+query:  var in <CAM> object <CAM> pattern
+target: this . in <CAM> object <CAM> pattern _ ;
+output: this . maybe <CAM> rename <CAM> rename <CAM> maybe
+------------------------------------------
+
+source: 
+var fill = ' local fill ' 
+query:  var find
+target: ' local find ' ;
+output: ' find ' ' ;
+------------------------------------------
+
+source: 
+var attributes = this . _ attributes 
+query:  var gl
+target: this . _ gl ;
+output: this . _ _ ;
+------------------------------------------
+
+source: 
+var paths = ob . paths 
+query:  var lines
+target: params . qstring . lines  |  |  0 ;
+output: ob . lines ;
+------------------------------------------
+
+source: 
+var is <CAM> undefined = _ angular . is <CAM> undefined 
+query:  var element
+target: _ angular . element ;
+output: angular _ . is ;
+------------------------------------------
+
+source: 
+var loc = document . location 
+query:  var port
+target: loc . port     ' ' ? ( loc . protocol     ' https : ' ? 443 : 80 ) : loc . port ;
+output: document . port ;
+------------------------------------------
+
+source: 
+var show <CAM> background = label . _ show <CAM> background & & ( text . split ( ' \n ' ) . join ( '' ) . length > 0 ) 
+query:  var background <CAM> billboard
+target: label . _ background <CAM> billboard ;
+output: text <CAM> background background <CAM> background .
+------------------------------------------
+
+source: 
+var literals = this . literals _ 
+query:  var build <CAM> placeholder
+target: goog . bind ( this . build <CAM> placeholder _ , this ) ;
+output: this . build <CAM> this . build <CAM> placeholder ) _  . ;
+------------------------------------------
+
+source: 
+var pink700 = exports . pink700 = ' # c2185b ' 
+query:  var pink800
+target: exports . pink800    ' # ad1457 ' ;
+output: ' . pink800     # pink800 ' ;
+------------------------------------------
+
+source: 
+var Range = math . type . Range 
+query:  var immutable <CAM> dense <CAM> matrix
+target: math . type . immutable <CAM> dense <CAM> matrix ;
+output: math . type . type <CAM> dense ;
+------------------------------------------
+
+source: 
+var bool = _ react$ <CAM> prop <CAM> types . bool 
+query:  var object
+target: _ react$ <CAM> prop <CAM> types . object ;
+output: react$ _ . types <CAM> types . get ;
+------------------------------------------
+
+source: 
+var min <UND> neighbors = this . shared . min <UND> neighbors 
+query:  var cascade
+target: this . shared . cascade ;
+output: this . min . min .
+------------------------------------------
+
+source: 
+var rule = this . _ css <CAM> parser . rules ( ) [ item <CAM> index ] 
+query:  var line <CAM> number
+target: rule . line <CAM> number ;
+output: this <CAM> _ <CAM> index <CAM>
+------------------------------------------
+
+source: 
+var i = [ ' foo ' + bar , null , baz + ' moo ' ] . join ( ' ' ) 
+query:  var j
+target: [ foo + ' bar ' , baz ] . join ( ' ' ) ;
+output: ' ' , ' ' ' ' ' ' , join ( ' j ' '
+------------------------------------------
+
+source: 
+var ember <CAM> generate = blueprint <CAM> helpers . ember <CAM> generate 
+query:  var ember <CAM> generate <CAM> destroy
+target: blueprint <CAM> helpers . ember <CAM> generate <CAM> destroy ;
+output: blueprint <CAM> generate . ember <CAM> generate <CAM> generate <CAM>
+------------------------------------------
+
+source: 
+var selection <CAM> id = powerbi . visuals . selection <CAM> id 
+query:  var visual <CAM> data <CAM> role <CAM> kind
+target: powerbi . visual <CAM> data <CAM> role <CAM> kind ;
+output: powerbi <CAM> selection <CAM> data <CAM> data <CAM> data ;
+------------------------------------------
+
+source: 
+var n = vertices . length 
+query:  var face
+target: geometry . faces [ i ] ;
+output: vertices . get ;
+------------------------------------------
+
+source: 
+var x = this . orientation . x 
+query:  var y
+target: this . orientation . y ;
+output: this . y . y ;
+------------------------------------------
+
+source: 
+var min = cfg . min  |  |  0 
+query:  var max
+target: cfg . max  |  |  1 ;
+output: cfg . max    |   ;
+------------------------------------------
+
+source: 
+var coord = this . _ _ coord  |  |  [ 0 , 0 , 0 , 0 ] 
+query:  var co
+target: this . draw <CAM> vars . co ;
+output: co . _    _ 
+------------------------------------------
+
+source: 
+var sx = t . sx 
+query:  var sy
+target: t . sy ;
+output: t . sy ;
+------------------------------------------
+
+source: 
+var v = verts [ i ] 
+query:  var edge
+target: pointInPolygon <UND> edge ;
+output: verts . edge .
+------------------------------------------
+
+source: 
+var api = imports . api 
+query:  var panels
+target: imports . panels ;
+output: imports . panels ;
+------------------------------------------
+
+source: 
+var net = require ( ' net ' ) 
+query:  var Stream
+target: require ( ' stream ' ) . Stream ;
+output: require ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var React = require ( ' React ' ) 
+query:  var fixed <CAM> data <CAM> table <CAM> cell <CAM> group
+target: require ( ' fixed <CAM> data <CAM> table <CAM> cell <CAM> group . react ' ) ;
+output: require ( ' fixed <CAM> data <CAM> data <CAM> data <CAM> data <CAM> fixed <CAM> ) ;
+------------------------------------------
+
+source: 
+var bubbles = typeof options . bubbles ! = ' undefined ' ? options . bubbles : true 
+query:  var cancelable
+target: typeof options . cancelable !   ' undefined ' ? options . cancelable : true ;
+output: options bubbles . cancelable bubbles    # ' ? ' . cancelable  ' )
+------------------------------------------
+
+source: 
+var model <CAM> matrix = collection . _ model <CAM> matrix 
+query:  var polyline <CAM> buckets
+target: collection . _ polyline <CAM> buckets    ;
+output: collection . model model <CAM> matrix <CAM> |  
+------------------------------------------
+
+source: 
+var texture <CAM> index <CAM> buffer = this . _ texture <CAM> index <CAM> buffer 
+query:  var uv <CAM> position <CAM> buffer
+target: this . _ uv <CAM> position <CAM> buffer ;
+output: this . _ texture <CAM> buffer ;
+------------------------------------------
+
+source: 
+var ann = anns [ i ] 
+query:  var severity
+target: ann . severity ;
+output: severity . severity ;
+------------------------------------------
+
+source: 
+var gulp    = require ( ' gulp ' ) 
+query:  var fs
+target: require ( ' fs ' ) ;
+output: require ( ' gulp ' ) ;
+------------------------------------------
+
+source: 
+var U8 = new primitive <CAM> type ( ' U8 ' , 1 , ' i ' , 0 , 255 ) 
+query:  var U16
+target: new primitive <CAM> type ( ' U16 ' , 2 , ' i ' , 0 , 65535 ) ;
+output: new <CAM> , type ( ' 0 ' ) ' , ' 0 ' ) ' , ' ' ;
+------------------------------------------
+
+source: 
+var extract <CAM> currency <CAM> symbols = closurei18n <CAM> extractor . extract <CAM> currency <CAM> symbols 
+query:  var extract <CAM> date <CAM> time <CAM> symbols
+target: closurei18n <CAM> extractor . extract <CAM> date <CAM> time <CAM> symbols ;
+output: <CAM> <CAM> symbols <CAM> extract <CAM> symbols <CAM> symbols <CAM> symbols ;
+------------------------------------------
+
+source: 
+var through2 = require ( ' through2 ' ) 
+query:  var exec
+target: require ( ' child <UND> process ' ) . exec ;
+output: require ( ' fs <UND> process ' ) ;
+------------------------------------------
+
+source: 
+var parse <CAM> tree <CAM> writer = traceur . outputgeneration . parse <CAM> tree <CAM> writer 
+query:  var parse <CAM> tree <CAM> map <CAM> writer
+target: traceur . outputgeneration . parse <CAM> tree <CAM> map <CAM> writer ;
+output: parse . syntax <CAM> parse <CAM> tree <CAM> tree <CAM> tree <CAM>
+------------------------------------------
+
+source: 
+var assert    = require ( ' assert ' ) 
+query:  var connection <CAM> config
+target: common . connection <CAM> config ;
+output: require . connection <CAM> config ;
+------------------------------------------
+
+source: 
+var cipher = this . _ cipher 
+query:  var block <CAM> size
+target: cipher . block <CAM> size ;
+output: this . block <CAM> size ;
+------------------------------------------
+
+source: 
+var mixin = scope . mixin 
+query:  var node <CAM> list
+target: scope . wrappers . node <CAM> list ;
+output: scope . node ;
+------------------------------------------
+
+source: 
+var plugin = $ ( this ) . attr ( ' plugin ' ) 
+query:  var action
+target: $ ( this ) . attr ( ' action ' ) ;
+output: ( ( ' . . attr ( ' action ' ) ;
+------------------------------------------
+
+source: 
+var disabled <CAM> text <CAM> color = _ context$mui <CAM> theme$tex . disabled <CAM> text <CAM> color 
+query:  var background <CAM> color
+target: _ context$mui <CAM> theme$tex . background <CAM> color ;
+output: context$mui _ <CAM> color <CAM> disabled <CAM> color <CAM>
+------------------------------------------
+
+source: 
+var react <CAM> component <CAM> environment = require ( ' react <CAM> component <CAM> environment ' ) 
+query:  var react <CAM> instance <CAM> map
+target: require ( ' react <CAM> instance <CAM> map ' ) ;
+output: require ( ' react <CAM> component <CAM> component <CAM> ) ;
+------------------------------------------
+
+source: 
+var fakexml <CAM> http <CAM> request = fake <CAM> xhr . fakexml <CAM> http <CAM> request 
+query:  var assert
+target: referee . assert ;
+output: fake <CAM> fakexml ;
+------------------------------------------
+
+source: 
+var half <CAM> axes = box . half <CAM> axes 
+query:  var u
+target: Matrix3 . get <CAM> column ( half <CAM> axes , 0 , scratch <CAM> cartesianu ) ;
+output: half . half <CAM> axes <CAM> <CAM> <CAM> axes <CAM> <CAM> . <CAM> ) axes <CAM> ;
+------------------------------------------
+
+source: 
+var config = ctx . config 
+query:  var timezone
+target: config . timezone ;
+output: ctx . timezone ;
+------------------------------------------
+
+source: 
+var ui <CAM> manager = require ( ' ui <CAM> manager ' ) 
+query:  var ensure <CAM> positive <CAM> delay <CAM> props
+target: require ( ' ensure <CAM> positive <CAM> delay <CAM> props ' ) ;
+output: ui ( ' ui <CAM> positive <CAM> manager <CAM> positive <CAM> ) ;
+------------------------------------------
+
+source: 
+var position = this . $ container . position ( ) 
+query:  var offset
+target: this . $ container . offset ( ) ;
+output: this . position . . position ( ) ;
+------------------------------------------
+
+source: 
+var inner = el . query <CAM> selector ( ' gui - list - view - inner ' ) 
+query:  var head
+target: el . query <CAM> selector ( ' gui - list - view - head ' ) ;
+output: el . get ( selector ( ' gui - view - view ' view - ) ;
+------------------------------------------
+
+source: 
+var uvs = this . uvs 
+query:  var colors
+target: this . colors ;
+output: this . colors ;
+------------------------------------------
+
+source: 
+var execute <CAM> direct <CAM> dispatch = event <CAM> plugin <CAM> utils . execute <CAM> direct <CAM> dispatch 
+query:  var has <CAM> dispatches
+target: event <CAM> plugin <CAM> utils . has <CAM> dispatches ;
+output: event <CAM> direct <CAM> direct . execute <CAM> direct <CAM>
+------------------------------------------
+
+source: 
+var vel = this . vel = new Vector2 ( 0,0 ) 
+query:  var target <CAM> vel
+target: this . target <CAM> vel    new Vector2 ( 0,0 ) ;
+output: 0,0 . vel <CAM> vel ;
+------------------------------------------
+
+source: 
+var win <CAM> height = Parallax . win <CAM> height 
+query:  var doc <CAM> height
+target: Parallax . doc <CAM> height ;
+output: Parallax <CAM> height <CAM> height ;
+------------------------------------------
+
+source: 
+var text   = _ text  |  |  ' Warning ' 
+query:  var position
+target: _ position  |  |  ' center ' ;
+output: _ _  |  |     ;
+------------------------------------------
+
+source: 
+var layers = cfg . layers = = = undefined?~0 : cfg . layers 
+query:  var width
+target: view . width * view . scaleX ;
+output: cfg . = ;
+------------------------------------------
+
+source: 
+var legend = legend <CAM> and <CAM> series <CAM> info . legend . data <CAM> points 
+query:  var series <CAM> sources
+target: legend <CAM> and <CAM> series <CAM> info . series <CAM> sources ;
+output: legend <CAM> series <CAM> series <CAM> series . legend <CAM> series <CAM>
+------------------------------------------
+
+source: 
+var validator = lang <UND> 1 . is <CAM> present ( extra ) ? collection <UND> 1 . string <CAM> map <CAM> wrapper . get ( extra , ' validator ' ) : null 
+query:  var async <CAM> validator
+target: lang <UND> 1 . is <CAM> present ( extra ) ? collection <UND> 1 . string <CAM> map <CAM> wrapper . get ( extra , ' async <CAM> validator ' ) : null ;
+output: lang <CAM> 1 . internal <CAM> validator ( ' <CAM> ;
+------------------------------------------
+
+source: 
+var model <CAM> name = context . model <CAM> name 
+query:  var method <CAM> names
+target: context . method <CAM> names ;
+output: context . method <CAM> names ;
+------------------------------------------
+
+source: 
+var tip <CAM> label = options . tip <CAM> label ! = = undefined ? options . tip <CAM> label : ' Attributions ' 
+query:  var collapse <CAM> label
+target: options . collapse <CAM> label !    undefined ? options . collapse <CAM> label : ' \u00BB ' ;
+output: options . tip <CAM> label <CAM>     ? options . tip <CAM> label <CAM> ' tip <CAM> ;
+------------------------------------------
+
+source: 
+var subscribers = parent . _ subscribers 
+query:  var length
+target: subscribers . length ;
+output: parent . _ ;
+------------------------------------------
+
+source: 
+var header <CAM> length = header . header <CAM> length 
+query:  var frame <CAM> length
+target: header . frame <CAM> length ;
+output: header <CAM> header <CAM> length ;
+------------------------------------------
+
+source: 
+var set <CAM> world <CAM> constructor = exports . set <CAM> world <CAM> constructor = proxy <CAM> support <CAM> code ( ' set <CAM> world <CAM> constructor ' ) 
+query:  var Given
+target: exports . Given    define <CAM> step ;
+output: set . set <CAM>    <CAM> constructor <CAM>
+------------------------------------------
+
+source: 
+var visual <CAM> map <CAM> model = this . visual <CAM> map <CAM> model 
+query:  var text <CAM> gap
+target: visual <CAM> map <CAM> model . get ( ' text <CAM> gap ' ) ;
+output: this <CAM> map <CAM> map . get <CAM> <CAM> text <CAM> map <CAM> ) ;
+------------------------------------------
+
+source: 
+var appear <CAM> to <CAM> class = data . appear <CAM> to <CAM> class 
+query:  var appear <CAM> active <CAM> class
+target: data . appear <CAM> active <CAM> class ;
+output: data . appear <CAM> class <CAM> class <CAM>
+------------------------------------------
+
+source: 
+var updatable = options . updatable 
+query:  var side <CAM> orientation
+target: options . side <CAM> orientation  |  |  BABYLON . Mesh . DEFAULTSIDE ;
+output: options . side <CAM> orientation <CAM> |  |  | . side ;
+------------------------------------------
+
+source: 
+var dont <CAM> push = opt <UND> dontPush  |  |  false 
+query:  var cur <CAM> slide
+target: this . cur <CAM> slide _ ;
+output: dont . cur  slide  cur
+------------------------------------------
+
+source: 
+var dynCall <UND> diii = Module [ ' dynCall <UND> diii ' ] = asm [ ' dynCall <UND> diii ' ] 
+query:  var dynCall <UND> dii
+target: Module [ ' dynCall <UND> dii ' ]    asm [ ' dynCall <UND> dii ' ] ;
+output: Module [ ' dynCall <UND> dii ' ] ;
+------------------------------------------
+
+source: 
+var toolbar = $ ( this . box ) . find ( ' > div . w2ui - form - toolbar ' ) 
+query:  var tabs
+target: $ ( this . box ) . find ( ' > div . w2ui - form - tabs ' ) ;
+output: ( . ' . find . ;
+------------------------------------------
+
+source: 
+var object <CAM> enumeration <CAM> builder = powerbi . visuals . object <CAM> enumeration <CAM> builder 
+query:  var value <CAM> formatter
+target: powerbi . visuals . value <CAM> formatter ;
+output: powerbi . object . object <CAM> formatter <CAM>
+------------------------------------------
+
+source: 
+var predefined <CAM> name = traceur . syntax . predefined <CAM> name 
+query:  var parse <CAM> tree <CAM> factory
+target: traceur . codegeneration . parse <CAM> tree <CAM> factory ;
+output: traceur . syntax <CAM> predefined <CAM> tree <CAM> factory .
+------------------------------------------
+
+source: 
+var settings = bin . settings  |  |  
+query:  var desc
+target: settings . desc  |  |  settings . title ;
+output: bin . desc  |  |  | . desc 
+------------------------------------------
+
+source: 
+var day <CAM> names = this . _ get ( inst , ' day <CAM> names ' ) 
+query:  var day <CAM> names <CAM> short
+target: this . _ get ( inst , ' day <CAM> names <CAM> short ' ) ;
+output: day . get get <CAM> ' <CAM> ' <CAM> <CAM> names <CAM> names <CAM> ) .
+------------------------------------------
+
+source: 
+var str <CAM> list = db . model ( ' str <CAM> list ' ) 
+query:  var t
+target: new str <CAM> list ( ) ;
+output: db <CAM> <CAM> list ( ' ;
+------------------------------------------
+
+source: 
+var type = this . _ type 
+query:  var stack
+target: this . _ stack ;
+output: this . _ _ ;
+------------------------------------------
+
+source: 
+var db = sync <CAM> browserdb . db . _ db 
+query:  var transaction
+target: db . transaction ( DBOS <UND> PLACES , ' readwrite ' ) ;
+output: sync . src ( ' ) name <UND> target + ' ) ;
+------------------------------------------
+
+source: 
+var vim = cm . state . vim 
+query:  var last <CAM> sel
+target: vim . last <CAM> selection ;
+output: cm . last <CAM> sel ;
+------------------------------------------
+
+source: 
+var spawn = require ( ' child <UND> process ' ) . spawn 
+query:  var interpreter
+target: pm2 <UND> env . exec <UND> interpreter  |  |  ' node ' ;
+output: require . interpreter . interpreter ;
+------------------------------------------
+
+source: 
+var parse <CAM> tree <CAM> type = traceur . syntax . trees . parse <CAM> tree <CAM> type 
+query:  var source <CAM> position
+target: traceur . syntax . source <CAM> position ;
+output: parse . syntax <CAM> trees <CAM> tree ;
+------------------------------------------
+
+source: 
+var ui <CAM> source <CAM> code = this . _ breakpoint . ui <CAM> source <CAM> code ( ) 
+query:  var line <CAM> number
+target: this . _ breakpoint . _ line <CAM> number ;
+output: this . ui <CAM> <CAM> ui ui <CAM> code <CAM>
+------------------------------------------
+
+source: 
+var react <CAM> browser <CAM> event <CAM> emitter = require ( ' react <CAM> browser <CAM> event <CAM> emitter ' ) 
+query:  var reactdom <CAM> fiber <CAM> input
+target: require ( ' reactdom <CAM> fiber <CAM> input ' ) ;
+output: require ( ' react <CAM> emitter <CAM> emitter <CAM> ) ;
+------------------------------------------
+
+source: 
+var name = this . transform <CAM> any ( tree . name ) 
+query:  var type <CAM> annotation
+target: this . transform <CAM> any ( tree . type <CAM> annotation ) ;
+output: this . name <CAM> any ( tree . name ) any ) ;
+------------------------------------------
+
+source: 
+var velocityX = e . gesture . velocityX 
+query:  var x
+target: e . gesture . center . x ;
+output: e . x ;
+------------------------------------------
+
+source: 
+var save = imports . save 
+query:  var settings
+target: imports . settings ;
+output: imports . settings ;
+------------------------------------------
+
+source: 
+var commands = imports . commands 
+query:  var jsonalyzer
+target: imports . jsonalyzer ;
+output: imports . jsonalyzer ;
+------------------------------------------
+
+source: 
+var _ malloc = Module [ ' _ malloc ' ] = asm [ ' _ malloc ' ] 
+query:  var _ bitshift64 <CAM> ashr
+target: Module [ ' _ bitshift64 <CAM> ashr ' ]    asm [ ' _ bitshift64 <CAM> ashr ' ] ;
+output: ' _ ' _ _ ' ashr ' ] ;
+------------------------------------------
+
+source: 
+var pos = month <CAM> label . get ( ' position ' ) 
+query:  var align
+target: month <CAM> label . get ( ' align ' ) ;
+output: month . label . get <CAM> ' align ' ) ;
+------------------------------------------
+
+source: 
+var body = this . body  |  |  
+query:  var query
+target: this . query  |  |  ;
+output: this . query  |  |  
+------------------------------------------
+
+source: 
+var height = this . height 
+query:  var bpc
+target: this . bpc ;
+output: this . bpc ;
+------------------------------------------
+
+source: 
+var x = _ point . x * component . scaleX + _ point . y * component . scale01 + component . dx 
+query:  var y
+target: _ point . y * component . scaleY + _ point . x * component . scale10 + component . dy ;
+output: _ . . component . . . component ) component . . component . . . component . component . component ;
+------------------------------------------
+
+source: 
+var scroll <CAM> top = offset <CAM> parent . scroll <CAM> top 
+query:  var scroll <CAM> left
+target: offset <CAM> parent . scroll <CAM> left ;
+output: offset . left . scroll <CAM> left <CAM>
+------------------------------------------
+
+source: 
+var array = event . data . array 
+query:  var post <CAM> message
+target: self . webkit <CAM> post <CAM> message  |  |  self . post <CAM> message ;
+output: event . data <CAM> message <CAM> message ;
+------------------------------------------
+
+source: 
+var timestamp = + record . timestamp 
+query:  var i d
+target: record . i d ;
+output: record . d d ;
+------------------------------------------
+
+source: 
+var error = props . error 
+query:  var error <CAM> style
+target: props . error <CAM> style ;
+output: props . error ;
+------------------------------------------
+
+source: 
+var tag <CAM> name = element . tag <CAM> name . to <CAM> lower <CAM> case ( ) 
+query:  var type
+target: element . get <CAM> attribute ( ' type ' ) ;
+output: tag <CAM> tag <CAM> element ( <CAM> type ' ) ;
+------------------------------------------
+
+source: 
+var rtc <CAM> ice <CAM> candidate = window . rtc <CAM> ice <CAM> candidate  |  |  window . mozrtc <CAM> ice <CAM> candidate 
+query:  var media <CAM> stream <CAM> track
+target: window . media <CAM> stream <CAM> track ;
+output: window . rtc <CAM> ice <CAM> candidate <CAM>
+------------------------------------------
+
+source: 
+var indigo600 = exports . indigo600 = ' # 3949ab ' 
+query:  var indigo700
+target: exports . indigo700    ' # 303f9f ' ;
+output: ' . indigo700     # indigo700 ' ;
+------------------------------------------
+
+source: 
+var open = document . get <CAM> element <CAM> by <CAM> id ( ' open ' ) 
+query:  var opensave
+target: document . get <CAM> element <CAM> by <CAM> id ( ' opensave ' ) ;
+output: document . create <CAM> element <CAM> by <CAM> id ( ' opensave ' ) ;
+------------------------------------------
+
+source: 
+var util = api . util 
+query:  var dom <CAM> position
+target: dom . dom <CAM> position ;
+output: api . dom . position ;
+------------------------------------------
+
+source: 
+var is <CAM> horizontal = reference <CAM> line <CAM> helper . is <CAM> horizontal ( ref <CAM> line , options . axes ) 
+query:  var viewport
+target: options . viewport ;
+output: ref . is <CAM>
+------------------------------------------
+
+source: 
+var clear = default <CAM> value ( options . clear , true ) 
+query:  var epsilon
+target: default <CAM> value ( options . epsilon , 0 ) ;
+output: options <CAM> value ( options . clear <CAM> true ) ;
+------------------------------------------
+
+source: 
+var ssao <CAM> ratio = ratio . ssao <CAM> ratio  |  |  ratio 
+query:  var blur <CAM> ratio
+target: ratio . blur <CAM> ratio  |  |  ratio ;
+output: ratio <CAM> ssao <CAM> ratio ;
+------------------------------------------
+
+source: 
+var geo = this . geometry 
+query:  var template
+target: this . _ template ;
+output: this . template template .
+------------------------------------------
+
+source: 
+var containment <CAM> edges = this . containment <CAM> edges 
+query:  var edge <CAM> fields <CAM> count
+target: this . _ edge <CAM> fields <CAM> count ;
+output: this . containment containment <CAM> edges <CAM> edges ;
+------------------------------------------
+
+source: 
+var app <CAM> name = options . app <CAM> name  |  |  '' 
+query:  var app <CAM> key
+target: options . app <CAM> key  |  |  '' ;
+output: app . app <CAM> key <CAM> |  |  | ;
+------------------------------------------
+
+source: 
+var dynCall <UND> viiiiiiiiiiiii = Module [ ' dynCall <UND> viiiiiiiiiiiii ' ] = asm [ ' dynCall <UND> viiiiiiiiiiiii ' ] 
+query:  var dynCall <UND> di
+target: Module [ ' dynCall <UND> di ' ]    asm [ ' dynCall <UND> di ' ] ;
+output: Module [ ' dynCall <UND> di ' ]     [ ' dynCall <UND> di ' ] ;
+------------------------------------------
+
+source: 
+var shader <CAM> program = PIXI . shader <CAM> program 
+query:  var tile <CAM> position
+target: sprite . tile <CAM> position ;
+output: PIXI <CAM> shader <CAM> program ;
+------------------------------------------
+
+source: 
+var canvas = self . canvas 
+query:  var aspect <CAM> ratio
+target: options . aspect <CAM> ratio ;
+output: self . aspect <CAM> ratio ;
+------------------------------------------
+
+source: 
+var capture = _ props2 . capture 
+query:  var target
+target: _ props2 . target ;
+output: _ _ . target ;
+------------------------------------------
+
+source: 
+var rename = require ( ' gulp - rename ' ) 
+query:  var sh
+target: require ( ' shelljs ' ) ;
+output: require ( ' gulp ' ) ;
+------------------------------------------
+
+source: 
+var eggs = _ get <CAM> formatted <CAM> item <CAM> reference ( ' items . eggs ' , _ . keys ( Content . eggs ) , ' Numeric Quantity ' ) 
+query:  var hatching <CAM> potions
+target: _ get <CAM> formatted <CAM> item <CAM> reference ( ' items . hatching <CAM> potions ' , _ . keys ( Content . hatching <CAM> potions ) , ' Numeric Quantity ' ) ;
+output: _ . <CAM> potions <CAM> potions <CAM> potions <CAM> ' hatching <CAM> eggs ' potions ' ) ' . eggs <CAM> ' <CAM> hatching <CAM> potions ' ;
+------------------------------------------
+
+source: 
+var fs = require ( ' fs ' ) 
+query:  var muk
+target: require ( ' muk ' ) ;
+output: require ( ' muk ' ) ;
+------------------------------------------
+
+source: 
+var fri = $ ( ' . fc - day - header . fc - fri ' ) [ 0 ] 
+query:  var we d
+target: $ ( ' . fc - day - header . fc - wed ' ) [ 0 ] ;
+output: ( . ' . fc ' fc ' fc - fc ' fc - ) ;
+------------------------------------------
+
+source: 
+var ADD <UND> TODO <UND> ERROR = exports . ADD <UND> TODO <UND> ERROR = ' ADD <UND> TODO <UND> ERROR ' 
+query:  var ADD <UND> TODO <UND> OK
+target: exports . ADD <UND> TODO <UND> OK    ' ADD <UND> TODO <UND> OK ' ;
+output: ' . ADD <UND> TODO <UND> TODO <UND>     ' TODO ' ERROR ' ;
+------------------------------------------
+
+source: 
+var DOCUMENT <UND> POSITION <UND> CONTAINED <UND> BY = Node . DOCUMENT <UND> POSITION <UND> CONTAINED <UND> BY 
+query:  var DOCUMENT <UND> POSITION <UND> IMPLEMENTATION <UND> SPECIFIC
+target: Node . DOCUMENT <UND> POSITION <UND> IMPLEMENTATION <UND> SPECIFIC ;
+output: <UND> . DOCUMENT <UND> <UND> <UND> <UND> <UND> <UND> <UND>
+------------------------------------------
+
+source: 
+var _ realloc = Module [ ' _ realloc ' ] = asm [ ' _ realloc ' ] 
+query:  var _ strncasecmp
+target: Module [ ' _ strncasecmp ' ]    asm [ ' _ strncasecmp ' ] ;
+output: _ [ ' _ _ ' ] ;
+------------------------------------------
+
+source: 
+var text <CAM> field <CAM> test <CAM> object = require ( path . resolve ( field <CAM> test <CAM> objects <CAM> path , ' text <CAM> field <CAM> test <CAM> object ' ) ) 
+query:  var html <CAM> field <CAM> test <CAM> object
+target: require ( path . resolve ( field <CAM> test <CAM> objects <CAM> path , ' html <CAM> field <CAM> test <CAM> object ' ) ) ;
+output: <CAM> ( <CAM> . resolve ( <CAM> <CAM> test <CAM> test <CAM> test <CAM> ' <CAM> <CAM> test <CAM> test <CAM> test <CAM> ) ;
+------------------------------------------
+
+source: 
+var tooltip <CAM> builder = powerbi . visuals . tooltip <CAM> builder 
+query:  var selection <CAM> id
+target: powerbi . visuals . selection <CAM> id ;
+output: powerbi . tooltip . tooltip <CAM> builder ;
+------------------------------------------
+
+source: 
+var x = e . heading . x 
+query:  var y
+target: e . heading . y ;
+output: e . y ;
+------------------------------------------
+
+source: 
+var is <CAM> valid <CAM> bounds = leaflet <CAM> bounds <CAM> helpers . is <CAM> valid <CAM> bounds 
+query:  var is <CAM> number
+target: leaflet <CAM> helpers . is <CAM> number ;
+output: leaflet <CAM> valid . is <CAM> bounds <CAM>
+------------------------------------------
+
+source: 
+var view <CAM> management = Windows . UI . view <CAM> management 
+query:  var application <CAM> view
+target: view <CAM> management . application <CAM> view ;
+output: Windows <CAM> management <CAM> view <CAM> management <CAM>
+------------------------------------------
+
+source: 
+var timing <CAM> function <CAM> utils = require ( ' timing <CAM> function <CAM> utils ' ) 
+query:  var step <CAM> editor <CAM> template
+target: require ( ' text! <CAM> step <CAM> editor <CAM> template . html ' ) ;
+output: require ( ' step <CAM> function <CAM> function <CAM> function <CAM> get <CAM> ) ;
+------------------------------------------
+
+source: 
+var name <CAM> statement = traceur . syntax . trees . name <CAM> statement 
+query:  var new <CAM> expression
+target: traceur . syntax . trees . new <CAM> expression ;
+output: traceur . syntax . trees . syntax <CAM> statement ;
+------------------------------------------
+
+source: 
+var can <CAM> evaluate = util . can <CAM> evaluate 
+query:  var try <CAM> catch1
+target: util . try <CAM> catch1 ;
+output: util . can <CAM> evaluate ;
+------------------------------------------
+
+source: 
+var radius <CAM> function = options . radius <CAM> function 
+query:  var cap
+target: options . cap  |  |  BABYLON . Mesh . NO <UND> CAP ;
+output: radius . cap <CAM> |  |  | . cap ;
+------------------------------------------
+
+source: 
+var interoperabilityifd <CAM> length = if <CAM> dlengths . interoperabilityifd <CAM> length 
+query:  var interoperability <CAM> length <CAM> data <CAM> section
+target: if <CAM> dlengths . interoperability <CAM> length <CAM> data <CAM> section ;
+output: if <CAM> length <CAM> interoperabilityifd <CAM> length <CAM> length <CAM> length <CAM>
+------------------------------------------
+
+source: 
+var image <CAM> el = this . _ image <CAM> el 
+query:  var crop <CAM> el
+target: this . _ crop <CAM> el ;
+output: this . _ image <CAM> el ;
+------------------------------------------
+
+source: 
+var node <CAM> name = node <CAM> names [ node <CAM> index ] 
+query:  var node <CAM> transformation
+target: node <CAM> transformations [ node <CAM> name ] ;
+output: node <CAM> transformation <CAM> node <CAM> index ] ;
+------------------------------------------
+
+source: 
+var get <CAM> column <CAM> header = window . get <CAM> column <CAM> header 
+query:  var get <CAM> row <CAM> header
+target: window . get <CAM> row <CAM> header ;
+output: window . get <CAM> header <CAM> header <CAM>
+------------------------------------------
+
+source: 
+var transform = require ( ' gulp - transform ' ) 
+query:  var mkdirp
+target: require ( ' mkdirp ' ) ;
+output: require ( ' gulp ' ) ;
+------------------------------------------
+
+source: 
+var matches <CAM> names = scope . matches <CAM> names 
+query:  var mixin
+target: scope . mixin ;
+output: scope . matches ;
+------------------------------------------
+
+source: 
+var face <CAM> colors = options . face <CAM> colors 
+query:  var flat
+target: ( options . flat      undefined ) ? true : options . flat ;
+output: options options . flat <CAM> |     ? ;
+------------------------------------------
+
+source: 
+var line <CAM> height = config . line <CAM> height 
+query:  var blame <CAM> data
+target: this . blame <CAM> column . blame <CAM> data ;
+output: config . line <CAM> height ;
+------------------------------------------
+
+source: 
+var stats = test <CAM> set . stats 
+query:  var tree <CAM> node
+target: test <CAM> set . tree <CAM> node ;
+output: test <CAM> node . tree <CAM> node ;
+------------------------------------------
+
+source: 
+var search = entry . search 
+query:  var path
+target: ( basename  |  |  '' ) + pathname + ( search  |  |  '' ) ;
+output: entry entry ( |  |   ) ;
+------------------------------------------
+
+source: 
+var dims <CAM> def = ( opt . dims <CAM> def  |  |  [ ] ) . slice ( ) 
+query:  var encode <CAM> def
+target: zr <CAM> util . create <CAM> hash <CAM> map ( opt . encode <CAM> def ) ;
+output: ( <CAM> def . dims <CAM> def  def  opt <CAM> dims  def  ;
+------------------------------------------
+
+source: 
+var marky = require ( ' marky ' ) 
+query:  var median
+target: require ( ' median ' ) ;
+output: require ( ' median ' ) ;
+------------------------------------------
+
+source: 
+var option = this . option 
+query:  var icon <CAM> paths
+target: this . icon <CAM> paths ;
+output: this . icon <CAM> paths ;
+------------------------------------------
+
+source: 
+var models = _ _ alloy <CAM> id23 . models 
+query:  var len
+target: models . length ;
+output: _ . length ;
+------------------------------------------
+
+source: 
+var hour = parse <CAM> int ( $ ( ' # new - alarm - hour ' ) . val ( ) ) 
+query:  var minute
+target: parse <CAM> int ( $ ( ' # new - alarm - minute ' ) . val ( ) ) ;
+output: ' <CAM> int ( ' ( ' # minute $ <CAM> ' client ' ) ;
+------------------------------------------
+
+source: 
+var cps <CAM> transformer = traceur . codegeneration . generator . cps <CAM> transformer 
+query:  var end <CAM> state
+target: traceur . codegeneration . generator . end <CAM> state ;
+output: traceur . syntax . cps . cps <CAM> transformer ;
+------------------------------------------
+
+source: 
+var Panel = imports . Panel 
+query:  var tab <CAM> manager
+target: imports . tab <CAM> manager ;
+output: imports . tab <CAM> manager ;
+------------------------------------------
+
+source: 
+var session <CAM> description = window . mozrtc <CAM> session <CAM> description  |  |  window . rtc <CAM> session <CAM> description 
+query:  var media <CAM> stream
+target: window . webkit <CAM> media <CAM> stream  |  |  window . media <CAM> stream ;
+output: window . mozrtc <CAM> session <CAM> description <CAM> |  |  | . mozrtc <CAM> session <CAM>
+------------------------------------------
+
+source: 
+var method = obj . method . to <CAM> lower <CAM> case ( ) 
+query:  var timeout
+target: obj . timeout ;
+output: obj . method <CAM>
+------------------------------------------
+
+source: 
+var Map   = Immutable . Map 
+query:  var is <CAM> map
+target: Immutable . Map . is <CAM> map ;
+output: Immutable . is . is <CAM> map ;
+------------------------------------------
+
+source: 
+var format <CAM> string = visuals . value <CAM> formatter . get <CAM> format <CAM> string ( values <CAM> metadata , format <CAM> string <CAM> prop ) 
+query:  var pct
+target: visuals . value <CAM> formatter . format ( percentage , pct <CAM> format <CAM> string ) ;
+output: visuals . get <CAM> string ;
+------------------------------------------
+
+source: 
+var line <CAM> number = style <CAM> sheet <CAM> header . line <CAM> number <CAM> in <CAM> source ( rule <CAM> location . start <CAM> line ) 
+query:  var column <CAM> number
+target: style <CAM> sheet <CAM> header . column <CAM> number <CAM> in <CAM> source ( rule <CAM> location . start <CAM> line , rule <CAM> location . start <CAM> column ) ;
+output: <CAM> <CAM> number <CAM> number <CAM> get <CAM> number <CAM> number <CAM> number <CAM> <CAM> <CAM> number <CAM> get <CAM> number <CAM> <CAM> <CAM> number <CAM> get <CAM> number <CAM> ;
+------------------------------------------
+
+source: 
+var current <CAM> config = config . build . current <CAM> config 
+query:  var build <CAM> configuration
+target: config . build <CAM> configurations [ current <CAM> config ] ;
+output: config . build <CAM> config ;
+------------------------------------------
+
+source: 
+var editor = this . ui . editor 
+query:  var graph
+target: editor . graph ;
+output: this . graph .
+------------------------------------------
+
+source: 
+var dnode = require ( ' dnode ' ) 
+query:  var net
+target: require ( ' net ' ) ;
+output: require ( ' net ' ) ;
+------------------------------------------
+
+source: 
+var targets = ptargets 
+query:  var matching <CAM> options
+target: pmatching <CAM> options ;
+output: var <CAM> options .
+------------------------------------------
+
+source: 
+var register <CAM> object = scope . register <CAM> object 
+query:  var document <CAM> fragment
+target: register <CAM> object ( document . create <CAM> document <CAM> fragment ( ) ) ;
+output: scope <CAM> object . scope . create <CAM> element <CAM> object <CAM> ' ;
+------------------------------------------
+
+source: 
+var debug = require ( ' debug ' ) ( ' express : view ' ) 
+query:  var path
+target: require ( ' path ' ) ;
+output: require ( ' stream ' ) ;
+------------------------------------------
+
+source: 
+var display <CAM> name <CAM> keys = powerbi . visuals . slicer <CAM> util . display <CAM> name <CAM> keys 
+query:  var select <CAM> menu
+target: powerbi . visual . controls . select <CAM> menu ;
+output: powerbi . display <CAM> display <CAM> display <CAM> name ;
+------------------------------------------
+
+source: 
+var f8 <CAM> colors = require ( ' f8 <CAM> colors ' ) 
+query:  var f8 <CAM> info <CAM> view
+target: require ( ' f8 <CAM> info <CAM> view ' ) ;
+output: require ( ' f8 <CAM> colors <CAM> colors <CAM> ) ;
+------------------------------------------
+
+source: 
+var IMPORT <UND> SPECIFIER = ' IMPORT <UND> SPECIFIER ' 
+query:  var IMPORT <UND> SPECIFIER <UND> SET
+target: ' IMPORT <UND> SPECIFIER <UND> SET ' ;
+output: ' IMPORT <UND> SPECIFIER <UND> SPECIFIER <UND> ;
+------------------------------------------
+
+source: 
+var origin = apps [ app ] . origin  |  |  null 
+query:  var install <CAM> origin
+target: apps [ app ] . install <CAM> origin  |  |  null ;
+output: apps . install .  install <CAM> origin ;
+------------------------------------------
+
+source: 
+var entity = this . entity 
+query:  var entity <CAM> manager
+target: this . entity <CAM> manager ;
+output: this . entity . manager ;
+------------------------------------------
+
+source: 
+var fore <CAM> color = color <CAM> info . fore <CAM> color 
+query:  var back <CAM> color
+target: color <CAM> info . back <CAM> color ;
+output: color <CAM> color . fore <CAM> color <CAM>
+------------------------------------------
+
+source: 
+var m = has <CAM> weak <CAM> map ? weak : sym 
+query:  var is <CAM> private <CAM> symbol
+target: m . is <CAM> private <CAM> symbol ;
+output: weak <CAM> is <CAM> weak <CAM> weak <CAM>
+------------------------------------------
+
+source: 
+var allow <CAM> picking = model . allow <CAM> picking 
+query:  var root <CAM> nodes
+target: model . _ runtime . root <CAM> nodes ;
+output: model <CAM> get root <CAM> allow <CAM> picking ;
+------------------------------------------
+
+source: 
+var ember <CAM> generate <CAM> destroy = blueprint <CAM> helpers . ember <CAM> generate <CAM> destroy 
+query:  var modify <CAM> packages
+target: blueprint <CAM> helpers . modify <CAM> packages ;
+output: blueprint <CAM> destroy . ember <CAM> generate <CAM>
+------------------------------------------
+
+source: 
+var push = [ ] . push 
+query:  var slice
+target: Array . prototype . slice ;
+output: [ . slice . slice .
+------------------------------------------
+
+source: 
+var _ save <CAM> setjmp = Module [ ' _ save <CAM> setjmp ' ] = asm [ ' _ save <CAM> setjmp ' ] 
+query:  var _ strcat
+target: Module [ ' _ strcat ' ]    asm [ ' _ strcat ' ] ;
+output: _ [ ' _ _ ' ]    ' [ ' _ _ ' ] ;
+------------------------------------------
+
+source: 
+var o = goog . style . get <CAM> page <CAM> offset ( element ) 
+query:  var s
+target: goog . style . get <CAM> size ( element ) ;
+output: element . get . get <CAM> offset <CAM> ) <CAM> ;
+------------------------------------------
+
