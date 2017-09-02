@@ -32,11 +32,15 @@ class TextFolder(data.Dataset):
     def __getitem__(self, index):
         data = self.data[index].split(':==:')
         
+        # src_tokens = data[0].split(' ')
+        # trg_tokens = data[1].split(' ')
+        # split_point = np.random.randint(1,min(len(trg_tokens),5))
+        # qry_tokens = trg_tokens[:split_point]
+        # trg_tokens = trg_tokens[split_point:]
+
         src_tokens = data[0].split(' ')
-        trg_tokens = data[1].split(' ')
-        split_point = np.random.randint(1,min(len(trg_tokens),5))
-        qry_tokens = trg_tokens[:split_point]
-        trg_tokens = trg_tokens[split_point:]
+        qry_tokens = data[1].split(' ')
+        trg_tokens = data[2].split(' ')
         
         src_tokens = self.tokenize(src_tokens,'single')
         qry_tokens = self.tokenize(qry_tokens,'single')
