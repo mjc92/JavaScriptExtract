@@ -43,7 +43,7 @@ class TextFolder(data.Dataset):
         else:
             src_tokens = self.tokenize(data[:-2],'multi') # context
         target = data[-2].split(' ')
-        split_point = np.random.randint(1,min(len(target),5))
+        split_point = np.random.randint(1, max(2, min(len(target), 5)))
         qry_ = target[:split_point]
         qry_tokens = self.tokenize(qry_,'single') # guery
         trg_ = target[split_point:]
@@ -63,7 +63,6 @@ class TextFolder(data.Dataset):
             src_np = np.zeros([len(src_tokens),max_src],dtype=int)
             for i,tokens in enumerate(src_tokens):
                 src_np[i,:len(tokens)] = np.array(tokens,dtype=int)
-            
             diff = 10-src_np.shape[0]
             if diff>0:
                 src_np = np.vstack([src_np,np.zeros([diff,src_np.shape[1]],dtype=int)])
