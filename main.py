@@ -25,8 +25,8 @@ parser = argparse.ArgumentParser()
 # parser.add_argument('--val_root',type=str,default='/home/irteam/users/data/D3/outputs_val.txt',help='data file')
 # parser.add_argument('--test_root',type=str,default='/home/irteam/users/data/D3/outputs_test.txt',help='data file')
 parser.add_argument('--train_root', type=str, default='data/type_dataset/type1_2_train.txt', help='data file')
-parser.add_argument('--val_root', type=str, default='data/new_outputs_var_val.txt', help='data file')
-parser.add_argument('--test_root', type=str, default='data/type_dataset/type1_2_test.txt"', help='data file')
+parser.add_argument('--val_root', type=str, default='data/type_dataset/type1_2_test.txt', help='data file')
+parser.add_argument('--test_root', type=str, default='data/type_dataset/type1_2_test.txt', help='data file')
 parser.add_argument('--dict_root', type=str, default='data/var/dict_18653.json',
                     help='directory of dictionary file')
 parser.add_argument('--save_dir', type=str, default='saves', help='where to save model & info')
@@ -175,9 +175,6 @@ def val(model, vocab, args):
     total_correct_labels = 0
 
     for i, (inputs, lengths, labels, oovs) in enumerate(data_loader):
-        if i == 1:
-            break
-
         model.eval()
         sources, queries, targets = inputs
         source_len, query_len, target_len, context_len = lengths
@@ -193,8 +190,6 @@ def val(model, vocab, args):
         targets = Variable(targets[:, 1:])  # correct answers
 
         packed_outputs, packed_targets = pack_padded(outputs, targets)
-        print(packed_outputs.size())
-        print(packed_targets.size())
         packed_outputs = torch.log(packed_outputs)
         if args.single:
             loss = criterion(packed_outputs, packed_targets).data[0]
