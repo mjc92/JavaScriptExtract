@@ -13,8 +13,8 @@ from packages.vocab import Vocab
 import torch.nn.functional as F
 from tensorboard.logger import Logger
 from torch.autograd import Variable
-from packages.data_loader_for_var import get_loader
-# from packages.data_loader import get_loader
+# from packages.data_loader_for_var import get_loader
+from packages.data_loader import get_loader
 from models.extractor import JavascriptExtractor
 from packages.functions import pack_padded, to_np, to_var, str2bool, write_log
 
@@ -24,9 +24,9 @@ parser = argparse.ArgumentParser()
 # parser.add_argument('--train_root',type=str,default='/home/irteam/users/data/D3/outputs_train.txt',help='data file')
 # parser.add_argument('--val_root',type=str,default='/home/irteam/users/data/D3/outputs_val.txt',help='data file')
 # parser.add_argument('--test_root',type=str,default='/home/irteam/users/data/D3/outputs_test.txt',help='data file')
-parser.add_argument('--train_root', type=str, default='data/var/new_outputs_train.txt', help='data file')
-parser.add_argument('--val_root', type=str, default='data/new_outputs_var_val.txt', help='data file')
-parser.add_argument('--test_root', type=str, default='data/new_outputs_var_test.txt', help='data file')
+parser.add_argument('--train_root', type=str, default='data/type_dataset/type1_2_train.txt', help='data file')
+parser.add_argument('--val_root', type=str, default='data/type_dataset/type1_2_test.txt', help='data file')
+parser.add_argument('--test_root', type=str, default='data/type_dataset/type1_2_test.txt', help='data file')
 parser.add_argument('--dict_root', type=str, default='data/var/dict_18653.json',
                     help='directory of dictionary file')
 parser.add_argument('--save_dir', type=str, default='saves', help='where to save model & info')
@@ -36,7 +36,7 @@ parser.add_argument("--max_oovs", type=int, default=20,
 # arguments related to model training and inference
 parser.add_argument("--mode", type=str, help='train/test mode. Error if unspecified')
 parser.add_argument("--epochs", type=int, default=10, help='Number of epochs. Set by default to 20')
-parser.add_argument("--lr", type=float, default=0.01, help='learning rate')
+parser.add_argument("--lr", type=float, default=0.001, help='learning rate')
 parser.add_argument("--batch", type=int, default=64, help='batch size')
 parser.add_argument("--k", type=int, default=5, help='for top-k accuracy')
 parser.add_argument("--single", type=str2bool, default=True,
@@ -77,38 +77,38 @@ def train(args):
 
     criterion = nn.NLLLoss()
     if args.load is None:
-        model = JavascriptExtractor(args,vocab)
+        model = JavascriptExtractor(args, vocab)
     else:
         model = torch.load(args.load)
     if args.cuda:
         model.cuda()
     steps = 0
     opt = optim.Adam(model.parameters(), lr=args.lr)
-    total_batches=0
+    total_batches = 0
     for epoch in range(args.epochs):
         within_steps = 0
         for i, (inputs, lengths, labels, oovs) in enumerate(data_loader):
             # split tuples
-            steps+=1
-            if steps==100000:
+            steps += 1
+            if steps == 100000:
                 sys.exit()
-            total_batches = max(total_batches,i)
+            total_batches = max(total_batches, i)
             model.zero_grad()
             sources, queries, targets = inputs
-            source_len, query_len, target_len, context_len= lengths
+            source_len, query_len, target_len, context_len = lengths
             if args.cuda:
                 sources = sources.cuda()
                 queries = queries.cuda()
                 targets = targets.cuda()
             if args.single:
-                outputs = model(sources,queries,lengths, targets) # [batch x seq x vocab]
+                outputs = model(sources, queries, lengths, targets)  # [batch x seq x vocab]
             else:
-                outputs, sim = model(sources,queries,lengths, targets) # [batch x seq x vocab]
-            targets = Variable(targets[:,1:])
-            packed_outputs,packed_targets = pack_padded(outputs,targets)
+                outputs, sim = model(sources, queries, lengths, targets)  # [batch x seq x vocab]
+            targets = Variable(targets[:, 1:])
+            packed_outputs, packed_targets = pack_padded(outputs, targets)
             packed_outputs = torch.log(packed_outputs)
             if args.single:
-                loss = criterion(packed_outputs,packed_targets)
+                loss = criterion(packed_outputs, packed_targets)
             else:
                 sim = sim + 1e-3
                 sim = torch.log(sim)
@@ -140,7 +140,7 @@ def train(args):
 
             # free memory
             del targets, outputs, packed_targets, packed_outputs, correct
-            if args.single == False:
+            if not args.single:
                 del sim, labels, correct_label
             opt.step()
             if steps % 100 == 0:
@@ -148,7 +148,7 @@ def train(args):
                 torch.save(obj=model, f=os.path.join(args.save_dir, 'model_%d_steps.pckl' % steps))
                 # print("Model saved...")
 
-            if args.log == True & (steps % 5 == 0):
+            if args.log and steps % 5 == 0:
                 # log scalar values
                 info = {'loss': loss.data[0],
                         'acc': acc}
@@ -175,9 +175,6 @@ def val(model, vocab, args):
     total_correct_labels = 0
 
     for i, (inputs, lengths, labels, oovs) in enumerate(data_loader):
-        if i == 1:
-            break
-
         model.eval()
         sources, queries, targets = inputs
         source_len, query_len, target_len, context_len = lengths
@@ -193,8 +190,6 @@ def val(model, vocab, args):
         targets = Variable(targets[:, 1:])  # correct answers
 
         packed_outputs, packed_targets = pack_padded(outputs, targets)
-        print(packed_outputs.size())
-        print(packed_targets.size())
         packed_outputs = torch.log(packed_outputs)
         if args.single:
             loss = criterion(packed_outputs, packed_targets).data[0]
@@ -216,7 +211,7 @@ def val(model, vocab, args):
         total_cases += len(packed_outputs)
 
         print("Loss: %1.3f" % (loss))
-        if args.single == False:
+        if not args.single:
             predicted_label = sim.max(1)[1]
             correct_label = (predicted_label == labels).long().sum().data[0]
 
@@ -225,7 +220,7 @@ def val(model, vocab, args):
 
         # free memory
         del targets, outputs, packed_targets, packed_outputs, correct
-        if args.single == False:
+        if not args.single:
             del sim, labels, correct_label
 
             # get top-k accuracy
@@ -315,7 +310,7 @@ def print_samples(model, vocab, args):
         query = queries[0]
         target = targets[0][1:]
         output = outputs[0].max(1)[1]
-        if args.single == True:
+        if args.single:
             l1 = 'source: \n' + vocab.tensor_to_string(source, oovs[0])
         else:
             l1 = 'source: \n' + '\n'.join([vocab.tensor_to_string(src, oovs[0]) for src in source])
@@ -327,7 +322,7 @@ def print_samples(model, vocab, args):
 
 
 def main(args):
-    if args.copy == True:
+    if args.copy:
         copy(args)
     if args.mode == 'train':
         print("Train mode")
