@@ -13,8 +13,8 @@ from packages.vocab import Vocab
 import torch.nn.functional as F
 from tensorboard.logger import Logger
 from torch.autograd import Variable
-from packages.data_loader_for_var import get_loader
-# from packages.data_loader import get_loader
+# from packages.data_loader_for_var import get_loader
+from packages.data_loader import get_loader
 from models.extractor import JavascriptExtractor
 from packages.functions import pack_padded, to_np, to_var, str2bool, write_log
 
@@ -24,9 +24,9 @@ parser = argparse.ArgumentParser()
 # parser.add_argument('--train_root',type=str,default='/home/irteam/users/data/D3/outputs_train.txt',help='data file')
 # parser.add_argument('--val_root',type=str,default='/home/irteam/users/data/D3/outputs_val.txt',help='data file')
 # parser.add_argument('--test_root',type=str,default='/home/irteam/users/data/D3/outputs_test.txt',help='data file')
-parser.add_argument('--train_root', type=str, default='data/var/new_outputs_train.txt', help='data file')
+parser.add_argument('--train_root', type=str, default='data/type_dataset/type1_2_train.txt', help='data file')
 parser.add_argument('--val_root', type=str, default='data/new_outputs_var_val.txt', help='data file')
-parser.add_argument('--test_root', type=str, default='data/new_outputs_var_test.txt', help='data file')
+parser.add_argument('--test_root', type=str, default='data/type_dataset/type1_2_test.txt"', help='data file')
 parser.add_argument('--dict_root', type=str, default='data/var/dict_18653.json',
                     help='directory of dictionary file')
 parser.add_argument('--save_dir', type=str, default='saves', help='where to save model & info')
