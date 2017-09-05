@@ -27,7 +27,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--train_root', type=str, default='data/type_dataset/type1_2_train.txt', help='data file')
 parser.add_argument('--val_root', type=str, default='data/type_dataset/type1_2_test.txt', help='data file')
 parser.add_argument('--test_root', type=str, default='data/type_dataset/type1_2_test.txt', help='data file')
-parser.add_argument('--dict_root', type=str, default='data/var/dict_18653.json',
+parser.add_argument('--dict_root', type=str, default='data/type_dataset/dict_6591.json',
                     help='directory of dictionary file')
 parser.add_argument('--save_dir', type=str, default='saves', help='where to save model & info')
 parser.add_argument("--max_oovs", type=int, default=20,
