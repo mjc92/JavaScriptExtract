@@ -3,6 +3,7 @@ import os
 from torch.utils import data
 import numpy as np
 from packages.functions import preprocess
+import re
 
 """
 Sample usage case
@@ -29,6 +30,7 @@ class TextFolder(data.Dataset):
         self.max_len = 100
         self.load_dict(dictionary)
         self.single = single
+        self.splitter = re.compile(r"(\W)")
 
     def __getitem__(self, index):
         data = self.data[index].split('%NWL%')
@@ -43,8 +45,9 @@ class TextFolder(data.Dataset):
             src_tokens = src_tokens.split(' ')
         else:
             src_tokens = self.tokenize(data[:-2], 'multi')  # context
-        target = data[-2].split(' ')
-        split_point = np.random.randint(1, max(2, min(len(target), 5)))
+
+        target = [x for x in self.splitter.split(data[-2]) if x is not '']
+        split_point = np.random.randint(1, min(len(target), 5))
         qry_ = target[:split_point]
         qry_tokens = self.tokenize(qry_, 'single')  # guery
         trg_ = target[split_point:]
@@ -100,7 +103,7 @@ class TextFolder(data.Dataset):
 
     def tokenize(self, input, mode=None):
         if mode == 'multi':  # input: list of strings
-            out = [x.split(' ')[:self.max_len] for x in input]
+            out = [[x_ for x_ in self.splitter.split(x)[:self.max_len] if x_ is not ''] for x in input]
         elif mode == 'single':  # input: string
             out = input[:self.max_len]
         elif mode == 'target':  # input: string
