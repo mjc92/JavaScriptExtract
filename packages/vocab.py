@@ -66,7 +66,9 @@ class Vocab(object):
             idx_list = [int(idx) for idx in idx_list]
         out = []
         for idx in idx_list:
-            if idx in idx2oov:
+            if idx==3: # EOS
+                break
+            elif idx in idx2oov:
                 out.append(idx2oov[idx])
             else:
                 out.append(self.idx2word(idx))

@@ -69,3 +69,12 @@ def pack_padded(outputs, targets):
         out_pack.append(outputs[i,:length])
         tar_pack.append(targets[i,:length])
     return torch.cat(out_pack,0), torch.cat(tar_pack,0)
+
+def smartprint(line):
+    line = line.split('%NWL%')
+    source = line[:-2]
+    query = line[-2]
+    idx = int(line[-1].strip())
+    source[idx] = '* '+source[idx]
+    print('\n'.join(source)+'\n'+query)
+    return

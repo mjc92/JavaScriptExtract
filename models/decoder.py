@@ -83,23 +83,25 @@ class CopyDecoder(nn.Module):
             numbers = sources.view(-1).tolist()
             set_numbers = list(set(numbers)) # unique numbers that appear
             c = Counter(numbers)
-            dup_list = [k for k in set_numbers if (c[k]>1)]
-            dup_attn_sum = Variable(torch.zeros(b,seq))
-            masked_idx_sum = Variable(torch.Tensor(b,seq).zero_())
-            encoded_idx_var = Variable(sources)
+            dup_list = [k for k in set_numbers if ((c[k]>1)& (k>0))] # list of idxs appearing more than once
+            
+            dup_attn_sum = Variable(torch.zeros(b,seq)) # here we sum all attn values
+            masked_idx_sum = Variable(torch.Tensor(b,seq).zero_()) # here we add up all dup idxs
+            encoded_idx_var = Variable(sources) # just the input idxs
             if self.iscuda:
                 dup_attn_sum = dup_attn_sum.cuda()
                 masked_idx_sum = masked_idx_sum.cuda()
                 encoded_idx_var = encoded_idx_var.cuda()
             
-            for dup in dup_list:
-                mask = (encoded_idx_var==dup).float()
-                masked_idx_sum += mask
-                attn_mask = torch.mul(mask,prob_c)
+            for dup in dup_list: # for any number appearing more than once
+                mask = (encoded_idx_var==dup).float() # whether encoded variable is in dup
+                masked_idx_sum += mask # add to total masked region
+                attn_mask = torch.mul(mask,prob_c) # multiple regions are multiplied the same value
                 attn_sum = attn_mask.sum(1).unsqueeze(1)
+                #dup_attn_sum += torch.mul(mask, attn_sum.expand(mask.size(0),mask.size(1)))
                 dup_attn_sum += torch.mul(mask, attn_sum)
                 
-            attn = torch.mul(prob_c,(1-masked_idx_sum))+dup_attn_sum
+            attn = torch.mul(prob_c,(1-masked_idx_sum))+dup_attn_sum # 
             batch_indices = torch.arange(start=0, end=b).long()
             batch_indices = batch_indices.expand(seq,b).transpose(1,0).contiguous().view(-1)
             idx_repeat = torch.arange(start=0, end=seq).repeat(b).long()
@@ -111,7 +113,7 @@ class CopyDecoder(nn.Module):
             #     prob_c_to_g = prob_c_to_g.cuda()
                 attn = attn.cpu()
                 word_indices = word_indices.cpu()
-
+            
             prob_c_to_g[batch_indices,word_indices] += attn[batch_indices,idx_repeat]
             if self.iscuda:
                 prob_c_to_g = prob_c_to_g.cuda()

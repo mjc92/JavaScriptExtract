@@ -44,7 +44,10 @@ class TextFolder(data.Dataset):
         else:
             src_tokens = self.tokenize(data[:-2], 'multi')  # context
         target = data[-2].split(' ')
-        split_point = np.random.randint(1, max(2, min(len(target), 5)))
+        if len(target)<6:
+            split_point = 2
+        else:
+            split_point = np.random.randint(2,int(len(target)/2))
         qry_ = target[:split_point]
         qry_tokens = self.tokenize(qry_, 'single')  # guery
         trg_ = target[split_point:]
@@ -168,7 +171,6 @@ def collate_fn(data):
     # queries_out = queries_out[:,:150]
     outputs = (sources_out, queries_out, targets_out)
     lengths = (source_len, query_len, target_len, context_len)
-
     return outputs, lengths, labels, list(oovs)
 
 

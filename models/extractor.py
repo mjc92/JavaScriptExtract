@@ -12,7 +12,7 @@ import time
 class JavascriptExtractor(nn.Module):
     def __init__(self, args, vocab):
         super(JavascriptExtractor, self).__init__()
-           
+        self.args = args
         self.copynet = CopyNet(args, vocab)
         
         if args.single==False:
@@ -23,13 +23,16 @@ class JavascriptExtractor(nn.Module):
             elif args.encoder=='lstm':
                 from models.similarity.lstm import LSTMLastState
                 self.encoder = LSTMLastState(args, vocab)
-
+            
             if args.similarity=='cosine':
                 from models.similarity.cosine import CosineSimilarity
                 self.similarity = CosineSimilarity(args, vocab)
             elif args.similarity=='mlp':
                 from models.similarity.mlp import MLPSimilarity
                 self.similarity = MLPSimilarity(args, vocab)
+            elif args.similarity=='levenshtein':
+                from models.similarity.levenshtein import LevenshteinDistance
+                self.similarity = LevenshteinDistance(args)
         
         self.iscuda = args.cuda
         self.single = args.single
@@ -49,22 +52,26 @@ class JavascriptExtractor(nn.Module):
         if self.single==False:
             # similarity_encode
             # similarity_compute
-            src_simil, q_simil = self.encoder(sources, queries)
-            sources, similarities = self.similarity(sources, src_simil, q_simil, context_len)
+            if self.args.similarity=='levenshtein':
+                sources, similarities = self.similarity(sources, queries, context_len)
+                
+            else:
+                src_simil, q_simil = self.encoder(sources, queries)
+                sources, similarities = self.similarity(sources, src_simil, q_simil, context_len)
+                # here, 'sources' are the selected lines
+        
         # merge sources and queries to one matrix
         source_lens = (sources>0).long().sum(1)
         query_lens = (queries>0).long().sum(1)
         max_len = (source_lens+query_lens).max()
         new_sources = torch.zeros(sources.size(0),max_len).long()
         new_sources = to_cuda(new_sources, self.iscuda)
-                
         for i in range(sources.size(0)):
             try:
                 new_sources[i,:source_lens[i]] += sources[i,:source_lens[i]]
             except ValueError:
                 pass
-            new_sources[i,source_lens[i]:source_lens[i]+query_lens[i]] += queries[i,:query_lens[i]]
-        
+            new_sources[i,source_lens[i]:(source_lens[i]+query_lens[i])] += queries[i,:query_lens[i]]
         # get target outputs using the copynet model
         outputs = self.copynet(new_sources, targets)
         
