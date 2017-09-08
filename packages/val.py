@@ -1,8 +1,9 @@
 from packages.data_loader import get_loader
 from torch.autograd import Variable
 import torch
-from packages.functions import pack_padded
+from packages.functions import pack_padded, write_log
 import os
+
 
 def val(model, vocab, args):
     mode = 'Validation results:'
@@ -26,18 +27,18 @@ def val(model, vocab, args):
             outputs = model(sources, queries, lengths, targets)  # [batch x seq x vocab]
         else:
             outputs, sim = model(sources, queries, lengths, targets)
-        
+
         targets = Variable(targets[:, 1:])  # correct answers
 
         packed_outputs, packed_targets = pack_padded(outputs, targets)
-        
+
         del outputs, targets
-        
+
         packed_outputs = packed_outputs.data
         packed_targets = packed_targets.data
         predicted = packed_outputs.max(1)[1] # how much was predicted
         correct = (predicted==packed_targets).long().sum()
-        
+
         print('%d out of %d tokens correct'%(correct,len(packed_targets)))
         total_correct_cases += correct
         total_cases += len(packed_targets)
@@ -50,8 +51,8 @@ def val(model, vocab, args):
             print('%d out of %d line predictions correct'%(correct_labels,len(predicted_labels)))
             total_correct_labels += correct_labels
             total_labels += len(predicted_labels)
-    
-        
+
+
         # free memory
         del packed_targets, packed_outputs, correct
         if not args.single:
@@ -63,16 +64,18 @@ def val(model, vocab, args):
             #         for i in range(len(target_list)):
             #             if target_list[i] in topk[i]:
             #                 total_correct_k += 1
-            
+
     print("Total: %d out of %d tokens correct"%(total_correct_cases,total_cases))
 
     if args.single:
         acc = (total_correct_cases * 1.0 / total_cases)
-        print("%s accuracy: %1.3f" % (mode, acc))
+        string = "%s accuracy: %1.3f" % (mode, acc)
     else:
         acc1 = (total_correct_labels * 1.0 / total_labels)
         acc2 = (total_correct_cases * 1.0 / total_cases)
-        print("%s accuracy - Similarity: %1.3f\tSequence: %1.3f" % (mode, acc1, acc2))
+        string = "%s accuracy - Similarity: %1.3f\tSequence: %1.3f" % (mode, acc1, acc2)
+    print(string)
+    write_log(string, args,'log_val.txt')
 
     # print("top-%d accuracy: %1.3f" %(args.k, total_correct_k*1.0/total_cases))
 

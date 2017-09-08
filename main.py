@@ -27,7 +27,7 @@ parser.add_argument("--max_oovs", type=int, default=20,
 
 # arguments related to model training and inference
 parser.add_argument("--mode", type=str, help='train/test mode. Error if unspecified')
-parser.add_argument("--epochs", type=int, default=10, help='Number of epochs. Set by default to 20')
+parser.add_argument("--epochs", type=int, default=20, help='Number of epochs. Set by default to 20')
 parser.add_argument("--lr", type=float, default=0.001, help='learning rate')
 parser.add_argument("--batch", type=int, default=64, help='batch size')
 parser.add_argument("--k", type=int, default=5, help='for top-k accuracy')
@@ -48,13 +48,15 @@ parser.add_argument("--max_out_seq", type=int, default=100, help='max length of 
 parser.add_argument("--similarity", type=str, default='cosine', help='similarity measure to use')
 parser.add_argument("--encoder", type=str, default='lstm', help='encoder type to use')
 
+# etc
+parser.add_argument("--gpu", type=int, default=0, help='which gpu to use')
+
 args = parser.parse_args()
+os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu)
 
-if not os.path.exists(args.save_dir):
-    os.mkdir(args.save_dir)
+# if not os.path.exists(args.save_dir):
+#     os.mkdir(args.save_dir)
 
-time_str = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-args.time_str = time_str
 
 
 
@@ -64,6 +66,9 @@ def main(args):
     if args.mode == 'train':
         print("Train mode")
         train(args)
+    elif args.mode =='train_sim':
+        from packages.train_sim import train_sim
+        train_sim(args)
     elif args.mode == 'test':
         print("Test mode")
         test(args)

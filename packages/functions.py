@@ -1,17 +1,15 @@
 import numpy as np
-import spacy
 import torch
 from torch.autograd import Variable
 import os
 from collections import Counter
 import torch
 import glob
-from spacy import attrs
 
-def write_log(string, args):
-    with open(os.path.join(args.save_dir,'log.txt'),'a') as f:
+def write_log(string, args, filename):
+    with open(os.path.join(args.save_dir,filename),'a') as f:
         f.write(string+'\n')
-        
+
 def str2bool(v):
     if v.lower() in ('yes', 'true', 't', 'y', '1'):
         return True
@@ -55,8 +53,8 @@ def to_np(x):
 def to_var(x):
     if torch.cuda.is_available():
         x = x.cuda()
-    return Variable(x)    
-    
+    return Variable(x)
+
 def pack_padded(outputs, targets):
     """
     outputs: Variable, [b x seq x vocab]

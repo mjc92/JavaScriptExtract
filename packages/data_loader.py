@@ -44,10 +44,12 @@ class TextFolder(data.Dataset):
         else:
             src_tokens = self.tokenize(data[:-2], 'multi')  # context
         target = data[-2].split(' ')
-        if len(target)<6:
+        if len(target)<4:
             split_point = 2
+        elif len(target)<6:
+            split_point = 3
         else:
-            split_point = np.random.randint(2,int(len(target)/2))
+            split_point = np.random.randint(3,int(len(target)/2)+1)
         qry_ = target[:split_point]
         qry_tokens = self.tokenize(qry_, 'single')  # guery
         trg_ = target[split_point:]
@@ -122,7 +124,7 @@ def collate_fn(data):
     2. queries: list of batch @ [seq] tensors
     3. targets: list of batch @ [seq] tensors
     4. labels: list of bqtch @ [integers], which line to point in a sentence
-    
+
     -- Outputs --
     1. context_len: a list of len batch, lengths of all contexts (mostly 10)
     2. sources_out: a tensor of size [batch*10-a x seq], all input sentences merged into 1 matrix
