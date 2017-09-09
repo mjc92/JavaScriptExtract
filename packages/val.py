@@ -37,11 +37,18 @@ def val(model, vocab, args):
         packed_outputs = packed_outputs.data
         packed_targets = packed_targets.data
         predicted = packed_outputs.max(1)[1] # how much was predicted
-        correct = (predicted==packed_targets).long().sum()
+        unks = torch.LongTensor(predicted.size()).zero_()+1
+        if args.cuda:
+            unks = unks.cuda()
+        unk_same = ((predicted == packed_targets)&(predicted==unks)).long().sum()
+        eos_same = ((predicted == packed_targets)&(predicted==(unks+2))).long().sum()
+        correct = ((predicted == packed_targets)).long().sum()
 
-        print('%d out of %d tokens correct'%(correct,len(packed_targets)))
-        total_correct_cases += correct
-        total_cases += len(packed_targets)
+        print('%d out of %d tokens correct'%(correct-unk_same-eos_same,len(packed_targets)-eos_same))
+        total_correct_cases += correct-unk_same-eos_same
+        total_cases += len(packed_targets)-eos_same
+
+
         if args.single==False:
             predicted_labels = sim.data.max(1)[1]
             if args.cuda:
