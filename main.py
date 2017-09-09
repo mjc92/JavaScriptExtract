@@ -45,7 +45,7 @@ parser.add_argument("--n_layers", type=int, default=2, help='number of layers fo
 parser.add_argument("--n_head", type=int, default=8, help='number of heads for transformer model')
 parser.add_argument("--max_in_seq", type=int, default=100, help='max length of input')
 parser.add_argument("--max_out_seq", type=int, default=100, help='max length of output')
-parser.add_argument("--similarity", type=str, default='cosine', help='similarity measure to use')
+parser.add_argument("--similarity", type=str, default='lstm_cosine', help='similarity measure to use')
 parser.add_argument("--encoder", type=str, default='lstm', help='encoder type to use')
 
 # etc
