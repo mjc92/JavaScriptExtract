@@ -1,0 +1,215 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+The idea of predicting source codes with data-driven approaches for source
+ code prediction and autocompletion is not new.
+ Statistical prediction models using n-grams
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "raychev14cc"
+
+\end_inset
+
+, decision trees
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "raychev16decision"
+
+\end_inset
+
+, graphs
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nquyen15graph"
+
+\end_inset
+
+, probabilistic context-free grammars
+\begin_inset space \thinspace{}
+\end_inset
+
+(PCFG)
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bielik16phog"
+
+\end_inset
+
+ have shown to predict source code components with decent accuracy.
+ These models require the data inputs to be in a form of program structures
+ which are usually represented in an abstract syntax tree
+\begin_inset space \thinspace{}
+\end_inset
+
+(AST) rather than raw source code tokens.
+ 
+\end_layout
+
+\begin_layout Standard
+Following the success of deep learning models in learning structural patterns
+ on its own, works that incorporate such models for directly generating
+ source code sequences have also been introduced.
+ White et al.
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "white15soft"
+
+\end_inset
+
+ report that using RNNs instead of n-grams lowers the perplexity of a language
+ model on source codes tokens.
+ Bhoopchand et al.
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bhoopchand16spn"
+
+\end_inset
+
+ introduce a sequence-to-sequence code autocompletion model that predicts
+ one token at a time by either generating a new token or using an identifier
+ introduced earlier in that code.
+\end_layout
+
+\begin_layout Standard
+A different yet similar task in that a sequence-to-sequence structure is
+ required is to generate programs or source code sequences from a different
+ input domain.
+ These tasks are made measured using specific datasets, e.g.
+ an alignment of json metadata files for trading card games such as Hearthstone
+ and a corresponding Python class
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ling16lpn"
+
+\end_inset
+
+.
+ Ling et al.
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ling16lpn"
+
+\end_inset
+
+ propose the latent predictor network, a neural network for sequence generation
+ which selects from several different models for generating tokens in different
+ parts of a code.
+ Rabinovich et al
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rabinovich17asn"
+
+\end_inset
+
+ further develop this idea by instead predicting the AST structure of a
+ code.
+\end_layout
+
+\end_body
+\end_document

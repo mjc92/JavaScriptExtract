@@ -1,0 +1,249 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Code autocompletion refers to the process of predicting the next token or
+ sequence of tokens of a source code given information of previously introduced
+ code tokens.
+ During the task of writing the source code for a program, a user can use
+ this feature to automatically generate relevant tokens such as the names
+ of functions or methods without having to type them manually.
+ The convenience of such autocompletion techniques makes it a frequently
+ used feature by programmers and developers who use integrated development
+ environments
+\begin_inset space \thinspace{}
+\end_inset
+
+(IDEs).
+ A survey conducted on Python users in 2016
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "jetbrains"
+
+\end_inset
+
+ reveals that out of the features provided by IDEs, code autocompletion
+ is most frequently used compared to other features such as code refactoring,
+ database and SQL provision, virtual environments and code linting, with
+ 75% of the users replying that they often use this feature.
+ It also showed that autocomplete features also determine user preferences
+ of one IDE over another, with PyCharm users using autocomplete features
+ 26% more compared with other IDEs.
+ We can imply from these results that autocompletion features can greatly
+ improve both user experience and IDE usage.
+\end_layout
+
+\begin_layout Standard
+Code autocompletion features implemented in IDEs mostly rely on predefined
+ rules for determining which token to suggest for autocompletion.
+ The downfall of this approach is that while an autocompletion model can
+ predict frequently used tokens based on stored database, it often has difficult
+ies trying to reproduce codes that contain similar patterns to those introduced
+ in previous lines.
+ For example, such autocompletion methods cannot be used for reproducing
+ a user's programming style, such as indentation or alignment styles.
+ It is also hard for the conventional autocompletion model in an IDE to
+ infer from similar lines of code that may seem obvious and even trivial
+ to the user.
+ For instance, while constructing a shape in D3.js, a JavaScript library
+ for visualizing data, a number of similar lines of code have to be written
+ to define the width, height, size of the targeted shape.
+ While the user's intention, that is to reconstruct a similar line of code
+ where only the variable indicating height is changed to weight and the
+ corresponding values are changed accordingly, may seem straightforward,
+ not even the state-of-the-art autocompletion models are capable of interpreting
+ such information and thus generating relevant lines of code.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+and thus is an important criterion for users to consider when deciding which
+ editor or IDE to use.
+ which implemented in most integrated development environments
+\begin_inset space \thinspace{}
+\end_inset
+
+(IDEs), which are the working platforms of many developers.
+ For instance, Visual Studio provides its own IntelliSense features which
+ suggests possible function methods and variable names for a given piece
+ of source code in programming languages such as Python, C
+\begin_inset space \thinspace{}
+\end_inset
+
+/
+\begin_inset space \thinspace{}
+\end_inset
+
+C++, HTML etc.
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "intellisense"
+
+\end_inset
+
+.
+ being most exemplary.
+ However, while code completion models using ASTs succeed at preserving
+ structural information of source codes, they cannot be directly applied
+ to real-world code autocompletion tasks where the next token has to be
+ predicted from an incomplete piece of code.
+ ASTs can be constructed only from structurally complete code, and cannot
+ be created when a line is incomplete.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analyzing the JavaScript 150K dataset shows that 69.8% of the identifiers
+ in the next line to predict can be found from the previous 10 lines of
+ any code.
+ This tendency is higher in codes using certain packages such as D3.js where
+ a user has to create multiple objects that share a similar structure.
+ Therefore, we introduce the idea of solving this task as a pattern reconstructi
+on problem by first selecting a relevant line from a number of previous
+ lines by comparing with an incomplete line that requires autocompletion,
+ and then learning to generate our desired line of code by referring both
+ to the selected line and the query line.
+ 
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Therefore, we set next-line code autocompletion as a task where a model
+ attends to a number of previous lines, extracts relevant information and
+ identifiers, and reconfigures them in a similar manner to the previously
+ introduced codes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to accomplish this task, we introduce a sequence-to-sequence based
+ code autocompletion model that predicts subsequent tokens on the fly.
+ By selectively copying tokens from relevant lines of previous code, our
+ model is not restricted to predicting a single token, but can actually
+ predict all the way up to a single line.
+ Thanks to this copying mechanism, we can also predict tokens which are
+ not included in the vocabulary of code tokens and thus can maintain the
+ same level of performance without having to construct a large vocabulary
+ size.
+ This is especially effective when applying our model to new lines of code,
+ considering that in actual source code construction, programmers often
+ use arbitrary and unique variable or method names which are likely to be
+ unintroduced to any predefined vocabulary.
+\end_layout
+
+\begin_layout Standard
+Our contributions are as follows:
+\end_layout
+
+\begin_layout Itemize
+We introduce a method of code autocompletion by selectively copying from
+ relevant lines and show several patterns which can be applied.
+\end_layout
+
+\begin_layout Itemize
+We introduce a sequence-to-sequence based model designed for completing
+ lines of source codes given an incomplete line an a previous number of
+ lines.
+ Our model can generate new tokens, and selectively copy from either previous
+ lines or the current line to be completed.
+\end_layout
+
+\begin_layout Itemize
+We compare our results with other sequence completion models and show that
+ our model outperforms other baselines.
+ We then describe how our model copies tokens selectively from both previous
+ lines of code and the current incomplete line by visualizing attention
+ values caused during computation.
+\end_layout
+
+\end_body
+\end_document

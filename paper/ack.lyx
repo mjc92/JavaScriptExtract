@@ -1,0 +1,383 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+%%%% ijcai17.tex
+
+\typeout{IJCAI-17 Instructions for Authors}
+
+% These are the instructions for authors for IJCAI-17.
+% They are the same as the ones for IJCAI-11 with superficical wording
+%   changes only.
+
+% The file ijcai17.sty is the style file for IJCAI-17 (same as ijcai07.sty).
+\usepackage{ijcai17}
+
+
+% Use the postscript times font!
+\usepackage{times}
+
+% Added by Sangho
+\usepackage{amsmath}
+\usepackage{amssymb}
+%% We encourage the use of mathptmx for consistent usage of times font
+%% throughout the proceedings. However, if you encounter conflicts
+%% with other math-related packages, you may want to disable it.
+
+\usepackage[ruled,lined]{algorithm2e}
+
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+
+\usepackage{multirow}
+
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+%\def\argmin{\operatornamewithlimits{arg\, min}}
+%\def\argmax{\operatornamewithlimits{arg\, max}}
+
+
+
+
+% the following package is optional:
+%\usepackage{latexsym} 
+
+% Following comment is from ijcai97-submit.tex:
+% The preparation of these files was supported by Schlumberger Palo Alto
+% Research, AT\&T Bell Laboratories, and Morgan Kaufmann Publishers.
+% Shirley Jowell, of Morgan Kaufmann Publishers, and Peter F.
+% Patel-Schneider, of AT\&T Bell Laboratories collaborated on their
+% preparation.
+
+% These instructions can be modified and used in other conferences as long
+% as credit to the authors and supporting agencies is retained, this notice
+% is not changed, and further modification or reuse is not restricted.
+% Neither Shirley Jowell nor Peter F. Patel-Schneider can be listed as
+% contacts for providing assistance without their prior permission.
+
+% To use for other conferences, change references to files and the
+% conference appropriate and use other authors, contacts, publishers, and
+% organizations.
+% Also change the deadline and address for returning papers and the length and
+% page charge instructions.
+% Put where the files are available in the appropriate places.
+
+\title {Local Topic Discovery via Boosted Ensemble of Nonnegative Matrix Factorization}
+% \author {Blinded for review}
+% \title{Boosted Local Topic Discovery via \\ Ensemble of Nonnegative Matrix Factorization\thanks{These match the formatting instructions of IJCAI-07. The support of IJCAI, Inc. is acknowledged.}}
+ \author{Sangho Suh\\ 
+ Korea University \\
+ Seoul, South Korea \\
+ sh31659@gmail.com 
+ \And
+ Jaegul Choo\\ 
+ Korea University \\
+ Seoul, South Korea \\
+ jchoo@korea.ac.kr 
+ \And
+ Joonseok Lee\\
+ Google Research\\
+ Mountain View, CA, USA\\
+ joonseok@google.com
+ \And
+ Chandan K. Reddy\\
+ Virginia Tech\\
+ Arlington, VA, USA\\
+ reddy@cs.vt.edu
+}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Nonnegative matrix factorization (NMF) has been increasingly popular for
+ topic modeling of large-scale documents.
+ However, the resulting topics often represent only general, thus redundant
+ information about the data rather than minor, but potentially meaningful
+ information to users.
+ To tackle this problem, we propose a novel ensemble model of nonnegative
+ matrix factorization for discovering high-quality local topics.
+ Our method leverages the idea of an ensemble model to successively perform
+ NMF given a residual matrix obtained from previous stages and generates
+ a sequence of topic sets.
+ The novelty of our method lies in the fact that it utilizes the residual
+ matrix inspired by a state-of-the-art gradient boosting model and applies
+ a sophisticated local weighting scheme on the given matrix to enhance the
+ locality of topics, which in turn delivers high-quality, focused topics
+ of interest to users.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This paper is an abridged version of an already published paper
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "suh2016ensnmf"
+
+\end_inset
+
+, invited to IJCAI'17 Sister Conferences track for a broader audience.
+ 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+The experimental results show that our algorithm performs better than other
+ state-of-the-art algorithms both quantitatively and qualitatively.
+ As a whole, this is an abridged report of an already published full research
+ paper
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "suh2016ensnmf"
+
+\end_inset
+
+ for a broader audience.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:intro"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "01_Intro.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:approach"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "03_Approach.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-0.08in}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Experiments
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:experiments"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "04_Experiment.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Future Work
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:conclusion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "05_Conclusion.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+Acknowledgments
+\series default
+.
+ This work was supported in part by the National Science Foundation grants
+ IIS-1707498, IIS-1619028, IIS-1646881 and by Basic Science Research Program
+ through the National Research Foundation of Korea (NRF) grant funded by
+ the Korea government (MSIP) (No.
+ NRF-2016R1C1B2015924).
+ Any opinions, findings, and conclusions or recommendations expressed here
+ are those of the authors and do not necessarily reflect the views of funding
+ agencies.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "ijcai17"
+options "named"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
