@@ -31,7 +31,7 @@ parser.add_argument("--epochs", type=int, default=20, help='Number of epochs. Se
 parser.add_argument("--lr", type=float, default=0.001, help='learning rate')
 parser.add_argument("--batch", type=int, default=64, help='batch size')
 parser.add_argument("--k", type=int, default=5, help='for top-k accuracy')
-parser.add_argument("--single", type=str2bool, default=True,
+parser.add_argument("--single", type=str2bool, default=False,
                     help='whether to include the task of selecting from multiple lines')
 parser.add_argument("--cuda", type=str2bool, default=True, help='whether to use cuda')
 parser.add_argument("--log", type=str2bool, default=False, help='whether to use tensorboard')
