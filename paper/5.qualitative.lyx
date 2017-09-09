@@ -1,0 +1,533 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+In this section, we further examine the performance of our memory network
+ model and the steps it takes to obtain a correct answer.
+ We also present visualization results on how our model understands the
+ concepts of numbers without being given any numerical information.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement t
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename data/figures/figure_embedding_visualization/number_embedded_cosine.eps
+	width 50col%
+	height 30col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cosine similarities
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename data/figures/figure_embedding_visualization/number_embedded_l2norm.eps
+	width 50col%
+	height 30col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+L2-norm distances
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename data/figures/figure_embedding_visualization/number_embedded_visualization_whole.eps
+	width 50col%
+	height 30col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representations of learned word embeddings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ visualization
+\begin_inset Graphics
+	filename data/figures/figure_embedding_visualization/number_embedded_tsne.pdf
+	width 50col%
+	height 30col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Visualization with t-SNE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Visualizations of word embedding vectors of numbers 1-100.
+ Red and blue indicate high and low values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vis"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Tracking hop-wise results
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:scores"
+
+\end_inset
+
+ shows that memory networks perform well at all task levels, yet these results
+ alone do not prove that it solves the tasks in our desired manner: by attending
+ and collecting information from different parts of the memory at different
+ hops.
+ Therefore we analyze individual prediction cases by inspecting which parts
+ of information our model has obtained from taking each hop.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename data/figures/figure_prediction_examples/success_0_0.emf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Prediction result with attention per hop
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pred-results"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pred-results"
+
+\end_inset
+
+ displays a successful example of buffer overrun analysis using memory networks.
+ We can observe that when given a 
+\shape italic
+strcpy
+\shape default
+ buffer access as query, the model's initial attention shifts to the sentence
+ where the destination buffer (
+\shape italic
+entity_3
+\shape default
+) is allocated.
+ The model decides here to later look for 
+\shape italic
+entity_9
+\shape default
+, which contains the size of the value used for allocating a size to 
+\shape italic
+entity_3
+\shape default
+.
+ During the next hop it attends the line where the source buffer (
+\shape italic
+entity_2
+\shape default
+) is allocated and obtains data of 99, the size of 
+\shape italic
+entity_2
+\shape default
+.
+ At the last hop the memory network visits entity_9 and obtains 69.
+ After the three hops, the destination size 69 is compared with source size
+ 99, and being a smaller number, returns `unsafe' as a result.
+ The prediction confidence in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pred-results"
+
+\end_inset
+
+ indicates how close the predicted value is to the ground answer.
+\end_layout
+
+\begin_layout Subsection
+Automatically learning numerical concepts 
+\end_layout
+
+\begin_layout Standard
+The most interesting achievement of our model is that it automatically learns
+ how to discriminate between different numbers.
+ Recall from 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:model"
+
+\end_inset
+
+ that our model was not given any prior information regarding the size of
+ numbers.
+\end_layout
+
+\begin_layout Standard
+Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vis"
+
+\end_inset
+
+ displays visualization results using only the word embedding vectors correspond
+ing to the 100 numbers.
+\end_layout
+
+\begin_layout Standard
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vis"
+
+\end_inset
+
+ (a) and (b) display the results of comparing the cosine similarities and
+ L2-norm distances of each number ranging from 1 to 100, starting from the
+ topmost left-hand side.
+ The colors observed at the first and third quadrants from both figures
+ show that numbers with large differences are trained to increase their
+ differences from each other, as seen from their small cosine similarities
+ and large L-2 distances.
+ An opposite effect is seen in the second and fourth quadrants of Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vis"
+
+\end_inset
+
+(a), where the embeddings of numbers similar in size also have large cosine
+ similarities.
+\end_layout
+
+\begin_layout Standard
+The word embeddings of all dimensions as seen in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vis"
+
+\end_inset
+
+(c) further shows that a clear sequential order exists between the different
+ numbers.
+ On the left-hand side of the figure we can see that the highlighted column
+ forms a strong color spectrum starting from a low value which gradually
+ increases as the corresponding number increases from 1 to 100.
+ Since all word embeddings were initialized with random values, this spectrum
+ indicates that our model learned by itself to assign such values for comparison
+ purposes.
+\end_layout
+
+\begin_layout Standard
+We can further improve our model's performance by manually altering the
+ weights in the highlighted column.
+ Our trained weights By fixing the weight of the value corresponding to
+ 1 and 100 each to the minimum and maximum values of the column, we adjust
+ the values corresponding to all other numbers to satisfy a linear relationship.
+ We experience a small but consistent increase throughout all test settings
+ (Fig.
+\begin_inset space ~
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Each number was considered as a unique word and was embedded into the word
+ embedding matrix, same as any other word token.
+ Moreover, although our task of buffer overrun analysis is in essence a
+ comparison task between the sizes of two numbers, our model is not given
+ any supporting information on which line or number to look at.
+\end_layout
+
+\begin_layout Standard
+Fig.
+ (t-SNE), 100 samples?
+\end_layout
+
+\begin_layout Standard
+Fig.
+ 3 embeddings of numbers
+\end_layout
+
+\begin_layout Standard
+Fig.
+ Attention of successful cases (1 from lvl3, 1 from lvl4) + attention from
+ failure cases
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,455 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+In this section, we present both quantitative and qualitative results of
+ our experiments on model performance and learned characteristics.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-.05in}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Quantitative Evaluation
+\end_layout
+
+\begin_layout Subsubsection
+Experiment settings.
+\end_layout
+
+\begin_layout Standard
+We use Adam
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kingma14adam"
+
+\end_inset
+
+ as the optimizer for our model and set the initial learning rate as 0.001.
+ The word embedding size and hidden state size are all set to 256.
+ We truncate lines that exceed 100 tokens.
+ We set the lookup range as 10, so that our model searches from up to 10
+ lines prior to the query line that requires autocompletion.
+ All hyperparameters were selected as a result of grid search.
+ Our models were implemented on PyTorch and trained on a GeForce TITAN X
+ GPU.
+\end_layout
+
+\begin_layout Subsubsection
+Similarity measures.
+\end_layout
+
+\begin_layout Standard
+In our first experiment, we verify whether our model for selecting the reference
+ line is effective compared to the baseline approach in Eq.
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sim1"
+
+\end_inset
+
+.
+ In Table
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sim"
+
+\end_inset
+
+we compare our model to the baseline as well as another setting where we
+ only use the token embeddings for vectorwise comparison instead of the
+ generated hidden states from the LSTM.
+ We measure the accuracy of selecting the correct reference line out of
+ 10 lines.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison of the selector network with a rule-based line selection method
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1_21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1_3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2_1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Rule based selection
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.693
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.617
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.676
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Word embedding + cosine similarity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.598
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.562
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.620
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+LSTM hidden states + cosine similarity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.780
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.712
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.624
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sim"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Intuitively, the baseline approach should be able to capture all similar
+ patterns as it is rule based.
+ However, the complexity of the code structure in our proposed dataset often
+ contains lines within a sample that show high similarity but have less
+ information for reconstructing a line of code and thus should not be considered
+ as a correct reference line.
+ While a rule-based model can overcome such difficulties by adding more
+ rules, this becomes a tedious task that has to be performed every time
+ a new condition is introduced.
+ On the other hand, by obtaining a similarity score using the hidden states
+ of token embeddings as in our model, each hidden state to be compared will
+ contain not only information of the token's embedding but also the information
+ of surrounding tokens.
+ Although we are using only up to the 
+\begin_inset Formula $len(Q)$
+\end_inset
+
+ hidden states for comparison, each hidden state at the same time represents
+ the entire line.
+ It can be seen that our model learns to select a reference line with regards
+ to information of the entire line as well as performing token comparison.
+ This is also observable as using only word embeddings instead of LSTM hidden
+ states produce inferior results, which come from its inability to capture
+ surrounding information.
+\end_layout
+
+\begin_layout Standard
+We next implement various models used for sequence generation and compare
+ the completeness of the source code lines generated.
+ We use n-grams and attention-based LSTMs as baselines.
+\end_layout
+
+\begin_layout Subsubsection
+Reduced vocabulary.
+\end_layout
+
+\begin_layout Standard
+As mentioned earlier, our model is able directly copy from unknown tokens
+ by referring to token positions, indicating that a large predefined vocabulary
+ is unnecessary.
+ We train our model on the same settings only by changing the vocabulary
+ size from 100 to 30000.
+ If our model properly learns to copy OOV tokens from sequences and place
+ them accordingly, then it will show consistant performances regardless
+ of the predefined vocabulary size.
+ The results are displayed at .
+\end_layout
+
+\begin_layout Subsubsection
+Performance as a code autocomplete model.
+\end_layout
+
+\begin_layout Standard
+In this stage we present the possibility of our model as a token-based code
+ autocomplete model.
+ We measure the accuracy of code prediction as the percentage of tokens
+ that are generated correctly.
+ For baseline models we implement an n-gram model and an LSTM attention
+ model.
+ For all oth
+\end_layout
+
+\begin_layout Subsection
+Qualitative Analysis
+\end_layout
+
+\begin_layout Standard
+Table OO includes snippets of our generated lines.
+ 
+\end_layout
+
+\begin_layout Standard
+ddd
+\end_layout
+
+\begin_layout Standard
+We 
+\end_layout
+
+\end_body
+\end_document
