@@ -50,6 +50,8 @@ parser.add_argument("--encoder", type=str, default='lstm', help='encoder type to
 
 # etc
 parser.add_argument("--gpu", type=int, default=0, help='which gpu to use')
+parser.add_argument("--val_freq", type=int, default=10, help='how many times to perform evaluation')
+parser.add_argument("--save_freq", type=int, default=1000, help='how many steps for a save')
 
 args = parser.parse_args()
 os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu)

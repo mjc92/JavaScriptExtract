@@ -92,7 +92,7 @@ def train(args):
             print('correct:',correct)
             print('unks:',unk_same)
             print('eos:',eos_same)
-            acc = ((correct-unk_same-eos_same) * 1.0 / (packed_targets.size(0)-unk_same-eos_same))
+            acc = ((correct-unk_same-eos_same) * 1.0 / (packed_targets.size(0)-eos_same))
             if args.single:
                 string = "[%d]: Epoch %d\t%d/%d\tSequence - loss: %1.3f, acc: %1.3f" \
                          % (steps, epoch + 1, i, total_batches, loss.data[0], acc)
@@ -116,12 +116,13 @@ def train(args):
             opt.step()
 
             # get intermediate test results
-            if steps % 100 == 0:
+            if steps % args.val_freq == 0:
                 val(model,vocab,args)
+            if steps % args.save_freq==0:
                 torch.save(obj=model, f=os.path.join(args.save_dir, 'model_%d_steps.pckl' % steps))
                 print("Model saved...")
 
-            if args.log and steps % 10 == 0:
+            if args.log and steps % args.val_freq == 0:
                 # log scalar values
                 info = {'loss': loss.data[0],
                         'tr_acc': acc}
