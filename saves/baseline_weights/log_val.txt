@@ -1,0 +1,10 @@
+Validation results: accuracy - Similarity: 0.575	Sequence: 0.597
+Validation results: accuracy - Similarity: 0.568	Sequence: 0.649
+Validation results: accuracy - Similarity: 0.578	Sequence: 0.682
+Validation results: accuracy - Similarity: 0.572	Sequence: 0.686
+Validation results: accuracy - Similarity: 0.576	Sequence: 0.718
+Validation results: accuracy - Similarity: 0.575	Sequence: 0.690
+Validation results: accuracy - Similarity: 0.581	Sequence: 0.699
+Validation results: accuracy - Similarity: 0.581	Sequence: 0.708
+Validation results: accuracy - Similarity: 0.573	Sequence: 0.668
+Validation results: accuracy - Similarity: 0.573	Sequence: 0.705
