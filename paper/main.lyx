@@ -129,14 +129,13 @@ Source code auto-completion has become an indispensable feature of modern
  to help programming.
  In a majority of cases, however, word predictions are done in rather a
  simple look-and-get manner by internally building a dictionary of words
- that previously appeared.
- This practice, being limited to judging only whether a token is in the
- record, dismisses various types of features of text such as the similarities
- of sentences which can give a prominent clue to predicting subsequent lines.
- Our work exploits this overlooked trait of source code that nearby sentences
- are prone to share patterns in designing an artificial neural network.
- The model we devised looks at the word-arrangement in previous lines of
- code and selects one to copy in order to generate the source code.
+ that previously appeared, often dismissing the similarities of sentences
+ which can give a prominent clue to predict subsequent lines.
+ In this paper, we exploit such characteristics of source code that nearby
+ sentences are prone to share patterns in designing an artificial neural
+ network.
+ Our proposed model looks at the word-arrangement in previous lines of code
+ and selects a particular line to copy in order to generate the source code.
  We show that this novel approach is applicable to various patterns of codebase
  and can suggest a series of words that should most probabilistically appear
  at a given position.

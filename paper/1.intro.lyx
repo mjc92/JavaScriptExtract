@@ -100,8 +100,8 @@ key "jetbrains"
  is most frequently used compared to other features such as code refactoring,
  database and SQL provision, virtual environments and code linting, with
  75% of the users replying that they often use this feature.
- It also showed that autocomplete features also determine user preferences
- of one IDE over another, with PyCharm users using autocomplete features
+ It also showed that auto-completion features also determine user preferences
+ of one IDE over another, with PyCharm users using auto-completion features
  26% more compared with other IDEs.
  We can imply from these results that autocompletion features can greatly
  improve both user experience and IDE usage.

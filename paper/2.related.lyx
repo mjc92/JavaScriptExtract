@@ -72,7 +72,7 @@
 
 \begin_layout Standard
 The idea of predicting source codes with data-driven approaches for source
- code prediction and autocompletion is not new.
+ code prediction and autocompletion has been a topic of great interest.
  Statistical prediction models using n-grams
 \begin_inset space \thinspace{}
 \end_inset
@@ -80,7 +80,7 @@ The idea of predicting source codes with data-driven approaches for source
 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "raychev14cc"
+key "raychev14cc,nguyen13ngram,tu14ngram"
 
 \end_inset
 
@@ -106,35 +106,49 @@ key "nquyen15graph"
 
 \end_inset
 
-, probabilistic context-free grammars
-\begin_inset space \thinspace{}
-\end_inset
-
-(PCFG)
+, domain specific languages
 \begin_inset space \thinspace{}
 \end_inset
 
 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "bielik16phog"
+key "bielik16phog,raychev16lpn"
 
 \end_inset
 
  have shown to predict source code components with decent accuracy.
- These models require the data inputs to be in a form of program structures
- which are usually represented in an abstract syntax tree
+ These models usually require a heavily processed version of the program
+ that incorporates structural information given in forms such as abstract
+ syntax trees
+\begin_inset space ~
+\end_inset
+
+(AST) or context-free grammars
 \begin_inset space \thinspace{}
 \end_inset
 
-(AST) rather than raw source code tokens.
- 
+(CFG).
 \end_layout
 
 \begin_layout Standard
-Following the success of deep learning models in learning structural patterns
- on its own, works that incorporate such models for directly generating
- source code sequences have also been introduced.
+Meanwhile, deep learning models have been known to successfully interpret
+ the syntax information of text sequences without given any prior information,
+ which has resulted in many studies that incorporate such models for source
+ codes.
+ Dong and Lapata.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dong16lang"
+
+\end_inset
+
+ use sequence-to-sequence neural networks to generate source codes from
+ natural languages.
  White et al.
 \begin_inset space \thinspace{}
 \end_inset
@@ -162,26 +176,6 @@ key "bhoopchand16spn"
  introduce a sequence-to-sequence code autocompletion model that predicts
  one token at a time by either generating a new token or using an identifier
  introduced earlier in that code.
-\end_layout
-
-\begin_layout Standard
-A different yet similar task in that a sequence-to-sequence structure is
- required is to generate programs or source code sequences from a different
- input domain.
- These tasks are made measured using specific datasets, e.g.
- an alignment of json metadata files for trading card games such as Hearthstone
- and a corresponding Python class
-\begin_inset space \thinspace{}
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "ling16lpn"
-
-\end_inset
-
-.
  Ling et al.
 \begin_inset space \thinspace{}
 \end_inset
@@ -209,6 +203,58 @@ key "rabinovich17asn"
 
  further develop this idea by instead predicting the AST structure of a
  code.
+\end_layout
+
+\begin_layout Standard
+Our model incorporates a recently changing trend in the concept of attention
+ in neural network models.
+ Until recently, attention in sequence-to-sequence neural network models
+ was based solely on adding a weighed vector to subsequent states of a stepwise
+ RNN model
+\begin_inset space \thinspace{}
+\end_inset
+
+.
+ Similar approaches for generating sequences by copying relevant parts from
+ input sequences can be seen in.sentence generation
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gu16copynet"
+
+\end_inset
+
+, text summarization
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cheng16sum,see17point"
+
+\end_inset
+
+, neural machine translation
+\begin_inset space \thinspace{}
+\end_inset
+
+(NMT)
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gulcehre16words"
+
+\end_inset
+
+ Similarly, our model also produces output sequences by both generating
+ raw tokens and selectively copying them from previous lines of code.
 \end_layout
 
 \end_body

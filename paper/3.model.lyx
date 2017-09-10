@@ -103,7 +103,7 @@ source lines
 \begin_inset Formula $N+1$
 \end_inset
 
-th line as a 
+th line as the 
 \series bold
 query line
 \series default
@@ -131,7 +131,7 @@ reference line
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -141,7 +141,7 @@ status open
 
 
 \backslash
-vspace{-.1in}
+vspace{-0.8in}
 \end_layout
 
 \end_inset
@@ -158,7 +158,9 @@ vspace{-.1in}
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Model overview
+Task overview.
+ The colors in `Selective copy' indicate which part of the input is it possible
+ to extract a token for the target line
 \end_layout
 
 \end_inset
@@ -193,7 +195,7 @@ Model description
 \end_layout
 
 \begin_layout Standard
-While explaining our model, we will refer to the source lines as 
+In this section, we will refer to the source lines as 
 \begin_inset Formula $S$
 \end_inset
 
@@ -206,7 +208,7 @@ While explaining our model, we will refer to the source lines as
 \end_inset
 
 , and the desired target line as 
-\begin_inset Formula $T$
+\begin_inset Formula $Y$
 \end_inset
 
 .
@@ -215,10 +217,10 @@ While explaining our model, we will refer to the source lines as
 \end_inset
 
  and 
-\begin_inset Formula $T$
+\begin_inset Formula $Y$
 \end_inset
 
- results in a full line of source code.
+ results in a single line of source code.
  Note that each line is considered as a list of source code tokens, and
  all tokens in 
 \begin_inset Formula $S$
@@ -229,7 +231,7 @@ While explaining our model, we will refer to the source lines as
 \end_inset
 
  and 
-\begin_inset Formula $T$
+\begin_inset Formula $Y$
 \end_inset
 
  are represented as integers corresponding to the index of that token from
@@ -252,7 +254,7 @@ While explaining our model, we will refer to the source lines as
 \end_inset
 
 th token of source line 
-\begin_inset Formula $i$
+\begin_inset Formula $S_{i}$
 \end_inset
 
  and the query as 
@@ -269,6 +271,7 @@ th token of source line
 
 \begin_layout Standard
 \begin_inset Float figure
+placement t
 wide true
 sideways false
 status open
@@ -281,16 +284,29 @@ status open
 
 
 \backslash
-vspace{-.1in}
+vspace{-1.4in}
 \end_layout
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename D:/Dropbox/progcopynet/figures/figure_model_overview/figure.pdf
+	filename D:/Dropbox/progcopynet/figures/figure_model_overview/model.pdf
 	scale 50
 	BoundingBox 0bp 0bp 960bp 500bp
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
 
 \end_inset
 
@@ -316,8 +332,7 @@ Selector network
 \end_layout
 
 \begin_layout Standard
-As previously mentioned, our first task is to select the reference line
- 
+Our first task is to select the reference line 
 \begin_inset Formula $S_{ref}$
 \end_inset
 
@@ -329,23 +344,23 @@ As previously mentioned, our first task is to select the reference line
 \begin_inset Formula $S_{i}$
 \end_inset
 
+
+\begin_inset Formula $\in S$
+\end_inset
+
  with 
 \begin_inset Formula $Q$
 \end_inset
 
 .
- As each line is a list of tokens, it makes sense that we can compare two
- lines by comparing the tokens from each line.
- Although each of the lines are likely to have different lengths, our only
- concern here is the number of tokens in 
-\begin_inset Formula $Q$
+ As each line is a list of tokens, we can obtain the similarity score by
+ comparing the tokens from each line.
+ Although each of the lines are likely to have different lengths, we only
+ have to compare up to 
+\begin_inset Formula $len(Q)$
 \end_inset
 
-, or 
-\begin_inset Formula $len\left(Q\right)$
-\end_inset
-
-.
+ tokens.
  Therefore, the task of measuring the similarity of the 
 \begin_inset Formula $i$
 \end_inset
@@ -370,19 +385,32 @@ th line of
 \begin_inset Formula $1\leq j\leq len(Q)$
 \end_inset
 
-, and add up the similarity scores for each tokenwise pair.
+ and adding up the similarity scores for each tokenwise pair.
 \end_layout
 
 \begin_layout Standard
-Then how can we measure similarities between tokens? While the most straightforw
-ard approach may be to directly compare the similarity of tokens as strings
- and add up the number of identical tokens as 
+How can we measure the similarity between tokens? While the most straightforward
+ approach may be to directly compare the similarity of tokens as a binary
+ problem and add them up as in
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-.1in}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\begin{alignedat}{1}tok\_similarity\left(S_{i},Q\right)= & \text{\ensuremath{\left(\sum\limits _{j=1}^{len(\text{Q})}\ensuremath{1\,}\ensuremath{if\,}\ensuremath{s_{i,j}\,\text{==\ensuremath{\,q_{j}\,}}else\,}\ensuremath{0}\right)}\,/\,\ensuremath{len(Q)}}\end{alignedat}
+\begin{alignedat}{1}sim_{\text{tok}}\left(S_{i},Q\right)= & \frac{\text{\ensuremath{\left(\sum\limits _{j=1}^{len(\text{Q})}\ensuremath{\text{if}\thinspace}s_{i,j}\text{==\ensuremath{q_{j}}}\thinspace\text{then}\thinspace1\thinspace\ensuremath{\text{else}\,}\ensuremath{0}\right)}}}{len\left(Q\right)}\end{alignedat}
 \label{eq:sim1}
 \end{equation}
 
@@ -406,47 +434,61 @@ of size
 \begin_inset Formula $Q$
 \end_inset
 
- to obtain word embedding vectors, where we denote as 
-\begin_inset Formula $s^{emb}$
+ to obtain 
+\begin_inset Formula $d_{w}$
+\end_inset
+
+-dimensional word embedding vectors, which we denote as 
+\begin_inset Formula $\mathbf{s}_{i,j}^{emb}$
 \end_inset
 
  and 
-\begin_inset Formula $q^{emb}$
+\begin_inset Formula $\mathbf{q}_{j}^{emb}$
 \end_inset
 
 .
- We then apply a bidirectional LSTM on these embeddings to obtain hidden
- states 
-\begin_inset Formula $s^{h}$
+ We then apply a LSTM on these embeddings to obtain 
+\begin_inset Formula $d_{h}$
+\end_inset
+
+-dimensional hidden states 
+\begin_inset Formula $\mathbf{s}_{i,j}^{h}$
 \end_inset
 
  and 
-\begin_inset Formula $q^{h}$
+\begin_inset Formula $\mathbf{q}_{j}^{h}$
+\end_inset
+
+as follows:
+\begin_inset Formula 
+\begin{align}
+\mathbf{s}_{i,j}^{h} & =\text{LSTM}\left(\mathbf{s}_{i,j-1}^{h},\mathbf{s}_{i,j}^{emb}\right)\label{eq:lstm}\\
+\mathbf{q}_{j}^{h} & =\text{LSTM}\left(\mathbf{q}_{j-1}^{h},\mathbf{q}_{j}^{emb}\right)\label{eq:lstm2}
+\end{align}
+
 \end_inset
 
 .
- These hidden states are created by incorporating token information from
- both forwards and backwards, and thus contain information of the surrounding
- tokens.
- We modify Eq.
+ Here, each hidden state becomes a vector representation of a token.
+ We can then modify Eq.
 \begin_inset space \thinspace{}
 \end_inset
 
-(1) asve
+(1) as
 \begin_inset Formula 
 \begin{equation}
-vec\_similarity\left(S_{i},Q\right)=\text{\ensuremath{\left(\sum\limits _{j=1}^{len(\text{Q})}cos\left(s_{i,j}^{h},q_{j}^{h}\right)\right)}}\label{eq:sim2}
+sim_{\text{LSTM}}\left(S_{i},Q\right)=\text{\ensuremath{\left(\sum\limits _{j=1}^{len(\text{Q})}cos\left(\mathbf{s}_{i,j}^{h},\mathbf{q}{}_{j}^{h}\right)\right)}}\label{eq:sim2}
 \end{equation}
 
 \end_inset
 
 where we use vectors instead of raw tokens.To change the similarity scores
- to a differentiable probability distribution , we apply a softmax function
+ to a differentiable probability distribution, we apply a softmax function
  on the 
 \begin_inset Formula $n$
 \end_inset
 
- similarity scores as
+ similarity scores and derive a loss function as
 \end_layout
 
 \begin_layout Standard
@@ -457,16 +499,17 @@ status open
 
 
 \backslash
-vspace{-.2in}
+vspace{-.1in}
 \end_layout
 
 \end_inset
 
 
 \begin_inset Formula 
-\begin{equation}
-p(y=i|q)=\frac{exp\left(vec\_similarity(S_{i},Q)\right)}{\Sigma_{k=1}^{n}exp\left(vec\_similarity(S_{i},Q)\right)}\label{eq:soft}
-\end{equation}
+\begin{align}
+p(y & =i|q)=\text{softmax}\left(sim_{\text{LSTM}}\left((S_{i},Q\right)\right)\label{eq:soft}\\
+\mathcal{L}_{1} & =-log\left[p\left(ref\thinspace|q\right)\right]\label{eq:loss1}
+\end{align}
 
 \end_inset
 
@@ -487,11 +530,7 @@ Copy-generator network
 \end_layout
 
 \begin_layout Standard
-This model takes in as inputs the reference line selected from 
-\begin_inset Formula $S$
-\end_inset
-
- which we denote as 
+The inputs for the copy-generator network are 
 \begin_inset Formula $S_{ref}$
 \end_inset
 
@@ -499,21 +538,21 @@ This model takes in as inputs the reference line selected from
 \begin_inset Formula $Q$
 \end_inset
 
-.
- The objective of this model is to copy tokens selectively from 
-\begin_inset Formula $S_{ref}$
+ which we concatenate as 
+\begin_inset Formula $X$
 \end_inset
 
- and 
-\begin_inset Formula $Q$
+.
+ The objective of this model is to copy tokens selectively from 
+\begin_inset Formula $X$
 \end_inset
 
  to generate the corresponding target sequence 
-\begin_inset Formula $T$
+\begin_inset Formula $Y$
 \end_inset
 
 .
- Our model, based on Copynet
+ For this task, we construct an encoder-decoder model based on Copynet
 \begin_inset space \thinspace{}
 \end_inset
 
@@ -524,42 +563,35 @@ key "gu16copynet"
 
 \end_inset
 
-, is capable of generating a target sequence from a source sequence by discrimin
-ating from when to generate new tokens from previous hidden states and when
- to copy directly from source tokens.
+.
 \end_layout
 
 \begin_layout Standard
-We concatenate 
-\begin_inset Formula $S_{ref}$
+Given a sequence 
+\begin_inset Formula $X=\left\{ x_{1},...,x_{len(X)}\right\} $
 \end_inset
 
- and 
-\begin_inset Formula $Q$
+, we obtain word embeddings 
+\begin_inset Formula $\left\{ x_{1}^{emb},...,x_{len(X)}^{emb}\right\} $
 \end_inset
 
- to obtain the input sequence 
-\begin_inset Formula $X$
-\end_inset
-
-, and obtain word vectors 
-\begin_inset Formula $\left\{ x_{1},...,x_{len(X)}\right\} $
-\end_inset
-
- using 
+ using the same word embedding matrix 
 \begin_inset Formula $W_{emb}.$
 \end_inset
 
- We feed this input into an encoder model which is a bidirectional GRU to
- obtain the hidden states 
-\begin_inset Formula $e_{1},...,e_{len(X)}$
+ We feed this input into an encoder model which is a GRU to obtain 
+\begin_inset Formula $d_{h}$
+\end_inset
+
+-dimensional hidden states 
+\begin_inset Formula $\mathbf{h}{}_{1}^{e},...,\mathbf{h}{}_{len(X)}^{e}$
 \end_inset
 
  for each input token, i.e.
  
 \begin_inset Formula 
 \begin{equation}
-e_{i}=GRU^{enc}\left(e_{i-1},x_{i}\right),\thinspace i\in\left\{ 1,\ldots,len(X)\right\} \label{eq:enc}
+\mathbf{h}{}_{t}^{e}=GRU^{enc}\left(\mathbf{h}{}_{t-1}^{e},x_{t}\right),\thinspace t\in\left\{ 1,\ldots,len(X)\right\} ;\,\mathbf{h}{}_{0}^{e}=\mathbf{0}\label{eq:enc}
 \end{equation}
 
 \end_inset
@@ -571,64 +603,82 @@ e_{i}=GRU^{enc}\left(e_{i-1},x_{i}\right),\thinspace i\in\left\{ 1,\ldots,len(X)
 with 
 \series bold
 
-\begin_inset Formula $e_{0}$
+\begin_inset Formula $\mathbf{h}{}_{0}^{e}$
 \end_inset
 
 
 \series default
  set to a zero vector.
  We then use the last hidden state 
-\begin_inset Formula $e_{len(X)}$
+\begin_inset Formula $\mathbf{h}{}_{len(X)}^{e}$
 \end_inset
 
  as an encoded version of the input sequence, and feed it into the subsequent
  decoder model.
  At the decoder model, another GRU is used to generate hidden states as
- 
 \begin_inset Formula 
-\begin{equation}
-h_{i}=GRU^{dec}\left(h_{i-1},\left[c_{i},t_{i-1}\right]\right)\label{eq:dec}
-\end{equation}
+\begin{align}
+\mathbf{h}{}_{t+1}^{d} & =GRU^{dec}\left(\mathbf{h}{}_{t}^{d},\left[\mathbf{c_{t}},y_{t}^{emb}\right]\right)\label{eq:dec}\\
+\mathbf{h}{}_{0}^{d} & =\mathbf{h}{}_{len(X)}^{e};\thinspace c_{0}=\mathbf{0}
+\end{align}
 
 \end_inset
 
  where 
-\begin_inset Formula $h_{i}$
+\begin_inset Formula $\mathbf{h}{}_{t}^{d}\in\mathbb{R}^{d_{h}}$
 \end_inset
 
- denotes the 
-\begin_inset Formula $i$
+ is the 
+\begin_inset Formula $t$
 \end_inset
 
 th hidden state for the decoder, 
-\begin_inset Formula $c_{i}$
+\begin_inset Formula $\mathbf{c_{t}}\in\mathbb{R}^{d_{h}}$
 \end_inset
 
- denotes the context vector that is an abstraction of the input hidden states
- according to attention scores, and 
-\begin_inset Formula $t_{i}$
+ is the context vector initialized to a zero vector of , and 
+\begin_inset Formula $y_{t}^{emb}\in\mathbb{R}^{d_{w}}$
 \end_inset
 
  is the word embedding of the 
 \begin_inset Formula $i$
 \end_inset
 
-th decoder input.
- Each hidden state of the decoder 
-\begin_inset Formula $h_{i}$
+th decoder input 
+\begin_inset Formula $y_{t}\in Y$
 \end_inset
 
- is used to predict the next word in two different ways: 1) to obtain the
- attention scores of which part of the input sequence to attend, and 2)
+, which is also embedded using 
+\begin_inset Formula $W_{emb}$
+\end_inset
+
+.
+ Each hidden state of the decoder 
+\begin_inset Formula $\mathbf{h}{}_{t}^{d}$
+\end_inset
+
+ is used to predict the next word in two different ways: 
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+ to obtain the attention scores of which part of the input sequence to attend,
+ and 
+\begin_inset Formula $\left(2\right)$
+\end_inset
+
  to directly apply a linear transformation for generating the next word
  from a large vocabulary.
 \end_layout
 
 \begin_layout Standard
-During 1), the output distribution of words is obtained as 
+For 
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+, we calculate the output distribution of the predicted next word as 
 \begin_inset Formula 
 \begin{equation}
-gen_{t}=h_{t}^{T}W_{o},\thinspace W_{o}\in\mathbb{R}^{d_{h}\times|V|}\label{eq:gen}
+\mathbf{gen_{t}}=\left(\mathbf{h}{}_{t}^{d}\right)^{\mathrm{\mathsf{T}}}W_{o};\thinspace W_{o}\in\mathbb{R}^{d_{h}\times|V|};\label{eq:gen}
 \end{equation}
 
 \end_inset
@@ -637,32 +687,37 @@ gen_{t}=h_{t}^{T}W_{o},\thinspace W_{o}\in\mathbb{R}^{d_{h}\times|V|}\label{eq:g
 \end_layout
 
 \begin_layout Standard
-where 
-\begin_inset Formula $d_{h}$
+.
+ The output 
+\begin_inset Formula $\mathbf{gen_{t}}$
 \end_inset
 
- is the hidden state size.
- The output is a 
+ is a 
 \begin_inset Formula $|V|$
 \end_inset
 
--dimensional vector which indicates the probability of generating a new
- word that exists in the vocabulary.
+-dimensional vector in which dimensions containing larger values indicate
+ a higher probability of a word existing in vocabulary index equivalent
+ to the dimension number.
 \end_layout
 
 \begin_layout Standard
-For 2), we use 
-\begin_inset Formula $h_{t}$
+For 
+\begin_inset Formula $\left(2\right)$
 \end_inset
 
- to obtain attention scores for each of the hidden states obtained from
- the input sequence as 
+, we use 
+\begin_inset Formula $\mathbf{h}{}_{t}^{d}$
+\end_inset
+
+ to calculate attention scores for each of the hidden states from the input
+ sequence as 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-att_{t,i}=tanh\left(h_{t}^{T}e_{i}\right),\thinspace i\in\left\{ 1,\ldots,len(X)\right\} \label{eq:att}
+\mathbf{att_{t,i}}=tanh\left(\left(\mathbf{h}{}_{t}^{d}\right)^{\mathsf{T}}e_{i}\right);\thinspace i\in\left\{ 1,\ldots,len(X)\right\} \label{eq:att}
 \end{equation}
 
 \end_inset
@@ -681,31 +736,91 @@ th token in the input sequence.
 \end_inset
 
  we can calculate an attention vector 
-\begin_inset Formula $att_{t}\in\mathbb{\mathbb{R}}^{len(X)}$
+\begin_inset Formula $\mathbf{att_{t}}\in\mathbb{\mathbb{R}}^{len(X)}$
 \end_inset
 
-, which indicates how relevant each of the input tokens are to the word
+ which represents how relevant each of the input tokens are to the word
  to be predicted at decoder step 
 \begin_inset Formula $t$
 \end_inset
 
 .
  By concatenating 
-\begin_inset Formula $att_{t}$
+\begin_inset Formula $\mathbf{att_{t}}$
 \end_inset
 
  and 
-\begin_inset Formula $gen_{t}$
+\begin_inset Formula $\mathbf{gen_{t}}$
 \end_inset
 
- and applying softmax, we can get a probability distribution
+ and applying softmax, we can get a probability distribution vector and
+ divide it into two parts as follows
 \begin_inset Formula 
 \begin{equation}
-\left[prob_{t}^{copy},prob_{t}^{gen}\right]=softmax\left(\left[att_{t},gen_{t}\right]\right)\label{eq:out}
+\mathbf{p}_{t}=\text{softmax}\left(\left[\mathbf{gen_{t}},\mathbf{att_{t,i}}\right]\right)\label{eq:p}
 \end{equation}
 
 \end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-.15in}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mathbf{p}_{t}^{gen}=\mathbf{p}_{t}\left[0:|V|\right]\label{eq:att-2}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-.15in}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mathbf{p}_{t}^{copy}=\mathbf{p}_{t}\left[|V|:|V|+len(X)\right]\label{eq:att-3}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-.1in}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 which contains both the probabilities of either copying the next token from
  the one of the input tokens or generating it directly using the hidden
  state.
@@ -714,20 +829,28 @@ which contains both the probabilities of either copying the next token from
 \end_inset
 
 th index of the vector 
-\begin_inset Formula $prob_{t}^{copy},$
+\begin_inset Formula $\mathbf{p}_{t}^{copy}$
 \end_inset
 
-
+,
 \begin_inset Formula $x_{k}$
 \end_inset
 
  becomes the next output token.
- On the other hand, if the largest value is located in the 
+ On the otherpackages, most tokens inveitably have to be treated as unknown
+ words.
+ In natural language processing tasks, these word are treated as out-of-vocabula
+ry
+\begin_inset space \thinspace{}
+\end_inset
+
+(OOV) tokens and are usually hand, if the largest value is located in the
+ 
 \begin_inset Formula $k$
 \end_inset
 
 th index of 
-\begin_inset Formula $prob_{t}^{gen}$
+\begin_inset Formula $\mathbf{p}_{t}^{gen}$
 \end_inset
 
 , the output token becomes the 
@@ -744,12 +867,22 @@ th word in the predefined vocabulary
 \end_layout
 
 \begin_layout Standard
-For each decoder step, we need to calculate a context vector 
-\begin_inset Formula $c_{t}$
+During each decoder step, we feed into the decoder model a context vector
+ 
+\begin_inset Formula $\mathbf{c_{t}}$
 \end_inset
 
- which represents how much information is selectively obtained from the
- input sequence.
+ which is calculated as
+\begin_inset Formula 
+\begin{equation}
+\mathbf{c_{t}}=\sum\limits _{j=1}^{len(X)}\ensuremath{\text{if}\,\,}x_{j}\text{==\ensuremath{y_{t}}}\,\,\text{then}\mathbf{\,\,att_{t,i}}\mathbf{h}{}_{i}^{e}\,\thinspace\text{else}\,\ensuremath{\,}\ensuremath{0}\label{eq:context}
+\end{equation}
+
+\end_inset
+
+.
+ This output represents how much information from the input sequence should
+ the model actually need for each step.
  This model is different from other attention-based sequence-to-sequence
  models
 \begin_inset space \thinspace{}
@@ -763,32 +896,11 @@ key "bahdanau15att"
 \end_inset
 
  in that instead of using the entire attention vector 
-\begin_inset Formula $att_{t}$
+\begin_inset Formula $\mathbf{att_{t}}$
 \end_inset
 
  to create a context vector, it only attends to positions where the input
- token is equal to the decoder input.
- In other words, if the decoder input token 
-\begin_inset Formula $t_{t}$
-\end_inset
-
- has appeared in the 
-\begin_inset Formula $j$
-\end_inset
-
-th position of 
-\begin_inset Formula $X$
-\end_inset
-
-, 
-\begin_inset Formula $c_{t}$
-\end_inset
-
- then takes the value of 
-\begin_inset Formula $e_{j}$
-\end_inset
-
-.
+ token is equal to the decoder input and omits all other positions.
  This rather direct form of attention allows for copying long sequences
  of tokens from the input as mentioned in 
 \begin_inset CommandInset citation
@@ -801,64 +913,10 @@ key "gu16copynet"
 \end_layout
 
 \begin_layout Subsubsection
-Dealing with out-of-vocabulary cases
+Dealing with out-of-vocabulary tokens
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{-.1in}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename D:/Dropbox/progcopynet/figures/figure_oov/oov-cropped.pdf
-	width 200col%
-	BoundingBox 0bp 0bp 960bp 500bp
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{-.1in}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Temporary vocabulary for handling OOVs
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 One advantage of our model is that it can handle words that does not exist
  in the predefined vocabulary.
  There is an unlimited amount of tokens that can appear in a source code
@@ -888,8 +946,11 @@ ry
 \begin_layout Standard
 We therefore introduce the concept of assigning temporary indices to OOVs
  for each sample.
- For each sample, we create a temporary dictionary that maps each unknown
- token from an input 
+ For each sample, we create a temporary dictionary 
+\begin_inset Formula $OOV$
+\end_inset
+
+ that maps each unknown token from an input 
 \begin_inset Formula $S$
 \end_inset
 
@@ -898,7 +959,89 @@ We therefore introduce the concept of assigning temporary indices to OOVs
 \end_inset
 
 .
- Since the word embedding matrix is of size 
+ We then reorganize the probability vectors 
+\begin_inset Formula $\mathbf{p}_{t}^{gen}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{\mathbf{p}_{t}^{copy}}$
+\end_inset
+
+ by dividing them into tokens that belong to the original vocabulary 
+\begin_inset Formula $V$
+\end_inset
+
+ and others that belong to the temporary 
+\begin_inset Formula $OOV$
+\end_inset
+
+.
+ The new vectors are derived as follows:
+\begin_inset Formula 
+\begin{equation}
+\mathbf{p}_{t}^{V}\left[i\right]=\mathbf{p}_{t}^{gen}\left[i\right]+\sum\limits _{j=1}^{len(X)}\ensuremath{\text{if}\,\thinspace}x_{j}\text{==\ensuremath{V_{i}}}\thinspace\,\text{then}\thinspace\,\mathbf{\mathbf{p}_{\mathit{t}}^{copy}\left[j\right]}\thinspace\,\text{else}\,\ensuremath{\,}\ensuremath{0}\label{eq:pV}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mathbf{p}_{t}^{OOV}\left[i\right]=\sum\limits _{j=1}^{len(X)}\ensuremath{\text{if}\,\thinspace}x_{j}\text{==\ensuremath{OOV_{i}}}\thinspace\,\text{then}\,\thinspace\mathbf{p}_{t}^{copy}\left[\mathbf{j}\right]\,\thinspace\text{else\,}\ensuremath{\,}\ensuremath{0}\label{eq:pOOV}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+y_{t}=\text{argmax\ensuremath{\left(\left[\mathbf{p}_{t}^{V},\mathbf{p}_{t}^{OOV}\right]\right)}}\label{eq:output}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mathcal{L}_{2}=-{\displaystyle \sum_{t=1}^{len(Y)}log}\left[p\left(y_{t}|y_{<t},X\right)\right]\label{eq:loss2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $V_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $OOV_{i}$
+\end_inset
+
+ each indicate the 
+\begin_inset Formula $i$
+\end_inset
+
+th token of the corresponding vocabulary.
+ We can thus predict the next token 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ by selecting the max value of both 
+\begin_inset Formula $\mathbf{p}_{t}^{V}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{p}_{t}^{OOV}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Since the word embedding matrix is of size 
 \begin_inset Formula $\mathbb{\mathbb{R}}^{|V|\times d_{w}}$
 \end_inset
 
@@ -914,6 +1057,43 @@ We therefore introduce the concept of assigning temporary indices to OOVs
  This convention combined with the model's capability to copy from positions
  saves us from the burden of having to restrict ourselves to a fixed and
  presumably very large vocabulary.
+\end_layout
+
+\begin_layout Subsubsection
+Training
+\end_layout
+
+\begin_layout Standard
+Our model is trained on two losses based on negative log-likelihood; one
+ created from predicting the reference line out of 
+\begin_inset Formula $N$
+\end_inset
+
+ source lines (Eq.
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:loss1"
+
+\end_inset
+
+), and another from predicting a sequence of tokens (Eq.
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:loss2"
+
+\end_inset
+
+).
+ We sum these two losses to create a single loss, which we train our model
+ to minimize via stochastic gradient descent..
 \end_layout
 
 \end_body
