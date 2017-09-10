@@ -31,7 +31,7 @@ parser.add_argument("--epochs", type=int, default=20, help='Number of epochs. Se
 parser.add_argument("--lr", type=float, default=0.001, help='learning rate')
 parser.add_argument("--batch", type=int, default=64, help='batch size')
 parser.add_argument("--k", type=int, default=5, help='for top-k accuracy')
-parser.add_argument("--single", type=str2bool, default=True,
+parser.add_argument("--single", type=str2bool, default=False,
                     help='whether to include the task of selecting from multiple lines')
 parser.add_argument("--cuda", type=str2bool, default=True, help='whether to use cuda')
 parser.add_argument("--log", type=str2bool, default=False, help='whether to use tensorboard')
@@ -45,11 +45,13 @@ parser.add_argument("--n_layers", type=int, default=2, help='number of layers fo
 parser.add_argument("--n_head", type=int, default=8, help='number of heads for transformer model')
 parser.add_argument("--max_in_seq", type=int, default=100, help='max length of input')
 parser.add_argument("--max_out_seq", type=int, default=100, help='max length of output')
-parser.add_argument("--similarity", type=str, default='cosine', help='similarity measure to use')
+parser.add_argument("--similarity", type=str, default='lstm_cosine', help='similarity measure to use')
 parser.add_argument("--encoder", type=str, default='lstm', help='encoder type to use')
 
 # etc
 parser.add_argument("--gpu", type=int, default=0, help='which gpu to use')
+parser.add_argument("--val_freq", type=int, default=10, help='how many times to perform evaluation')
+parser.add_argument("--save_freq", type=int, default=1000, help='how many steps for a save')
 
 args = parser.parse_args()
 os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu)
