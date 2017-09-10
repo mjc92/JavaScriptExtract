@@ -16,10 +16,10 @@ from packages.copy_model import copy_model
 parser = argparse.ArgumentParser()
 
 # arguments related to the dataset
-parser.add_argument('--train_root', type=str, default='data/types/all/all_train.txt', help='data file')
-parser.add_argument('--val_root', type=str, default='data/types/all/all_val.txt', help='data file')
-parser.add_argument('--test_root', type=str, default='data/types/all/all_test.txt', help='data file')
-parser.add_argument('--dict_root', type=str, default='data/types/all/dict_1000.json',
+parser.add_argument('--train_root', type=str, default='data/types/real/all/all_train.txt', help='data file')
+parser.add_argument('--val_root', type=str, default='data/types/real/all/all_val.txt', help='data file')
+parser.add_argument('--test_root', type=str, default='data/types/real/all/all_test.txt', help='data file')
+parser.add_argument('--dict_root', type=str, default='data/types/real/all/dict_1000.json',
                     help='directory of dictionary file')
 parser.add_argument('--save_dir', type=str, default='saves', help='where to save model & info')
 parser.add_argument("--max_oovs", type=int, default=20,
@@ -50,7 +50,7 @@ parser.add_argument("--encoder", type=str, default='lstm', help='encoder type to
 
 # etc
 parser.add_argument("--gpu", type=int, default=0, help='which gpu to use')
-parser.add_argument("--val_freq", type=int, default=10, help='how many times to perform evaluation')
+parser.add_argument("--val_freq", type=int, default=100, help='how many times to perform evaluation')
 parser.add_argument("--save_freq", type=int, default=1000, help='how many steps for a save')
 
 args = parser.parse_args()
