@@ -136,11 +136,7 @@ Meanwhile, deep learning models have been known to successfully interpret
  the syntax information of text sequences without given any prior information,
  which has resulted in many studies that incorporate such models for source
  codes.
- Dong and Lapata.
-\begin_inset space ~
-\end_inset
-
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "dong16lang"
@@ -149,11 +145,7 @@ key "dong16lang"
 
  use sequence-to-sequence neural networks to generate source codes from
  natural languages.
- White et al.
-\begin_inset space \thinspace{}
-\end_inset
-
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "white15soft"
@@ -162,11 +154,7 @@ key "white15soft"
 
  report that using RNNs instead of n-grams lowers the perplexity of a language
  model on source codes tokens.
- Bhoopchand et al.
-\begin_inset space \thinspace{}
-\end_inset
-
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "bhoopchand16spn"
@@ -176,11 +164,7 @@ key "bhoopchand16spn"
  introduce a sequence-to-sequence code autocompletion model that predicts
  one token at a time by either generating a new token or using an identifier
  introduced earlier in that code.
- Ling et al.
-\begin_inset space \thinspace{}
-\end_inset
-
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ling16lpn"
@@ -190,11 +174,7 @@ key "ling16lpn"
  propose the latent predictor network, a neural network for sequence generation
  which selects from several different models for generating tokens in different
  parts of a code.
- Rabinovich et al
-\begin_inset space \thinspace{}
-\end_inset
-
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rabinovich17asn"
@@ -206,17 +186,21 @@ key "rabinovich17asn"
 \end_layout
 
 \begin_layout Standard
-Our model incorporates a recently changing trend in the concept of attention
- in neural network models.
- Until recently, attention in sequence-to-sequence neural network models
- was based solely on adding a weighed vector to subsequent states of a stepwise
- RNN model
-\begin_inset space \thinspace{}
+Our model incorporates a recent trend in the concept of attention in neural
+ network models for sequences.
+ Following the work 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "vinyals15pointer"
+
 \end_inset
 
-.
- Similar approaches for generating sequences by copying relevant parts from
- input sequences can be seen in.sentence generation
+ which extended the use of computed attention as a direct output, many studies
+ on neural models that point to parts of the input sequence as answers have
+ appeared.
+ This approach has been widely adopted in natural language processing tasks,
+ with models for generating sequences by copying relevant parts from input
+ sequences seen in.sentence generation
 \begin_inset space \thinspace{}
 \end_inset
 

@@ -71,48 +71,364 @@
 \begin_body
 
 \begin_layout Standard
-We test our models on two datasets: synthetic- and real- code samples.
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Description of patterns in data samples
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Explanation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Object's property and the property value being equal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Object property as property value of other object
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Two object's same properties appearing in dot notation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Two different objects having same property dot-notted
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Identifier appearing as argument of a function
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Identifier appearing as part of string argument of function
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Invocation of constructors with frequently used arguments
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+An expression having another expression as part
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:data"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-As for our second dataset, we used the Javascript 150K source code dataset
- provided by 
+We test our models on two datasets: synthetic- and real- code samples.
+ We define 8 types of code patterns that frequently appear in source codes,
+ and create datasets based on these patterns.
+ Here we define a sample as 11 lines of code, where the first 10 lines form
+ the source lines and the last is to be splitted into a query and target
+ line.
+\end_layout
+
+\begin_layout Standard
+We first present a dataset that is collected from real source code projects.
+ We used the Javascript 150K source code dataset
+\begin_inset space \thinspace{}
+\end_inset
+
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "raychev16lpn"
 
 \end_inset
 
-.
- This dataset consists of 150,000 Javascript code files collected from different
- projects.
- We exclude files that do not meet a number of criteria: e.g.
- less lines than 10, more than 30,000 tokens, including text in non-English,
- etc.
- From our reduced dataset consisting of 119,142 cases, we collect samples
- consisting of 11 lines of code that correspond to any of the three specific
- patterns:
-\end_layout
-
-\begin_layout Itemize
-type1_2 , object properties, nested structure
-\end_layout
-
-\begin_layout Itemize
-type1_3, object properties, dot notation
-\end_layout
-
-\begin_layout Itemize
-type 2_1, variable literal AND function argument
+, which consists of 150,000 Javascript code files collected from different
+ repositories on Github.
+ Prior to extracting code snippets straightaway, we took a number of preprocessi
+ng measures.
+ First, we excluded files that did not meet a number of conditions: e.g.
+ files less than 10 lines or more than 30,000 tokens, files including text
+ in non-English, files with a single line longer than 150 tokens, etc.
+ This reduced the number of files to 119,142, from where we searched for
+ every possible 11 consecutive lines of code.
+ We conducted a similarity check on the first 10 lines to see if there exists
+ a line that shares a pattern with the last line.
+ Every set of lines that satisfy this condition were added to our dataset
+ as potential samples.
+ 
 \end_layout
 
 \begin_layout Standard
-Again, from our selected types, we remove duplicates and exclude samples
- that include lines with more than 100 tokens, to preserve training data
- quality.
- Though such exclusion processes greatly reduces our data size, we still
- end up with a dataset consisting of 46,626 samples.
- 
+We then adopted even further measures to improve the quality of our training
+ data.
+ From our selected types, we removed duplicates and exclude samples that
+ include lines with more than 100 tokens.
+ We also removed samples where the last line is less than 3 tokens or contains
+ trivial patterns such as a closing bracket.
+ For samples where more than one source line can be considered as a reference
+ line and thus multiple instances could be generated
+\begin_inset space \thinspace{}
+\end_inset
+
+(e.g.
+ cases where both lines 2 and 3 share the same pattern with the last line
+ and can be qualified as reference lines), we only selected one sample.
+ By balancing through data quality and quantity, we were able to clean our
+ training data and still end up with a decent dataset consisting of 46,626
+ samples.
+\end_layout
+
+\begin_layout Standard
+While we were able to collect a decent amount of samples using only actual
+ codes, we observed an imbalance in the distribution of our types where
+ most of the samples belonged to types 1, 2 and 3.
+ To compensate for this data imbalance, we created a synthetic dataset based
+ on actual data.
+ Our second dataset is also based on the Javascript dataset, but now is
+ generated by sampling from random lines.
+ To generate a sample, we randomly extract 9 lines from the entire code,
+ and then generate two lines that conform with one of the patterns listed
+ in Table
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:data"
+
+\end_inset
+
+.
+ We then shuffle the first 10 lines so that we can later perform the task
+ of selecting the correct reference line.
+ For each pattern type we created up to 15,000 samples to compensate for
+ the lack of actual data, resulting in a combined dataset of 120,000 samples
+ and over 300,000 unique tokens.
+ Due to computational constraints, we restrict our vocabulary size to the
+ 10,000 most frequently appearing tokens in the dataset.
 \end_layout
 
 \end_body

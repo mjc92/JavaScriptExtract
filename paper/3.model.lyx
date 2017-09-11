@@ -75,7 +75,11 @@ Task definition
 \end_layout
 
 \begin_layout Standard
-We define our proposed task as can be seen at 
+We define our proposed task as can be seen at Fig.
+\begin_inset space \thinspace{}
+\end_inset
+
+
 \shape italic
 
 \begin_inset CommandInset ref
@@ -131,7 +135,7 @@ reference line
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -148,7 +152,7 @@ vspace{-0.8in}
 
 
 \begin_inset Graphics
-	filename D:/Dropbox/progcopynet/figures/figure_task_overview/task.pdf
+	filename figures/figure_task_overview/task.pdf
 	width 150col%
 	BoundingBox 0bp 0bp 960bp 500bp
 
@@ -188,6 +192,61 @@ In this sense we can divide our task into two steps: (1) to correctly select
  line.
  This leads us to designing a two-staged neural network model which is suitable
  for such tasks.
+\begin_inset Float figure
+placement t
+wide true
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1.4in}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/figure_model_overview/model.pdf
+	scale 50
+	BoundingBox 0bp 0bp 960bp 500bp
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Model overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -267,64 +326,6 @@ th token of source line
 
  respectively.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement t
-wide true
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{-1.4in}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename D:/Dropbox/progcopynet/figures/figure_model_overview/model.pdf
-	scale 50
-	BoundingBox 0bp 0bp 960bp 500bp
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Model overview
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
