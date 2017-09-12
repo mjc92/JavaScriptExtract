@@ -72,61 +72,47 @@
 \begin_body
 
 \begin_layout Standard
-Code autocompletion refers to the process of predicting the next token or
- sequence of tokens of a source code given information of previously introduced
- code tokens.
- During the task of writing the source code for a program, a user can use
- this feature to automatically generate relevant tokens such as the names
- of functions or methods without having to type them manually.
- The convenience of such autocompletion techniques makes it a frequently
- used feature by programmers and developers who use integrated development
- environments
-\begin_inset space \thinspace{}
-\end_inset
-
-(IDEs).
- A survey conducted on Python users in 2016
-\begin_inset space ~
-\end_inset
-
-
+Code auto-completion, often dubbed as autocomplete, refers to the process
+ of predicting a single or a sequence of words when a developer is typing
+ computer application's source code.
+ The core concept is in fact widely applied to various fields as in search
+ engine's query suggestion.
+ Typing a single character 'a' for example would produce an array of strings
+ like 'air'.
+ Software developers these days are generally dependent on this feature
+ when they write programs that they do not have to type every single character
+ of words.
+ The convenience of this auto-competion or intelligent-suggestion functionality
+ makes it the most frequetly used feature of integrated development environments
+ (IDEs) as shown in the survey conducted on Python developers in 2016 by
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "jetbrains"
 
 \end_inset
 
- reveals that out of the features provided by IDEs, code autocompletion
- is most frequently used compared to other features such as code refactoring,
- database and SQL provision, virtual environments and code linting, with
- 75% of the users replying that they often use this feature.
- It also showed that auto-completion features also determine user preferences
- of one IDE over another, with PyCharm users using auto-completion features
- 26% more compared with other IDEs.
- We can imply from these results that autocompletion features can greatly
- improve both user experience and IDE usage.
+.
+ In the study, programmers tend to choose one code editor over another by
+ the degree of availability of auto-completion.
+ It has become such an integral feature in programming settings these days.
 \end_layout
 
 \begin_layout Standard
-Code autocompletion features implemented in IDEs mostly rely on predefined
- rules for determining which token to suggest for autocompletion.
- The downfall of this approach is that while an autocompletion model can
- predict frequently used tokens based on stored database, it often has difficult
-ies trying to reproduce codes that contain similar patterns to those introduced
- in previous lines.
- For example, such autocompletion methods cannot be used for reproducing
- a user's programming style, such as indentation or alignment styles.
- It is also hard for the conventional autocompletion model in an IDE to
- infer from similar lines of code that may seem obvious and even trivial
- to the user.
- For instance, while constructing a shape in D3.js, a JavaScript library
- for visualizing data, a number of similar lines of code have to be written
- to define the width, height, size of the targeted shape.
- While the user's intention, that is to reconstruct a similar line of code
- where only the variable indicating height is changed to weight and the
- corresponding values are changed accordingly, may seem straightforward,
- not even the state-of-the-art autocompletion models are capable of interpreting
- such information and thus generating relevant lines of code.
+The technology, meanwhile, relies on predefined rules for determining which
+ token to suggest or generate for users.
+ This process allows to predict frequently showed tokens based on the record
+ of word appearance.
+ It, however, often fails reproduce codes that have similar patterns to
+ those of previous lines.
+ A word or two that starts to have a similar pattern with preceding entire
+ sentences can be completed by humans even with the first few words given.
+ The traditional approach simply is not equipped with a proper device to
+ do this.
+ It cannot refer to a developer's programming style, such as how he indents
+ or aligns the words, or the arrangement of words, thus is limited in performanc
+e.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -178,17 +164,6 @@ key "intellisense"
 \end_layout
 
 \begin_layout Standard
-Analyzing the JavaScript 150K dataset shows that 69.8% of the identifiers
- in the next line to predict can be found from the previous 10 lines of
- any code.
- This tendency is higher in codes using certain packages such as D3.js where
- a user has to create multiple objects that share a similar structure.
- Therefore, we introduce the idea of solving this task as a pattern reconstructi
-on problem by first selecting a relevant line from a number of previous
- lines by comparing with an incomplete line that requires autocompletion,
- and then learning to generate our desired line of code by referring both
- to the selected line and the query line.
- 
 \begin_inset Note Comment
 status collapsed
 
@@ -205,44 +180,40 @@ Therefore, we set next-line code autocompletion as a task where a model
 \end_layout
 
 \begin_layout Standard
-In order to accomplish this task, we introduce a sequence-to-sequence based
- code autocompletion model that predicts subsequent tokens on the fly.
- By selectively copying tokens from relevant lines of previous code, our
- model is not restricted to predicting a single token, but can actually
- predict all the way up to a single line.
- Thanks to this copying mechanism, we can also predict tokens which are
- not included in the vocabulary of code tokens and thus can maintain the
- same level of performance without having to construct a large vocabulary
- size.
- This is especially effective when applying our model to new lines of code,
- considering that in actual source code construction, programmers often
- use arbitrary and unique variable or method names which are likely to be
- unintroduced to any predefined vocabulary.
+In this work, we introduce a sequence-to-sequence based code auto-completion
+ model that predicts an array of subsequent tokens on the fly.
+ Comprised of two major steps, the SelectCopy network first selects the
+ preceding lines that share the closest sentence structure.
+ It then copies the sentence and adjust to make it fit as the rest of the
+ sentence to predict.
+ Thanks to the copying mechanism, it is not restricted to predicting a single
+ token, but all the way up to a single line.
+ The model is also able to predict tokens which are not part of the known
+ vocabulary which leads to the performance gain even with the relatively
+ small size of vocabulary.
+ This is effective in end-to-end code-completion task knowing that in reality,
+ the words are infinitely many in number and having all those vocabularies
+ in advance is impractical.
 \end_layout
 
 \begin_layout Standard
-Our contributions are as follows:
+In order to make the network learn the codes, we analyzed JavaScript dataset
+ [QUOTE NEEDED] to find out that in many cases, an identifier appears again
+ in the following ten lines.
+ The tendency was shown to be stronger when the application uses libraries
+ such as D3.js where a developer is made to create multiple instances of
+ object of a similar type.
+ We therefore make the model look preceding ten lines of code to selectively
+ choose the most relevant line, if any, then generate the next possible
+ sentence by reproducing the pattern.
 \end_layout
 
-\begin_layout Itemize
-We introduce a method of code autocompletion by selectively copying from
- relevant lines and show several patterns which can be applied.
-\end_layout
-
-\begin_layout Itemize
-We introduce a sequence-to-sequence based model designed for completing
- lines of source codes given an incomplete line an a previous number of
- lines.
- Our model can generate new tokens, and selectively copy from either previous
- lines or the current line to be completed.
-\end_layout
-
-\begin_layout Itemize
-We compare our results with other sequence completion models and show that
- our model outperforms other baselines.
- We then describe how our model copies tokens selectively from both previous
- lines of code and the current incomplete line by visualizing attention
- values caused during computation.
+\begin_layout Standard
+We then compare our results with other sequence completion models to show
+ that SelectCopy network outperforms others in certain aspects.
+ The description of how the network copies tokens selectively from both
+ previous lines of code and the current incomplete line with adjusted attention
+ values does also follow.
 \end_layout
 
 \end_body
