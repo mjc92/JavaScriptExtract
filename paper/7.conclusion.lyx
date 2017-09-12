@@ -71,34 +71,26 @@
 \begin_body
 
 \begin_layout Standard
-In this work, we proposed a memory network-based model for predicting buffer
- overruns in programming language analysis.
- Our work is the first to apply a deep learning-based approach to a problem
- in the field of program analysis that requires both syntactic and semantic
- knowledge.
- Performance results show that memory networks are superior to other models
- in solving buffer overrun tasks across all difficulty levels.
- We also presented that our model successfully learns the notion of numbers
- and their quantitative comparisons from merely textual data in an end-to-end
- setting.
-\end_layout
-
-\begin_layout Standard
-Our work has room to improve in many interesting aspects from a software
- engineering perspective.
- As mentioned earlier, source codes preserve much syntactic information
- which can be processed to better understand the structure of programs.
- The use of sophisticated models that take in additional syntactic information
- can lead to better performances.
- Meanwhile, we can expand our model to cover different program analysis
- tasks such as pointer analysis, interval analysis, and flow-sensitivity
- analysis, which share similar semantic natures.
- Applying more sophisticate memory network models that preserve state changes
- can provide solutions to such problems.
- Our knowledge of models learning numerical representations can further
- aid deep learning models compatible with arithmetic and logical reasoning.
- All of these combined, our work marks a stepping stone to a fully data-driven
- program analyzer.
+In this work, we proposed a framework for generating source codes at a token
+ level.
+ We show that by using our network which first selects lines of similar
+ patterns and then generates a new line accordingly, we can generate linewise
+ source codes while preserving the patterns of previous lines, also at a
+ high accuracy.
+ Performance results show that our proposed models beat conventional methods
+ used for generating sequences and thus can be applied to code autocompletion
+ in scenarios where a user has to generate repetitive but slightly different
+ lines of code.
+ We also demonstrated how our model can benefit from using a selective copying
+ mechanism by not having to resort to a large vocabulary size.
+ Last of all, we presented visualizations which show that our model can
+ learn the concepts of deciding when to selectively copying tokens from
+ the source and query lines as well as generating new tokens from processed
+ information.
+ Our work opens up the possibility of a straightforward yet effective approach
+ towards the complex task of source code autocompletion and generation without
+ requiring handcrafted rules and structural information, and and can possibly
+ be applied to many other tasks in the domain of software engineering.
 \end_layout
 
 \end_body
